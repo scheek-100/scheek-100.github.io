@@ -1,7 +1,5 @@
 # [Sasha Cheek - Science Writer Portfolio](https://scheek-100.github.io)
 
-[Creative](https://startbootstrap.com/theme/creative/) is a one page, creative website theme built with [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
-
 ## About
 
 I translate complex scientific and technical topics into narrative stories.
