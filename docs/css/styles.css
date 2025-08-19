@@ -10993,3 +10993,71 @@ header.masthead h1, header.masthead .h1 {
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+/* =======================
+    ADD-ON COLOR OVERRIDES
+   ======================= */
+
+/* General font */
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background: url('../assets/img/obsidian.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #b8f5b8; /* light neon green tint */
+}
+
+/* Navbar */
+#mainNav {
+  background-color: #000 !important; /* Black navbar */
+}
+
+#mainNav .navbar-brand,
+#mainNav .nav-link {
+  color: #39ff14 !important; /* Neon green */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+#mainNav .nav-link:hover {
+  color: #b8f5b8 !important; /* lighter green on hover */
+}
+
+/* Section headers */
+h1, h2, h3, h4, h5 {
+  color: #39ff14 !important; /* Neon green headers */
+}
+
+/* Dividers */
+.divider {
+  border-color: #39ff14 !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #39ff14;
+  border: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #b8f5b8;
+  color: #000;
+}
+
+.btn-light {
+  background-color: #000;
+  border: 1px solid #39ff14;
+  color: #39ff14;
+}
+
+.btn-light:hover {
+  background-color: #39ff14;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  background-color: #000 !important;
+  color: #39ff14 !important;
+}
+
