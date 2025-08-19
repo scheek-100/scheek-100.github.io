@@ -10866,7 +10866,7 @@ hr.divider-light {
 
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: black limportant;
+  background-color: #fff;
   transition: background-color 0.2s ease;
 }
 #mainNav .navbar-brand {
@@ -10929,7 +10929,7 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/vintage-green-terminal-stockcake.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10992,66 +10992,4 @@ header.masthead h1, header.masthead .h1 {
 }
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption, #portfolio .container-sm .portfolio-box:hover .portfolio-box-caption, #portfolio .container-md .portfolio-box:hover .portfolio-box-caption, #portfolio .container-lg .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption, #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
-}
-/* NEW PORTFOLIO BACKGROUND === Global Styles === */
-body {
-  background: url("../assets/img/obsidian.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: #00ff66; /* neon terminal green */
-  font-family: "Courier New", monospace;
-}
-
-/* === NEW PORTFOLIO BACKGROUND Section Titles (CLI Style) === */
-.section-title {
-  position: relative;
-  font-size: 2rem;
-  padding: 1rem 2rem;
-  margin: 2rem 0;
-  display: inline-block;
-  color: #00ff66;
-  font-weight: bold;
-  background: url("../assets/img/vintage-green-terminal-stockcake.jpg") center center no-repeat;
-  background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.75);
-  border: 2px solid #00ff66;
-  border-radius: 5px;
-}
-
-.section-title::before {
-  content: "$ ";
-  color: #00ff66;
-}
-.section-title::after {
-  content: "_";
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink {
-  from, to { opacity: 0; }
-  50% { opacity: 1; }
-}
-
-/* === Buttons === */
-.btn {
-  background: transparent;
-  border: 2px solid #00ff66;
-  color: #00ff66;
-  font-family: "Courier New", monospace;
-}
-.btn:hover {
-  background: #00ff66;
-  color: black;
-}
-
-/* === Article Cards === */
-.article-card {
-  background-color: rgba(0,0,0,0.7);
-  border: 1px solid #00ff66;
-  padding: 1rem;
-  margin: 1rem 0;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-.article-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 15px #00ff66;
 }
