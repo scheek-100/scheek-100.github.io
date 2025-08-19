@@ -1,233 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-<!--Style fix covers overflow issues in file-->
+  <head>
+    <!-- Fix overflow issue -->
     <style>
-     html, body {
-      overflow-x: hidden;
-    }
-   </style>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <!-- Webrowser Tab Title-->
-        <title>Sasha B. Cheek | Technologist & Science Writer</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap Icons-->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Lora:wght@400;700&display=swap" rel="stylesheet" />
-        <!-- Fonts-->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
-        <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Portfolio</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 h-100">
-                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">Sasha B.Cheek's Portfolio</h1>
-                        <p class="lead fw-normal text-muted mb-5">Engineering ideas. Explaining tech and science to general audiences.</p>
-                        <hr class="divider" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">AI | APIs | Cybersecurity | Data Plumbing | Particle Physics (High-Energy Physics) | Space Science | System Architecture</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">About</h2>
-                        <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">Systems integrations specialist and part-time freelance science writer, applying technical expertise to particle physics, space science, and system/API architectures. Building systems engineering skills while translating complex technical concepts into clear, engaging stories. Currently pursuing an M.A. in Science Writing at Johns Hopkins University.</p>
-                        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Services-->
-        <section class="page-section" id="services">
-            <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">Services</h2>
-                <hr class="divider" />
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <!-- Service 1-->
-                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Technology & Science Writing</h3>
-                            <p class="text-muted mb-0">• Technologist contributor for tech & science media outlets.<br>• Breaking down complex topics in technology related to systems, particle physics and space science.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <!-- Service 2-->
-                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Technical Communication & Documentation</h3>
-                            <p class="text-muted mb-0">• Simplify existing and future technical documentation for APIs and complex software systems architecture.<br>• Data storytelling based on reputable data sources, using data visualization and programming tools.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <!-- Service 3-->
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Content Development for Organizations</h3>
-                            <p class="text-muted mb-0">• Case studies analysis.<br>• Science and tech storytelling services for educational initiatives.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <!-- Service 4-->
-                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Peer Review & Editing</h3>
-                            <p class="text-muted mb-0">• Peer editing for technical and science writing.<br>• Mentorship through resume advisement and educational materials for tech and engineering professionals.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Articles-->
-        <section id="portfolio" class="py-5">
-            <div class="container px-4 px-lg-5"><!--Medium.com-Style Cards Container-->
-                <h2 class="text-center mt-0">Selected Writing</h2>
-                <hr class="divider" />
-                <div class="row g-4">
-                    <!--Card & Article 1-->
-                    <div class="col-md-6 col-lg-4">
-                        <a class="medium-card" href="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079" target="_blank" rel="noopener noreferrer">
-                            <div class="medium-card__img">
-                                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*Tv3QfLov-HJwoiiN" alt="Automated Love: How AI Became the New Face of Romance">
-                            </div>
-                            <div class="medium-card__body">
-                                <h3 class="medium-card__title">Automated Love: How AI Became the New Face of Romance</h3>
-                                <p class="medium-card__meta">Medium · @sashacheek100</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--Card & Article 2-->
-                    <div class="col-md-6 col-lg-4">
-                        <a class="medium-card" href="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546" target="_blank" rel="noopener noreferrer">
-                            <div class="medium-card__img">
-                                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png" alt="David Bowie’s Ode to Sci-Fi and Space Science">
-                            </div>
-                            <div class="medium-card__body">
-                                <h3 class="medium-card__title">David Bowie’s Ode to Sci-Fi and Space Science</h3>
-                                <p class="medium-card__meta">Medium · @sashacheek100</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--Card & Article 3-->
-                    <div class="col-md-6 col-lg-4">
-                        <a class="medium-card" href="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7" target="_blank" rel="noopener noreferrer">
-                            <div class="medium-card__img">
-                                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*x2mm18W8-WYL6Ahz" alt="Dealing with Early Signs of Alzheimer’s Disease in Loved Ones">
-                            </div>
-                            <div class="medium-card__body">
-                                <h3 class="medium-card__title">Dealing with Early Signs of Alzheimer’s Disease in Loved Ones</h3>
-                                <p class="medium-card__meta">Medium · @sashacheek100</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!--End of Medium Articles Container-->
-                    <div class="text-center mt-4">
-                        <a class="btn btn-outline-dark btn-lg" target="_blank" rel="noopener noreferrer"
-                        href="https://medium.com/@sashacheek100">
-                            See all on Medium
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section><!--div changed to section to prevent portfolio navigation break-->
-        <!-- Call to action-->
-        <section class="page-section bg-dark text-white">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">Please click the button below to download my resume.</h2>
-                <!--Resume Download Link-->
-                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
-            </div>
-        </section>
-        <!-- Contact-->
-        <section class="page-section overflow-hidden" id="contact">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-8 col-xl-6 text-center">
-                <h2 class="mt-0">Let's Get In Touch!</h2>
-                <hr class="divider" />
-                <p class="text-muted mb-5">Please send me a message if science writing services are needed, and I will get back to you within 1 business day.</p>
-            </div>
+      html, body { overflow-x: hidden; }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Portfolio of Sasha B. Cheek" />
+    <meta name="author" content="Sasha B. Cheek" />
+    <title>Sasha B. Cheek | Technologist & Science Writer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- SimpleLightbox plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+    <!-- Core theme CSS (Bootstrap + Custom styles) -->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-neon" href="#page-top">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link text-neon" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link text-neon" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link text-neon" href="#portfolio">Writing</a></li>
+            <li class="nav-item"><a class="nav-link text-neon" href="#contact">Contact</a></li>
+          </ul>
         </div>
-        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-            <div class="col-lg-6">
-                <form action="https://formspree.io/f/xovlzkjj" method="POST">
-                    <div class="form-floating mb-3">
-                        <input class="form-control" name="name" type="text" placeholder="Enter your name..." required />
-                        <label for="name">Full name</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input class="form-control" name="email" type="email" placeholder="name@example.com" required />
-                        <label for="email">Email address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input class="form-control" name="phone" type="tel" placeholder="(123) 456-7890" />
-                        <label for="phone">Phone number</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" name="message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
-                        <label for="message">Message</label>
-                    </div>
-                    <div class="d-grid">
-                        <button class="btn btn-primary btn-xl" type="submit">Submit</button>
-                    </div>
-                </form>
+      </div>
+    </nav>
+
+    <!-- Hero / Masthead -->
+    <header class="masthead text-center">
+      <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="neon-title">Sasha B. Cheek’s Portfolio<span class="cursor">_</span></h1>
+        <p class="lead neon-subtitle">Engineering ideas. Explaining tech and science to general audiences.</p>
+        <p class="neon-tags">AI | APIs | Cybersecurity | Particle Physics | Space Science | Systems</p>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="page-section">
+      <div class="container text-center">
+        <h2 class="section-heading">About</h2>
+        <p class="mb-4">
+          Systems integrations specialist and part-time freelance science writer, applying technical expertise
+          to particle physics, space science, and API architectures. Currently pursuing an M.A. in Science Writing
+          at Johns Hopkins University.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="page-section">
+      <div class="container">
+        <h2 class="section-heading">Services</h2>
+        <div class="row gx-4 gx-lg-5">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <h3>Technology & Science Writing</h3>
+              <p>Breaking down complex topics in systems, APIs, and space science for general audiences.</p>
             </div>
-        </div>
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                <!-- Optional Phone Number or additional contact info here -->
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <h3>API Documentation</h3>
+              <p>Improving clarity and usability of REST API and developer-facing docs.</p>
             </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <h3>Content Development</h3>
+              <p>Case studies, science storytelling, and educational initiatives.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <h3>Editing & Peer Review</h3>
+              <p>Technical peer review and mentoring for early-career engineers and writers.</p>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
-        <!-- Footer-->
-        <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2025 - Sasha B. Cheek</div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+      </div>
+    </section>
+
+    <!-- Writing / Portfolio -->
+    <section id="portfolio" class="page-section">
+      <div class="container">
+        <h2 class="section-heading">Selected Writing</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <a class="medium-card" href="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079" target="_blank">
+              <div class="medium-card__img">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*Tv3QfLov-HJwoiiN" alt="Automated Love: How AI Became the New Face of Romance">
+              </div>
+              <div class="medium-card__body">
+                <h3>Automated Love: How AI Became the New Face of Romance</h3>
+                <p>Medium · @sashacheek100</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="medium-card" href="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546" target="_blank">
+              <div class="medium-card__img">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png" alt="David Bowie’s Ode to Sci-Fi and Space Science">
+              </div>
+              <div class="medium-card__body">
+                <h3>David Bowie’s Ode to Sci-Fi and Space Science</h3>
+                <p>Medium · @sashacheek100</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <a class="medium-card" href="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7" target="_blank">
+              <div class="medium-card__img">
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*x2mm18W8-WYL6Ahz" alt="Dealing with Early Signs of Alzheimer’s Disease">
+              </div>
+              <div class="medium-card__body">
+                <h3>Dealing with Early Signs of Alzheimer’s Disease</h3>
+                <p>Medium · @sashacheek100</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a class="btn btn-outline-neon btn-lg" href="https://medium.com/@sashacheek100" target="_blank">See all on Medium</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="page-section">
+      <div class="container">
+        <h2 class="section-heading">Contact</h2>
+        <p class="text-center mb-4">Please send me a message if science writing services are needed. I will reply within 1 business day.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <form action="https://formspree.io/f/xovlzkjj" method="POST">
+              <input class="form-control mb-3" name="name" type="text" placeholder="Full Name" required />
+              <input class="form-control mb-3" name="email" type="email" placeholder="Email Address" required />
+              <textarea class="form-control mb-3" name="message" placeholder="Message" style="height: 8rem" required></textarea>
+              <div class="d-grid">
+                <button class="btn btn-neon btn-lg" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+      <div class="container">
+        <small class="text-muted">Copyright &copy; 2025 - Sasha B. Cheek</small>
+      </div>
+    </footer>
+
+    <!-- Bootstrap + Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
