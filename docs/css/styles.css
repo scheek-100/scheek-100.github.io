@@ -11060,4 +11060,50 @@ footer {
   background-color: #000 !important;
   color: #39ff14 !important;
 }
+/* === Custom Overlay Section Styles === */
+
+/* About Section with black overlay */
+#about {
+  position: relative;
+  background: url("assets/img/obsidian.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+#about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with opacity */
+  z-index: -1;
+}
+
+/* Selected Writing Section with black overlay */
+#portfolio {
+  position: relative;
+  background: url("assets/img/obsidian.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+#portfolio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with opacity */
+  z-index: -1;
+}
+
+/* Services Section with white overlay */
+#services {
+  position: relative;
+  background: url("assets/img/obsidian.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+#services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* White overlay with opacity */
+  z-index: -1;
+}
 
