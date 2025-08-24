@@ -14,7 +14,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-    <!-- Fonts -->
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
@@ -26,50 +26,39 @@
   </head>
 
   <body id="page-top">
-      <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-  <div class="container px-4 px-lg-5">
-    <a class="navbar-brand" href="#page-top">Portfolio</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button"
-      data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ms-auto my-2 my-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Writing</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#page-top">Portfolio</a>
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto my-2 my-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#writing">Writing</a></li><!-- fixed -->
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- Hero / Masthead -->
     <header class="masthead text-center">
-      <!--Hero Title-->  
-      <div id="cli-title"></div>
+      <div class="container">
+        <!-- Hero Title (Typed.js target) -->
+        <div id="cli-title"></div>
 
-      <!--Add this script before the close </body>-->
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-      <script>
-          new Typed("#cli-title", {
-            strings: ["Sasha B.Cheek’s Portfolio", "Engineering ideas. Explaining tech and science to general audiences."],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true,
-            showCursor: true,
-            cursorChar: "|"
-          });
-      </script>
-      <!--Subtitle-->  
-      <div id="cli-title"></div>  
-      <p class="hero-subline">AI | APIs | Cybersecurity | Particle Physics | Space Science | Systems</p>
+        <!-- Subtitle -->
+        <p class="hero-subline">AI | APIs | Cybersecurity | Particle Physics | Space Science | Systems</p>
+      </div>
     </header>
 
     <!-- About -->
-    <section id="about" class=overlay-terminal">
+    <section id="about" class="overlay-terminal"><!-- fixed quote -->
       <div class="container text-center">
         <h2 class="section-heading">About</h2>
         <p>
@@ -117,13 +106,13 @@
     <section id="writing" class="overlay-terminal">
       <div class="container text-center">
         <h2 class="text-primary section-title">Selected Writing</h2>
-        <!--Space-->
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 term-grid">
-        <!--Title-->      
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 term-grid">
+          <!-- Tile 1 -->
           <div class="col">
             <a class="term-card text-decoration-none" href="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079" target="_blank" rel="noopener">
               <div class="term-thumb">
-                <img src="docs/assets/img/portfolio/thumbnails/Medium_1_thumbnail.jpg" alt="Automated Love: How AI Became the New Face of Romance">
+                <img src="assets/img/portfolio/thumbnails/Medium_1_thumbnail.jpg" alt="Automated Love: How AI Became the New Face of Romance">
               </div>
               <div class="term-body">
                 <h5 class="term-title">Automated Love: How AI Became the New Face of Romance</h5>
@@ -131,11 +120,12 @@
               </div>
             </a>
           </div>
-          <!--Title 2-->    
+
+          <!-- Tile 2 -->
           <div class="col">
             <a class="term-card text-decoration-none" href="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546" target="_blank" rel="noopener">
               <div class="term-thumb">
-                <img src="docs/assets/img/portfolio/thumbnails/Medium_2_thumbnail.jpg" alt="David Bowie’s Ode to Sci-Fi and Space Science">
+                <img src="assets/img/portfolio/thumbnails/Medium_2_thumbnail.jpg" alt="David Bowie’s Ode to Sci-Fi and Space Science">
               </div>
               <div class="term-body">
                 <h5 class="term-title">David Bowie’s Ode to Sci-Fi and Space Science</h5>
@@ -143,11 +133,12 @@
               </div>
             </a>
           </div>
-          <!--Title 3-->    
+
+          <!-- Tile 3 -->
           <div class="col">
             <a class="term-card text-decoration-none" href="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7" target="_blank" rel="noopener">
-              <div class=term-thumb">
-                <img src="docs/assets/img/portfolio/thumbnails/Medium_3_thumbnail.jpg" alt="Dealing with Early Signs of Alzheimer’s Disease">
+              <div class="term-thumb"><!-- fixed quote -->
+                <img src="assets/img/portfolio/thumbnails/Medium_3_thumbnail.jpg" alt="Dealing with Early Signs of Alzheimer’s Disease">
               </div>
               <div class="term-body">
                 <h5 class="term-title">Dealing with Early Signs of Alzheimer’s Disease</h5>
@@ -156,7 +147,7 @@
             </a>
           </div>
         </div>
-        <!--Space (unknown reason why)-->  
+
         <div class="text-center mt-4">
           <a class="btn btn-outline-success" href="https://medium.com/@sashacheek100" target="_blank" rel="noopener">See all on Medium</a>
         </div>
@@ -190,9 +181,22 @@
       </div>
     </footer>
 
-    <!-- Bootstrap + Scripts -->
+    <!-- Scripts: load at bottom -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Typed("#cli-title", {
+          strings: ["Sasha B. Cheek’s Portfolio", "Engineering ideas. Explaining tech and science to general audiences."],
+          typeSpeed: 50,
+          backSpeed: 30,
+          loop: true,
+          showCursor: true,
+          cursorChar: "|"
+        });
+      });
+    </script>
     <script src="js/scripts.js"></script>
   </body>
 </html>
