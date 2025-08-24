@@ -10,7 +10,7 @@ Sasha Cheek's Science Writing & Technology Portfolio
 
 # Sasha Cheek
 
-[Research Triangle Park, NC, US] • [Portfolio/Website](https://scheek-100.github.io) • [GitHub](https://github.com/scheek-100) • [LinkedIn](https://linkedin.com/in/sasha-cheek)
+Research Triangle Park, NC, US • [Portfolio/Website](https://scheek-100.github.io) • [GitHub](https://github.com/scheek-100) • [LinkedIn](https://linkedin.com/in/sasha-cheek)
 
 ---
 
