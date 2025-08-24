@@ -11119,3 +11119,39 @@ footer {
   z-index: -1;
 }
 
+/* Base wrapper all sections can use */
+.section-box{
+  border-radius:12px; padding:2rem 1.25rem;
+  margin-left:auto; margin-right:auto;
+  border:1px solid transparent;
+  max-width: 980px;           /* keeps long lines readable */
+}
+
+/* Terminal (dark) overlay with green border/glow */
+.section-box--terminal{
+  background:rgba(0,0,0,.78);
+  border-color:rgba(124,255,107,.20);
+  box-shadow:0 0 18px rgba(124,255,107,.08), 0 12px 28px rgba(0,0,0,.45);
+}
+
+/* White “glass” overlay for higher contrast on busy backgrounds */
+.section-box--white{
+  background:rgba(255,255,255,.10);         /* light glass */
+  border-color:rgba(255,255,255,.35);
+  backdrop-filter:saturate(110%) blur(1px);
+  -webkit-backdrop-filter:saturate(110%) blur(1px);
+  color:#e9f0ec;
+}
+
+/* Underline on section titles */
+.section-title{
+  border-bottom:1px solid rgba(124,255,107,.25);
+  padding-bottom:.35rem; margin-bottom:1.25rem;
+}
+
+/* Mobile padding */
+@media (max-width:576px){
+  .section-box{padding:1.25rem}
+}
+
+
