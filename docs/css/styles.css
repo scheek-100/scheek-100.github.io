@@ -11190,3 +11190,14 @@ body{
 /* Optional: tighten hero spacing if needed */
 .masthead .container{ padding-top: 6rem; padding-bottom: 3rem; }
 
+/* Section Text */
+.section-text {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: rgba(124, 255, 107, 0.85); /* lime with dimmed brightness */
+  margin-top: 0.75rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+
