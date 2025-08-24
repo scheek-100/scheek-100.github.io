@@ -48,11 +48,24 @@
 
     <!-- Hero / Masthead -->
     <header class="masthead text-center">
-      <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
-        <h1 class="neon-title">Sasha B. Cheek’s Portfolio<span class="cursor">_</span></h1>
-        <p class="lead neon-subtitle">Engineering ideas. Explaining tech and science to general audiences.</p>
-        <p class="neon-tags">AI | APIs | Cybersecurity | Particle Physics | Space Science | Systems</p>
-      </div>
+      <!--Hero Title-->  
+      <div id="cli-title"></div>
+
+      <!--Add this script before the close </body>-->
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+          new Typed("#cli-title", {
+            strings: ["Sasha B.Cheek’s Portfolio", "Engineering ideas. Explaining tech and science to general audiences."],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            showCursor: true,
+            cursorChar: "|"
+          });
+      </script>
+      <!--Subtitle-->  
+      <div id="cli-title"></div>  
+      <p class="hero-subline">AI | APIs | Cybersecurity | Particle Physics | Space Science | Systems</p>
     </header>
 
     <!-- About -->
