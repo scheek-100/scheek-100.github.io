@@ -11060,23 +11060,6 @@ footer {
   background-color: #000 !important;
   color: #39ff14 !important;
 }
-/* === Custom Overlay Section Styles === */
-
-/* About Section with black overlay */
-#about {
-  position: relative;
-  background: url("assets/img/obsidian.jpg") no-repeat center center;
-  background-size: cover;
-  z-index: 1;
-}
-#about::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with opacity */
-  z-index: -1;
-}
-
 /* ===== Selected Writing: terminal tiles ===== */
 :root{
   --term-green: #7CFF6B;
@@ -11103,22 +11086,6 @@ footer {
 .term-body{padding:1rem 1rem 1.1rem}
 .term-title{color:var(--term-txt); font-weight:700; font-size:1.05rem; line-height:1.35; margin:0 0 .35rem}
 .term-meta{color:var(--term-meta); font-size:.85rem; margin:0}
-
-/* Services Section with white overlay */
-#services {
-  position: relative;
-  background: url("assets/img/obsidian.jpg") no-repeat center center;
-  background-size: cover;
-  z-index: 1;
-}
-#services::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.6); /* White overlay with opacity */
-  z-index: -1;
-}
-
 /* Base wrapper all sections can use */
 .section-box{
   border-radius:12px; padding:2rem 1.25rem;
@@ -11190,4 +11157,32 @@ footer {
   border-radius: 6px;
   color: #eee;
 }
+/* CORRECTIONS: Ensure body bg path is correct (styles.css is in /css/) */
+body{
+  background: url('../assets/img/obsidian.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Buttons: you used .btn-neon in HTML—define it */
+.btn-neon{
+  background:#39ff14;
+  color:#000;
+  border:1px solid #39ff14;
+  font-weight:700;
+}
+.btn-neon:hover{
+  background:#b8f5b8;
+  color:#000;
+  border-color:#b8f5b8;
+}
+
+/* Overlay link/readability tweaks */
+.overlay-terminal a{ color:#7CFF6B; text-decoration:underline; }
+.overlay-terminal a:hover{ opacity:.85; }
+
+.overlay-white a{ color:#eaffea; text-decoration:underline; }
+.overlay-white a:hover{ opacity:.85; }
+
+/* Optional: tighten hero spacing if needed */
+.masthead .container{ padding-top: 6rem; padding-bottom: 3rem; }
 
