@@ -11200,7 +11200,16 @@ body{
 .overlay-white a:hover{ opacity:.85; }
 
 /* Optional: tighten hero spacing if needed */
-.masthead .container{ padding-top: 6rem; padding-bottom: 3rem; }
+/* .masthead .container{ padding-top: 6rem; padding-bottom: 3rem; } */
+.masthead {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+/* About section top margin fix */
+#about {
+  margin-top: 0 !important;
+  padding-top: 2rem; /* keep a little breathing room */
+}
 
 /* Section Text */
 .section-text {
@@ -11211,5 +11220,3 @@ body{
   text-align: center;
   letter-spacing: 1px;
 }
-
-
