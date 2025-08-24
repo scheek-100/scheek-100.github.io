@@ -1,71 +1,8 @@
-# [Start Bootstrap - Creative](https://startbootstrap.com/theme/creative/)
+# [Sasha B. Cheek - Portfolio Website](https://scheek-100.github.io)
 
-[Creative](https://startbootstrap.com/theme/creative/) is a one page creative theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
 
-## Preview
 
-[View Live Preview](https://startbootstrap.github.io/startbootstrap-creative/)
-
-## Status
-
-[![GitHub release](https://img.shields.io/github/release/startbootstrap/startbootstrap-creative.svg)](https://github.com/StartBootstrap/startbootstrap-creative/releases)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-creative.svg)](https://www.npmjs.com/package/startbootstrap-creative)
-[![Build Status](https://img.shields.io/travis/com/StartBootstrap/startbootstrap-creative/master.svg)](https://app.travis-ci.com/StartBootstrap/startbootstrap-creative)
-[![dependencies Status](https://img.shields.io/david/startbootstrap/startbootstrap-creative.svg)](https://david-dm.org/startbootstrap/startbootstrap-creative)
-[![devDependencies Status](https://img.shields.io/david/dev/startbootstrap/startbootstrap-creative.svg)](https://david-dm.org/startbootstrap/startbootstrap-creative?type=dev)
-
-## Download and Installation
-
-To begin using this template, choose one of the following options to get started:
-
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/creative/)
-* Install via npm: `npm i startbootstrap-creative`
-* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-creative.git`
-
-## Usage
-
-### Basic Usage
-
-After downloading, simply edit the HTML and CSS files included with your template to customize it to your liking!
-
-### Advanced Usage
-
-This template was designed to be used with [Bootstrap](https://getbootstrap.com/), [Sass](https://sass-lang.com/), and [npm](https://www.npmjs.com/). Before using the advanced features of this template, you must have the following installed:
-
-* [Node.js](https://nodejs.org/)
-* [npm](https://www.npmjs.com/)
-* [Gulp CLI](https://gulpjs.com/)
-
-#### Install Dependencies
-
-After installing the tools above, open your terminal and run the following command in the root directory of your project:
-
-```
-npm install
-```
-
-#### Build Tools
-
-Gulp is used to compile the Sass source files, minify CSS and JavaScript, and more. Run the following command to build and launch the theme locally:
-
-```
-npm start
-```
-
-You can also run additional tasks provided in the gulpfile:
-
-* `gulp build` - Compiles the theme for production
-* `gulp dev` - Compiles the theme for development
-
-## Bugs and Issues
-
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-creative/issues) on GitHub.
-
-## Custom Builds
-
-Need a custom build? [Contact Start Bootstrap](https://startbootstrap.com/contact/) for custom development options.
-
-## About
+## ABOUT
 
 Start Bootstrap is maintained by [David Miller](https://davidmiller.io/).
 
@@ -75,12 +12,70 @@ Start Bootstrap is maintained by [David Miller](https://davidmiller.io/).
 
 Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-## Copyright and License
+## RESUME
 
-Copyright 2013-2023 Start Bootstrap LLC.
+# [Sasha Cheek]
 
-Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE) license.
+[Reseaech Triangle Park, NC, US] • [Email] • [Portfolio/Website](https://scheek-100.github.io) • [GitHub](https://github.com/scheek-100) • [LinkedIn](https://linkedin.com/in/sasha-cheek)
 
------------------------------
+---
 
-If you need a different template or want to preserve some of your own info, let me know! I can help customize this too.
+## Career Summary
+Results-driven technical professional with experience spanning API integrations, program management, and science communication. Proven ability to deliver large-scale projects for global brands, while also translating complex technical and scientific topics into clear, accessible content.
+
+---
+
+## Skills
+**Frameworks/Tools:** REST/GraphQL APIs, Postman, Datadog, Swagger/OpenAPI, GitLab, Jira, Agile/Scrum, Drupal CMS  
+**Languages:** SQL, XML, JSON, Python, HTML/CSS  
+**Communication:** Technical Writing, Science Communication  
+
+---
+
+## Experience
+
+**Technical Integrations Specialist – Indeed.com**  
+*Mar 2023 – Present*  
+- Delivered 15+ API integrations using Postman and Swagger/OpenAPI  
+- Implemented API tracing via Datadog and GitLab CI/CD  
+- Acted as SME in systems-engineering triage meetings  
+
+**Freelance Science Writer – Self-Employed**  
+*Mar 2024 – Present*  
+- Developed a professional GitHub portfolio using Bootstrap and JavaScript frameworks  
+- Applied science communication techniques to translate complex research for general audiences  
+
+**Technical Program Manager – Various Projects**  
+*Mar 2021 – Dec 2022*  
+- Secured highly-vetted TPM work from clients including Microsoft and Credit Karma  
+  - **Microsoft (May 2022 – Dec 2022):** Managed CDN workflows for 3,500+ global pages using Power BI and Azure DevOps  
+  - **Credit Karma (Aug 2021 – May 2022):** Reduced partner onboarding time by improving API documentation and review workflows  
+
+**Technical Business Analyst – Hudson MX**  
+*Jul 2019 – Mar 2021*  
+- Organized XML/JSON/SQL datasets to accelerate prototype development  
+- Managed credential workflows for media-client API gateways  
+
+**Product Management Apprentice – Warner Bros. Digital Media**  
+*Jun 2018 – Jun 2019*  
+- Coordinated QA/UAT across iOS, Android, Roku, Fire TV  
+- Published high-traffic Drupal CMS content (1M+ views)  
+
+---
+
+## Publications
+- [**David Bowie’s Ode to Sci-Fi and Space Science**](https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546) — Medium, Apr 2024  
+- [**Automated Love: How AI Became the New Face of Romance**](https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079) — Medium, Mar 2024  
+
+---
+
+## Education
+**Johns Hopkins University** — M.A. Science Writing (4.0 GPA), *Expected May 2027*  
+**NC A&T State University** — B.S. Electronics Engineering Technology, *May 2018*
+
+
+## COPYRIGHT & LICENSE
+
+Copyright 2025 Sasha B. Cheek
+
+Code released under the Template forked from [MIT](https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE) license.
