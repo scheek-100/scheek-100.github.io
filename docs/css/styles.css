@@ -11166,12 +11166,8 @@ footer {
 .hero-subline {
   font-family: "Courier New", monospace;
   font-size: 1rem;
-  color: #cfd8d3;              /* softer than the bright lime */
+  color: rgba(124, 255, 107, 0.85); /* lime with dimmed brightness */
   margin-top: 0.75rem;
   text-align: center;
   letter-spacing: 1px;
 }
-
-
-
-
