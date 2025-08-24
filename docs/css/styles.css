@@ -11110,10 +11110,14 @@ footer {
   color:#e9f0ec;
 }
 
-/* Underline on section titles */
-.section-title{
-  border-bottom:1px solid rgba(124,255,107,.25);
-  padding-bottom:.35rem; margin-bottom:1.25rem;
+/* Section Titles with underline */
+.section-title {
+  color: #39ff14 !important; /* neon green */
+  border-bottom: 2px solid rgba(124,255,107,0.25);
+  padding-bottom: 0.35rem;
+  margin-bottom: 1.25rem;
+  display: block; 
+/* display:block underlines entire container widthunderline matches text width only */
 }
 
 /* Mobile padding */
