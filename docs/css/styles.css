@@ -11110,16 +11110,28 @@ footer {
   color:#e9f0ec;
 }
 
-/* Section Titles with underline */
+/* Section Titles: neon green + underline + blinking cursor */
 .section-title {
   color: #39ff14 !important; /* neon green */
   border-bottom: 2px solid rgba(124,255,107,0.25);
   padding-bottom: 0.35rem;
   margin-bottom: 1.25rem;
   display: block; 
+  position: relative;  
 /* display:block underlines entire container widthunderline matches text width only */
 }
 
+/* Add a blinking cursor _ after each title */
+.section-title::after {
+  content: "_";
+  margin-left: 4px;
+  color: #39ff14;
+  animation: blink 1s steps(1,end) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
 /* Mobile padding */
 @media (max-width:576px){
   .section-box{padding:1.25rem}
