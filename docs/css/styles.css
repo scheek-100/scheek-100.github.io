@@ -11171,3 +11171,23 @@ footer {
   text-align: center;
   letter-spacing: 1px;
 }
+
+/* PAGE SECTIONS: Terminal overlay (dark with lime border) */
+.overlay-terminal {
+  background: rgba(0,0,0,0.8);
+  border: 1px solid lime;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 6px;
+}
+
+/* PAGE SECTIONS: White overlay (light glow) */
+.overlay-white {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid white;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 6px;
+  color: #eee;
+}
+
