@@ -11162,6 +11162,16 @@ footer {
   margin-top: 2rem;
   text-align: center;
 }
+/* Hero Subtitles/Focuses */
+.hero-subline {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: #cfd8d3;              /* softer than the bright lime */
+  margin-top: 0.75rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
 
 
 
