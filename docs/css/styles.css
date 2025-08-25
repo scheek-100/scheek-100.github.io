@@ -11202,8 +11202,14 @@ body{
 /* Optional: tighten hero spacing if needed */
 /* .masthead .container{ padding-top: 6rem; padding-bottom: 3rem; } */
 .masthead {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
+  position: relative;
+  display: flex;
+  align-items: center;    /*vertical centering */
+  justify-content: center; /*horizontal centering */
+  text-align: center;
+  padding: 0;               /*remove Bootstrap default padding */
+  /*padding-bottom: 0 !important; */
+  /*margin-bottom: 0 !important; */
 }
 /* About section top margin fix */
 #about {
