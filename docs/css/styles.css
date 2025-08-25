@@ -11226,3 +11226,18 @@ body{
   text-align: center;
   letter-spacing: 1px;
 }
+
+/* Reserve width so the title or subtitle lines don't change length while typing */
+.cli-title{
+  margin:0 auto;
+  width: 32ch;             /* set >= longest string length; tune as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-align:center;
+}
+#typed-title{display:inline-block;}
+.cursor{margin-left:.2rem; animation:blink 1s steps(1,end) infinite;}
+@keyframes blink{50%{opacity:0}}
+
+/* Reduce layout work on mobile backgrounds */
+@media (max-width:576px){ .cli-title{ width: 26ch; font-size:1.6rem; } }
