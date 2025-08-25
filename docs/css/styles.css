@@ -10929,7 +10929,7 @@ hr.divider-light {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/earth-spacecraft-elements-this-image-furnished-by-nasa.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/abstract_halftone_dots_masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10994,102 +10994,86 @@ header.masthead h1, header.masthead .h1 {
   opacity: 1;
 }
 /* =======================
-   FINAL OVERRIDES (paste at end)
+    ADD-ON COLOR OVERRIDES
    ======================= */
 
-/* Global background + type */
-body{
-  font-family:'Share Tech Mono', monospace;
+/* General font */
+body {
+  font-family: 'Share Tech Mono', monospace;
   background: url('../assets/img/obsidian_cropped.jpg') no-repeat center center fixed;
   background-size: cover;
-  color:#b8f5b8;
+  color: #b8f5b8; /* light neon green tint */
 }
 
 /* Navbar */
-#mainNav{ background:#000 !important; }
-#mainNav .navbar-brand, #mainNav .nav-link{
-  color:#39ff14 !important; font-weight:700; transition:color .2s;
-}
-#mainNav .nav-link:hover{ color:#b8f5b8 !important; }
-
-/* Headings */
-h1,h2,h3,h4,h5{ color:#39ff14 !important; }
-
-/* Section titles: neon + underline + blinking cursor */
-.section-title{
-  color:#39ff14 !important;
-  border-bottom:2px solid rgba(124,255,107,.25);
-  padding-bottom:.35rem; margin-bottom:1.25rem;
-  display:inline-block;            /* underline only under text */
-  position:relative;
-}
-.section-title::after{
-  content:"_"; margin-left:4px; color:#39ff14;
-  animation:blink 1s steps(1,end) infinite;
-}
-@keyframes blink{50%{opacity:0}}
-
-/* Hero / masthead centering (within natural image height) */
-.masthead{
-  position:relative; display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:0;
-}
-#cli-title{
-  font-family:"Courier New", monospace;
-  font-size:2rem; color:lime; text-shadow:0 0 8px lime; margin-top:2rem;
-}
-/* fixed-width title line to prevent jumping */
-.cli-title{ margin:0 auto; width:32ch; white-space:nowrap; overflow:hidden; text-align:center; }
-#typed-title{ display:inline-block; }
-.cursor{ margin-left:.2rem; animation:blink 1s steps(1,end) infinite; }
-
-/* Hero subline */
-.hero-subline{
-  font-family:"Courier New", monospace; font-size:1rem;
-  color:rgba(124,255,107,.85); margin-top:.75rem; text-align:center; letter-spacing:1px;
-}
-@media (max-width:576px){ .cli-title{ width:26ch; font-size:1.6rem; } }
-
-/* Overlays */
-.overlay-terminal{
-  background:rgba(0,0,0,.8); border:1px solid #39ff14; padding:2rem; margin:2rem auto; border-radius:6px;
-}
-.overlay-white{
-  background:rgba(255,255,255,.12); border:1px solid #fff; padding:2rem; margin:2rem auto; border-radius:6px; color:#eee;
-}
-.overlay-terminal a{ color:#7CFF6B; text-decoration:underline; }
-.overlay-white   a{ color:#eaffea; text-decoration:underline; }
-
-/* Body text defaults (readable) */
-.page-section p{
-  font-family:"Courier New", monospace;
-  color:rgba(124,255,107,.88);
-  text-align:left; letter-spacing:.2px; line-height:1.7;
+#mainNav {
+  background-color: #000 !important; /* Black navbar */
 }
 
-/* Services layout (equal-height cards) */
-#services .row{ row-gap:1.25rem; }     /* use: row row-cols-1 row-cols-md-2 g-4 in HTML */
-.service-box{
-  background:rgba(0,0,0,.78); border:1px solid rgba(124,255,107,.18);
-  border-radius:12px; padding:1rem 1.25rem; height:100%;
+#mainNav .navbar-brand,
+#mainNav .nav-link {
+  color: #39ff14 !important; /* Neon green */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
 }
-.service-box h3{ color:#39ff14; margin-bottom:.5rem; }
-.service-box p { color:#cfe7d3; }
 
-/* Selected Writing: terminal tiles */
+#mainNav .nav-link:hover {
+  color: #b8f5b8 !important; /* lighter green on hover */
+}
+
+/* Section headers */
+h1, h2, h3, h4, h5 {
+  color: #39ff14 !important; /* Neon green headers */
+}
+
+/* Dividers */
+.divider {
+  border-color: #39ff14 !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #39ff14;
+  border: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #b8f5b8;
+  color: #000;
+}
+
+.btn-light {
+  background-color: #000;
+  border: 1px solid #39ff14;
+  color: #39ff14;
+}
+
+.btn-light:hover {
+  background-color: #39ff14;
+  color: #000;
+}
+
+/* Footer */
+footer {
+  background-color: #000 !important;
+  color: #39ff14 !important;
+}
+/* ===== Selected Writing: terminal tiles ===== */
 :root{
-  --term-green:#7CFF6B; --term-green-dim:rgba(124,255,107,.18);
-  --term-txt:#d7ffe0; --term-meta:#94b39d;
+  --term-green: #7CFF6B;
+  --term-green-dim: rgba(124,255,107,.18);
+  --term-txt: #d7ffe0;
+  --term-meta: #94b39d;
 }
-/* scope flex only to writing grid cols */
-.term-grid .col{ display:flex; }
-.row > [class^="col"], .row > [class*=" col-"]{ display:block; }  /* reset elsewhere */
 
+.term-grid .col{display:flex}               /* equal-height tiles */
 .term-card{
   display:flex; flex-direction:column; width:100%;
   background:#081008; border:1px solid var(--term-green-dim);
-  border-radius:14px; overflow:hidden; text-decoration:none;
-  box-shadow:0 0 0 rgba(0,0,0,0);
+  border-radius:14px; overflow:hidden;
+  text-decoration:none; box-shadow:0 0 0 rgba(0,0,0,0);
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .term-card:hover{
@@ -11097,20 +11081,142 @@ h1,h2,h3,h4,h5{ color:#39ff14 !important; }
   border-color:rgba(124,255,107,.35);
   box-shadow:0 0 18px rgba(124,255,107,.15), 0 14px 28px rgba(0,0,0,.45);
 }
-.term-thumb{ aspect-ratio:16/9; overflow:hidden; background:#0d0f0d; }
-.term-thumb img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.9) contrast(1.05); }
-.term-body{ padding:1rem 1rem 1.1rem; margin-top:auto; }
-.term-title{ color:var(--term-txt); font-weight:700; font-size:1.05rem; line-height:1.35; margin:0 0 .35rem; }
-.term-meta { color:var(--term-meta); font-size:.85rem; margin:0; }
+.term-thumb{aspect-ratio:16/9; overflow:hidden; background:#0d0f0d}
+.term-thumb img{width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.9) contrast(1.05)}
+.term-body{padding:1rem 1rem 1.1rem}
+.term-title{color:var(--term-txt); font-weight:700; font-size:1.05rem; line-height:1.35; margin:0 0 .35rem}
+.term-meta{color:var(--term-meta); font-size:.85rem; margin:0}
+/* Base wrapper all sections can use */
+.section-box{
+  border-radius:12px; padding:2rem 1.25rem;
+  margin-left:auto; margin-right:auto;
+  border:1px solid transparent;
+  max-width: 980px;           /* keeps long lines readable */
+}
 
-/* Buttons */
-.btn-neon{ background:#39ff14; color:#000; border:1px solid #39ff14; font-weight:700; }
-.btn-neon:hover{ background:#b8f5b8; color:#000; border-color:#b8f5b8; }
+/* Terminal (dark) overlay with green border/glow */
+.section-box--terminal{
+  background:rgba(0,0,0,.78);
+  border-color:rgba(124,255,107,.20);
+  box-shadow:0 0 18px rgba(124,255,107,.08), 0 12px 28px rgba(0,0,0,.45);
+}
 
+/* White “glass” overlay for higher contrast on busy backgrounds */
+.section-box--white{
+  background:rgba(255,255,255,.10);         /* light glass */
+  border-color:rgba(255,255,255,.35);
+  backdrop-filter:saturate(110%) blur(1px);
+  -webkit-backdrop-filter:saturate(110%) blur(1px);
+  color:#e9f0ec;
+}
+
+/* Section Titles: neon green + underline + blinking cursor */
+.section-title {
+  color: #39ff14 !important; /* neon green */
+  border-bottom: 2px solid rgba(124,255,107,0.25);
+  padding-bottom: 0.35rem;
+  margin-bottom: 1.25rem;
+  display: block; 
+  position: relative;  
+/* display:block underlines entire container widthunderline matches text width only */
+}
+
+/* Add a blinking cursor _ after each title */
+.section-title::after {
+  content: "_";
+  margin-left: 4px;
+  color: #39ff14;
+  animation: blink 1s steps(1,end) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
 /* Mobile padding */
-@media (max-width:576px){ .overlay-terminal, .overlay-white{ padding:1.25rem; } }
+@media (max-width:576px){
+  .section-box{padding:1.25rem}
+}
+/*Portfolio Title and Styling */
+#cli-title {
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  color: lime;
+  text-shadow: 0 0 8px lime;
+  margin-top: 2rem;
+  text-align: center;
+}
+/* Hero Subtitles/Focuses */
+.hero-subline {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: rgba(124, 255, 107, 0.85); /* lime with dimmed brightness */
+  margin-top: 0.75rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .cursor, .term-card:hover{ animation:none; transform:none; box-shadow:none; }
+/* PAGE SECTIONS: Terminal overlay (dark with lime border) */
+.overlay-terminal {
+  background: rgba(0,0,0,0.8);
+  border: 1px solid lime;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 6px;
+}
+
+/* PAGE SECTIONS: White overlay (light glow) */
+.overlay-white {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid white;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 6px;
+  color: #eee;
+}
+/* CORRECTIONS: Ensure body bg path is correct (styles.css is in /css/) */
+body{
+  background: url('../assets/img/obsidian_cropped.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Buttons: you used .btn-neon in HTML—define it */
+.btn-neon{
+  background:#39ff14;
+  color:#000;
+  border:1px solid #39ff14;
+  font-weight:700;
+}
+.btn-neon:hover{
+  background:#b8f5b8;
+  color:#000;
+  border-color:#b8f5b8;
+}
+
+/* Overlay link/readability tweaks */
+.overlay-terminal a{ color:#7CFF6B; text-decoration:underline; }
+.overlay-terminal a:hover{ opacity:.85; }
+
+.overlay-white a{ color:#eaffea; text-decoration:underline; }
+.overlay-white a:hover{ opacity:.85; }
+
+/* Optional: tighten hero spacing if needed */
+/* .masthead .container{ padding-top: 6rem; padding-bottom: 3rem; } */
+.masthead {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+/* About section top margin fix */
+#about {
+  margin-top: 0 !important;
+  padding-top: 2rem; /* keep a little breathing room */
+}
+
+/* Section Text */
+.section-text {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  color: rgba(124, 255, 107, 0.85); /* lime with dimmed brightness */
+  margin-top: 0.75rem;
+  text-align: center;
+  letter-spacing: 1px;
 }
