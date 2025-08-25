@@ -31,7 +31,7 @@ Results-driven technical professional with experience spanning API integrations,
 **Technical Integrations Specialist – Indeed.com**  
 *Mar 2023 – Present*  
 - Delivered 15+ API integrations using Postman and Swagger/OpenAPI  
-- Implemented API tracing via Datadog and GitLab CI/CD  
+- Proposed data pipeline solution for centralizing API tracing, improving response rates to API abnormalities 
 - Acted as SME in systems-engineering triage meetings  
 
 **Freelance Science Writer – Self-Employed**  
