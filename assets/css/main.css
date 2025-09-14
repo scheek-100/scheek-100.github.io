@@ -1224,33 +1224,54 @@ section,
   /* Add your styles here */
 }
 
-/* Import slimmer retro font */
+/* === Import retro font === */
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-/* Titles (Hero + Sections + Headings) */
+/* === Titles (Hero + Section Headings) === */
 h1, h2, h3, .folio-title, .section-title, .folio-subtitle {
   font-family: 'VT323', monospace !important;
   font-size: clamp(20px, 2.5vw, 34px) !important;
   line-height: 1.3 !important;
   color: #00f0ff !important;
 
-  /* Professional subtle glow only */
+  /* Professional subtle glow */
   text-shadow: 
     0 0 2px #00f0ff,
     0 0 4px #00c0cc;
 
   letter-spacing: 0.5px;
   text-align: center;
-  background: none !important; /* removes border/box */
+  background: none !important; /* no border/box */
 }
 
-/* Body text remains modern */
+/* === Body Text === */
 body, p, li {
   font-family: 'Helvetica Neue', Arial, sans-serif !important;
   font-size: 16px;
   color: #e0e0e0;
-  text-shadow: none;
+  text-shadow: black;
+  line-height: 1.6;
 }
+
+/* === Links === */
+a {
+  color: #00f0ff;
+  text-decoration: none;
+}
+a:hover {
+  color: #00c0cc;
+  text-decoration: underline;
+}
+
+/* === Social Icons Fix (neon hover) === */
+.social-icons a {
+  color: #e0e0e0 !important;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #00f0ff !important;
+}
+
 
 
 
