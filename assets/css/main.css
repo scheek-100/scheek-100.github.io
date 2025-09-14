@@ -1224,14 +1224,31 @@ section,
   /* Add your styles here */
 }
 
-  /* TITLES TEXT (NEW) */
-h1, h2, h3, .folio-title, .section-title {
+/* Main Titles (Hero / Section) */
+h1, .folio-title, .section-title {
   font-family: 'Press Start 2P', monospace !important;
+  font-size: clamp(18px, 3vw, 32px) !important; 
+  line-height: 1.4 !important;
   color: #00f0ff !important;
   text-shadow: 
-    0 0 5px #00f0ff,
-    0 0 10px #00f0ff,
-    0 0 20px #00f0ff,
-    0 0 40px #00f0ff;
-  letter-spacing: 2px;
+    0 0 4px #00f0ff,
+    0 0 8px #00f0ff,
+    0 0 16px #00f0ff;
+  letter-spacing: 1px;
+  text-align: center;
 }
+
+/* Subtitles / Secondary Headings */
+h2, h3, .folio-subtitle {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: clamp(14px, 2vw, 22px) !important; 
+  line-height: 1.4 !important;
+  color: #00f0ff !important;
+  text-shadow: 
+    0 0 3px #00f0ff,
+    0 0 6px #00f0ff,
+    0 0 12px #00f0ff;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
