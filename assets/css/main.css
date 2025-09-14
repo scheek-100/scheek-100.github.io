@@ -19,7 +19,7 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --background-color: #000000; /* Background color for the entire website, including individual sections */
   --default-color: #898989; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #777777; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #b8a07e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
@@ -1222,4 +1222,16 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+  /* TITLES TEXT (NEW) */
+h1, h2, h3, .folio-title, .section-title {
+  font-family: 'Press Start 2P', monospace !important;
+  color: #00f0ff !important;
+  text-shadow: 
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 40px #00f0ff;
+  letter-spacing: 2px;
 }
