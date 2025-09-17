@@ -1291,25 +1291,18 @@ section,
 # Category: Text Styling
 --------------------------------------------------------------*/
 /* TR2N Font-face Loading */
-@font-face {
-  font-family: 'TR2N';
-  src: url('/fonts/TR2N.woff2') format('woff2'),
-       url('/fonts/TR2N.woff') format('woff'),
-       url('/fonts/TR2N.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; /* optional but good for performance */
-}
+/* Import Orbitron (closest free match to TRON style) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-/* Example h2 Styling using TR2N + glow effect */
 h2 {
-  font-family: 'TR2N', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
+  font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #00faff; /* neon cyan or similar */
-  
-  /* Neon glow / multiple shadows like TRON style */
+  color: #00faff; /* neon cyan */
+
+  /* TRON neon glow */
   text-shadow:
     0 0 5px #00faff,
     0 0 10px #00faff,
@@ -1317,6 +1310,7 @@ h2 {
     0 0 40px #00c5ff,
     0 0 60px #0099cc;
 }
+
 
 
 
