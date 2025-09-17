@@ -1290,24 +1290,33 @@ section,
 /*--------------------------------------------------------------
 # Category: Text Styling
 --------------------------------------------------------------*/
-/* Import a clean monospaced tech font */
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
-.subtitle {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #aeeaff; /* softer cyan than the title */
-
-  /* Light, subtle glow */
-  text-shadow:
-    0 0 2px rgba(174, 234, 255, 0.6),
-    0 0 4px rgba(174, 234, 255, 0.4);
+/* TR2N Font-face Loading */
+@font-face {
+  font-family: 'TR2N';
+  src: url('/fonts/TR2N.woff2') format('woff2'),
+       url('/fonts/TR2N.woff') format('woff'),
+       url('/fonts/TR2N.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* optional but good for performance */
 }
 
-
+/* Example h2 Styling using TR2N + glow effect */
+h2 {
+  font-family: 'TR2N', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #00faff; /* neon cyan or similar */
+  
+  /* Neon glow / multiple shadows like TRON style */
+  text-shadow:
+    0 0 5px #00faff,
+    0 0 10px #00faff,
+    0 0 20px #00faff,
+    0 0 40px #00c5ff,
+    0 0 60px #0099cc;
+}
 
 
 
