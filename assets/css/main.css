@@ -1290,33 +1290,42 @@ section,
 /*--------------------------------------------------------------
 # Category: Text Styling
 --------------------------------------------------------------*/
-/* TR2N Font-face Loading */
-@font-face {
-  font-family: 'TR2N';
-  src: url('/fonts/TR2N.woff2') format('woff2'),
-       url('/fonts/TR2N.woff') format('woff'),
-       url('/fonts/TR2N.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; /* optional but good for performance */
-}
-
-/* Example h2 Styling using TR2N + glow effect */
 h2 {
-  font-family: 'TR2N', sans-serif;
+  font-family: 'TR2N', 'Orbitron', sans-serif;
   font-size: 3rem;
+  font-weight: 500;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #00faff; /* neon cyan or similar */
-  
-  /* Neon glow / multiple shadows like TRON style */
+  color: #00faff; /* bright cyan core text */
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em; /* spacing inside box */
+  z-index: 1;
+
+  /* Neon glow for text */
   text-shadow:
-    0 0 5px #00faff,
-    0 0 10px #00faff,
-    0 0 20px #00faff,
-    0 0 40px #00c5ff,
-    0 0 60px #0099cc;
+    0 0 2px #00faff,
+    0 0 6px #00faff,
+    0 0 12px #00c5ff;
+
+  /* Optional stroke to keep edges crisp */
+  -webkit-text-stroke: 1px rgba(0, 200, 255, 0.4);
 }
+
+/* Glow box background */
+h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.08); /* soft cyan tint */
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4); /* glow around box */
+  border-radius: 4px; /* slightly rounded corners */
+  z-index: -1; /* behind the text */
+}
+
 
 
 
