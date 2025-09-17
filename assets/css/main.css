@@ -1290,26 +1290,28 @@ section,
 /*--------------------------------------------------------------
 # Category: Text Styling
 --------------------------------------------------------------*/
-/* TR2N Font-face Loading */
-/* Import Orbitron (closest free match to TRON style) */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+/* Import Questrial from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 4px;
+  font-family: 'Questrial', 'Eurostile Rounded', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #e0f6ff;
   text-transform: uppercase;
-  color: #00faff; /* neon cyan */
+  position: relative;
+  display: inline-block;
 
-  /* TRON neon glow */
-  text-shadow:
-    0 0 5px #00faff,
-    0 0 10px #00faff,
-    0 0 20px #00faff,
-    0 0 40px #00c5ff,
-    0 0 60px #0099cc;
+  /* Cyberpunk glow */
+  text-shadow: 
+    0 0 5px rgba(0, 255, 255, 0.8),
+    0 0 10px rgba(0, 255, 255, 0.6),
+    -2px 0 3px rgba(255, 0, 0, 0.7), 
+    2px 0 3px rgba(0, 255, 255, 0.7);
 }
+
+
 
 
 
