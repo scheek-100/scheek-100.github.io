@@ -217,4 +217,41 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /* accordion-blog.js
+    Small helper for accordion caret rotation and optional lazy behavior.
+    Load this after Bootstrap's JS.
+  */
+  document.addEventListener('DOMContentLoaded', function () {
+    var accordion = document.getElementById('accordionBlog');
+    if (!accordion) return;
+
+    // Attach listeners for each collapse to toggle caret rotation
+    var collapses = accordion.querySelectorAll('.accordion-collapse');
+    collapses.forEach(function (collapse) {
+      collapse.addEventListener('shown.bs.collapse', function (event) {
+        var headerId = event.target.getAttribute('aria-labelledby');
+        var header = document.getElementById(headerId);
+        if (!header) return;
+        var caret = header.querySelector('.accordion-caret');
+        if (caret) caret.classList.add('rotated');
+        // optional: lazy load images inside revealed panel
+        var imgs = event.target.querySelectorAll('img[data-src]');
+        imgs.forEach(function (img) {
+          img.setAttribute('src', img.getAttribute('data-src'));
+          img.removeAttribute('data-src');
+        });
+      });
+
+      collapse.addEventListener('hidden.bs.collapse', function (event) {
+        var headerId = event.target.getAttribute('aria-labelledby');
+        var header = document.getElementById(headerId);
+        if (!header) return;
+        var caret = header.querySelector('.accordion-caret');
+        if (caret) caret.classList.remove('rotated');
+      });
+    });
+
+    // Optional: if you want only one open at a time, Bootstrap's data-bs-parent already handles it.
+  });  
+
 })();
