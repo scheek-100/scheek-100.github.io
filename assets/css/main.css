@@ -1292,7 +1292,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   min-height: 100vh;
-  background: url('assets/img/spacecraft-hero-bg.jpg') no-repeat center center/cover;
+  background: url('spacecraft-hero-bg.jpg') no-repeat center center/cover;
   color: #00f0ff;
   padding: 2rem;
 }
