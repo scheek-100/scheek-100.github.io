@@ -1290,26 +1290,34 @@ section,
 /*--------------------------------------------------------------
 # Category: Text Styling
 --------------------------------------------------------------*/
-/* Import Questrial from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-/* H2 FONT --------------------------------------------------------------*/
-h2 {
-  font-family: 'Questrial', 'Eurostile Rounded', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #e0f6ff;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-
-  /* Cyberpunk glow */
-  text-shadow: 
-    0 0 5px rgba(0, 255, 255, 0.8),
-    0 0 10px rgba(0, 255, 255, 0.6),
-    -2px 0 3px rgba(255, 0, 0, 0.7), 
-    2px 0 3px rgba(0, 255, 255, 0.7);
+/* TR2N Font-face Loading */
+@font-face {
+  font-family: 'TR2N';
+  src: url('/fonts/TR2N.woff2') format('woff2'),
+       url('/fonts/TR2N.woff') format('woff'),
+       url('/fonts/TR2N.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* optional but good for performance */
 }
+
+/* Example h2 Styling using TR2N + glow effect */
+h2 {
+  font-family: 'TR2N', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #00faff; /* neon cyan or similar */
+  
+  /* Neon glow / multiple shadows like TRON style */
+  text-shadow:
+    0 0 5px #00faff,
+    0 0 10px #00faff,
+    0 0 20px #00faff,
+    0 0 40px #00c5ff,
+    0 0 60px #0099cc;
+}
+
 
 
 
