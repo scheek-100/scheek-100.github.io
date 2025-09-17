@@ -1287,6 +1287,29 @@ section,
   object-fit: cover;
 }
 
+/*--------------------------------------------------------------
+# Category: Text Styling
+--------------------------------------------------------------*/
+/* Import Questrial from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+/* H2 FONT --------------------------------------------------------------*/
+h2 {
+  font-family: 'Questrial', 'Eurostile Rounded', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #e0f6ff;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+
+  /* Cyberpunk glow */
+  text-shadow: 
+    0 0 5px rgba(0, 255, 255, 0.8),
+    0 0 10px rgba(0, 255, 255, 0.6),
+    -2px 0 3px rgba(255, 0, 0, 0.7), 
+    2px 0 3px rgba(0, 255, 255, 0.7);
+}
 
 
 
