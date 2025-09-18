@@ -1287,33 +1287,3 @@ section,
   object-fit: cover;
 }
 
-/*--------------------------------------------------------------
-# Category: Background
---------------------------------------------------------------*/
-/* Background for everything except navbar, hero, and footer */
-main {
-  position: relative; /* allows overlay positioning */
-  background: #1a1f2a url('assets/img/motherboard-background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  z-index: 0;
-}
-
-/* Dark overlay */
-main::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(10, 15, 25, 0.7); /* dark navy/gray tint */
-  z-index: -1; /* stays behind content */
-}
-
-/* Explicitly reset navbar, hero, and footer */
-nav.navbar,
-header.masthead,
-footer {
-  background: none !important; /* leave their styles alone */
-  position: relative; /* avoid overlay bleed */
-  z-index: 1;
-}
-
