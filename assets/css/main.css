@@ -1290,15 +1290,28 @@ section,
 /*--------------------------------------------------------------
 # Category: Text Styling
 --------------------------------------------------------------*/
-/* Import Orbitron font */
+/* Import Orbitron for headings */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
+/* Import Pixelify Sans for body + UI */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+/* Apply Pixelify Sans everywhere by default */
+body, p, span, a, li, ul, ol, button, input, textarea, select, i, svg, .icon {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  line-height: 1.6;
+  color: #ffffff; /* adjust to your background */
+  text-decoration: none;
+}
+
+/* Headings keep Orbitron */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
-  font-style: normal;
   text-transform: uppercase;
   letter-spacing: 2px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+
