@@ -1303,7 +1303,7 @@ body, p, span, a, li, ul, ol, button, input, textarea, select, i, svg, .icon {
   font-style: normal;
   font-optical-sizing: auto;
   line-height: 1.6;
-  color: #ffffff; /* adjust to your background */
+  color: #000000; /* adjust to your background */
   text-decoration: none;
 }
 
