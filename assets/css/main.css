@@ -1294,8 +1294,11 @@ section,
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
