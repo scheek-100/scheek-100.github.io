@@ -1290,17 +1290,12 @@ section,
 /*--------------------------------------------------------------
 # Category: Text Styling
 --------------------------------------------------------------*/
-/* Import Ethnocentric font */
-@import url('https://fonts.cdnfonts.com/css/ethnocentric');
+/* Import Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ethnocentric', sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #00e5ff;
-  letter-spacing: 2px;
-  line-height: 1.2;
-  -webkit-text-stroke: 1px #00e5ff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
