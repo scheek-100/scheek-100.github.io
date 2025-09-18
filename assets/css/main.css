@@ -1293,32 +1293,14 @@ section,
 /* Import Ethnocentric font */
 @import url('https://fonts.cdnfonts.com/css/ethnocentric');
 
-/* Apply to h2 */
-h2 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Ethnocentric', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: #00e5ff;
   letter-spacing: 2px;
   line-height: 1.2;
-
-  /* Neon glow effect */
-  text-shadow:
-    0 0 4px #00e5ff,
-    0 0 8px #00e5ff,
-    0 0 12px #00e5ff,
-    0 0 16px #00e5ff;
-
-  /* Crisp rendering */
+  -webkit-text-stroke: 1px #00e5ff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-
-
-
-
-
-
-
