@@ -1290,14 +1290,4 @@ section,
 /*--------------------------------------------------------------
 # Category: Text Styling
 --------------------------------------------------------------*/
-/* Import Orbitron for headings */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
-/* Headings keep Orbitron */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
 
