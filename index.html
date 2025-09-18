@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -14,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-
+  
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,14 +26,21 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
   <style>
-    .section-with-bg {
+    /* Black background for About, Resume, Writing, Contact */
+    .section-black {
+      background-color: #12151f;
+    }
+  
+    /* Image + overlay for Services, Projects, Testimonials */
+    .section-img-bg {
       position: relative;
       overflow: hidden;
-      z-index: 1;
+      background: none;
     }
-
-    .section-with-bg .bg-img {
+  
+    .section-img-bg .bg-img {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -41,48 +49,39 @@
       z-index: 1;
       pointer-events: none;
     }
-
-    /* Dark overlay for About, Resume, Writing, Contact */
-    .section-dark-overlay .overlay {
+  
+    .section-img-bg .bg-img::after {
+      content: "";
       position: absolute;
       inset: 0;
-      background: rgba(18, 21, 31, 0.7);
-      /* dark navy/black, opaque */
+      background: rgba(18, 30, 60, 0.65);
+      /* dark blue overlay */
       z-index: 2;
       pointer-events: none;
+      display: block;
     }
-
-    /* Light blue overlay for Services, Projects, Testimonials */
-    .section-light-overlay .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(142, 189, 255, 0.55);
-      /* mid-light blue, semi-transparent */
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .section-with-bg .container,
-    .section-with-bg .content-wrap,
-    .section-with-bg .section-title {
+  
+    .section-img-bg>.container,
+    .section-img-bg>.content-wrap,
+    .section-img-bg>.section-title {
       position: relative;
       z-index: 3;
     }
-
+  
     @media (max-width: 768px) {
-      .section-with-bg .bg-img {
+      .section-img-bg .bg-img {
         object-position: center;
       }
     }
   </style>
-</head>
   <!-- =======================================================
-  * Template Name: Folio
-  * Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-  * Updated: Aug 08 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    * Template Name: Folio
+    * Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
+    * Updated: Aug 08 2024 with Bootstrap v5.3.3
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+  </head>
 
 <body class="index-page">
 
@@ -130,42 +129,28 @@
       </div>
 
     </section><!-- /Hero Section -->
-
-<!-- About Section (dark overlay) -->
-<section id="about" class="about section-with-bg section-dark-overlay">
-  <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-  <div class="overlay"></div>
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>About</h2>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100" style="position: relative; z-index: 1;">
-    <div class="row gy-4 justify-content-between" style="position: relative; z-index: 2;">
-      <div class="col-lg-4 profile-img align-self-start">
-        <img
-          src="https://media.licdn.com/dms/image/v2/D4E03AQFhIHTA-7Yisg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710599898260?e=1760572800&v=beta&t=4OgrGlAuEfvje2SDfZQ4JYN4I_4Kpzwpamn-mRMMr4w"
-          class="img-fluid" alt="">
+<!--About Section-->
+    <section id="about" class="about section-black">
+      <div class="container content-wrap" data-aos="fade-up">
+        <div class="section-title">
+          <h2>About</h2>
+        </div>
+        <div class="row gy-4 justify-content-between" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 profile-img align-self-start">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQFhIHTA-7Yisg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710599898260?e=1760572800&v=beta&t=4OgrGlAuEfvje2SDfZQ4JYN4I_4Kpzwpamn-mRMMr4w" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-7 content">
+            <h3>Sasha Cheek is a systems integration specialist and freelance science writer, with a hunger to demystify engineering and science through storytelling.</h3>
+            <p>Her career began with a systems engineering NASA internship, followed by recent technical liaison and program management roles at Microsoft and Indeed. In addition to working full-time in technology, Sasha is an M.A. candidate in Science Writing at Johns Hopkins University.</p>
+            <p>When Sasha is not debugging code and creating articles, she's dissecting the science behind her favorite films and TV shows.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-7 content">
-        <h3>Sasha Cheek is a systems integration specialist and freelance science writer, with a hunger to demystify
-          engineering and science through storytelling.</h3>
-        <p>Her career began with a systems engineering NASA internship, followed by recent technical liaison and program
-          management roles at Microsoft and Indeed. In addition to working full-time in technology, Sasha is an M.A.
-          candidate in Science Writing at Johns Hopkins University.</p>
-        <p>When Sasha is not debugging code and creating articles, she's dissecting the science behind her favorite
-          films and TV shows.</p>
-      </div>
-    </div>
+    </section><!-- /About Section -->
 
-  </div>
-</section><!-- /About Section -->
-
-    <!-- Services Section (light blue overlay) -->
-    <section id="services" class="services section-with-bg section-light-overlay">
+    <!-- Services Section -->
+    <section id="services" class="services section-img-bg">
       <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-      <div class="overlay"></div>
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -208,19 +193,15 @@
 
     </section><!-- /Services Section -->
 
-    <!-- Resume Section (dark overlay) -->
-    <section id="resume" class="resume section-with-bg section-dark-overlay">
-      <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-      <div class="overlay"></div>
-
+    <!-- Resume Section [Lonely Bootstrap Addition] -->
+     <section id="resume" class="resume section-black">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
         <p>Experience and technical expertise at a glance.</p>
       </div><!-- End Section Title -->
-      <!--<div class="container" data-aos="fade-up" data-aos-delay="100"> -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
     <!-- Resume Section [Lonely Bootstrap Addition] -->
-    <section class="resume py-5 d-section" id="resume">
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
@@ -310,11 +291,9 @@
         </div>
       </section><!-- /Resume Section [Lonely Bootstrap Addition] -->
 
-    <!-- Technical Projects Section (light blue overlay) -->
-    <section id="portfolio" class="portfolio section-with-bg section-light-overlay">
+    <!-- Technology Projects Section -->
+    <section id="portfolio" class="portfolio section-img-bg">
       <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-      <div class="overlay"></div>
-
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Technical Projects</h2>
@@ -414,10 +393,7 @@
     </section><!-- /Technology Projects Section -->
 
 <!--Blog Section - Accordion Style-->
-<section id="blog-accordion" class="section-with-bg section-dark-overlay py-5">
-  <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-  <div class="overlay"></div>
-  <!--Section Content-->
+<section id="blog-accordion" class="section-black py-5">
   <div class="container">
     <div class="section-header text-center mb-4">
       <h2 class="mb-1">Writing</h2>
@@ -541,10 +517,9 @@
 </section>
 <!-- End Blog Section - Accordion Style -->
 
-    <!-- Testimonials Section (light blue overlay) -->
-    <section id="testimonials" class="testimonials section-with-bg section-light-overlay light-background">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section-img-bg">
       <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-      <div class="overlay"></div>
     
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -616,10 +591,8 @@
     
     </section><!-- /Testimonials Section -->
 
-    <!-- Contact Section (dark overlay) -->
-    <section id="contact" class="contact section-with-bg section-dark-overlay">
-      <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-      <div class="overlay"></div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-black">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
