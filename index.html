@@ -24,56 +24,60 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  
-  <style>
-    /* Black background for About, Resume, Writing, Contact */
-    .section-black {
-      background-color: #12151f;
-    }
-  
-    /* Image + overlay for Services, Projects, Testimonials */
-    .section-img-bg {
-      position: relative;
-      overflow: hidden;
-      background: none;
-    }
-  
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    
+<style>
+  body {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #fff;
+    background: #12151f;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Solid black background for About, Resume, Writing, Contact */
+  .section-black {
+    background-color: #12151f;
+  }
+
+  /* Motherboard image + overlay for Services, Projects, Testimonials */
+  .section-img-bg {
+    position: relative;
+    overflow: hidden;
+    background: none;
+  }
+  .section-img-bg .bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.50; /* Lower opacity makes the image more faded */
+  }
+  .section-img-bg .bg-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 30, 60, 0.65); /* dark blue overlay, adjust final number for overlay opacity */
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+  }
+  .section-img-bg > .container,
+  .section-img-bg > .content-wrap,
+  .section-img-bg > .section-title {
+    position: relative;
+    z-index: 3;
+  }
+  @media (max-width: 768px) {
     .section-img-bg .bg-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-      pointer-events: none;
+      object-position: center;
     }
-  
-    .section-img-bg .bg-img::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(18, 30, 60, 0.65);
-      /* dark blue overlay */
-      z-index: 2;
-      pointer-events: none;
-      display: block;
-    }
-  
-    .section-img-bg>.container,
-    .section-img-bg>.content-wrap,
-    .section-img-bg>.section-title {
-      position: relative;
-      z-index: 3;
-    }
-  
-    @media (max-width: 768px) {
-      .section-img-bg .bg-img {
-        object-position: center;
-      }
-    }
-  </style>
+  }
+</style>
   <!-- =======================================================
     * Template Name: Folio
     * Template URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
