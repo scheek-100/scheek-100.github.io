@@ -1122,7 +1122,21 @@ section,
   height: auto;
   object-fit: cover;
 }
-
+/*--------------------------------------------------------------
+# Blog Section Font Correction - 9.20.25
+--------------------------------------------------------------*/
+#blog-accordion {
+ font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+#blog-accordion h1,
+#blog-accordion h2,
+#blog-accordion h3,
+#blog-accordion h4,
+#blog-accordion h5,
+#blog-accordion h6 {
+ font-family: inherit !important;
+ font-weight: 600 !important;
+}
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
