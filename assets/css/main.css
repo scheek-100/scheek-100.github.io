@@ -1276,7 +1276,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section - ENTER NEW DESIGNS HERE
+# Starter Section Section - SECTION-IMG-BG AND MOTHERBOARD BACKGROUND/TERMNIAL OVERLAY
 --------------------------------------------------------------*/
 .starter-section {
   /* Motherboard backgrounds for selected sections */
@@ -1324,4 +1324,52 @@ section,
   margin: 2rem auto;                  /* centered in container */
   position: relative;
   z-index: 2;                         /* sits above motherboard bg */
+}
+/*--------------------------------------------------------------
+# SECTION-IMG-BG FIX ON 9/20/25
+--------------------------------------------------------------*/
+.section-img-bg {
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+/* disable fixed on smaller screens for better mobile performance */
+@media (max-width: 1024px) {
+  .section-img-bg {
+    background-attachment: scroll;
+  }
+}
+
+Robust fix (recommended if you see moving/jittering because an ancestor uses transform):
+Paste into the same stylesheet. If you use this, remove any background-image on .section-img-bg itself to avoid duplication, and replace the URL below with your image path.
+
+.section-img-bg {
+  position: relative;
+  z-index: 0;
+  overflow: visible;
+  /* remove background-image here when using the pseudo-element */
+  background-image: none;
+}
+
+.section-img-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-image: url('/assets/img/your-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* fallback for mobile: make the pseudo-element scroll instead of fixed */
+@media (max-width: 1024px) {
+  .section-img-bg::before {
+    position: absolute;
+  }
 }
