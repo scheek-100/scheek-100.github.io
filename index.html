@@ -40,43 +40,6 @@
   .section-black {
     background-color: #12151f;
   }
-
-  /* Motherboard image + overlay for Services, Projects, Testimonials */
-  .section-img-bg {
-    position: relative;
-    overflow: hidden;
-    background: none;
-  }
-  .section-img-bg .bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.50; /* Lower opacity makes the image more faded */
-  }
-  .section-img-bg .bg-img::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(18, 30, 60, 0.65); /* dark blue overlay, adjust final number for overlay opacity */
-    z-index: 2;
-    pointer-events: none;
-    display: block;
-  }
-  .section-img-bg > .container,
-  .section-img-bg > .content-wrap,
-  .section-img-bg > .section-title {
-    position: relative;
-    z-index: 3;
-  }
-  @media (max-width: 768px) {
-    .section-img-bg .bg-img {
-      object-position: center;
-    }
-  }
 </style>
   <!-- =======================================================
     * Template Name: Folio
@@ -152,44 +115,45 @@
       </div>
     </section><!-- /About Section -->
 
-    <!-- Services Section -->
-    <section id="services" class="services section-img-bg">
-      <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
+<!-- Services Section -->
+<section id="services" class="services section-img-bg">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>The services I offer cover technical consulting, mentorship and guidance for individuals in engineering and tech, integrations, and freelance science writing services.</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Services</h2>
+    <p>The services I offer cover technical consulting, mentorship and guidance for individuals in engineering and tech, integrations, and freelance science writing services.</p>
+  </div><!-- End Section Title -->
 
-      <div class="container">
+  <div class="container">
+    <div class="row gy-4">
 
-        <div class="row gy-4">
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon flex-shrink-0"><i class="bi bi-lightbulb-fill"></i></div>
+        <div>
+          <h4 class="title">Technical Consulting & Integrations</h4>
+          <p class="description">*Improve existing technical documentation or create them to streamline information about API architecture, systems engineering, data feeds, and other similar topics.<br>*Offer services related to systems integrations projects and initiatives in a consultant role.</p>
+        </div>
+      </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-lightbulb-fill"></i></div>
-            <div>
-              <h4 class="title">Technical Consulting & Integrations</h4>
-              <p class="description">*Improve existing technical documentation or create them to streamline information about API architecture, systems engineering, data feeds, and other similar topics.<br>*Offer services related to systems integrations projects and initiatives in a consultant role.</p>
-            </div>
-          </div>
-          <!-- End Service Item -->
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon flex-shrink-0"><i class="bi bi-vector-pen"></i></div>
+        <div>
+          <h4 class="title">Science & Technology Writing</h4>
+          <p class="description">*Report on science and technical expertise in narrative form as a contributor, SME, and for freelance writing.<br>*Write research-driven features related to science, technology, engineering, and other similar topics for articles.</p>
+        </div>
+      </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-vector-pen"></i></div>
-            <div>
-              <h4 class="title">Science & Technology Writing</h4>
-              <p class="description">*Report on science and technical expertise in narrative form as a contributor, SME, and for freelance writing.<br>*Write research-driven features related to science, technology, engineering, and other similar topics for articles.</p>
-            </div>
-          </div><!-- End Service Item -->
+      <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="icon flex-shrink-0"><i class="bi bi-person-arms-up"></i></div>
+        <div>
+          <h4 class="title">Mentorship & Advisory</h4>
+          <p class="description">*Coach on careers in technical integrations and systems engineering.<br>*Review resumes, pitches, and technical skills.<br>*Guide colleagues and clients on APIs, feeds, and other data processes.</p>
+        </div>
+      </div><!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon flex-shrink-0"><i class="bi bi-person-arms-up"></i></div>
-            <div>
-              <h4 class="title">Mentorship & Advisory</h4>
-              <p class="description">*Coach on careers in technical integrations and systems engineering.<br>*Review resumes, pitches, and technical skills.<br>*Guide colleagues and clients on APIs, feeds, and other data processes.</p>
-            </div>
-          </div><!-- End Service Item -->
+    </div>
+  </div>
+</section><!-- /Services Section -->
 
         </div>
 
@@ -296,99 +260,101 @@
       </section><!-- /Resume Section [Lonely Bootstrap Addition] -->
 
     <!-- Technology Projects Section -->
-    <section id="portfolio" class="portfolio section-img-bg">
-      <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Technical Projects</h2>
-        <p>Applying engineering to real-world challenges, involving APIs and programming projects. More projects coming soon!</p>
-      </div><!-- End Section Title -->
+<section id="portfolio" class="portfolio section-img-bg">
 
-      <div class="container">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Technical Projects</h2>
+    <p>Applying engineering to real-world challenges, involving APIs and programming projects. More projects coming soon!</p>
+  </div><!-- End Section Title -->
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+  <div class="container">
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-writing">API Projects</li>
-            <li data-filter=".filter-projects">Coding Projects</li>
-          </ul><!-- End Portfolio Filters -->
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter="*" class="filter-active">All</li>
+        <li data-filter=".filter-writing">API Projects</li>
+        <li data-filter=".filter-projects">Coding Projects</li>
+      </ul><!-- End Portfolio Filters -->
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-writing">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>API Project 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-1.jpg" title="API Project 1" data-gallery="portfolio-gallery-writing" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-writing">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>API Project 1</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <a href="assets/img/portfolio/app-1.jpg" title="API Project 1" data-gallery="portfolio-gallery-writing" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Coding Projects 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-1.jpg" title="Coding Projects 1" data-gallery="portfolio-gallery-projects" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Coding Projects 1</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <a href="assets/img/portfolio/product-1.jpg" title="Coding Projects 1" data-gallery="portfolio-gallery-projects" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-writing">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>API Project 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-2.jpg" title="API Project 2" data-gallery="portfolio-gallery-writing" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-writing">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>API Project 2</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <a href="assets/img/portfolio/app-2.jpg" title="API Project 2" data-gallery="portfolio-gallery-writing" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Coding Projects 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-2.jpg" title="Coding Projects 2" data-gallery="portfolio-gallery-projects" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Coding Projects 2</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <a href="assets/img/portfolio/product-2.jpg" title="Coding Projects 2" data-gallery="portfolio-gallery-projects" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-writing">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>API Project 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-3.jpg" title="API Project 3" data-gallery="portfolio-gallery-writing" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-writing">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>API Project 3</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <a href="assets/img/portfolio/app-3.jpg" title="API Project 3" data-gallery="portfolio-gallery-writing" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-projects">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Coding Projects 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-3.jpg" title="Coding Projects 3" data-gallery="portfolio-gallery-projects" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-projects">
+          <div class="portfolio-content h-100">
+            <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Coding Projects 3</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <a href="assets/img/portfolio/product-3.jpg" title="Coding Projects 3" data-gallery="portfolio-gallery-projects" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div><!-- End Portfolio Item -->
 
-          </div><!-- End Portfolio Container -->
+      </div><!-- End Portfolio Container -->
+    </div>
+  </div>
+</section><!-- /Technology Projects Section -->
 
         </div>
 
@@ -521,79 +487,80 @@
 </section>
 <!-- End Blog Section - Accordion Style -->
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section-img-bg">
-      <img src="assets/img/motherboard-background.jpg" alt="" class="bg-img" data-aos="fade-in">
-    
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Results recognized by former colleagues, coworkers, and clients.</p>
-      </div><!-- End Section Title -->
-    
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-    
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-          <div class="swiper-wrapper">
-    
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                    Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-    
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
-                    quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-    
+  <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section-img-bg">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <p>Results recognized by former colleagues, coworkers, and clients.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          }
+        }
+      </script>
+
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+            <h3>Saul Goodman</h3>
+            <h4>Ceo &amp; Founder</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
+                Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
-    
+        </div><!-- End testimonial item -->
+
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+            <h3>Sara Wilsson</h3>
+            <h4>Designer</h4>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+        </div><!-- End testimonial item -->
+
       </div>
-    
-    </section><!-- /Testimonials Section -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section><!-- /Testimonials Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section-black">
