@@ -1286,47 +1286,44 @@ section,
   height: auto;
   object-fit: cover;
 }
-*/
-/*--------------------------------------------------------------
-# Category: Motherboard Section Styling
---------------------------------------------------------------*/
-.section-img-bg {
+/* ===== Limit motherboard background to Services, Portfolio, and Testimonials only ===== */
+#services.section-img-bg,
+#portfolio.section-img-bg,
+#testimonials.section-img-bg {
   position: relative;
   overflow: hidden;
-  background: transparent !important; /* override Bootstrap's white bg */
+  background: transparent !important;
 }
 
-/* Background image layer */
-.section-img-bg::before {
+#services.section-img-bg::before,
+#portfolio.section-img-bg::before,
+#testimonials.section-img-bg::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url("assets/img/motherboard-background.jpg") no-repeat center/cover;
-  opacity: 0.5; /* Adjust fade */
+  opacity: 0.5; /* fade level */
   z-index: 1;
   pointer-events: none;
 }
 
-/* Dark overlay layer */
-.section-img-bg::after {
+#services.section-img-bg::after,
+#portfolio.section-img-bg::after,
+#testimonials.section-img-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(18, 30, 60, 0.65); /* Dark overlay */
+  background: rgba(18, 30, 60, 0.65); /* overlay color */
   z-index: 2;
   pointer-events: none;
 }
 
-/* Keep text/content above overlays */
-.section-img-bg > .container,
-.section-img-bg > .section-title {
+#services.section-img-bg > .container,
+#services.section-img-bg > .section-title,
+#portfolio.section-img-bg > .container,
+#portfolio.section-img-bg > .section-title,
+#testimonials.section-img-bg > .container,
+#testimonials.section-img-bg > .section-title {
   position: relative;
   z-index: 3;
-}
-
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .section-img-bg::before {
-    background-position: center;
-  }
 }
