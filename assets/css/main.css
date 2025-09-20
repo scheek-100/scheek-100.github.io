@@ -1286,3 +1286,43 @@ section,
   height: auto;
   object-fit: cover;
 }
+*/
+/*--------------------------------------------------------------
+# Category: Motherboard Section Styling
+--------------------------------------------------------------*/
+/* Motherboard image + overlay for Services, Projects, Testimonials */
+  .section-img-bg {
+    position: relative;
+    overflow: hidden;
+    background: none;
+  }
+  .section-img-bg .bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.50; /* Lower opacity makes the image more faded */
+  }
+  .section-img-bg .bg-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 30, 60, 0.65); /* dark blue overlay, adjust final number for overlay opacity */
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+  }
+  .section-img-bg > .container,
+  .section-img-bg > .content-wrap,
+  .section-img-bg > .section-title {
+    position: relative;
+    z-index: 3;
+  }
+  @media (max-width: 768px) {
+    .section-img-bg .bg-img {
+      object-position: center;
+    }
+  }
