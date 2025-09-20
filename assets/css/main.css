@@ -1251,6 +1251,22 @@ section,
   position: relative;
   z-index: 1;
 }
+/* Terminal Overlay */
+.terminal-overlay {
+  background: rgba(0, 0, 0, 0.4);     /* transparent dark layer */
+  backdrop-filter: blur(8px);         /* glass effect */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  color: #00ff00;                     /* green "terminal" text */
+  font-family: monospace;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 12px #00ff00;
+  max-width: 800px;
+  margin: 2rem auto;                  /* centered in container */
+  position: relative;
+  z-index: 2;                         /* sits above motherboard bg */
+}
 /*--------------------------------------------------------------
 # Category: Blog Section - Accordion Style
 --------------------------------------------------------------*/
