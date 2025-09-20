@@ -1221,26 +1221,36 @@ section,
 # Starter Section Section - ENTER NEW DESIGNS HERE
 --------------------------------------------------------------*/
 .starter-section {
-  /* Add your styles here */
+  /* Motherboard backgrounds for selected sections */
 }
-/* Motherboard */
+
+.section-img-bg {
+  position: relative;
+  overflow: hidden;
+  background: transparent; /* remove Bootstrap default */
+}
+
+/* Motherboard background + dark overlay ONLY for these sections */
 #services.section-img-bg::before,
 #portfolio.section-img-bg::before,
 #testimonials.section-img-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)), /* dark tint */
-    url("/assets/img/motherboard-background.jpg") no-repeat center/cover;
-  z-index: 1;
+  background:
+    linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
+    url("../img/motherboard-background.jpg") no-repeat center/cover;
+  z-index: 0;
   pointer-events: none;
 }
 
-/* accordion-blog.css
-  Small set of styles to better match Folio visuals.
-  Import after your main stylesheet so it can override as needed.
-*/
+/* Keep section content above background */
+#services.section-img-bg > *,
+#portfolio.section-img-bg > *,
+#testimonials.section-img-bg > * {
+  position: relative;
+  z-index: 1;
+}
 /*--------------------------------------------------------------
 # Category: Blog Section - Accordion Style
 --------------------------------------------------------------*/
