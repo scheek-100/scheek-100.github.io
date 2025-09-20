@@ -1297,7 +1297,7 @@ section,
   inset: 0;
   background:
     linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
-    url("../img/motherboard-background.jpg") no-repeat center/cover;
+    url(".../motherboard-background.jpg") no-repeat center/cover;
   z-index: 0;
   pointer-events: none;
 }
@@ -1359,7 +1359,7 @@ Paste into the same stylesheet. If you use this, remove any background-image on 
   content: "";
   position: fixed;
   inset: 0; /* top:0; right:0; bottom:0; left:0; */
-  background-image: url('/assets/img/your-bg.jpg');
+  background-image: url('../motherboard-background.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
