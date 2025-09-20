@@ -1125,17 +1125,35 @@ section,
 /*--------------------------------------------------------------
 # Blog Section Font Correction - 9.20.25
 --------------------------------------------------------------*/
+/* Blog/writing: system font, normal-weight headings, lighter muted line */
 #blog-accordion {
- font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
 }
+
 #blog-accordion h1,
 #blog-accordion h2,
 #blog-accordion h3,
 #blog-accordion h4,
 #blog-accordion h5,
 #blog-accordion h6 {
- font-family: inherit !important;
- font-weight: 600 !important;
+  font-family: inherit !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+
+#blog-accordion .section-header h2 {
+  font-weight: 400 !important;
+}
+
+#blog-accordion .accordion-button {
+  font-weight: 400 !important;
+}
+
+#blog-accordion .section-header .text-muted {
+  color: var(--contrast-color) !important;
+  opacity: 0.85 !important;
 }
 /*--------------------------------------------------------------
 # Contact Section
