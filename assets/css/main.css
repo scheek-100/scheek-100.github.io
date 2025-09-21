@@ -1308,18 +1308,22 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Stable motherboard background for Portfolio Section
+# Stable motherboard background for Services, Portfolio & Testimonials
 --------------------------------------------------------------*/
-#portfolio.section-img-bg {
+#services.section-img-bg,
+#portfolio.section-img-bg,
+#testimonials.section-img-bg {
   min-height: 100vh;   /* Prevent section collapse */
   position: relative;
   overflow: hidden;
-  z-index: 1;          /* Ensure content is above background */
+  z-index: 1;          /* Ensure content stays above background */
 }
 
-#portfolio.section-img-bg::before {
+#services.section-img-bg::before,
+#portfolio.section-img-bg::before,
+#testimonials.section-img-bg::before {
   content: "";
-  position: fixed;     /* Decouple from section height */
+  position: fixed;     /* Keep background independent of section height */
   top: 0;
   left: 0;
   width: 100%;
@@ -1332,11 +1336,18 @@ section,
   background-size: cover;
   z-index: -1;         /* Push background behind content */
   pointer-events: none;
+
+  /* Performance hints */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  contain: paint;
 }
 
 /* Mobile fallback: fixed backgrounds can be glitchy */
 @media (max-width: 1024px) {
-  #portfolio.section-img-bg::before {
+  #services.section-img-bg::before,
+  #portfolio.section-img-bg::before,
+  #testimonials.section-img-bg::before {
     position: absolute;
     background-attachment: scroll;
   }
