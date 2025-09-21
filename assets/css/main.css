@@ -1326,7 +1326,3 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
   background: rgba(0, 0, 0, 0.5); /* 50% overlay */
   z-index: -1; /* push behind footer text */
 }
-
-/*--------------------------------------------------------------
-# PERSONAL WEB DESIGNS: TERMNIAL OVERLAY
---------------------------------------------------------------*/
