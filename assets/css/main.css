@@ -1310,49 +1310,6 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 /*--------------------------------------------------------------
-# Section Backgrounds
---------------------------------------------------------------*/
-
-.section-img-bg {
-  position: relative;
-  overflow: hidden;
-  background: transparent; /* remove Bootstrap default */
-}
-
-/* Stable motherboard background for image-backed sections */
-#services.section-img-bg::before,
-#portfolio.section-img-bg::before,
-#testimonials.section-img-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
-    url("../img/motherboard-background.jpg") no-repeat center/cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* Keep the background fixed relative to the viewport so it doesn't 'jump' when content height changes */
-  background-attachment: fixed;
-  z-index: 0;
-  pointer-events: none;
-
-  /* Hint the browser to composite this layer separately for smoother rendering */
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  contain: paint;
-}
-
-/* Disable fixed background on smaller devices to avoid mobile jank */
-@media (max-width: 1024px) {
-  #services.section-img-bg::before,
-  #portfolio.section-img-bg::before,
-  #testimonials.section-img-bg::before {
-    background-attachment: scroll;
-  }
-}
-
-/*--------------------------------------------------------------
 # TERMNIAL OVERLAY
 --------------------------------------------------------------*/
 
@@ -1373,7 +1330,46 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
   z-index: 2;                         /* sits above motherboard bg */
 }
 
-#portfolio {
-  background: url("/assets/img/motherboard-background.jpg") no-repeat center/cover !important;
-  min-height: 400px !important; /* force some height so it shows */
+/*--------------------------------------------------------------
+# Section Backgrounds with Motherboard Image
+--------------------------------------------------------------*/
+
+.section-img-bg {
+  position: relative;
+  z-index: 1; /* keep the section itself above the page background */
+  overflow: hidden;
+  background: transparent; /* remove Bootstrap default */
+}
+
+/* Motherboard background applied to sections */
+#services.section-img-bg::before,
+#portfolio.section-img-bg::before,
+#testimonials.section-img-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
+    url("/assets/img/motherboard-background.jpg") no-repeat center/cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Keep the background fixed relative to the viewport */
+  background-attachment: fixed;
+  z-index: -1; /* push background behind section content */
+  pointer-events: none;
+
+  /* Performance hints */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  contain: paint;
+}
+
+/* Disable fixed background on smaller devices */
+@media (max-width: 1024px) {
+  #services.section-img-bg::before,
+  #portfolio.section-img-bg::before,
+  #testimonials.section-img-bg::before {
+    background-attachment: scroll;
+  }
 }
