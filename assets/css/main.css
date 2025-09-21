@@ -1308,9 +1308,19 @@ margin-bottom: 20px;
 padding: 0;
 color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
-
 /*--------------------------------------------------------------
-# TERMNIAL OVERLAY
+# PERSONAL WEB DESIGNS: FOOTER
+--------------------------------------------------------------*/
+#footer {
+  position: relative;
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* semi-transparent tint */
+    url("assets/img/cyberpunk-footer.jpg") no-repeat center center/cover;
+  color: #fff;   /* text stays bright */
+  background-attachment: fixed; /* optional: parallax effect */
+}
+/*--------------------------------------------------------------
+# PERSONAL WEB DESIGNS: TERMNIAL OVERLAY
 --------------------------------------------------------------*/
 
 /* Terminal Overlay */
