@@ -1308,50 +1308,38 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section - SECTION-IMG-BG AND MOTHERBOARD BACKGROUND/TERMNIAL OVERLAY
+# Stable motherboard background for Portfolio Section
 --------------------------------------------------------------*/
-.section-img-bg {
+#portfolio.section-img-bg {
+  min-height: 100vh;   /* Prevent section collapse */
   position: relative;
   overflow: hidden;
-  background: transparent; /* remove Bootstrap default */
+  z-index: 1;          /* Ensure content is above background */
 }
 
-/* Stable motherboard background for image-backed sections */
-#services.section-img-bg::before,
-#portfolio.section-img-bg::before,
-#testimonials.section-img-bg::before {
+#portfolio.section-img-bg::before {
   content: "";
-  position: absolute;
-  inset: 0;
+  position: fixed;     /* Decouple from section height */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background:
     linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
     url("../img/motherboard-background.jpg") no-repeat center/cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* Keep the background fixed relative to the viewport so it doesn't 'jump' when content height changes */
-  background-attachment: fixed;
-  z-index: 0;
+  z-index: -1;         /* Push background behind content */
   pointer-events: none;
-
-  /* Hint the browser to composite this layer separately for smoother rendering */
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  contain: paint;
 }
 
-/* Disable fixed background on smaller devices to avoid mobile jank */
+/* Mobile fallback: fixed backgrounds can be glitchy */
 @media (max-width: 1024px) {
-  #services.section-img-bg::before,
-  #portfolio.section-img-bg::before,
-  #testimonials.section-img-bg::before {
+  #portfolio.section-img-bg::before {
+    position: absolute;
     background-attachment: scroll;
   }
-}
-
-/* Optional: smooth height changes when Isotope lays out items (helps visual jump) */
-.isotope-layout .isotope-container {
-  transition: height 300ms ease;
 }
 /*--------------------------------------------------------------
 # TERMNIAL OVERLAY
