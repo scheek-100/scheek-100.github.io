@@ -1308,19 +1308,15 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section - SECTION-IMG-BG AND MOTHERBOARD BACKGROUND/TERMNIAL OVERLAY
+# Starter Section - SECTION-IMG-BG AND MOTHERBOARD BACKGROUND/TERMNIAL OVERLAY
 --------------------------------------------------------------*/
-.starter-section {
-  /* Motherboard backgrounds for selected sections */
-}
-
 .section-img-bg {
   position: relative;
   overflow: hidden;
   background: transparent; /* remove Bootstrap default */
 }
 
-/* Motherboard background + dark overlay ONLY for these sections */
+/* Stable motherboard background for image-backed sections */
 #services.section-img-bg::before,
 #portfolio.section-img-bg::before,
 #testimonials.section-img-bg::before {
@@ -1330,17 +1326,37 @@ section,
   background:
     linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
     url("../img/motherboard-background.jpg") no-repeat center/cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Keep the background fixed relative to the viewport so it doesn't 'jump' when content height changes */
+  background-attachment: fixed;
   z-index: 0;
   pointer-events: none;
+
+  /* Hint the browser to composite this layer separately for smoother rendering */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  contain: paint;
 }
 
-/* Keep section content above background */
-#services.section-img-bg > *,
-#portfolio.section-img-bg > *,
-#testimonials.section-img-bg > * {
-  position: relative;
-  z-index: 1;
+/* Disable fixed background on smaller devices to avoid mobile jank */
+@media (max-width: 1024px) {
+  #services.section-img-bg::before,
+  #portfolio.section-img-bg::before,
+  #testimonials.section-img-bg::before {
+    background-attachment: scroll;
+  }
 }
+
+/* Optional: smooth height changes when Isotope lays out items (helps visual jump) */
+.isotope-layout .isotope-container {
+  transition: height 300ms ease;
+}
+/*--------------------------------------------------------------
+# TERMNIAL OVERLAY
+--------------------------------------------------------------*/
+
 /* Terminal Overlay */
 .terminal-overlay {
   background: rgba(0, 0, 0, 0.4);     /* transparent dark layer */
