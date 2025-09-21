@@ -1315,14 +1315,4 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
 #footer {
   position: relative;
   background: url("assets/img/cyberpunk-footer.jpg") no-repeat center center/cover;
-  color: #fff;
-  z-index: 0; /* make room for overlay layer */
-}
-
-#footer::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* shorthand for top/right/bottom/left: 0 */
-  background: rgba(0, 0, 0, 0.5); /* 50% overlay */
-  z-index: -1; /* push behind footer text */
-}
+  }
