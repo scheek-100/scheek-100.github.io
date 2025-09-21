@@ -1246,112 +1246,118 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details Section
+
+Portfolio Details Section
+
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
-  width: 100%;
+width: 100%;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
+margin-top: 20px;
+position: relative;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
+width: 12px;
+height: 12px;
+background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+opacity: 1;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+background-color: var(--accent-color);
 }
 
 .portfolio-details .portfolio-info {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+background-color: var(--surface-color);
+padding: 30px;
+box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+font-size: 22px;
+font-weight: 700;
+margin-bottom: 20px;
+padding-bottom: 20px;
+border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
+list-style: none;
+padding: 0;
+font-size: 15px;
 }
 
 .portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 .portfolio-details .portfolio-description {
-  padding-top: 30px;
+padding-top: 30px;
 }
 
 .portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
+font-size: 26px;
+font-weight: 700;
+margin-bottom: 20px;
 }
 
 .portfolio-details .portfolio-description p {
-  padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+padding: 0;
+color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 /*--------------------------------------------------------------
-# Stable motherboard background for Services, Portfolio & Testimonials
---------------------------------------------------------------*/
-#services.section-img-bg,
-#portfolio.section-img-bg,
-#testimonials.section-img-bg {
-  min-height: 100vh;   /* Prevent section collapse */
-  position: relative;
-  overflow: hidden;
-  z-index: 1;          /* Ensure content stays above background */
+
+Starter Section - SECTION-IMG-BG AND MOTHERBOARD BACKGROUND/TERMNIAL OVERLAY
+
+--------------------------------------------------------------/
+.section-img-bg {
+position: relative;
+overflow: hidden;
+background: transparent; / remove Bootstrap default */
 }
 
+/* Stable motherboard background for image-backed sections /
 #services.section-img-bg::before,
 #portfolio.section-img-bg::before,
 #testimonials.section-img-bg::before {
-  content: "";
-  position: fixed;     /* Keep background independent of section height */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
-    url("../img/motherboard-background.jpg") no-repeat center/cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;         /* Push background behind content */
-  pointer-events: none;
+content: "";
+position: absolute;
+inset: 0;
+background:
+linear-gradient(rgba(10, 10, 30, 0.6), rgba(10, 10, 30, 0.6)),
+url("../img/motherboard-background.jpg") no-repeat center/cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+/ Keep the background fixed relative to the viewport so it doesn't 'jump' when content height changes */
+background-attachment: fixed;
+z-index: 0;
+pointer-events: none;
 
-  /* Performance hints */
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  contain: paint;
+/* Hint the browser to composite this layer separately for smoother rendering */
+will-change: transform, opacity;
+transform: translateZ(0);
+contain: paint;
 }
 
-/* Mobile fallback: fixed backgrounds can be glitchy */
+/* Disable fixed background on smaller devices to avoid mobile jank */
 @media (max-width: 1024px) {
-  #services.section-img-bg::before,
-  #portfolio.section-img-bg::before,
-  #testimonials.section-img-bg::before {
-    position: absolute;
-    background-attachment: scroll;
-  }
+#services.section-img-bg::before,
+#portfolio.section-img-bg::before,
+#testimonials.section-img-bg::before {
+background-attachment: scroll;
 }
+}
+
+/* Optional: smooth height changes when Isotope lays out items (helps visual jump) */
+.isotope-layout .isotope-container {
+transition: height 300ms ease;
+}
+
 /*--------------------------------------------------------------
 # TERMNIAL OVERLAY
 --------------------------------------------------------------*/
