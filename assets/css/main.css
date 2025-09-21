@@ -1372,3 +1372,8 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
   position: relative;
   z-index: 2;                         /* sits above motherboard bg */
 }
+
+#portfolio {
+  background: url("/assets/img/motherboard-background.jpg") no-repeat center/cover !important;
+  min-height: 400px !important; /* force some height so it shows */
+}
