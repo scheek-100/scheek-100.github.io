@@ -1352,26 +1352,6 @@ section,
     background-attachment: scroll;
   }
 }
-
-/* Prevent background jump when filtering */
-.portfolio-grid-wrapper {
-  min-height: 500px;          /* default for smaller screens */
-  transition: min-height 0.4s ease;
-}
-
-/* Tablet adjustments */
-@media (min-width: 768px) {
-  .portfolio-grid-wrapper {
-    min-height: 700px;
-  }
-}
-
-/* Desktop adjustments */
-@media (min-width: 1200px) {
-  .portfolio-grid-wrapper {
-    min-height: 900px;
-  }
-}
 /*--------------------------------------------------------------
 # TERMNIAL OVERLAY
 --------------------------------------------------------------*/
