@@ -1311,13 +1311,22 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
 /*--------------------------------------------------------------
 # PERSONAL WEB DESIGNS: FOOTER
 --------------------------------------------------------------*/
+
 #footer {
   position: relative;
-  background: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* overlay at 50% */
-    url("assets/img/cyberpunk-footer.jpg") no-repeat center center/cover; /* image stays 100% */
+  background: url("assets/img/cyberpunk-footer.jpg") no-repeat center center/cover;
   color: #fff;
+  z-index: 0; /* make room for overlay layer */
 }
+
+#footer::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top/right/bottom/left: 0 */
+  background: rgba(0, 0, 0, 0.5); /* 50% overlay */
+  z-index: -1; /* push behind footer text */
+}
+
 /*--------------------------------------------------------------
 # PERSONAL WEB DESIGNS: TERMNIAL OVERLAY
 --------------------------------------------------------------*/
