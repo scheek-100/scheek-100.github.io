@@ -1313,14 +1313,14 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
 
 Starter Section - SECTION-IMG-BG AND MOTHERBOARD BACKGROUND/TERMNIAL OVERLAY
 
---------------------------------------------------------------/
+--------------------------------------------------------------*/
 .section-img-bg {
 position: relative;
 overflow: hidden;
 background: transparent; / remove Bootstrap default */
 }
 
-/* Stable motherboard background for image-backed sections /
+/* Stable motherboard background for image-backed sections */
 #services.section-img-bg::before,
 #portfolio.section-img-bg::before,
 #testimonials.section-img-bg::before {
