@@ -630,11 +630,11 @@ section,
   position: relative;
 }
 
-.section-title h2 {
+/* .section-title h2 {
   font-size: 32px;
   font-weight: 300;
   margin-bottom: 15px;
-}
+} */
 
 .section-title p {
   margin-bottom: 0;
