@@ -37,7 +37,9 @@
 # Cyberpunk Neon Section Titles - H2
 --------------------------------------------------------------*/
 
-.section-title h2 {
+/* Neon cyberpunk H2 styling */
+.section-title h2,
+.section-header h2 {
   position: relative;
   display: inline-block;
   font-size: 48px; /* Bigger size for Orbitron */
@@ -50,23 +52,28 @@
   text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff, 0 0 32px #00f7ff;
 }
 
+/* Neon glowing divider lines */
 .section-title h2::before,
-.section-title h2::after {
+.section-title h2::after,
+.section-header h2::before,
+.section-header h2::after {
   content: "";
   position: absolute;
   top: 50%;
-  width: 200px; /* Side line length */
+  width: 200px; /* side line length */
   height: 2px;
   background: #00f7ff;
   box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
 }
 
-.section-title h2::before {
+.section-title h2::before,
+.section-header h2::before {
   right: 100%;
   transform: translateY(-50%) skewX(-30deg);
 }
 
-.section-title h2::after {
+.section-title h2::after,
+.section-header h2::after {
   left: 100%;
   transform: translateY(-50%) skewX(30deg);
 }
