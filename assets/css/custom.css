@@ -37,42 +37,42 @@
 # Cyberpunk Neon Section Titles - H2
 --------------------------------------------------------------*/
 
-/* Neon cyberpunk H2 styling */
+/* Apply to both section-title and section-header */
 .section-title h2,
 .section-header h2 {
-  position: relative;
-  display: inline-block;
-  font-size: 48px; /* Bigger size for Orbitron */
-  font-weight: 700;
-  color: #00f7ff; /* Neon cyan */
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  padding: 0 20px;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff, 0 0 32px #00f7ff;
+  position: relative !important;
+  display: inline-block !important;
+  font-size: 48px !important; /* Bigger Orbitron */
+  font-weight: 700 !important;
+  color: #00f7ff !important; /* Neon cyan */
+  text-transform: uppercase !important;
+  letter-spacing: 4px !important;
+  padding: 0 20px !important;
+  font-family: 'Orbitron', sans-serif !important;
+  text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff, 0 0 32px #00f7ff !important;
 }
 
 .section-title h2::before,
 .section-title h2::after,
 .section-header h2::before,
 .section-header h2::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 200px; /* Adjust for line length */
-  height: 2px;
-  background: #00f7ff;
-  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  width: 200px !important;
+  height: 2px !important;
+  background: #00f7ff !important;
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff !important;
 }
 
 .section-title h2::before,
 .section-header h2::before {
-  right: 100%;
-  transform: translateY(-50%) skewX(-30deg);
+  right: 100% !important;
+  transform: translateY(-50%) skewX(-30deg) !important;
 }
 
 .section-title h2::after,
 .section-header h2::after {
-  left: 100%;
-  transform: translateY(-50%) skewX(30deg);
+  left: 100% !important;
+  transform: translateY(-50%) skewX(30deg) !important;
 }
