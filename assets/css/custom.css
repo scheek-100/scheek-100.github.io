@@ -1,34 +1,39 @@
 /* CYBERPUNK PORTFOLIO SKIN V02 */
-/* Neon section title divider style */
+
+*--------------------------------------------------------------
+# Cyberpunk Neon Section Titles - H2
+--------------------------------------------------------------*/
+
 .section-title h2 {
   position: relative;
   display: inline-block;
-  font-size: 32px;
+  font-size: 48px; /* Bigger size for Orbitron */
   font-weight: 700;
-  color: #00f7ff; /* change this for different neon colors */
+  color: #00f7ff; /* Neon cyan */
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   padding: 0 20px;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff, 0 0 32px #00f7ff;
 }
 
-/* horizontal glowing lines */
 .section-title h2::before,
 .section-title h2::after {
   content: "";
   position: absolute;
   top: 50%;
-  width: 120px;
+  width: 200px; /* Side line length */
   height: 2px;
-  background: currentColor;
-  box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+  background: #00f7ff;
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
 }
 
 .section-title h2::before {
   right: 100%;
-  margin-right: 15px;
+  transform: translateY(-50%) skewX(-30deg);
 }
 
 .section-title h2::after {
   left: 100%;
-  margin-left: 15px;
+  transform: translateY(-50%) skewX(30deg);
 }
