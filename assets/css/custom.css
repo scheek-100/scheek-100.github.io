@@ -1,4 +1,37 @@
 /* CYBERPUNK PORTFOLIO SKIN V02 */
+/* Neon section title divider style */
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #00f7ff; /* change this for different neon colors */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0 20px;
+}
+
+/* horizontal glowing lines */
+.section-title h2::before,
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 120px;
+  height: 2px;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+}
+
+.section-title h2::before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.section-title h2::after {
+  left: 100%;
+  margin-left: 15px;
+}
 
 *--------------------------------------------------------------
 # Cyberpunk Neon Section Titles - H2
