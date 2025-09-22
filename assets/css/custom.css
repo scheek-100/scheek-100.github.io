@@ -52,7 +52,6 @@
   text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff, 0 0 32px #00f7ff;
 }
 
-/* Neon glowing divider lines */
 .section-title h2::before,
 .section-title h2::after,
 .section-header h2::before,
@@ -60,7 +59,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  width: 200px; /* side line length */
+  width: 200px; /* Adjust for line length */
   height: 2px;
   background: #00f7ff;
   box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
