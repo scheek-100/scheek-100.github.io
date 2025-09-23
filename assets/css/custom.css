@@ -55,25 +55,23 @@
 }
 
 /* Glowing divider lines */
-.section-title h2::before,
-.section-title h2::after {
+.section-title > h2::before,
+.section-title > h2::after {
   content: "";
   position: absolute;
   top: 50%;
   width: 200px;
   height: 2px;
   background: #00f7ff;
-  box-shadow: 
-    0 0 8px #00f7ff,
-    0 0 16px #00f7ff;
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
 }
 
-.section-title h2::before {
+.section-title > h2::before {
   right: 100%;
   transform: translateY(-50%) skewX(-30deg);
 }
 
-.section-title h2::after {
+.section-title > h2::after {
   left: 100%;
   transform: translateY(-50%) skewX(30deg);
 }
