@@ -1,5 +1,5 @@
 /* ==========================================================
-   CYBERPUNK PORTFOLIO SKIN - FINAL CLEAN VERSION
+   CYBERPUNK PORTFOLIO SKIN - ORBITRON FOR TITLES
    ========================================================== */
 
 /* Section Titles (H2 in .section-title or .section-header) */
@@ -9,6 +9,7 @@
   display: inline-block;
   font-size: 48px;
   font-weight: 700;
+  font-family: 'Orbitron', sans-serif; /* Force Orbitron */
   color: #00f7ff; /* Neon cyan */
   text-transform: uppercase;
   letter-spacing: 4px;
