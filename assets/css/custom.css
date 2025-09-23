@@ -125,19 +125,6 @@
   box-shadow: 0 0 8px #a020f0, 0 0 16px #00f7ff;
 }
 
-/* === Green Terminal Text for All Body Text Inside Sections === */
-section p,
-section .description,
-section .accordion-body,
-section .accordion-button,
-section .blog-meta,
-section .footer p {
-  font-family: 'VT323', monospace;
-  font-size: 18px;
-  color: #39ff14; /* neon green */
-  text-shadow: 0 0 4px #000;
-}
-
 /* === Cyberpunk Buttons === */
 .cp-btn {
   display: inline-block;
