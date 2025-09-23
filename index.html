@@ -368,63 +368,68 @@
 
     </section><!-- /Portfolio Section -->
 
-<!-- Blog Section - Cyberpunk Accordion -->
-<section id="blog-accordion" class="section-black">
+<!-- Blog Section -->
+<section id="blog-accordion" class="blog section-black">
 
+  <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Writing</h2>
     <p>Latest posts, summaries and quick links — expand to read more.</p>
   </div>
 
-  <div class="container cyberpunk-accordion" data-aos="fade-up" data-aos-delay="100">
-
-    <!-- Article 1 -->
-    <div class="cp-accordion-item">
-      <button class="cp-accordion-toggle">
-        David Bowie’s Ode to Sci-Fi and Space Science 
-        <span class="meta">Medium · Feature</span>
-      </button>
-      <div class="cp-accordion-content">
-        <p>A deep dive into Bowie’s cosmic influence on science and storytelling.</p>
-        <button class="cp-btn open-article" data-article="bowie">Read full article</button>
-      </div>
-    </div>
-
-    <!-- Article 2 -->
-    <div class="cp-accordion-item">
-      <button class="cp-accordion-toggle">
-        Automated Love: How AI Became the New Face of Romance 
-        <span class="meta">Medium · Feature</span>
-      </button>
-      <div class="cp-accordion-content">
-        <p>Exploring AI, intimacy, and the reshaping of human connection.</p>
-        <button class="cp-btn open-article" data-article="love">Read full article</button>
-      </div>
-    </div>
-
-    <!-- Article 3 -->
-    <div class="cp-accordion-item">
-      <button class="cp-accordion-toggle">
-        Dealing with Early Signs of Alzheimer’s Disease in Loved Ones 
-        <span class="meta">Medium · Feature</span>
-      </button>
-      <div class="cp-accordion-content">
-        <p>A personal and practical look at recognizing and managing Alzheimer’s early symptoms.</p>
-        <button class="cp-btn open-article" data-article="alzheimers">Read full article</button>
-      </div>
-    </div>
-
+  <!-- Article buttons -->
+  <div class="container text-center">
+    <button class="cp-btn open-article" data-article="medium1">David Bowie’s Ode to Sci-Fi</button>
+    <button class="cp-btn open-article" data-article="medium2">Automated Love</button>
+    <button class="cp-btn open-article" data-article="medium3">Dealing with Alzheimer’s</button>
   </div>
+
+  <!-- Modal (hidden until triggered) -->
+  <div id="articleModal" class="cp-modal">
+    <div class="cp-modal-content">
+      <span class="cp-modal-close">&times;</span>
+      <div id="articleContent"></div>
+    </div>
+  </div>
+
+  <!-- Script for this section -->
+  <script>
+    // Map Medium articles to modal content
+    const articles = {
+      medium1: `
+        <h3>David Bowie’s Ode to Sci-Fi and Space Science</h3>
+        <iframe src="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546"
+          width="100%" height="500" style="border:none;"></iframe>
+      `,
+      medium2: `
+        <h3>Automated Love: How AI Became the New Face of Romance</h3>
+        <iframe src="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079"
+          width="100%" height="500" style="border:none;"></iframe>
+      `,
+      medium3: `
+        <h3>Dealing with Early Signs of Alzheimer’s Disease in Loved Ones</h3>
+        <iframe src="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7"
+          width="100%" height="500" style="border:none;"></iframe>
+      `
+    };
+
+    // Open modal on click
+    document.querySelectorAll('.open-article').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-article');
+        document.getElementById('articleContent').innerHTML = articles[key];
+        document.getElementById('articleModal').style.display = 'block';
+      });
+    });
+
+    // Close modal
+    document.querySelector('.cp-modal-close').addEventListener('click', () => {
+      document.getElementById('articleModal').style.display = 'none';
+    });
+  </script>
+
 </section>
-
-<!-- Cyberpunk Article Modal -->
-<div id="article-modal" class="cp-modal">
-  <div class="cp-modal-content">
-    <span class="cp-close">&times;</span>
-    <div id="article-body"></div>
-  </div>
-</div>
-<!-- End Blog Section -->
+<!-- End Blog Accordion Section -->
 
  <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials section-black">
