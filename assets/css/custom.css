@@ -78,6 +78,16 @@ section:not(:last-of-type):not(#hero)::after {
     0 0 24px #00f7ff; /* strong glow */
 }
 
+/* Gradient neon divider before each section */
+section:not(.hero):before {
+  content: "";
+  display: block;
+  height: 6px;
+  margin: 0;
+  background: linear-gradient(90deg, #00f7ff, #a020f0, #00f7ff);
+  box-shadow: 0 0 15px #00f7ff, 0 0 25px #a020f0, 0 0 40px #00f7ff;
+}
+
 /* === Green Terminal Text for All Body Text Inside Sections === */
 section p,
 section .description,
