@@ -38,7 +38,7 @@
    ========================================================== */
 
 /* Neon section title style for all H2 headers */
-.section-title h2 {
+.section-title h2 > {
   position: relative;
   display: inline-block;
   font-size: 48px;
