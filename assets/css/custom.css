@@ -57,18 +57,25 @@
   text-align: center;
 }
 
-/* === Neon Blue Frames for Entire Sections === */
-section {
+/* === Neon Laser Divider Between Sections (Exclude Hero + Footer) === */
+section:not(:last-of-type):not(#hero) {
   position: relative;
-  border: 2px solid #00f7ff;
-  border-radius: 10px;
-  margin: 2rem auto;
-  padding: 2rem 1.5rem;
-  background: rgba(0, 0, 0, 0.7);
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+section:not(:last-of-type):not(#hero)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px; /* thin laser beam */
+  background: #00f7ff;
   box-shadow:
-    0 0 8px #00f7ff,
-    0 0 16px #00f7ff,
-    0 0 32px #00f7ff;
+    0 0 6px #00f7ff,
+    0 0 12px #00f7ff,
+    0 0 24px #00f7ff; /* strong glow */
 }
 
 /* === Green Terminal Text for All Body Text Inside Sections === */
