@@ -368,68 +368,84 @@
 
     </section><!-- /Portfolio Section -->
 
-<!-- Blog Section -->
+<!-- Blog Section - Accordion Style -->
 <section id="blog-accordion" class="blog section-black">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Writing</h2>
     <p>Latest posts, summaries and quick links — expand to read more.</p>
-  </div>
+  </div><!-- End Section Title -->
 
-  <!-- Article buttons -->
-  <div class="container text-center">
-    <button class="cp-btn open-article" data-article="medium1">David Bowie’s Ode to Sci-Fi</button>
-    <button class="cp-btn open-article" data-article="medium2">Automated Love</button>
-    <button class="cp-btn open-article" data-article="medium3">Dealing with Alzheimer’s</button>
-  </div>
+  <div class="container">
 
-  <!-- Modal (hidden until triggered) -->
-  <div id="articleModal" class="cp-modal">
-    <div class="cp-modal-content">
-      <span class="cp-modal-close">&times;</span>
-      <div id="articleContent"></div>
-    </div>
-  </div>
+    <div class="accordion" id="accordionBlog" data-aos="fade-up" data-aos-delay="100">
 
-  <!-- Script for this section -->
-  <script>
-    // Map Medium articles to modal content
-    const articles = {
-      medium1: `
-        <h3>David Bowie’s Ode to Sci-Fi and Space Science</h3>
-        <iframe src="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546"
-          width="100%" height="500" style="border:none;"></iframe>
-      `,
-      medium2: `
-        <h3>Automated Love: How AI Became the New Face of Romance</h3>
-        <iframe src="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079"
-          width="100%" height="500" style="border:none;"></iframe>
-      `,
-      medium3: `
-        <h3>Dealing with Early Signs of Alzheimer’s Disease in Loved Ones</h3>
-        <iframe src="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7"
-          width="100%" height="500" style="border:none;"></iframe>
-      `
-    };
+      <!-- Article 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="false" aria-controls="collapseOne">
+            David Bowie’s Ode to Sci-Fi and Space Science
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse"
+             aria-labelledby="headingOne" data-bs-parent="#accordionBlog">
+          <div class="accordion-body">
+            <p>A reflection on how David Bowie’s music bridged art, science fiction,
+               and real space exploration — inspiring a generation of scientists.</p>
+            <a href="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546"
+               target="_blank" class="cp-btn">Read on Medium →</a>
+          </div>
+        </div>
+      </div>
 
-    // Open modal on click
-    document.querySelectorAll('.open-article').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const key = btn.getAttribute('data-article');
-        document.getElementById('articleContent').innerHTML = articles[key];
-        document.getElementById('articleModal').style.display = 'block';
-      });
-    });
+      <!-- Article 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo">
+            Automated Love: How AI Became the New Face of Romance
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse"
+             aria-labelledby="headingTwo" data-bs-parent="#accordionBlog">
+          <div class="accordion-body">
+            <p>Exploring how artificial intelligence has reshaped intimacy and
+               relationships in the digital era.</p>
+            <a href="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079"
+               target="_blank" class="cp-btn">Read on Medium →</a>
+          </div>
+        </div>
+      </div>
 
-    // Close modal
-    document.querySelector('.cp-modal-close').addEventListener('click', () => {
-      document.getElementById('articleModal').style.display = 'none';
-    });
-  </script>
+      <!-- Article 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree">
+            Dealing with Early Signs of Alzheimer’s Disease in Loved Ones
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse"
+             aria-labelledby="headingThree" data-bs-parent="#accordionBlog">
+          <div class="accordion-body">
+            <p>Personal and practical insights into supporting loved ones showing
+               early symptoms of Alzheimer’s disease.</p>
+            <a href="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7"
+               target="_blank" class="cp-btn">Read on Medium →</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.accordion -->
+  </div><!-- /.container -->
 
 </section>
-<!-- End Blog Accordion Section -->
+<!-- End Blog Section -->
 
  <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials section-black">
