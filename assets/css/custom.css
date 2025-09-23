@@ -57,6 +57,33 @@
   text-align: center;
 }
 
+/* === Neon Blue Frames for Entire Sections === */
+section {
+  position: relative;
+  border: 2px solid #00f7ff;
+  border-radius: 10px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow:
+    0 0 8px #00f7ff,
+    0 0 16px #00f7ff,
+    0 0 32px #00f7ff;
+}
+
+/* === Green Terminal Text for All Body Text Inside Sections === */
+section p,
+section .description,
+section .accordion-body,
+section .accordion-button,
+section .blog-meta,
+section .footer p {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: #39ff14; /* neon green */
+  text-shadow: 0 0 4px #000;
+}
+
 /* === Cyberpunk Buttons === */
 .cp-btn {
   display: inline-block;
