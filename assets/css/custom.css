@@ -61,65 +61,68 @@
    CYBERPUNK NEON FRAMES FOR CONTENT SECTIONS
    ========================================================== */
 
-.neon-frame {
+/* Neon framed paragraphs/blocks */
+.neon-paragraph {
   position: relative;
-  padding: 60px 40px;
-  margin: 60px auto;
-  border-radius: 8px;
-  background: rgba(18, 21, 31, 0.85); /* dark translucent panel */
+  padding: 30px 25px;
+  margin: 30px auto;
+  border-radius: 6px;
+  background: rgba(18, 21, 31, 0.85); /* dark semi-transparent */
+  color: #fff;
   z-index: 1;
   overflow: hidden;
 }
 
-/* Top-right glowing frame */
-.neon-frame::before,
-.neon-frame::after {
+/* Top-right corner glow */
+.neon-paragraph::before,
+.neon-paragraph::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.neon-frame::before {
+.neon-paragraph::before {
   top: 0;
   right: 0;
-  width: 120px;
-  height: 4px;
+  width: 80px;
+  height: 3px;
   background: linear-gradient(90deg, #00f7ff, #a020f0);
-  box-shadow: 0 0 10px #00f7ff, 0 0 20px #a020f0;
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #a020f0;
 }
 
-.neon-frame::after {
+.neon-paragraph::after {
   top: 0;
   right: 0;
-  width: 4px;
-  height: 120px;
+  width: 3px;
+  height: 80px;
   background: linear-gradient(180deg, #00f7ff, #a020f0);
-  box-shadow: 0 0 10px #00f7ff, 0 0 20px #a020f0;
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #a020f0;
 }
 
-/* Bottom-left glowing helpers */
-.corner {
+/* Bottom-left corner glow */
+.neon-paragraph .corner-bottom-left,
+.neon-paragraph .corner-bottom-left-vert {
   position: absolute;
   display: block;
   pointer-events: none;
 }
 
-.corner-bottom-left {
+.neon-paragraph .corner-bottom-left {
   bottom: 0;
   left: 0;
-  width: 120px;
-  height: 4px;
+  width: 80px;
+  height: 3px;
   background: linear-gradient(90deg, #a020f0, #00f7ff);
-  box-shadow: 0 0 10px #a020f0, 0 0 20px #00f7ff;
+  box-shadow: 0 0 8px #a020f0, 0 0 16px #00f7ff;
 }
 
-.corner-bottom-left-vert {
+.neon-paragraph .corner-bottom-left-vert {
   bottom: 0;
   left: 0;
-  width: 4px;
-  height: 120px;
+  width: 3px;
+  height: 80px;
   background: linear-gradient(180deg, #a020f0, #00f7ff);
-  box-shadow: 0 0 10px #a020f0, 0 0 20px #00f7ff;
+  box-shadow: 0 0 8px #a020f0, 0 0 16px #00f7ff;
 }
 
 /* === Green Terminal Text for All Body Text Inside Sections === */
