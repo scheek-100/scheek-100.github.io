@@ -200,13 +200,9 @@
   overflow: hidden;
 }
 
-/* Dark overlay so text stays visible */
-#footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65); /* adjust transparency as needed */
-  z-index: -1;
+/* Overlay removed */
+footer#footer.footer::before {
+  content: none; /* disables overlay entirely */
 }
 
 /* Title (Orbitron) */
