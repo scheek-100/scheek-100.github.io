@@ -72,6 +72,62 @@
 }
 
 /* ==========================================================
+   HERO/HEADER (GRID WITH OVERLAY)
+   ========================================================== */
+/* Hero Section with Grid Overlay */
+#hero {
+  position: relative;
+  background: url("assets/img/spacecraft-hero-bg.jpg") no-repeat center center/cover;
+  overflow: hidden;
+}
+
+/* Purple gradient overlay */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(128, 0, 128, 0.5), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+/* Faint tech grid overlay */
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 50px 50px; /* adjust spacing */
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hero content sits above overlays */
+#hero .container {
+  position: relative;
+  z-index: 3;
+  text-align: left; /* or center if you prefer */
+}
+
+/* Title */
+#hero h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00f7ff; /* neon cyan */
+  text-shadow: 0 0 12px rgba(0, 247, 255, 0.8);
+}
+
+/* Subtitle + tagline */
+#hero p {
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
+  color: #6fd3ff; /* softer pale blue */
+  text-shadow: 0 0 6px rgba(111, 211, 255, 0.6);
+}
+
+/* ==========================================================
    CYBERPUNK NEON FRAMES FOR CONTENT SECTIONS
    ========================================================== */
 
