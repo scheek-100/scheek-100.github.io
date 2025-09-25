@@ -1,5 +1,5 @@
 /* ==========================================================
-   CYBERPUNK PORTFOLIO SKIN - ORBITRON FOR TITLES
+   SECTION TITLES (ORBITRON TEXT)
    ========================================================== */
 
 /* Section Titles (H2 in .section-title or .section-header) */
@@ -55,6 +55,20 @@
   color: #bbb;
   margin-top: 10px;
   text-align: center;
+}
+
+/* ==========================================================
+   PARAGRAPHS (VT323 TEXT)
+   ========================================================== */
+/* Pale green VT323 for content text only */
+.section-black p,
+.section-black .description,
+.section-black .resume-item p,
+.section-black .blog .description {
+  font-family: 'VT323', monospace;
+  font-size: 18px; /* tweak for readability */
+  color: #9aff9a;  /* pale green */
+  line-height: 1.6;
 }
 
 /* ==========================================================
@@ -150,7 +164,7 @@
 }
 
 /* ==========================================================
-   CYBERPUNK BARCODE DIVIDER FOR TESTIMONIALS
+   TESTIMONIALS
    ========================================================== */
 .testimonials .testimonial-item .cyber-barcode {
   width: 160px;                  /* similar width to stars row */
@@ -170,3 +184,4 @@
     0 0 12px #a020f0,
     0 0 24px #00f7ff;
 }
+
