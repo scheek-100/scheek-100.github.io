@@ -205,7 +205,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(128, 0, 128, 0.45); /* purple tint, adjust alpha for strength */
+  background: linear-gradient(
+    rgba(128, 0, 128, 0.55) 0%,   /* top: purple */
+    rgba(0, 0, 0, 0.65) 100%     /* bottom: fade to black */
+  );
   z-index: 0;
 }
 
