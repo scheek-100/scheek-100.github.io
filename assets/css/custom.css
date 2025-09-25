@@ -109,7 +109,7 @@
 
 /* Title styling */
 #hero h1 {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron", sans-serif !important;
   font-size: 3rem;
   font-weight: 700;
   color: #00f7ff; /* neon cyan */
