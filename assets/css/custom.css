@@ -74,50 +74,63 @@
 /* ==========================================================
    HERO/HEADER (GRID WITH OVERLAY)
    ========================================================== */
-/* Hero Section with Grid Overlay */
+/* Ensure hero image acts as background */
 #hero {
   position: relative;
-  background: 
-    /* Purple gradient overlay */
-    linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75)),
-
-    /* Neon tech grid overlay */
-    repeating-linear-gradient(0deg, rgba(0, 247, 255, 0.15) 1px, transparent 40px),  /* cyan horizontal */
-    repeating-linear-gradient(90deg, rgba(186, 85, 211, 0.15) 1px, transparent 40px), /* purple vertical */
-
-    /* Background image */
-    url("assets/img/spacecraft-hero-bg.jpg") no-repeat center center / cover !important;
-
-  background-blend-mode: overlay, lighten, normal;
-  color: #fff;
+  overflow: hidden;
   text-align: center;
+  color: #fff;
 }
 
-/* Hero content sits above overlays */
+/* Background image */
+#hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Purple overlay */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75));
+  z-index: 2;
+}
+
+/* Content sits above overlay */
 #hero .container {
   position: relative;
   z-index: 3;
-  text-align: left; /* or center if you prefer */
 }
 
-/* Title */
+/* Title styling */
 #hero h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: #00f7ff; /* neon cyan */
   text-shadow: 0 0 12px rgba(0, 247, 255, 0.8);
+  margin-bottom: 1rem;
 }
 
-/* Subtitle + tagline */
+/* Subtitle / typed text */
 #hero p {
   font-family: "VT323", monospace;
   font-size: 1.5rem;
-  color: #6fd3ff; /* softer pale blue */
+  color: #6fd3ff; /* pale blue */
   text-shadow: 0 0 6px rgba(111, 211, 255, 0.6);
+  margin-bottom: 0.5rem;
 }
 
-/* ==========================================================
+/* Tagline */
+#hero .tagline {
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+} ==========================================================
    CYBERPUNK NEON FRAMES FOR CONTENT SECTIONS
    ========================================================== */
 
