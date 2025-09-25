@@ -85,15 +85,6 @@
   text-align: center;
 }
 
-/* Purple gradient overlay */
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75));
-  z-index: 1;
-}
-
 /* Faint neon tech grid overlay */
 #hero::after {
   content: "";
@@ -105,6 +96,15 @@
   background-size: 50px 50px; /* adjust spacing */
   z-index: 2;
   pointer-events: none;
+}
+
+/* Purple gradient overlay */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75));
+  z-index: 1;
 }
 
 /* Hero content sits above overlays */
