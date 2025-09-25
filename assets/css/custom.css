@@ -200,9 +200,13 @@
   overflow: hidden;
 }
 
-/* Overlay removed */
-footer#footer.footer::before {
-  content: none; /* disables overlay entirely */
+/* Purple overlay */
+#footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(128, 0, 128, 0.45); /* purple tint, adjust alpha for strength */
+  z-index: 0;
 }
 
 /* Title (Orbitron) */
@@ -248,4 +252,14 @@ footer#footer.footer::before {
   box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
 
+/* Keep footer content above overlay */
+#footer .container,
+#footer h3,
+#footer p,
+#footer .social-links,
+#footer .copyright,
+#footer .credits {
+  position: relative;
+  z-index: 1;
+}
 
