@@ -78,33 +78,19 @@
 #hero {
   position: relative;
   background: 
+    /* Purple gradient overlay */
+    linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75)),
+
+    /* Neon tech grid overlay */
+    repeating-linear-gradient(0deg, rgba(0, 247, 255, 0.15) 1px, transparent 40px),  /* cyan horizontal */
+    repeating-linear-gradient(90deg, rgba(186, 85, 211, 0.15) 1px, transparent 40px), /* purple vertical */
+
     /* Background image */
     url("assets/img/spacecraft-hero-bg.jpg") no-repeat center center / cover !important;
 
+  background-blend-mode: overlay, lighten, normal;
   color: #fff;
   text-align: center;
-}
-
-/* Faint neon tech grid overlay */
-#hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(0, 247, 255, 0.12) 1px, transparent 1px),   /* neon cyan horizontal */
-    linear-gradient(90deg, rgba(186, 85, 211, 0.12) 1px, transparent 1px); /* purple vertical */
-  background-size: 50px 50px; /* adjust spacing */
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Purple gradient overlay */
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75));
-  z-index: 1;
 }
 
 /* Hero content sits above overlays */
