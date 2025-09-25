@@ -191,7 +191,7 @@
 /* Cyberpunk Footer */
 #footer {
   position: relative;
-  background: url("assets/img/cyberpunk-footer.jpg") no-repeat center center;
+  background: url("../img/cyberpunk-footer.jpg") no-repeat center center;
   background-size: cover !important;  /* fills the entire area */
   color: #fff;
   text-align: center;
@@ -252,7 +252,4 @@
   box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
 
-#footer {
-  background: hotpink !important;
-}
 
