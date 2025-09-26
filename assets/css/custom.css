@@ -300,3 +300,29 @@ h1.sitename {
   z-index: 1;
 }
 
+/* ==========================================================
+  SCROLL-TO-TOP BUTTON
+   ========================================================== */
+/* Scroll-to-top button styled like social icons */
+#scroll-top {
+  font-size: 22px; /* slightly larger arrow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 247, 255, 0.2); /* faint cyan background */
+  color: #00f7ff; /* neon cyan */
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+#scroll-top:hover {
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
