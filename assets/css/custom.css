@@ -262,50 +262,28 @@ h1.sitename {
   margin-bottom: 8px;
 }
 
-/* Resume section h4 bullet styling */
-#resume ul {
-  list-style: none;        /* remove default bullets */
-  padding-left: 1.2rem;    /* keep spacing */
-  position: relative;
+/* Cyberpunk Resume Timeline Line */
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -12px; /* adjust so the line aligns */
+  width: 2px;
+  height: 100%;
+  background: #00f7ff; /* neon cyan */
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
+  z-index: -1; /* keep behind content */
 }
 
-/* Remove all default bullets */
-#resume ul,
-#resume ul li {
-  list-style-type: none !important;
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Force reset any Bootstrap pseudo-elements */
-#resume ul li::marker {
-  content: "" !important;
-  display: none !important;
-}
-
-/* Add space for neon arrow */
-#resume ul {
-  padding-left: 1.5rem !important;
-}
-
-#resume ul li {
-  position: relative !important;
-  padding-left: 1.5rem !important;
-  margin-bottom: 10px !important;
-  line-height: 1.6 !important;
-}
-
-/* Neon cyan cyberpunk arrow */
-#resume ul li::before {
-  content: "▹" !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 0.2em !important;
-  color: #00f7ff !important;
-  font-size: 1.2rem !important;
-  line-height: 1 !important;
-  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff !important;
+/* Cyberpunk Resume Markers (replace white dots) */
+.resume .resume-item::after {
+  content: "▹"; /* or a square/diamond if you prefer */
+  position: absolute;
+  left: -20px;
+  top: 8px;
+  font-size: 1.2rem;
+  color: #00f7ff;
+  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
 }
 
 /* ==========================================================
