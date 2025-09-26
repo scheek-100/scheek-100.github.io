@@ -181,7 +181,7 @@ h1.sitename {
   font-family: 'VT323', monospace;
   font-size: 1.8rem; /* tweak as needed */
   font-weight: bold;
-  color: #90ee90; /* pale green */
+  color: 39ff14; /* neon green */
   text-shadow: 0 0 4px rgba(144, 238, 144, 0.6);
   margin-bottom: 15px;
 }
