@@ -915,6 +915,8 @@ section,
 /*--------------------------------------------------------------
 # Resume Section [Lonely Bootstrap Addition]
 --------------------------------------------------------------*/
+
+/* Original Lonely Bootstrap Template */
 .resume-item::before {
   content: '';
   position: absolute;
@@ -922,7 +924,8 @@ section,
   top: 0;
   height: 100%;
   width: 2px;
-  background: var(--pink);
+  background: #00f7ff; /* neon cyan */
+  box-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
 }
 
 .resume-item::after {
@@ -932,8 +935,8 @@ section,
   top: 0;
   width: 16px;
   height: 16px;
-  border: 2px solid var(--pink);
-  background: #fff;
+  border: 2px solid var(--#00f7ff);
+  background: #00f7ff; /* neon cyan */
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
