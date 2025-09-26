@@ -269,35 +269,43 @@ h1.sitename {
   position: relative;
 }
 
-/* Kill default bullets */
+/* Remove all default bullets */
 #resume ul,
 #resume ul li {
+  list-style-type: none !important;
   list-style: none !important;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
+/* Force reset any Bootstrap pseudo-elements */
+#resume ul li::marker {
+  content: "" !important;
+  display: none !important;
+}
+
+/* Add space for neon arrow */
 #resume ul {
-  padding-left: 1.2rem; /* space for arrow */
+  padding-left: 1.5rem !important;
 }
 
 #resume ul li {
-  position: relative;
-  padding-left: 1.4rem; /* space for neon arrow */
-  margin-bottom: 10px;
-  line-height: 1.6;
+  position: relative !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 10px !important;
+  line-height: 1.6 !important;
 }
 
-/* Static neon cyan arrow bullet aligned with first line */
+/* Neon cyan cyberpunk arrow */
 #resume ul li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  top: 0.25em; /* aligns vertically with first line */
-  color: #00f7ff;
-  font-size: 1.2rem;
-  line-height: 1; /* keeps it from stretching */
-  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
+  content: "▹" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.2em !important;
+  color: #00f7ff !important;
+  font-size: 1.2rem !important;
+  line-height: 1 !important;
+  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff !important;
 }
 
 /* ==========================================================
