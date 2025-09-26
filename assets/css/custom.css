@@ -218,6 +218,33 @@ h1.sitename {
    RESUME
    ========================================================== */
 
+/* Timeline vertical neon line */
+.resume::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px; /* aligns with items */
+  width: 2px;
+  height: 100%;
+  background: #00f7ff; /* neon cyan */
+  box-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
+  z-index: 0;
+}
+
+/* Cyberpunk square markers instead of dots */
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  left: 12px; /* centers on line */
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  background: #00f7ff;
+  box-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
+  border-radius: 2px; /* slightly rounded */
+  z-index: 1;
+}
+
 /* Resume section h5 styling */
 #resume h5 {
   font-family: 'VT323', monospace;
@@ -260,40 +287,6 @@ h1.sitename {
     0 0 8px #39ff14,
     0 0 16px #39ff14;
   margin-bottom: 8px;
-}
-
-/* Kill Lonely's default dots */
-.resume .resume-item::before {
-  content: none !important;
-  background: none !important;
-  border: none !important;
-}
-
-/* Vertical timeline line */
-.resume::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 20px; /* adjust offset */
-  width: 2px;
-  height: 100%;
-  background: #00f7ff !important; /* neon cyan */
-  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
-  z-index: 0;
-}
-
-/* Cyberpunk custom markers */
-.resume .resume-item::after {
-  content: "▹";
-  position: absolute;
-  left: 12px;  /* line up with the vertical line */
-  top: 8px;
-  font-size: 1.2rem;
-  color: #00f7ff;
-  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
-  background: none !important;
-  border: none !important;
-  z-index: 1;
 }
 
 /* ==========================================================
