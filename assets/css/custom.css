@@ -173,6 +173,19 @@ h1.sitename {
   box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
 
+/* ==========================================================
+   ABOUT
+   ========================================================== */
+
+#about h3 {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem; /* tweak as needed */
+  font-weight: bold;
+  color: #90ee90; /* pale green */
+  text-shadow: 0 0 4px rgba(144, 238, 144, 0.6);
+  margin-bottom: 15px;
+}
+
 /*==========================================================
    CYBERPUNK NEON FRAMES FOR CONTENT SECTIONS
    ========================================================== */
