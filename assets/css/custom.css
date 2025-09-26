@@ -269,18 +269,34 @@ h1.sitename {
   position: relative;
 }
 
+/* Kill default bullets */
+#resume ul,
 #resume ul li {
-  position: relative;
-  padding-left: 1.2rem;    /* space for custom bullet */
-  margin-bottom: 8px;
+  list-style: none !important;
+  margin: 0;
+  padding: 0;
 }
 
+#resume ul {
+  padding-left: 1.2rem; /* space for arrow */
+}
+
+#resume ul li {
+  position: relative;
+  padding-left: 1.4rem; /* space for neon arrow */
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Static neon cyan arrow bullet aligned with first line */
 #resume ul li::before {
   content: "▹";
   position: absolute;
   left: 0;
-  color: #00f7ff; /* neon cyan */
+  top: 0.25em; /* aligns vertically with first line */
+  color: #00f7ff;
   font-size: 1.2rem;
+  line-height: 1; /* keeps it from stretching */
   text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
 }
 
