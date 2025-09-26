@@ -1,5 +1,19 @@
 /* ==========================================================
-   SECTION TITLES (ORBITRON TEXT)
+   HEADER
+   ========================================================== */
+/* Header background update */
+#header {
+  background-color: #12151f !important;
+  /* dark navy */
+}
+
+.header,
+.navbar {
+  background-color: #12151f !important;
+}
+
+/* ==========================================================
+   INDEX
    ========================================================== */
 
 /* Index - Sitename Text Stylying */
@@ -87,7 +101,7 @@ h1.sitename {
 }
 
 /* ==========================================================
-   HERO/HEADER
+   HERO
    ========================================================== */
 /* Ensure hero image acts as background */
 #hero {
