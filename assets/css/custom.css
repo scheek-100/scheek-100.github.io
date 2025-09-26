@@ -179,14 +179,20 @@ h1.sitename {
 
 #about h3 {
   font-family: 'VT323', monospace;
-  font-size: 1.8rem; /* tweak as needed */
+  font-size: 1.8rem; /* match resume size */
   font-weight: bold;
-  color: 39ff14; /* neon green */
+  color: #39ff14; /* neon green */
+  display: inline-block; /* makes glow hug the text */
+  padding: 3px 8px;
+  border: 2px solid #39ff14; /* matches resume h4 frame */
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4); /* keeps letters sharp */
   text-shadow: 
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
   margin-bottom: 15px;
+  box-shadow: 0 0 6px #39ff14;
 }
 
 /*==========================================================
