@@ -182,7 +182,10 @@ h1.sitename {
   font-size: 1.8rem; /* tweak as needed */
   font-weight: bold;
   color: 39ff14; /* neon green */
-  text-shadow: 0 0 4px rgba(144, 238, 144, 0.6);
+  text-shadow: 
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14;
   margin-bottom: 15px;
 }
 
