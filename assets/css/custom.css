@@ -262,28 +262,38 @@ h1.sitename {
   margin-bottom: 8px;
 }
 
-/* Cyberpunk Resume Timeline Line */
+/* Kill Lonely's default dots */
 .resume .resume-item::before {
+  content: none !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* Vertical timeline line */
+.resume::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -12px; /* adjust so the line aligns */
+  left: 20px; /* adjust offset */
   width: 2px;
   height: 100%;
-  background: #00f7ff; /* neon cyan */
+  background: #00f7ff !important; /* neon cyan */
   box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
-  z-index: -1; /* keep behind content */
+  z-index: 0;
 }
 
-/* Cyberpunk Resume Markers (replace white dots) */
+/* Cyberpunk custom markers */
 .resume .resume-item::after {
-  content: "▹"; /* or a square/diamond if you prefer */
+  content: "▹";
   position: absolute;
-  left: -20px;
+  left: 12px;  /* line up with the vertical line */
   top: 8px;
   font-size: 1.2rem;
   color: #00f7ff;
   text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
+  background: none !important;
+  border: none !important;
+  z-index: 1;
 }
 
 /* ==========================================================
