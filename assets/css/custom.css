@@ -237,33 +237,64 @@ h1.sitename {
   box-shadow: 0 0 6px #39ff14;
 }
 
-/*==========================================================
-   CYBERPUNK NEON FRAMES FOR CONTENT SECTIONS
+/* ==========================================================
+   SERVICES
    ========================================================== */
-
-/* === Cyberpunk Buttons === */
-/*.cp-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  color: #00f7ff;
-  border: 2px solid #00f7ff;
-  background: transparent;
-  text-transform: uppercase;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px #00f7ff, inset 0 0 8px #00f7ff;
+   /* Service Items Wrapper */
+.service-item {
+  max-width: 320px; /* keeps width consistent */
+  margin: 20px;
+  text-align: center; /* centers text */
 }
 
-.cp-btn:hover {
+/* Service Titles */
+.service-item .title {
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #39ff14; /* neon green */
+  margin: 12px 0;
+  text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14, 0 0 16px #39ff14;
+}
+
+/* Service Descriptions */
+.service-item .description {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #9aff9a;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* Bullet Styling */
+.service-item .bullet {
+  display: inline-block;
+  text-align: left;
+}
+
+/* Service Icons */
+.service-item .icon {
+  font-size: 42px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #00f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #00f7ff;
+  text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, inset 0 0 8px #00f7ff;
+  transition: all 0.3s ease;
+}
+
+/* Icon Hover Glow */
+.service-item .icon:hover {
   background: #00f7ff;
   color: #12151f;
-  box-shadow: 0 0 16px #00f7ff, inset 0 0 16px #00f7ff;
-  text-shadow: none;
-} */
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
+}
 
 /* ==========================================================
    RESUME
