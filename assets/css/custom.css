@@ -250,11 +250,19 @@ h1.sitename {
 /* Service Titles */
 .service-item .title {
   font-family: 'VT323', monospace;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #39ff14; /* neon green */
-  margin: 12px 0;
-  text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14, 0 0 16px #39ff14;
+  text-transform: uppercase;
+  text-align: center;
+
+  /* Sharper glow effect */
+  text-shadow: 
+    0 0 2px #39ff14,
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 12px #39ff14;
+  margin-top: 15px;
 }
 
 /* Service Descriptions */
