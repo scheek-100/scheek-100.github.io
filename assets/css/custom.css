@@ -78,7 +78,7 @@ h1.sitename {
    VT323 GREEN PARAGRAPH FONT
    ========================================================== */
  /* .section-title p with boxes */
-.section-title p {
+.section-title p:not(#about .section-title p) {
   font-family: 'VT323', monospace;
   font-size: 1.2rem; /* smaller than h3 for balance */
   font-weight: bold;
