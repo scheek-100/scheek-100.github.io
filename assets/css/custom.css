@@ -66,13 +66,13 @@ h1.sitename {
 }
 
 /* Section subtitles (paragraphs under H2) */
-/*.section-title p,
+.section-title p,
 .section-header p {
   font-size: 16px;
   color: #bbb;
   margin-top: 10px;
   text-align: center;
-} /*
+}
 
 /* ==========================================================
    VT323 GREEN PARAGRAPH FONT
