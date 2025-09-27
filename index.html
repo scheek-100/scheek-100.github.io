@@ -646,13 +646,13 @@
 
 <!-- Contact Section JS Script -->
 <script>
-  const form = document.querySelector('#contact-form');
+  const form = document.getElementById('contact-form');
   const loading = form.querySelector('.loading');
   const errorMessage = form.querySelector('.error-message');
   const sentMessage = form.querySelector('.sent-message');
 
   form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+    e.preventDefault(); // stop the redirect
     loading.style.display = 'block';
     errorMessage.style.display = 'none';
     sentMessage.style.display = 'none';
@@ -671,14 +671,16 @@
         form.reset();
       } else {
         const data = await response.json();
-        errorMessage.textContent = data.errors ? 
-          data.errors.map(err => err.message).join(", ") :
-          "Oops! There was a problem submitting your form.";
+        if (data.errors) {
+          errorMessage.textContent = data.errors.map(err => err.message).join(', ');
+        } else {
+          errorMessage.textContent = "Oops! There was a problem submitting your form.";
+        }
         errorMessage.style.display = 'block';
       }
     } catch (error) {
       loading.style.display = 'none';
-      errorMessage.textContent = "⚠️ Network error — please try again later.";
+      errorMessage.textContent = "Network error — please try again later.";
       errorMessage.style.display = 'block';
     }
   });
