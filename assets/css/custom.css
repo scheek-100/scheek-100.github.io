@@ -254,13 +254,10 @@ h1.sitename {
   font-family: 'VT323', monospace;
   font-size: 1.6rem;
   font-weight: bold;
-  color: #39ff14;
-  /* neon green */
+  color: #39ff14; /* neon green */
   text-transform: uppercase;
   text-align: center;
-
-/* Sharper glow effect */
-  text-shadow:
+  text-shadow: 
     0 0 2px #39ff14,
     0 0 4px #39ff14,
     0 0 8px #39ff14,
@@ -270,11 +267,15 @@ h1.sitename {
 
 /* Service Descriptions */
 .service-item .description {
-  font-family: 'VT323', monospace;
+  font-family: 'VT323', monospace !important; /* override Bootstrap */
   font-size: 1.1rem;
-  color: #9aff9a;
+  color: #9aff9a !important;  /* pale neon green */
   line-height: 1.6;
   margin: 0 auto;
+  text-shadow: 
+    0 0 2px #9aff9a,
+    0 0 4px #9aff9a,
+    0 0 6px #9aff9a; /* subtle glow */
 }
 
 /* Bullet Styling */
