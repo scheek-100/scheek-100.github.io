@@ -1,12 +1,10 @@
-/* ==========================================================
-   HEADER
-   ========================================================== */
+/* SASHA CHEEK - CYBERPUNK PORTFOLIO SKIN */
 
 /* ==========================================================
    INDEX
    ========================================================== */
 
-/* Index - Sitename Text Stylying */
+/* Index - Sitename Text Styling */
 h1.sitename {
   font-family: 'Orbitron', sans-serif;
   font-size: 64px;
@@ -18,7 +16,7 @@ h1.sitename {
 }
 
 /* ==========================================================
-   SECTION TITLES (ORBITRON TEXT)
+   SECTION TITLES
    ========================================================== */
 
 /* Section Titles (H2 in .section-title or .section-header) */
@@ -68,18 +66,41 @@ h1.sitename {
 }
 
 /* Section subtitles (paragraphs under H2) */
-.section-title p,
+/*.section-title p,
 .section-header p {
   font-size: 16px;
   color: #bbb;
   margin-top: 10px;
   text-align: center;
-}
+} /*
 
 /* ==========================================================
-   PARAGRAPHS (VT323 TEXT)
+   VT323 GREEN PARAGRAPH FONT
    ========================================================== */
-/* Pale green VT323 for content text only */
+ /* .section-title p with boxes */
+.section-title p {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem; /* smaller than h3 for balance */
+  font-weight: bold;
+  color: #39ff14; /* neon green */
+  display: inline-block; /* keeps glow tight */
+  padding: 3px 8px;
+  border: 2px solid #39ff14;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4); /* sharp contrast */
+  text-shadow: 
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14;
+  margin-top: 10px;
+  box-shadow: 0 0 6px #39ff14;
+  text-align: center;   /* keeps it centered */
+  max-width: 800px;     /* avoids stretching on big screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ /* Pale green VT323 for content text only */
 .section-black p,
 .section-black .description,
 .section-black .resume-item p,
@@ -196,33 +217,11 @@ h1.sitename {
 }
 
 /*==========================================================
-   SERVICES
-   ========================================================== */
-
-#services .section-title p {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem; /* smaller than h3 for balance */
-  font-weight: bold;
-  color: #39ff14; /* neon green */
-  display: inline-block; /* keeps glow tight */
-  padding: 3px 8px;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4); /* sharp contrast */
-  text-shadow: 
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14;
-  margin-top: 10px;
-  box-shadow: 0 0 6px #39ff14;
-}
-
-/*==========================================================
    CYBERPUNK NEON FRAMES FOR CONTENT SECTIONS
    ========================================================== */
 
 /* === Cyberpunk Buttons === */
-.cp-btn {
+/*.cp-btn {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
@@ -243,29 +242,11 @@ h1.sitename {
   color: #12151f;
   box-shadow: 0 0 16px #00f7ff, inset 0 0 16px #00f7ff;
   text-shadow: none;
-}
+} */
 
 /* ==========================================================
    RESUME
    ========================================================== */
-
-#resume .section-title p {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem; /* smaller than h3 for balance */
-  font-weight: bold;
-  color: #39ff14; /* neon green */
-  display: inline-block; /* keeps glow tight */
-  padding: 3px 8px;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4); /* sharp contrast */
-  text-shadow: 
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14;
-  margin-top: 10px;
-  box-shadow: 0 0 6px #39ff14;
-}
 
 /* Resume section h5 styling */
 #resume h5 {
@@ -314,7 +295,8 @@ h1.sitename {
 /* ==========================================================
    TESTIMONIALS
    ========================================================== */
-.testimonials .testimonial-item .cyber-barcode {
+/* Cyberpunk Barcode */
+  .testimonials .testimonial-item .cyber-barcode {
   width: 160px;                  /* similar width to stars row */
   height: 24px;
   margin: 0 auto 15px auto;      /* same spacing as .stars */
@@ -336,7 +318,7 @@ h1.sitename {
 /* ==========================================================
    FOOTER
    ========================================================== */
-/* Cyberpunk Footer */
+/* Cyberpunk Footer Background Pic */
 #footer {
   position: relative;
   background: url("../img/cyberpunk-footer.jpg") no-repeat center center;
