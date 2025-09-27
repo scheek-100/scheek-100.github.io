@@ -259,7 +259,7 @@ h1.sitename {
   text-transform: uppercase;
   text-align: center;
 
-  /* Sharper glow effect */
+/* Sharper glow effect */
   *text-shadow:
     0 0 2px #39ff14,
     0 0 4px #39ff14,
@@ -267,8 +267,6 @@ h1.sitename {
     0 0 12px #39ff14;
   margin-top: 15px;
 }
-
-*/
 
 /* Service Descriptions */
 .service-item .description {
