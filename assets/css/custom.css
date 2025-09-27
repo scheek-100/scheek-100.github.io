@@ -468,44 +468,56 @@ h1.sitename {
    CONTACT FORM
    ========================================================== */
 
-/* Neon form feedback messages */
-.php-email-form .loading,
-.php-email-form .error-message,
-.php-email-form .sent-message {
+/* Form Status Messages */
+#contact-form .loading,
+#contact-form .error-message,
+#contact-form .sent-message {
   display: none;
-  margin: 15px 0;
-  padding: 12px;
-  font-family: 'VT323', monospace;
-  font-size: 18px;
+  margin: 10px 0;
+  padding: 10px;
   border-radius: 4px;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
   text-align: center;
 }
 
-/* Loading – cyan glow */
-.php-email-form .loading {
+/* Loading (cyan glow) */
+#contact-form .loading {
   color: #00f7ff;
-  border: 2px solid #00f7ff;
-  background: rgba(0, 247, 255, 0.1);
-  text-shadow: 0 0 8px #00f7ff;
-  box-shadow: 0 0 12px #00f7ff;
+  border: 1px solid #00f7ff;
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
 }
 
-/* Error – magenta glow */
-.php-email-form .error-message {
+/* Error (magenta glow) */
+#contact-form .error-message {
   color: #ff00ff;
-  border: 2px solid #ff00ff;
-  background: rgba(255, 0, 255, 0.1);
-  text-shadow: 0 0 8px #ff00ff;
-  box-shadow: 0 0 12px #ff00ff;
+  border: 1px solid #ff00ff;
+  box-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff;
 }
 
-/* Sent – neon green glow */
-.php-email-form .sent-message {
+/* Success (neon green glow) */
+#contact-form .sent-message {
   color: #39ff14;
-  border: 2px solid #39ff14;
-  background: rgba(57, 255, 20, 0.1);
-  text-shadow: 0 0 8px #39ff14;
-  box-shadow: 0 0 12px #39ff14;
+  border: 1px solid #39ff14;
+  box-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14;
+}
+
+/* Neon Button */
+.btn-neon {
+  background: transparent;
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  box-shadow: 0 0 8px #00f7ff, inset 0 0 8px #00f7ff;
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 16px #00f7ff, inset 0 0 16px #00f7ff;
 }
 
 /* ==========================================================
