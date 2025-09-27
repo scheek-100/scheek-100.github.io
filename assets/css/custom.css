@@ -11,7 +11,8 @@ h1.sitename {
   font-weight: 700;
   margin-bottom: 15px;
   text-transform: uppercase;
-  color: #00f7ff; /* neon cyan */
+  color: #00f7ff;
+  /* neon cyan */
   text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff, 0 0 32px #00f7ff;
 }
 
@@ -26,12 +27,14 @@ h1.sitename {
   display: inline-block;
   font-size: 48px;
   font-weight: 700;
-  font-family: 'Orbitron', sans-serif; /* Force Orbitron */
-  color: #00f7ff; /* Neon cyan */
+  font-family: 'Orbitron', sans-serif;
+  /* Force Orbitron */
+  color: #00f7ff;
+  /* Neon cyan */
   text-transform: uppercase;
   letter-spacing: 4px;
   padding: 0 20px;
-  text-shadow: 
+  text-shadow:
     0 0 8px #00f7ff,
     0 0 16px #00f7ff,
     0 0 32px #00f7ff;
@@ -48,8 +51,8 @@ h1.sitename {
   width: 200px;
   height: 2px;
   background: #00f7ff;
-  box-shadow: 
-    0 0 8px #00f7ff, 
+  box-shadow:
+    0 0 8px #00f7ff,
     0 0 16px #00f7ff;
 }
 
@@ -77,37 +80,49 @@ h1.sitename {
 /* ==========================================================
    VT323 GREEN PARAGRAPH FONT
    ========================================================== */
- 
- /* Only subtitles with .framed-subtitle get neon boxes */
+/* Framed parapgraph subtitles */
 .framed-subtitle {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   font-weight: bold;
   color: #39ff14;
-  display: inline-block;
-  padding: 3px 12px;
+  display: block;
+  /* full block so centering works cleanly */
+  padding: 6px 14px;
+  /* balanced padding */
   border: 2px solid #39ff14;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.4);
-  text-shadow: 
+  text-shadow:
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
   box-shadow: 0 0 6px #39ff14;
-  text-align: center;
-  width: 700px; /* fixed width across all sections */
-  max-width: 90%; /* keeps it responsive on small screens */
-  margin: 10px auto 0 auto;
+
+  width: 700px;
+  /* fixed box width */
+  max-width: 90%;
+  /* prevents overflow on small screens */
+  margin: 12px auto 0 auto;
+  /* centers the box itself */
+
+  text-align: justify;
+  /* spreads text evenly */
+  text-align-last: center;
+  /* ensures last line is centered */
 }
 
- /* Pale green VT323 for content text only */
+
+/* Pale green VT323 for content text only */
 .section-black p,
 .section-black .description,
 .section-black .resume-item p,
 .section-black .blog .description {
   font-family: 'VT323', monospace;
-  font-size: 18px; /* tweak for readability */
-  color: #9aff9a;  /* pale green */
+  font-size: 18px;
+  /* tweak for readability */
+  color: #9aff9a;
+  /* pale green */
   line-height: 1.6;
 }
 
@@ -162,7 +177,8 @@ h1.sitename {
 #hero p {
   font-family: "VT323", monospace;
   font-size: 1.5rem;
-  color: #6fd3ff; /* pale blue */
+  color: #6fd3ff;
+  /* pale blue */
   text-shadow: 0 0 6px rgba(111, 211, 255, 0.6);
   margin-bottom: 0.5rem;
 }
@@ -200,15 +216,20 @@ h1.sitename {
 
 #about h3 {
   font-family: 'VT323', monospace;
-  font-size: 1.8rem; /* match resume size */
+  font-size: 1.8rem;
+  /* match resume size */
   font-weight: bold;
-  color: #39ff14; /* neon green */
-  display: inline-block; /* makes glow hug the text */
+  color: #39ff14;
+  /* neon green */
+  display: inline-block;
+  /* makes glow hug the text */
   padding: 3px 8px;
-  border: 2px solid #39ff14; /* matches resume h4 frame */
+  border: 2px solid #39ff14;
+  /* matches resume h4 frame */
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4); /* keeps letters sharp */
-  text-shadow: 
+  background: rgba(0, 0, 0, 0.4);
+  /* keeps letters sharp */
+  text-shadow:
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
@@ -255,11 +276,14 @@ h1.sitename {
   font-size: 1.2rem;
   color: #12151f;
   background-color: #90ee90;
-  display: inline-flex;   /* tighter than inline-block */
+  display: inline-flex;
+  /* tighter than inline-block */
   align-items: center;
-  padding: 2px 6px;       /* minimal padding */
+  padding: 2px 6px;
+  /* minimal padding */
   border-radius: 3px;
-  margin: 0;              /* remove excess margin */
+  margin: 0;
+  /* remove excess margin */
   box-shadow: 0 0 4px #90ee90, 0 0 8px #90ee90;
 }
 
@@ -270,10 +294,12 @@ h1.sitename {
   font-size: 1.6rem;
   color: #90ee90;
   text-transform: uppercase;
-  display: inline-flex;   /* hug text */
+  display: inline-flex;
+  /* hug text */
   align-items: center;
   padding: 4px 10px;
-  margin: 0 0 12px 0;     /* keep spacing below only */
+  margin: 0 0 12px 0;
+  /* keep spacing below only */
   border: 2px solid #90ee90;
   border-radius: 4px;
   box-shadow: 0 0 6px #90ee90, 0 0 12px #90ee90 inset;
@@ -282,10 +308,12 @@ h1.sitename {
 /* Resume section h4 styling */
 .resume-item h4 {
   font-family: 'VT323', monospace;
-  font-size: 1.6rem;  /* adjust size as needed */
+  font-size: 1.6rem;
+  /* adjust size as needed */
   font-weight: bold;
-  color: #39ff14; /* neon green */
-  text-shadow: 
+  color: #39ff14;
+  /* neon green */
+  text-shadow:
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
@@ -296,20 +324,22 @@ h1.sitename {
    TESTIMONIALS
    ========================================================== */
 /* Cyberpunk Barcode */
-  .testimonials .testimonial-item .cyber-barcode {
-  width: 160px;                  /* similar width to stars row */
+.testimonials .testimonial-item .cyber-barcode {
+  width: 160px;
+  /* similar width to stars row */
   height: 24px;
-  margin: 0 auto 15px auto;      /* same spacing as .stars */
-  background: repeating-linear-gradient(
-    90deg,
-    #00f7ff 0 3px,                /* neon cyan bar */
-    transparent 3px 6px,
-    #a020f0 6px 9px,              /* purple bar */
-    transparent 9px 12px
-  );
+  margin: 0 auto 15px auto;
+  /* same spacing as .stars */
+  background: repeating-linear-gradient(90deg,
+      #00f7ff 0 3px,
+      /* neon cyan bar */
+      transparent 3px 6px,
+      #a020f0 6px 9px,
+      /* purple bar */
+      transparent 9px 12px);
   border: 1px solid #00f7ff;
   border-radius: 2px;
-  box-shadow: 
+  box-shadow:
     0 0 6px #00f7ff,
     0 0 12px #a020f0,
     0 0 24px #00f7ff;
@@ -322,7 +352,8 @@ h1.sitename {
 #footer {
   position: relative;
   background: url("../img/cyberpunk-footer.jpg") no-repeat center center;
-  background-size: cover !important;  /* fills the entire area */
+  background-size: cover !important;
+  /* fills the entire area */
   color: #fff;
   text-align: center;
   padding: 60px 0;
@@ -335,10 +366,11 @@ h1.sitename {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(128, 0, 128, 0.55) 0%,   /* top: purple */
-    rgba(0, 0, 0, 0.65) 100%     /* bottom: fade to black */
-  );
+  background: linear-gradient(rgba(128, 0, 128, 0.55) 0%,
+      /* top: purple */
+      rgba(0, 0, 0, 0.65) 100%
+      /* bottom: fade to black */
+    );
   z-index: 0;
 }
 
@@ -349,7 +381,8 @@ h1.sitename {
   font-weight: 700;
   margin-bottom: 15px;
   text-transform: uppercase;
-  color: #00f7ff; /* neon cyan */
+  color: #00f7ff;
+  /* neon cyan */
   text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
 }
 
@@ -359,8 +392,9 @@ h1.sitename {
 #footer .credits {
   font-family: 'VT323', monospace;
   font-size: 18px;
-  color: #9aff9a; /* pale green */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+  color: #9aff9a;
+  /* pale green */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
   margin-bottom: 20px;
 }
 
@@ -401,15 +435,18 @@ h1.sitename {
    ========================================================== */
 /* Scroll-to-top button styled like social icons */
 #scroll-top {
-  font-size: 22px; /* slightly larger arrow */
+  font-size: 22px;
+  /* slightly larger arrow */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(0, 247, 255, 0.2); /* faint cyan background */
-  color: #00f7ff; /* neon cyan */
+  background: rgba(0, 247, 255, 0.2);
+  /* faint cyan background */
+  color: #00f7ff;
+  /* neon cyan */
   transition: all 0.3s ease;
   position: fixed;
   bottom: 20px;
