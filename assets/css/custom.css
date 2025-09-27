@@ -364,6 +364,81 @@ h1.sitename {
   margin-bottom: 8px;
 }
 
+/* ============================================
+   BLOG ACCORDION STYLING (Cyberpunk)
+   ============================================ */
+
+/* Accordion container centered with fixed width */
+#accordionBlog {
+  max-width: 800px;        /* fixed width */
+  margin: 0 auto;          /* center horizontally */
+}
+
+/* Accordion headers (button text) */
+#accordionBlog .accordion-button {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00f7ff;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid #00f7ff;
+  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
+  box-shadow: 0 0 8px #00f7ff inset;
+  transition: all 0.3s ease;
+}
+
+#accordionBlog .accordion-button:hover {
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+#accordionBlog .accordion-button:focus {
+  outline: none;
+  box-shadow: 0 0 12px #00f7ff, 0 0 24px #00f7ff;
+}
+
+/* Keep collapsed state looking styled */
+#accordionBlog .accordion-button.collapsed {
+  background: rgba(0, 0, 0, 0.6);
+  color: #00f7ff;
+  border: 2px solid #00f7ff;
+}
+
+/* Accordion body text */
+#accordionBlog .accordion-body {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #9aff9a; /* pale green */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border: 1px solid #00f7ff;
+  box-shadow: inset 0 0 10px #00f7ff;
+}
+
+/* Article links styled like glowing buttons */
+#accordionBlog .accordion-body a.btn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  color: #12151f;
+  background: #00f7ff;
+  border: 2px solid #00f7ff;
+  border-radius: 4px;
+  padding: 6px 14px;
+
+  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
+  transition: all 0.3s ease;
+}
+
+#accordionBlog .accordion-body a.btn:hover {
+  background: #12151f;
+  color: #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, inset 0 0 10px #00f7ff;
+}
+
 /* ==========================================================
    TESTIMONIALS
    ========================================================== */
