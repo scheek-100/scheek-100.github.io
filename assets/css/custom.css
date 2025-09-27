@@ -247,6 +247,24 @@ h1.sitename {
   text-align: center; /* centers text */
 }
 
+/* Service Item Title Styling v02 */
+.service-item .title {
+  font-family: 'VT323', monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #12151f;
+  background-color: #90ee90;
+  display: inline-flex;
+  /* tighter than inline-block */
+  align-items: center;
+  padding: 2px 6px;
+  /* minimal padding */
+  border-radius: 3px;
+  margin: 0;
+  /* remove excess margin */
+  box-shadow: 0 0 4px #90ee90, 0 0 8px #90ee90;
+}
+
 /* Service Titles */
 .service-item .title {
   font-family: 'VT323', monospace;
@@ -257,13 +275,13 @@ h1.sitename {
   text-align: center;
 
   /* Sharper glow effect */
-  text-shadow: 
+  /*text-shadow: 
     0 0 2px #39ff14,
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 12px #39ff14;
   margin-top: 15px;
-}
+} */
 
 /* Service Descriptions */
 .service-item .description {
