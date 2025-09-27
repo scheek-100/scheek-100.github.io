@@ -552,41 +552,33 @@
       <!-- Contact Container -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <form action="https://formspree.io/f/xovlzkjj" method="POST" class="php-email-form" novalidate>
-  <div class="row gy-4">
+ <div class="row justify-content-center">
+      <div class="col-lg-6">
 
-    <div class="col-md-6">
-      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+        <!-- Neon Contact Form -->
+        <form id="contact-form" action="https://formspree.io/f/xovlzkjj" method="POST">
+          <input class="form-control mb-3" name="name" type="text" placeholder="Full Name" required />
+          <input class="form-control mb-3" name="email" type="email" placeholder="Email Address" required />
+          <input class="form-control mb-3" name="subject" type="text" placeholder="Subject" required />
+          <textarea class="form-control mb-3" name="message" placeholder="Message" style="height: 8rem" required></textarea>
+          
+          <!-- Status Messages -->
+          <div class="loading">Sending...</div>
+          <div class="error-message"></div>
+          <div class="sent-message">✅ Your message has been sent. Thank you!</div>
+
+          <div class="d-grid">
+            <button class="btn btn-neon btn-lg" type="submit">Send Message</button>
+          </div>
+        </form>
+
+      </div>
     </div>
-
-    <div class="col-md-6">
-      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-    </div>
-
-    <div class="col-md-12">
-      <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-    </div>
-
-    <div class="col-md-12">
-      <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-    </div>
-
-    <!-- Feedback messages -->
-    <div class="col-md-12 text-center">
-      <div class="loading" style="display:none;">Loading</div>
-      <div class="error-message" style="display:none;"></div>
-      <div class="sent-message" style="display:none;">Your message has been sent. Thank you!</div>
-      <button type="submit">Send Message</button>
-    </div>
-
   </div>
-</form>
-    </div>
+</section>  
+</main>
 
-    </section><!-- /Contact Section -->
-
-  </main>
-
+<!-- Footer -->
   <footer id="footer" class="footer" style="background:url('assets/img/cyberpunk-footer.jpg') no-repeat center center / cover !important;
                background-size:cover;">
     <div class="container">
@@ -636,7 +628,7 @@
 
 <!-- Contact Section JS Script -->
 <script>
-  const form = document.querySelector('.php-email-form');
+  const form = document.querySelector('#contact-form');
   const loading = form.querySelector('.loading');
   const errorMessage = form.querySelector('.error-message');
   const sentMessage = form.querySelector('.sent-message');
@@ -661,16 +653,14 @@
         form.reset();
       } else {
         const data = await response.json();
-        if (data.errors) {
-          errorMessage.textContent = data.errors.map(err => err.message).join(", ");
-        } else {
-          errorMessage.textContent = "Oops! There was a problem submitting your form.";
-        }
+        errorMessage.textContent = data.errors ? 
+          data.errors.map(err => err.message).join(", ") :
+          "Oops! There was a problem submitting your form.";
         errorMessage.style.display = 'block';
       }
     } catch (error) {
       loading.style.display = 'none';
-      errorMessage.textContent = "Network error — please try again later.";
+      errorMessage.textContent = "⚠️ Network error — please try again later.";
       errorMessage.style.display = 'block';
     }
   });
