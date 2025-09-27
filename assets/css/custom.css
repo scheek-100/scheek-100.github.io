@@ -77,27 +77,27 @@ h1.sitename {
 /* ==========================================================
    VT323 GREEN PARAGRAPH FONT
    ========================================================== */
- /* .section-title p with boxes */
-.section-title p:not(#about .section-title p) {
+ 
+ /* Only subtitles with .framed-subtitle get neon boxes */
+.framed-subtitle {
   font-family: 'VT323', monospace;
-  font-size: 1.2rem; /* smaller than h3 for balance */
+  font-size: 1.2rem;
   font-weight: bold;
-  color: #39ff14; /* neon green */
-  display: inline-block; /* keeps glow tight */
-  padding: 3px 8px;
+  color: #39ff14;
+  display: inline-block;
+  padding: 3px 12px;
   border: 2px solid #39ff14;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4); /* sharp contrast */
+  background: rgba(0, 0, 0, 0.4);
   text-shadow: 
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
-  margin-top: 10px;
   box-shadow: 0 0 6px #39ff14;
-  text-align: center;   /* keeps it centered */
-  max-width: 800px;     /* avoids stretching on big screens */
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  width: 700px; /* fixed width across all sections */
+  max-width: 90%; /* keeps it responsive on small screens */
+  margin: 10px auto 0 auto;
 }
 
  /* Pale green VT323 for content text only */
