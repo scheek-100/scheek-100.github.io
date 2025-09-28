@@ -269,23 +269,24 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* === Hologram / CRT Glitch Effect (Enhanced) === */
+/* === Hologram / Yellowjackets-style Glitch === */
 .profile-img {
   position: relative;
   display: inline-block;
+  overflow: hidden;
 }
 
 .profile-img img {
   display: block;
   max-width: 100%;
-  border: 2px solid #00f7ff; /* neon cyan frame */
+  border: 2px solid #00f7ff; /* cyan neon frame */
   border-radius: 8px;
   box-shadow: 
-    0 0 12px rgba(0, 247, 255, 0.9),
-    0 0 24px rgba(0, 247, 255, 0.6),
-    0 0 48px rgba(0, 247, 255, 0.3);
-  filter: contrast(1.25) brightness(1.15) saturate(1.4);
-  animation: crt-glitch 2.8s infinite steps(2);
+    0 0 10px rgba(0, 247, 255, 0.9),
+    0 0 20px rgba(0, 247, 255, 0.6),
+    0 0 40px rgba(0, 247, 255, 0.4);
+  filter: contrast(1.2) brightness(1.1);
+  animation: baseFlicker 3s infinite steps(2);
 }
 
 /* Scanline overlay */
@@ -296,51 +297,87 @@ h1.sitename {
   border-radius: 8px;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0, 247, 255, 0.12) 0px,
-    rgba(0, 247, 255, 0.12) 2px,
+    rgba(0, 247, 255, 0.1) 0px,
+    rgba(0, 247, 255, 0.1) 2px,
     transparent 2px,
     transparent 4px
   );
-  pointer-events: none;
   mix-blend-mode: screen;
-  animation: scanlines 1.5s linear infinite;
+  pointer-events: none;
+  animation: scanlines 1.2s linear infinite;
 }
 
-/* Extra distortion layers */
-.profile-img::before {
+/* Glitch slices (3 layers shifted) */
+.profile-img::before,
+.profile-img span::before,
+.profile-img span::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 8px;
-  background: repeating-linear-gradient(
-    to right,
-    rgba(255, 0, 0, 0.15) 0px,
-    rgba(0, 247, 255, 0.15) 2px,
-    transparent 3px,
-    transparent 6px
-  );
+  background: url("https://media.licdn.com/dms/image/v2/D4E03AQFhIHTA-7Yisg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710599898260?e=1760572800&v=beta&t=4OgrGlAuEfvje2SDfZQ4JYN4I_4Kpzwpamn-mRMMr4w") no-repeat center/cover;
+  opacity: 0.8;
   mix-blend-mode: screen;
-  animation: flicker 4s infinite steps(3);
 }
 
-/* Glitch keyframes */
-@keyframes crt-glitch {
+/* Red channel offset */
+.profile-img::before {
+  left: -2px;
+  animation: glitchRed 2.8s infinite;
+  clip-path: inset(10% 0 50% 0);
+  filter: hue-rotate(310deg);
+}
+
+/* Blue channel offset */
+.profile-img span::before {
+  right: -2px;
+  animation: glitchBlue 3.3s infinite;
+  clip-path: inset(40% 0 20% 0);
+  filter: hue-rotate(200deg);
+}
+
+/* Distorted flicker band */
+.profile-img span::after {
+  top: -3px;
+  animation: glitchSlice 2s infinite;
+  clip-path: inset(70% 0 5% 0);
+  filter: brightness(1.4);
+}
+
+/* Animations */
+@keyframes baseFlicker {
+  0%, 100% { opacity: 0.95; }
+  45% { opacity: 0.8; transform: skewX(-2deg); }
+  50% { opacity: 1; transform: skewX(3deg); }
+  70% { opacity: 0.7; transform: translateX(-3px); }
+}
+
+@keyframes glitchRed {
   0%, 100% { transform: none; }
-  20% { transform: skewX(-3deg) translateX(-2px); }
-  25% { transform: translateX(3px); filter: hue-rotate(10deg); }
-  45% { transform: translateX(-3px) skewY(2deg); }
-  50% { transform: translateX(4px); filter: hue-rotate(-10deg); }
-  70% { transform: skewX(2deg) translateX(-1px); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(2px) skewY(2deg); }
+  60% { transform: translateX(-1px) skewX(-2deg); }
+  80% { transform: translateX(3px); }
+}
+
+@keyframes glitchBlue {
+  0%, 100% { transform: none; }
+  15% { transform: translateX(3px); }
+  35% { transform: translateX(-2px) skewY(-1deg); }
+  55% { transform: translateX(2px) skewX(3deg); }
+  75% { transform: translateX(-3px); }
+}
+
+@keyframes glitchSlice {
+  0%, 100% { transform: none; }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(3px) skewX(5deg); }
+  75% { transform: translateX(-3px) skewY(-2deg); }
 }
 
 @keyframes scanlines {
   from { background-position: 0 0; }
   to { background-position: 0 100%; }
-}
-
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 0.6; }
-  20%, 24%, 55% { opacity: 1; }
 }
 
 /* H3 Text Styling */
