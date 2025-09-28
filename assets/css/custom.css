@@ -269,27 +269,30 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* === Hologram / Yellowjackets-style Glitch === */
+/* === Yellowjackets-Style Static Transmission Glitch === */
 .profile-img {
   position: relative;
   display: inline-block;
   overflow: hidden;
-}
-
-.profile-img img {
-  display: block;
-  max-width: 100%;
-  border: 2px solid #00f7ff; /* cyan neon frame */
+  border: 2px solid #00f7ff;
   border-radius: 8px;
   box-shadow: 
-    0 0 10px rgba(0, 247, 255, 0.9),
-    0 0 20px rgba(0, 247, 255, 0.6),
-    0 0 40px rgba(0, 247, 255, 0.4);
-  filter: contrast(1.2) brightness(1.1);
-  animation: baseFlicker 3s infinite steps(2);
+    0 0 10px #00f7ff,
+    0 0 25px rgba(0, 247, 255, 0.6),
+    0 0 50px rgba(0, 247, 255, 0.3);
+  animation: borderGlitch 3s infinite;
 }
 
-/* Scanline overlay */
+/* Main image */
+.profile-img img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  filter: contrast(1.2) brightness(1.1);
+  animation: baseFlicker 2.7s infinite steps(2);
+}
+
+/* Scanline effect */
 .profile-img::after {
   content: "";
   position: absolute;
@@ -297,67 +300,85 @@ h1.sitename {
   border-radius: 8px;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0, 247, 255, 0.1) 0px,
-    rgba(0, 247, 255, 0.1) 2px,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 2px,
     transparent 2px,
     transparent 4px
   );
-  mix-blend-mode: screen;
+  mix-blend-mode: overlay;
   pointer-events: none;
-  animation: scanlines 1.2s linear infinite;
+  animation: scanlines 1s linear infinite;
 }
 
-/* Glitch slices (3 layers shifted) */
-.profile-img::before,
+/* Static noise overlay */
+.profile-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif") center/cover repeat;
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: noiseFlicker 0.3s steps(2) infinite;
+}
+
+/* RGB Glitch Layers */
 .profile-img span::before,
 .profile-img span::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 8px;
+  background: inherit;
   background: url("https://media.licdn.com/dms/image/v2/D4E03AQFhIHTA-7Yisg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710599898260?e=1760572800&v=beta&t=4OgrGlAuEfvje2SDfZQ4JYN4I_4Kpzwpamn-mRMMr4w") no-repeat center/cover;
   opacity: 0.8;
   mix-blend-mode: screen;
 }
 
-/* Red channel offset */
-.profile-img::before {
-  left: -2px;
-  animation: glitchRed 2.8s infinite;
-  clip-path: inset(10% 0 50% 0);
-  filter: hue-rotate(310deg);
-}
-
-/* Blue channel offset */
+/* Red layer */
 .profile-img span::before {
-  right: -2px;
-  animation: glitchBlue 3.3s infinite;
-  clip-path: inset(40% 0 20% 0);
-  filter: hue-rotate(200deg);
+  left: -3px;
+  filter: hue-rotate(310deg);
+  clip-path: inset(10% 0 55% 0);
+  animation: glitchRed 2.8s infinite;
 }
 
-/* Distorted flicker band */
+/* Blue layer */
 .profile-img span::after {
-  top: -3px;
-  animation: glitchSlice 2s infinite;
-  clip-path: inset(70% 0 5% 0);
-  filter: brightness(1.4);
+  right: -3px;
+  filter: hue-rotate(200deg);
+  clip-path: inset(50% 0 15% 0);
+  animation: glitchBlue 3.5s infinite;
 }
 
-/* Animations */
+/* ===== Animations ===== */
+@keyframes borderGlitch {
+  0%, 100% {
+    box-shadow: 0 0 10px #00f7ff, 0 0 25px rgba(0, 247, 255, 0.6), 0 0 50px rgba(0, 247, 255, 0.3);
+  }
+  40% {
+    box-shadow: 0 0 5px #ff004c, 0 0 20px #ff004c;
+    border-color: #ff004c;
+  }
+  60% {
+    box-shadow: 0 0 5px #00f7ff, 0 0 15px #00f7ff;
+  }
+}
+
 @keyframes baseFlicker {
-  0%, 100% { opacity: 0.95; }
-  45% { opacity: 0.8; transform: skewX(-2deg); }
-  50% { opacity: 1; transform: skewX(3deg); }
-  70% { opacity: 0.7; transform: translateX(-3px); }
+  0%, 100% { opacity: 1; transform: none; }
+  30% { opacity: 0.85; transform: skewX(-2deg); }
+  45% { opacity: 0.7; transform: translateX(-3px); }
+  55% { opacity: 1; transform: skewX(3deg); }
+  80% { opacity: 0.9; transform: translateX(2px); }
 }
 
 @keyframes glitchRed {
   0%, 100% { transform: none; }
   20% { transform: translateX(-4px); }
-  40% { transform: translateX(2px) skewY(2deg); }
-  60% { transform: translateX(-1px) skewX(-2deg); }
-  80% { transform: translateX(3px); }
+  50% { transform: translateX(2px) skewY(2deg); }
+  70% { transform: translateX(-2px); }
 }
 
 @keyframes glitchBlue {
@@ -368,16 +389,14 @@ h1.sitename {
   75% { transform: translateX(-3px); }
 }
 
-@keyframes glitchSlice {
-  0%, 100% { transform: none; }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(3px) skewX(5deg); }
-  75% { transform: translateX(-3px) skewY(-2deg); }
-}
-
 @keyframes scanlines {
   from { background-position: 0 0; }
   to { background-position: 0 100%; }
+}
+
+@keyframes noiseFlicker {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.25; }
 }
 
 /* H3 Text Styling */
