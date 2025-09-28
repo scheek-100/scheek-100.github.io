@@ -269,6 +269,54 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
+/* === Hologram Effect for Profile Pic === */
+.profile-img img {
+  position: relative;
+  border: 2px solid #00f7ff;  /* neon cyan outline */
+  border-radius: 8px;
+  box-shadow: 
+    0 0 12px rgba(0, 247, 255, 0.8),
+    0 0 24px rgba(0, 247, 255, 0.6),
+    0 0 48px rgba(0, 247, 255, 0.4);
+  filter: contrast(1.2) brightness(1.1);
+  animation: hologram-flicker 3s infinite;
+}
+
+/* Scanline overlay */
+.profile-img img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 247, 255, 0.1) 0px,
+    rgba(0, 247, 255, 0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: scanlines 4s linear infinite;
+}
+
+/* Flicker */
+@keyframes hologram-flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.97; }
+  50% { opacity: 0.92; }
+  55% { opacity: 0.97; }
+}
+
+/* Scanline movement */
+@keyframes scanlines {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+
+/* H3 Text Styling */
 #about h3 {
   font-family: 'VT323', monospace;
   font-size: 1.8rem;
