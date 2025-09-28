@@ -127,6 +127,51 @@ h1.sitename {
 }
 
 /* ==========================================================
+   NAVIGATION MENU
+   ========================================================== */
+
+/* Desktop Nav */
+@media (min-width: 1200px) {
+  .navmenu a,
+  .navmenu a:focus {
+    font-family: 'Orbitron', sans-serif;  /* <-- your new font */
+    font-weight: 600;                     /* bolder for sharper look */
+    color: #00f7ff;                       /* neon cyan font */
+    background-color: transparent;        /* clean by default */
+    transition: 0.3s;
+  }
+
+  .navmenu li:hover > a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: #39ff14;                       /* neon green on hover/active */
+    background-color: rgba(0, 0, 0, 0.6); /* subtle dark backdrop */
+    border-radius: 4px;
+  }
+}
+
+/* Mobile Nav */
+@media (max-width: 1199px) {
+  .navmenu ul {
+    background-color: rgba(10, 10, 30, 0.95); /* dark navy/purple cyberpunk panel */
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #00f7ff; /* default neon cyan */
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: #39ff14; /* neon green highlight */
+  }
+}
+
+/* ==========================================================
    HERO
    ========================================================== */
 /* Ensure hero image acts as background */
