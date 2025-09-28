@@ -130,7 +130,7 @@ h1.sitename {
    NAVIGATION MENU
    ========================================================== */
 
-/* Desktop Nav */
+//* Desktop Nav */
 @media (min-width: 1200px) {
   .navmenu a,
   .navmenu a:focus {
@@ -170,7 +170,6 @@ h1.sitename {
     color: #39ff14; /* neon green highlight */
   }
 }
-
 /* ==========================================================
    HERO
    ========================================================== */
