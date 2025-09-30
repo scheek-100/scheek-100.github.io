@@ -649,6 +649,13 @@ h1.sitename {
     0 0 24px #00f7ff;
 }
 
+#testimonials .quote-icon-left,
+#testimonials .quote-icon-right {
+  color: #39ff14; 
+  font-size: 1.5rem; /* make the quotes pop */
+  vertical-align: middle;
+}
+
 /* ==========================================================
    CONTACT FORM
    ========================================================== */
