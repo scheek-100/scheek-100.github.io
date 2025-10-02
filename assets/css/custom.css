@@ -550,6 +550,27 @@ h1.sitename {
 }
 
 /* ============================================
+   TECH PORTFOLIO
+   ============================================ */
+
+/* Portfolio section h4 styling */
+.portfolio-info h4 {
+  font-family: 'VT323', monospace;
+  font-weight: bold;
+  color: #90ee90;
+  text-transform: uppercase;
+  display: inline-flex;
+  /* hug text */
+  align-items: center;
+  padding: 4px 10px;
+  margin: 0 0 12px 0;
+  /* keep spacing below only */
+  border: 2px solid #90ee90;
+  border-radius: 4px;
+  box-shadow: 0 0 6px #90ee90, 0 0 12px #90ee90 inset;
+}
+
+/* ============================================
    BLOG ACCORDION STYLING (Cyberpunk)
    ============================================ */
 
