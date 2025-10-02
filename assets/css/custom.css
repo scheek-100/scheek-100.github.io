@@ -553,40 +553,11 @@ h1.sitename {
    TECH PORTFOLIO
    ============================================ */
 
-/* Neon text box style for portfolio section */
+/* Neon transparent box for portfolio section labels */
 .portfolio-info h4 {
   font-family: 'VT323', monospace;
   font-weight: bold;
-  font-size: 1.6rem; /* tweak for balance */
-  text-transform: uppercase;
-
-  /* neon text color */
-  color: #39ff14;
-  text-shadow:
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14;
-
-  /* box around text */
-  display: inline-block; /* ensures border hugs text */
-  padding: 4px 12px;
-  border: 2px solid #39ff14;
-  border-radius: 6px;
-
-  /* neon glow around the box */
-  box-shadow:
-    0 0 6px #39ff14,
-    0 0 12px #39ff14,
-    inset 0 0 6px rgba(57, 255, 20, 0.6);
-  
-  background: transparent; /* transparent background */
-}
-
-/* Neon label with transparent background */
-.portfolio-info h4 {
-  font-family: 'VT323', monospace;
-  font-weight: bold;
-  font-size: 1.2rem;   /* adjust size as needed */
+  font-size: 1.4rem;   /* adjust size */
   text-transform: uppercase;
 
   /* neon green text */
@@ -596,16 +567,17 @@ h1.sitename {
     0 0 8px #39ff14,
     0 0 16px #39ff14;
 
-  /* box border hugging text */
+  /* border hugging text */
   display: inline-block;
-  padding: 4px 10px;
+  padding: 4px 12px;
+  margin: 0 0 12px 0;
   border: 2px solid #39ff14;
-  border-radius: 4px;
+  border-radius: 6px;
 
-  /* keep transparent background */
-  background: transparent;
+  /* force no background */
+  background-color: transparent !important;
 
-  /* subtle glow only around border, not filling behind */
+  /* border glow only (removed inset so no fill) */
   box-shadow:
     0 0 6px #39ff14,
     0 0 12px #39ff14;
