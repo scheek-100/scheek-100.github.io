@@ -572,7 +572,6 @@ h1.sitename {
 
 .portfolio h4 {
   font-family: 'VT323', monospace;
-  /* adjust size as needed */
   font-weight: bold;
   color: #39ff14;
   /* neon green */
@@ -580,7 +579,6 @@ h1.sitename {
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
-  margin-bottom: 8px;
 }
 /* ============================================
    BLOG ACCORDION STYLING (Cyberpunk)
