@@ -665,11 +665,8 @@ h1.sitename {
 }
 
 /* Testimonials h4 styling */
-.resume-item h4 {
+#testimonials h4 {
   font-family: 'VT323', monospace;
-  /* adjust size as needed */
-  font-weight: bold;
-  color: #39ff14;
 }
 
 /* ==========================================================
