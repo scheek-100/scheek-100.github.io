@@ -670,6 +670,10 @@ h1.sitename {
   color: #39ff14; 
 }
 
+.testimonials .testimonial-item swiper-wrapper {
+  color: #90ee90;
+}
+
 /* ==========================================================
    CONTACT FORM
    ========================================================== */
