@@ -903,7 +903,7 @@ section,
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+  background-color: var(--#39ff14);
 }
 
 @media (min-width: 992px) {
@@ -1084,7 +1084,7 @@ opacity: 1;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-background-color: var(--accent-color);
+background-color: var(--#39ff14);
 }
 
 .portfolio-details .portfolio-info {
