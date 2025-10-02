@@ -570,6 +570,18 @@ h1.sitename {
   box-shadow: 0 0 6px #90ee90, 0 0 12px #90ee90 inset;
 }
 
+.portfolio h4 {
+  font-family: 'VT323', monospace;
+  /* adjust size as needed */
+  font-weight: bold;
+  color: #39ff14;
+  /* neon green */
+  text-shadow:
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14;
+  margin-bottom: 8px;
+}
 /* ============================================
    BLOG ACCORDION STYLING (Cyberpunk)
    ============================================ */
