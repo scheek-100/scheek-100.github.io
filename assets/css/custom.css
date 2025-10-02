@@ -553,32 +553,33 @@ h1.sitename {
    TECH PORTFOLIO
    ============================================ */
 
-/* Portfolio section h4 styling */
+/* Neon text box style for portfolio section */
 .portfolio-info h4 {
   font-family: 'VT323', monospace;
   font-weight: bold;
-  color: #90ee90;
+  font-size: 1.6rem; /* tweak for balance */
   text-transform: uppercase;
-  display: inline-flex;
-  /* hug text */
-  align-items: center;
-  padding: 4px 10px;
-  margin: 0 0 12px 0;
-  /* keep spacing below only */
-  border: 2px solid #90ee90;
-  border-radius: 4px;
-  box-shadow: 0 0 6px #90ee90, 0 0 12px #90ee90 inset;
-}
 
-.portfolio h4 {
-  font-family: 'VT323', monospace;
-  font-weight: bold;
+  /* neon text color */
   color: #39ff14;
-  /* neon green */
   text-shadow:
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
+
+  /* box around text */
+  display: inline-block; /* ensures border hugs text */
+  padding: 4px 12px;
+  border: 2px solid #39ff14;
+  border-radius: 6px;
+
+  /* neon glow around the box */
+  box-shadow:
+    0 0 6px #39ff14,
+    0 0 12px #39ff14,
+    inset 0 0 6px rgba(57, 255, 20, 0.6);
+  
+  background: transparent; /* transparent background */
 }
 /* ============================================
    BLOG ACCORDION STYLING (Cyberpunk)
