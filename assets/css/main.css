@@ -1084,7 +1084,7 @@ opacity: 1;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-background-color: var(--#39ff14);
+background-color: var(--accent-color);
 }
 
 .portfolio-details .portfolio-info {
