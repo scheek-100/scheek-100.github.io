@@ -553,6 +553,44 @@ h1.sitename {
    TECH PORTFOLIO
    ============================================ */
 
+/* Portfolio filter tabs with VT323 font */
+.portfolio-filters li {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  /* default state */
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+/* Hover state */
+.portfolio-filters li:hover {
+  color: #39ff14;
+  text-shadow:
+    0 0 4px #39ff14,
+    0 0 8px #39ff14;
+}
+
+/* Active filter */
+.portfolio-filters li.filter-active {
+  color: #39ff14;
+  text-shadow:
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14;
+  border: 2px solid #39ff14;
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: inline-block;
+  background: transparent;
+  box-shadow:
+    0 0 6px #39ff14,
+    0 0 12px #39ff14;
+}
+
 /* Neon transparent box for portfolio section labels */
 .portfolio-info h4 {
   font-family: 'VT323', monospace;
