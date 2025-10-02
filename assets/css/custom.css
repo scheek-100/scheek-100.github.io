@@ -670,7 +670,7 @@ h1.sitename {
   color: #39ff14; 
 }
 
-.testimonials .testimonial-item swiper-slide {
+#swiper-wrapper swiper-slide {
   color: #90ee90;
 }
 
