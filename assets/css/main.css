@@ -903,7 +903,7 @@ section,
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--#39ff14);
+  background-color: var(--accent-color);
 }
 
 @media (min-width: 992px) {
