@@ -269,7 +269,7 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* === Profile Pic Cyber Glitch Effect=== */
+/* === CYBER GLITCH EFFECT (VERIFIED VERSION) === */
 .glitch-wrapper {
   position: relative;
   display: inline-block;
@@ -279,7 +279,7 @@ h1.sitename {
   animation: neonPulse 3s infinite ease-in-out;
 }
 
-/* Base Image Enhancements */
+/* Base Image */
 .glitch-img {
   display: block;
   width: 100%;
@@ -299,7 +299,7 @@ h1.sitename {
   }
 }
 
-/* Pseudo Glitch Layers */
+/* Scanline and Glow Layers */
 .glitch-wrapper::before,
 .glitch-wrapper::after {
   content: '';
@@ -308,25 +308,37 @@ h1.sitename {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Scanlines.png');
-  background-size: cover;
-  opacity: 0.15;
-  mix-blend-mode: screen;
-  animation: flicker 2s infinite steps(2, end);
+  pointer-events: none;
 }
 
+/* Visible Scanlines */
+.glitch-wrapper::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 246, 255, 0.08) 0px,
+    rgba(0, 246, 255, 0.08) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.25;
+  animation: flicker 1.6s infinite steps(2, end);
+}
+
+/* Flickering Glow Layer */
 .glitch-wrapper::after {
   background: linear-gradient(
-    rgba(0, 246, 255, 0.2),
+    rgba(0, 246, 255, 0.15),
     rgba(0, 246, 255, 0.05)
   );
   mix-blend-mode: overlay;
+  animation: flicker 2.5s infinite ease-in-out;
 }
 
 /* Flicker Animation */
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 0.1; }
-  20%, 24%, 55% { opacity: 0.3; }
+  20%, 24%, 55% { opacity: 0.35; }
 }
 
 /* Optional Hover Boost */
@@ -335,10 +347,11 @@ h1.sitename {
   transform: scale(1.02);
 }
 
+/* Subtle Horizontal Glitch (Motion) */
 @keyframes dataGlitch {
   0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(-2px, 0); }
-  40% { transform: translate(2px, 0); }
+  20% { transform: translate(-3px, 0); }
+  40% { transform: translate(3px, 0); }
   60% { transform: translate(-1px, 0); }
   80% { transform: translate(1px, 0); }
 }
