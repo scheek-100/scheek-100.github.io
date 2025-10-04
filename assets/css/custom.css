@@ -335,6 +335,17 @@ h1.sitename {
   transform: scale(1.02);
 }
 
+@keyframes dataGlitch {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 0); }
+  40% { transform: translate(2px, 0); }
+  60% { transform: translate(-1px, 0); }
+  80% { transform: translate(1px, 0); }
+}
+
+.glitch-wrapper {
+  animation: neonPulse 3s infinite ease-in-out, dataGlitch 5s infinite ease-in-out;
+}
 
 /* H3 Text Styling */
 #about h3 {
