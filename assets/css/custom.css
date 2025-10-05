@@ -94,40 +94,47 @@ h1.sitename {
 }
 
 /* ==========================================================
-   VT323 GREEN PARAGRAPH FONT
+   FRAMED SUBTITLES (VT323T)
    ========================================================== */
-/* Framed parapgraph subtitles */
+/* === Framed Paragraph Subtitles (VT323 Terminal Hybrid) === */
 .framed-subtitle {
   font-family: 'VT323', monospace;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* keep original size */
   font-weight: bold;
-  color: #39ff14;
-  display: block;
-  /* full block so centering works cleanly */
-  padding: 6px 14px;
-  /* balanced padding */
+  color: #39ff14; /* same neon green */
+  display: block; /* full block for clean centering */
+  padding: 6px 14px; /* unchanged */
   border: 2px solid #39ff14;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(5, 10, 15, 0.9); /* terminal-style matte background */
+  letter-spacing: 0.5px;
+
+  /* === Enhanced glow with crisp black outline === */
   text-shadow:
+    0 0 1px #000,   /* subtle dark edge for clarity */
+    0 0 2px #000,
     0 0 4px #39ff14,
     0 0 8px #39ff14,
-    0 0 16px #39ff14;
-  box-shadow: 0 0 6px #39ff14;
+    0 0 16px #39ff14,
+    0 0 32px #39ff14;
 
-  width: 700px;
-  /* fixed box width */
-  max-width: 90%;
-  /* prevents overflow on small screens */
-  margin: 12px auto 0 auto;
-  /* centers the box itself */
+  /* === Glow frame for balance === */
+  box-shadow:
+    0 0 6px #39ff14,
+    inset 0 0 8px rgba(57, 255, 20, 0.2);
+
+  width: 700px; /* keep existing width */
+  max-width: 90%; /* responsive protection */
+  margin: 12px auto 0 auto; /* centered alignment */
 
   text-align: justify;
-  /* spreads text evenly */
-  text-align-last: center;
-  /* ensures last line is centered */
+  text-align-last: center; /* ensures last line centered */
+  position: relative;
 }
 
+/* ==========================================================
+   PARAGRAPHS (VT323T)
+   ========================================================== */
 
 /* Pale green VT323 for content text only */
 .section-black p,
