@@ -4,54 +4,28 @@
    INDEX
    ========================================================== */
 
-/* Index - Sitename Text Styling */
+/* Index - Sitename Text Styling (DotGothic16 version) */
 h1.sitename {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   font-size: 64px;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 15px;
   text-transform: uppercase;
-  color: #00f7ff;
-  /* neon cyan */
-  text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff, 0 0 32px #00f7ff;
+  color: #00eaff; /* slightly deeper cyan for realism */
+  letter-spacing: 2px;
+
+  /* Crisp digital glow + dark shadow for contrast */
+  text-shadow:
+    3px 3px 8px rgba(0, 0, 0, 0.85), /* dark back shadow to sharpen edges */
+    0 0 3px #00eaff,                 /* subtle inner glow */
+    0 0 6px #00eaff;                 /* minimal outer glow */
 }
 
 /* ==========================================================
-   SECTION TITLES
+   SECTION TITLES (DotGothic16)
    ========================================================== */
 
-/* === Neon Divider Lines (muted glow) === */
-.section-title h2::before,
-.section-title h2::after,
-.section-header h2::before,
-.section-header h2::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 200px;
-  height: 2px;
-  background: #00eaff;
-  box-shadow:
-    0 0 4px #00eaff,   /* smaller glow radius for crispness */
-    0 0 10px #00eaff;
-  opacity: 0.9; /* slightly less intense */
-}
-
-.section-title h2::before,
-.section-header h2::before {
-  right: 100%;
-  transform: translateY(-50%) skewX(-30deg);
-}
-
-.section-title h2::after,
-.section-header h2::after {
-  left: 100%;
-  transform: translateY(-50%) skewX(30deg);
-}
-
-/* Text Experiment */
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
-
+/* Main title text */
 .section-title h2,
 .section-header h2 {
   position: relative;
@@ -62,19 +36,61 @@ h1.sitename {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #00eaff;
+
+  /* Sharper glow and deeper back shadow for definition */
   text-shadow:
-    2px 2px 4px rgba(0, 0, 0, 0.8), /* dark contrast shadow */
-    0 0 3px #00eaff,
-    0 0 6px #00eaff;
+    3px 3px 8px rgba(0, 0, 0, 0.9), /* solid dark back shadow for contrast */
+    0 0 2px #00eaff,                /* inner precision glow */
+    0 0 6px #00eaff;                /* outer neon softness */
 }
 
-/* Section subtitles (paragraphs under H2) */
+/* === DIVIDER LINES (tech-inspired, reduced glow) === */
+.section-title h2::before,
+.section-title h2::after,
+.section-header h2::before,
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00eaff 20%,
+    #00eaff 80%,
+    transparent
+  );
+  box-shadow:
+    0 0 4px #00eaff,
+    0 0 8px rgba(0, 234, 255, 0.5);
+  opacity: 0.8;
+}
+
+/* Left divider */
+.section-title h2::before,
+.section-header h2::before {
+  right: 100%;
+  transform: translateY(-50%) skewX(-30deg);
+}
+
+/* Right divider */
+.section-title h2::after,
+.section-header h2::after {
+  left: 100%;
+  transform: translateY(-50%) skewX(30deg);
+}
+
+/* === SUBTITLES (paragraphs under titles) === */
 .section-title p,
 .section-header p {
-  font-size: 16px;
-  color: #bbb;
-  margin-top: 10px;
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 15px;
+  color: #b5c7cc;
   text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* ==========================================================
@@ -130,54 +146,67 @@ h1.sitename {
    NAVIGATION MENU
    ========================================================== */
 
+/* === NAVIGATION MENU (DotGothic16 – refined tech aesthetic) === */
+
 /* Desktop Nav */
 @media (min-width: 1200px) {
   .navmenu a,
   .navmenu a:focus {
-    font-family: 'Orbitron', sans-serif;  /* cyberpunk font */
-    font-weight: 600;
-    color: #00f7ff;                       /* neon cyan */
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #00eaff; /* refined cyan */
     background-color: transparent;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    text-shadow:
+      1px 1px 4px rgba(0, 0, 0, 0.8), /* crisp back shadow */
+      0 0 3px #00eaff,
+      0 0 6px #00eaff; /* soft inner glow */
   }
 
   .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #39ff14;                       /* neon green on hover/active */
-    background-color: rgba(0, 0, 0, 0.6); /* subtle dark backdrop */
+    color: #39ff14; /* neon green accent */
+    background-color: rgba(0, 0, 0, 0.7); /* subtle dark hover plate */
     border-radius: 4px;
-    text-shadow: 
-      0 0 6px #39ff14,
-      0 0 12px #39ff14,
-      0 0 24px #39ff14;                   /* glow effect */
-    box-shadow: 0 0 8px #39ff14;          /* glowing box behind */
+    text-shadow:
+      1px 1px 4px rgba(0, 0, 0, 0.8),
+      0 0 5px #39ff14,
+      0 0 12px #39ff14; /* contained glow */
+    box-shadow: 0 0 6px rgba(57, 255, 20, 0.6); /* mild edge aura */
   }
 }
 
 /* Mobile Nav */
 @media (max-width: 1199px) {
   .navmenu ul {
-    background-color: rgba(10, 10, 30, 0.95); /* dark cyberpunk panel */
+    background-color: rgba(10, 10, 30, 0.95); /* dark glass panel */
+    backdrop-filter: blur(4px); /* subtle futuristic blur */
   }
 
   .navmenu a,
   .navmenu a:focus {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'DotGothic16', sans-serif;
     font-size: 18px;
-    font-weight: 600;
-    color: #00f7ff; /* default neon cyan */
-    transition: 0.3s;
+    font-weight: 400;
+    color: #00eaff; /* calm cyan */
+    letter-spacing: 1px;
+    text-shadow:
+      1px 1px 4px rgba(0, 0, 0, 0.8),
+      0 0 3px #00eaff;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #39ff14; /* neon green */
-    text-shadow: 
-      0 0 6px #39ff14,
-      0 0 12px #39ff14,
-      0 0 24px #39ff14;  /* glowing effect */
+    color: #39ff14; /* signal green */
+    text-shadow:
+      1px 1px 4px rgba(0, 0, 0, 0.8),
+      0 0 5px #39ff14,
+      0 0 10px #39ff14;
   }
 }
 
@@ -217,18 +246,25 @@ h1.sitename {
   z-index: 3;
 }
 
-/* Force hero title (h2) to Orbitron */
+/* === HERO SECTION TITLE (DotGothic16 – retro-tech refined) === */
 .hero h2,
 #hero h2,
 #hero .container h2 {
-  font-family: "Orbitron", sans-serif !important;
-  font-weight: 700 !important;
+  font-family: 'DotGothic16', sans-serif !important;
+  font-weight: 400 !important;
   font-size: 3rem !important;
-  color: #00f7ff !important;
-  text-shadow: 0 0 12px rgba(0, 247, 255, 0.8) !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #00eaff !important;
+
+  /* Sharper digital glow with dark contrast */
+  text-shadow:
+    3px 3px 8px rgba(0, 0, 0, 0.85) !important,  /* deep back shadow */
+    0 0 3px #00eaff !important,                  /* tight inner glow */
+    0 0 8px rgba(0, 234, 255, 0.6) !important;   /* subtle outer aura */
 }
 
-/* Subtitle / typed text */
+/* VT323T Subtitle / typed text */
 #hero p {
   font-family: "VT323", monospace;
   font-size: 1.5rem;
@@ -364,7 +400,7 @@ h1.sitename {
   100% { background-position: 60px 60px; }
 }
 
-/* H3 Text Styling */
+/* VT323T H3 Text Styling */
 #about h3 {
   font-family: 'VT323', monospace;
   font-size: 1.8rem;
@@ -460,7 +496,7 @@ h1.sitename {
 }
 
 /* ==========================================================
-   RESUME
+   RESUME - VT323T
    ========================================================== */
 
 /* Resume section h5 styling */
@@ -593,78 +629,89 @@ h1.sitename {
 }
 
 /* ============================================
-   BLOG ACCORDION STYLING (Cyberpunk)
+   BLOG ACCORDION STYLING (DotGothic16 + VT323)
    ============================================ */
 
 /* Accordion container centered with fixed width */
 #accordionBlog {
-  max-width: 800px;        /* fixed width */
-  margin: 0 auto;          /* center horizontally */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Accordion headers (button text) */
 #accordionBlog .accordion-button {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   font-size: 1.1rem;
-  font-weight: 700;
-  color: #00f7ff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #00eaff;
   background: rgba(0, 0, 0, 0.75);
-  border: 2px solid #00f7ff;
-  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
-  box-shadow: 0 0 8px #00f7ff inset;
+  border: 2px solid #00eaff;
+  text-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.8),
+    0 0 3px #00eaff,
+    0 0 6px #00eaff;
+  box-shadow: inset 0 0 8px rgba(0, 234, 255, 0.6);
   transition: all 0.3s ease;
 }
 
 #accordionBlog .accordion-button:hover {
-  background: #00f7ff;
-  color: #12151f;
-  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+  background: #00eaff;
+  color: #0d0f18;
+  box-shadow:
+    0 0 10px #00eaff,
+    0 0 20px #00eaff;
 }
 
 #accordionBlog .accordion-button:focus {
   outline: none;
-  box-shadow: 0 0 12px #00f7ff, 0 0 24px #00f7ff;
+  box-shadow:
+    0 0 12px #00eaff,
+    0 0 24px #00eaff;
 }
 
-/* Keep collapsed state looking styled */
+/* Collapsed state styling */
 #accordionBlog .accordion-button.collapsed {
-  background: rgba(0, 0, 0, 0.6);
-  color: #00f7ff;
-  border: 2px solid #00f7ff;
+  background: rgba(0, 0, 0, 0.65);
+  color: #00eaff;
+  border: 2px solid #00eaff;
 }
 
-/* Accordion body text */
+/* Accordion body (article content) */
 #accordionBlog .accordion-body {
   font-family: 'VT323', monospace;
   font-size: 1.1rem;
-  color: #9aff9a; /* pale green */
-  background: rgba(0, 0, 0, 0.7);
+  color: #9aff9a;
+  background: rgba(0, 0, 0, 0.75);
   padding: 20px;
-  border: 1px solid #00f7ff;
-  box-shadow: inset 0 0 10px #00f7ff;
+  border: 1px solid #00eaff;
+  box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.6);
 }
 
-/* Article links styled like glowing buttons */
+/* Article links styled as glowing buttons */
 #accordionBlog .accordion-body a.btn {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-
-  color: #12151f;
-  background: #00f7ff;
-  border: 2px solid #00f7ff;
+  letter-spacing: 1px;
+  color: #0d0f18;
+  background: #00eaff;
+  border: 2px solid #00eaff;
   border-radius: 4px;
   padding: 6px 14px;
-
-  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
+  box-shadow:
+    0 0 8px #00eaff,
+    0 0 16px #00eaff;
   transition: all 0.3s ease;
 }
 
 #accordionBlog .accordion-body a.btn:hover {
-  background: #12151f;
-  color: #00f7ff;
-  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, inset 0 0 10px #00f7ff;
+  background: #0d0f18;
+  color: #00eaff;
+  box-shadow:
+    0 0 10px #00eaff,
+    0 0 20px #00eaff,
+    inset 0 0 10px #00eaff;
 }
 
 /* ==========================================================
@@ -798,16 +845,19 @@ h1.sitename {
   z-index: 0;
 }
 
-/* Title (Orbitron) */
+/* FOOTER TITLE (DotGothic16) */
 #footer h3.sitename {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 15px;
   text-transform: uppercase;
-  color: #00f7ff;
-  /* neon cyan */
-  text-shadow: 0 0 6px #00f7ff, 0 0 12px #00f7ff;
+  letter-spacing: 2px;
+  color: #00eaff; /* deeper cyan tone for realism */
+  text-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.85), /* dark base shadow */
+    0 0 3px #00eaff,                 /* inner glow */
+    0 0 6px #00eaff;                 /* soft outer edge */
 }
 
 /* Body text (VT323) */
