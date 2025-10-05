@@ -20,7 +20,7 @@ h1.sitename {
    SECTION TITLES
    ========================================================== */
 
-/* Section Titles (H2 in .section-title or .section-header) */
+/* === Sharper Neon Title Styling === */
 .section-title h2,
 .section-header h2 {
   position: relative;
@@ -28,19 +28,19 @@ h1.sitename {
   font-size: 48px;
   font-weight: 700;
   font-family: 'Orbitron', sans-serif;
-  /* Force Orbitron */
-  color: #00f7ff;
-  /* Neon cyan */
+  color: #00eaff; /* slightly deeper cyan */
   text-transform: uppercase;
   letter-spacing: 4px;
   padding: 0 20px;
+
+  /* Sharper glow + dark shadow behind */
   text-shadow:
-    0 0 8px #00f7ff,
-    0 0 16px #00f7ff,
-    0 0 32px #00f7ff;
+    2px 2px 6px rgba(0, 0, 0, 0.8),   /* dark back shadow for contrast */
+    0 0 4px #00eaff,                  /* light inner glow */
+    0 0 8px #00eaff;                  /* faint outer glow only */
 }
 
-/* Neon glowing divider lines */
+/* === Neon Divider Lines (muted glow) === */
 .section-title h2::before,
 .section-title h2::after,
 .section-header h2::before,
@@ -50,10 +50,11 @@ h1.sitename {
   top: 50%;
   width: 200px;
   height: 2px;
-  background: #00f7ff;
+  background: #00eaff;
   box-shadow:
-    0 0 8px #00f7ff,
-    0 0 16px #00f7ff;
+    0 0 4px #00eaff,   /* smaller glow radius for crispness */
+    0 0 10px #00eaff;
+  opacity: 0.9; /* slightly less intense */
 }
 
 .section-title h2::before,
