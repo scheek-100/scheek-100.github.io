@@ -20,26 +20,6 @@ h1.sitename {
    SECTION TITLES
    ========================================================== */
 
-/* === Sharper Neon Title Styling === */
-.section-title h2,
-.section-header h2 {
-  position: relative;
-  display: inline-block;
-  font-size: 48px;
-  font-weight: 700;
-  font-family: 'Orbitron', sans-serif;
-  color: #00eaff; /* slightly deeper cyan */
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  padding: 0 20px;
-
-  /* Sharper glow + dark shadow behind */
-  text-shadow:
-    2px 2px 6px rgba(0, 0, 0, 0.8),   /* dark back shadow for contrast */
-    0 0 4px #00eaff,                  /* light inner glow */
-    0 0 8px #00eaff;                  /* faint outer glow only */
-}
-
 /* === Neon Divider Lines (muted glow) === */
 .section-title h2::before,
 .section-title h2::after,
