@@ -269,7 +269,7 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* === TRUE HOLOGRAPHIC TRANSMISSION EFFECT === */
+/* === ADVANCED CYBER TRANSMISSION DISTORTION === */
 .holo-static {
   position: relative;
   display: inline-block;
@@ -279,65 +279,82 @@ h1.sitename {
   box-shadow: 0 0 25px #00eaff55, 0 0 45px #00eaff33;
 }
 
-/* Base portrait stays still */
+/* Base image — static but slightly vivid */
 .holo-img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 12px;
-  filter: brightness(1.15) contrast(1.25) saturate(1.2);
+  filter: brightness(1.25) contrast(1.3) saturate(1.3);
+  animation: distortionWave 6s infinite ease-in-out;
 }
 
-/* Moving scanline wave overlay */
-.holo-static::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 255, 255, 0.08) 0px,
-    rgba(0, 255, 255, 0.08) 2px,
-    transparent 3px,
-    transparent 5px
-  );
-  animation: transmissionLines 3s linear infinite;
-  opacity: 0.35;
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-/* Moving shimmer bands */
+/* Scanline and flicker layers */
+.holo-static::before,
 .holo-static::after {
   content: '';
   position: absolute;
   inset: 0;
+  pointer-events: none;
+}
+
+/* Scanlines moving downward */
+.holo-static::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.06) 0px,
+    rgba(0, 255, 255, 0.06) 2px,
+    transparent 3px,
+    transparent 5px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.3;
+  animation: transmissionLines 2.8s linear infinite;
+}
+
+/* Random horizontal interference bands */
+.holo-static::after {
   background: linear-gradient(
     to bottom,
-    rgba(0, 255, 255, 0.05) 0%,
-    rgba(0, 255, 255, 0.25) 5%,
-    rgba(0, 255, 255, 0.05) 10%,
-    transparent 100%
+    transparent 0%,
+    rgba(0, 255, 255, 0.15) 2%,
+    transparent 5%,
+    transparent 10%,
+    rgba(0, 255, 255, 0.08) 12%,
+    transparent 20%
   );
-  animation: signalSweep 2.5s linear infinite;
   mix-blend-mode: screen;
-  pointer-events: none;
+  opacity: 0.5;
+  animation: signalDistort 4s ease-in-out infinite;
 }
 
 /* === ANIMATIONS === */
 
-/* Horizontal line drift (signal interference) */
-@keyframes transmissionLines {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 100px; }
+/* Slow undulating wave — subtle horizontal bend */
+@keyframes distortionWave {
+  0%, 100% { transform: skewX(0deg) translateX(0); }
+  10% { transform: skewX(2deg) translateX(-2px); }
+  25% { transform: skewX(-2deg) translateX(2px); }
+  45% { transform: skewX(1deg) translateX(-1px); }
+  60% { transform: skewX(-1deg) translateX(1px); }
+  80% { transform: skewX(3deg) translateX(-2px); }
 }
 
-/* Light wave sweeping downward */
-@keyframes signalSweep {
-  0% { transform: translateY(-100%); opacity: 0; }
-  10% { opacity: 0.3; }
-  50% { opacity: 0.5; transform: translateY(100%); }
-  90% { opacity: 0.2; }
-  100% { opacity: 0; transform: translateY(200%); }
+/* Scanlines drifting downward continuously */
+@keyframes transmissionLines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 200px; }
+}
+
+/* Randomized interference bursts */
+@keyframes signalDistort {
+  0%, 100% { opacity: 0.3; filter: none; }
+  10% { opacity: 0.6; filter: brightness(1.8) contrast(1.5); }
+  20% { opacity: 0.4; filter: hue-rotate(20deg); }
+  40% { opacity: 0.7; filter: brightness(1.5) contrast(1.8); }
+  60% { opacity: 0.35; filter: none; }
+  75% { opacity: 0.6; filter: brightness(1.4) contrast(1.6); }
+  85% { opacity: 0.4; }
 }
 
 /* H3 Text Styling */
