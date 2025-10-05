@@ -269,88 +269,40 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* Hologram Profile Pic */
-.hologram-img {
+/* === Restore Original Folio Layout === */
+#about .profile-img img {
   width: 100%;
-  border-radius: 12px;
-  background-color: #000;
-  box-shadow:
-    0 0 25px #00eaff55,
-    0 0 45px #00eaff33,
-    0 0 80px #00eaff22;
-  filter: brightness(1.15) contrast(1.35) saturate(1.3);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #00eaff55;
 }
 
-.hologram-img:hover {
-  transform: scale(1.02);
-  filter: brightness(1.3) contrast(1.5);
-}
-
-/* === ABOUT SECTION SPACING FIX (FOLIO TEMPLATE TUNED) === */
-
-/* Base layout — mobile first */
-#about .row {
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-/* Image column */
-#about .profile-img {
-  padding: 0 20px;
-  text-align: center;
-}
-
-/* Hologram image tweaks */
-#about .hologram-img {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 340px; /* keeps your hologram contained on mobile */
-  border-radius: 12px;
-}
-
-/* Text column */
 #about .content {
-  padding: 0 20px;
-  text-align: center;
+  padding-top: 10px;
 }
 
-/* === Medium screens (tablets and small laptops) === */
-@media (min-width: 768px) {
-  #about .row {
-    justify-content: space-between;
-    gap: 3rem;
-  }
+#about .intro-text {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #39ff14;
+  display: inline-block;
+  padding: 3px 8px;
+  border: 2px solid #39ff14;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  text-shadow:
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #39ff1444;
+}
+
+/* Adjust responsive spacing back to default */
+@media (min-width: 992px) {
   #about .profile-img {
-    text-align: left;
     padding-right: 30px;
-  }
-  #about .hologram-img {
-    max-width: 380px;
-  }
-  #about .content {
-    text-align: left;
-    padding-left: 10px;
-  }
-}
-
-/* === Large screens (desktop and ultrawide) === */
-@media (min-width: 1200px) {
-  #about .row {
-    gap: 4rem;
-  }
-  #about .hologram-img {
-    max-width: 420px;
-  }
-  #about .profile-img {
-    padding-right: 40px;
-  }
-  #about .content {
-    padding-left: 20px;
   }
 }
 
