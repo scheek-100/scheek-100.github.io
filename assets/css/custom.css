@@ -400,28 +400,43 @@ h1.sitename {
   100% { background-position: 60px 60px; }
 }
 
-/* VT323T H3 Text Styling */
+/* === ABOUT SECTION H3 (VT323 Terminal Hybrid) === */
 #about h3 {
   font-family: 'VT323', monospace;
-  font-size: 1.8rem;
-  /* match resume size */
+  font-size: 1.8rem; /* match resume size */
   font-weight: bold;
-  color: #39ff14;
-  /* neon green */
+  color: #39ff14; /* keep original neon green */
   display: inline-block;
-  /* makes glow hug the text */
   padding: 3px 8px;
-  border: 2px solid #39ff14;
-  /* matches resume h4 frame */
+  border: 2px solid #39ff14; /* same frame weight */
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
-  /* keeps letters sharp */
+  background: rgba(5, 10, 15, 0.9); /* terminal-style matte background */
+  letter-spacing: 0.5px;
+
+  /* Preserve glow intensity from original design */
   text-shadow:
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14;
+  box-shadow:
+    inset 0 0 10px rgba(57, 255, 20, 0.2),
+    0 0 6px #39ff14;
+
   margin-bottom: 15px;
-  box-shadow: 0 0 6px #39ff14;
+  position: relative;
+}
+
+/* === Subtle Blinking Cursor (Terminal Effect) === */
+#about h3::after {
+  content: "_";
+  color: #39ff14;
+  margin-left: 6px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 /* ==========================================================
