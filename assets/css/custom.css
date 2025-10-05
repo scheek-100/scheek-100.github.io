@@ -269,67 +269,6 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* === Restore Original Folio Layout === */
-#about .profile-img img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 30px #00eaff55;
-}
-
-#about .content {
-  padding-top: 10px;
-}
-
-#about .intro-text {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #39ff14;
-  display: inline-block;
-  padding: 3px 8px;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
-  text-shadow:
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14;
-  margin-top: 10px;
-  box-shadow: 0 0 10px #39ff1444;
-}
-
-/* Adjust responsive spacing back to default */
-@media (min-width: 992px) {
-  #about .profile-img {
-    padding-right: 30px;
-  }
-}
-
-/* Tighten vertical spacing in ABOUT section */
-#about {
-  padding-top: 40px; /* was likely 80px or more */
-  padding-bottom: 40px;
-}
-
-#about .section-title {
-  margin-bottom: 30px; /* reduce space under ABOUT title */
-}
-
-#about .profile-img {
-  margin-top: -10px; /* pull image slightly upward */
-}
-
-/* Optional: tweak for mobile screens only */
-@media (max-width: 768px) {
-  #about {
-    padding-top: 30px;
-  }
-  #about .section-title {
-    margin-bottom: 20px;
-  }
-}
-
 /* H3 Text Styling */
 #about h3 {
   font-family: 'VT323', monospace;
