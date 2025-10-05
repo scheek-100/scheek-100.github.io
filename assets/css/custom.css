@@ -97,44 +97,35 @@ h1.sitename {
    FRAMED SUBTITLES (VT323T)
    ========================================================== */
 
-/* === Unify Glow, Width, and Centering for All Framed Subtitles (EXCEPT #about) === */
-section:not(#about) .framed-subtitle,
-#services h4,
-#resume .framed-subtitle,
-#portfolio .framed-subtitle,
-#projects .framed-subtitle,
-##blog-accordion .framed-subtitle,
-#testimonials .framed-subtitle,
-#contact .framed-subtitle {
-  /* Font & color consistency */
+/* === Consistent Framed Subtitle Styling (All Sections EXCEPT #about) === */
+section:not(#about) p.framed-subtitle {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   font-weight: bold;
   color: #39ff14;
 
-  /* Framing and alignment */
+  /* === Frame and Background === */
   display: block;
   padding: 6px 14px;
-  border: 2px solid #39ff14;
+  border: 2px solid #39ff14;        /* neon green frame */
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
-
-  /* Neon + shadow layering for sharp clarity */
-  text-shadow:
-    3px 3px 8px rgba(0, 0, 0, 0.9),
-    0 0 2px #39ff14,
-    0 0 6px #39ff14,
-    0 0 12px #39ff14,
-    0 0 24px rgba(57, 255, 20, 0.8);
-
+  background: rgba(0, 0, 0, 0.4);   /* translucent black background */
   box-shadow:
-    0 0 6px #39ff14,
-    inset 0 0 8px rgba(57, 255, 20, 0.2);
+    0 0 6px #39ff14,                /* outer neon halo */
+    inset 0 0 8px rgba(57, 255, 20, 0.25); /* soft inner glow */
 
-  /* Center and constrain all boxes uniformly */
+  /* === Text Glow and Sharpening === */
+  text-shadow:
+    3px 3px 8px rgba(0, 0, 0, 0.9), /* deep back shadow for crisp edges */
+    0 0 2px #39ff14,                /* sharp inner glow */
+    0 0 6px #39ff14,                /* mid glow */
+    0 0 12px #39ff14,               /* soft outer halo */
+    0 0 24px rgba(57, 255, 20, 0.8);/* smooth diffusion */
+
+  /* === Centered and Consistent Width === */
   width: 700px;
   max-width: 90%;
-  margin: 12px auto 0 auto;
+  margin: 12px auto;
   text-align: justify;
   text-align-last: center;
 }
