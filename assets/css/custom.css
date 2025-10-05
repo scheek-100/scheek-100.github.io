@@ -878,123 +878,117 @@ section:not(#about) p.framed-subtitle {
    CONTACT FORM
    ========================================================== */
 
-/* === Strict Contact Form Scope === */
-#contact form,
-#contact-form {
-  all: initial; /* resets inherited global rules */
-  * {
-    all: unset;
-  }
+/* ==========================================================
+   CONTACT — Formspree Neon Version w/ Success Animation
+   ========================================================== */
+
+#contact form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  background: rgba(10, 10, 20, 0.6);
+  border: 2px solid rgba(0, 247, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.25), inset 0 0 8px rgba(0, 247, 255, 0.1);
+  backdrop-filter: blur(3px);
 }
 
-#contact-form input,
-#contact-form textarea,
-#contact-form button,
-#contact-form select,
-#contact-form label,
-#contact-form ::placeholder {
-  all: revert; /* restores normal styling defaults */
-}
-
-/* === Now safely reapply your actual contact form design === */
-#contact-form input,
-#contact-form textarea {
+#contact input,
+#contact textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(0, 247, 255, 0.25);
+  border-radius: 8px;
+  color: #9aff9a;
   font-family: 'VT323', monospace;
-  font-size: 1.1rem;
-  color: #39ff14;
-  border: 2px solid #39ff14;
-  border-radius: 4px;
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: inset 0 0 6px rgba(57, 255, 20, 0.3);
-}
-
-#contact-form ::placeholder {
-  font-family: 'VT323', monospace;
-  color: rgba(57, 255, 20, 0.6);
-}
-
-/* === Form messages isolated === */
-#contact-form .loading,
-#contact-form .error-message,
-#contact-form .sent-message {
-  display: none;
-  margin: 10px 0;
-  padding: 10px;
-  text-align: center;
-  border-radius: 4px;
-  font-family: 'VT323', monospace;
-  font-size: 1.1rem;
-}
-
-#contact-form .loading {
-  color: #00f7ff;
-  border: 1px solid #00f7ff;
-  box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
-}
-#contact-form .error-message {
-  color: #ff00ff;
-  border: 1px solid #ff00ff;
-  box-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff;
-}
-#contact-form .sent-message {
-  color: #39ff14;
-  border: 1px solid #39ff14;
-  box-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14;
-}
-
-/* Neon Button */
-.btn-neon {
-  background: transparent;
-  border: 2px solid #00f7ff;
-  color: #00f7ff;
-  text-transform: uppercase;
-  font-family: 'DotGothic16', sans-serif;
   font-size: 1.2rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  box-shadow: 0 0 8px #00f7ff, inset 0 0 8px #00f7ff;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  outline: none;
   transition: all 0.3s ease;
-  text-shadow:
-    0 0 4px #00f7ff,
-    0 0 8px #00f7ff;
 }
 
-.btn-neon:hover {
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: rgba(154, 255, 154, 0.4);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #00f7ff;
+  box-shadow: 0 0 10px #00f7ff, 0 0 25px rgba(0, 247, 255, 0.5);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Submit Button */
+#contact button[type="submit"] {
+  width: 100%;
   background: #00f7ff;
-  color: #0a0a0a;
-  box-shadow:
-    0 0 10px #00f7ff,
-    0 0 20px #00f7ff,
-    inset 0 0 12px #00f7ff;
-  text-shadow: none;
-}
-
-/* Restore global framed boxes */
-p.framed-subtitle {
-  all: revert !important;
-}
-
-/* Fix portfolio filter buttons */
-.isotope-filters li {
-  all: revert !important;
-  font-family: 'DotGothic16', sans-serif;
-  color: #00f7ff;
-  border: 2px solid #00f7ff;
-  padding: 6px 12px;
+  color: #0e121b;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 0 8px #00f7ff;
-  transition: 0.3s ease;
+  padding: 14px 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 16px #00f7ff, 0 0 36px rgba(0, 247, 255, 0.4);
 }
 
-.isotope-filters li.filter-active,
-.isotope-filters li:hover {
-  color: #0a0a0a;
+#contact button[type="submit"]:hover {
   background: #00f7ff;
-  box-shadow:
-    0 0 10px #00f7ff,
-    0 0 20px #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 20px #00f7ff, 0 0 45px rgba(0, 247, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* SUCCESS MESSAGE */
+#contact .sent-message {
+  display: none;
+  margin-top: 15px;
+  color: #12151f;
+  background: #39ff14;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 0 10px #39ff14, 0 0 20px rgba(57, 255, 20, 0.5);
+  animation: none;
+}
+
+/* Error Message */
+#contact .error-message {
+  display: none;
+  margin-top: 15px;
+  color: #ff66c4;
+  background: rgba(255, 0, 144, 0.15);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 0 8px #ff66c4, 0 0 18px rgba(255, 102, 196, 0.4);
+}
+
+/* Glow Animation */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14; opacity: 0.9; }
+  50% { box-shadow: 0 0 16px #39ff14, 0 0 36px #39ff14; opacity: 1; }
+  100% { box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14; opacity: 0.9; }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  #contact form {
+    padding: 18px;
+  }
+  #contact input,
+  #contact textarea {
+    font-size: 1.1rem;
+  }
 }
 
 /* ==========================================================
