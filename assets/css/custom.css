@@ -898,6 +898,18 @@ section:not(#about) p.framed-subtitle {
   box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
 }
 
+/* === Contact Form Placeholder Text (VT323 Terminal Style) === */
+#contact-form ::placeholder {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: rgba(57, 255, 20, 0.7); /* soft neon green */
+  letter-spacing: 0.3px;
+  text-shadow:
+    0 0 2px #39ff14,
+    0 0 6px rgba(57, 255, 20, 0.5);
+  opacity: 1; /* ensure visible on all browsers */
+}
+
 /* Error (magenta glow) */
 #contact-form .error-message {
   color: #ff00ff;
@@ -918,16 +930,25 @@ section:not(#about) p.framed-subtitle {
   border: 2px solid #00f7ff;
   color: #00f7ff;
   text-transform: uppercase;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
   box-shadow: 0 0 8px #00f7ff, inset 0 0 8px #00f7ff;
   transition: all 0.3s ease;
+  text-shadow:
+    0 0 4px #00f7ff,
+    0 0 8px #00f7ff;
 }
 
 .btn-neon:hover {
   background: #00f7ff;
-  color: #12151f;
-  box-shadow: 0 0 16px #00f7ff, inset 0 0 16px #00f7ff;
+  color: #0a0a0a;
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff,
+    inset 0 0 12px #00f7ff;
+  text-shadow: none;
 }
 
 /* ==========================================================
