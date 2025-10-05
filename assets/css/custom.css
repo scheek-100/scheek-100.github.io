@@ -103,8 +103,7 @@ section:not(#about) .framed-subtitle,
 #resume .framed-subtitle,
 #portfolio .framed-subtitle,
 #projects .framed-subtitle,
-#blog .framed-subtitle,
-#writing .framed-subtitle,
+##blog-accordion .framed-subtitle,
 #testimonials .framed-subtitle,
 #contact .framed-subtitle {
   /* Font & color consistency */
