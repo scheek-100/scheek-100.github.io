@@ -69,6 +69,25 @@ h1.sitename {
   transform: translateY(-50%) skewX(30deg);
 }
 
+/* Text Experiment */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+.section-title h2,
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00eaff;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.8), /* dark contrast shadow */
+    0 0 3px #00eaff,
+    0 0 6px #00eaff;
+}
+
 /* Section subtitles (paragraphs under H2) */
 .section-title p,
 .section-header p {
