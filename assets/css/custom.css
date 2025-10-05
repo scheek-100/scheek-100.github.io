@@ -306,6 +306,30 @@ h1.sitename {
   }
 }
 
+/* Tighten vertical spacing in ABOUT section */
+#about {
+  padding-top: 40px; /* was likely 80px or more */
+  padding-bottom: 40px;
+}
+
+#about .section-title {
+  margin-bottom: 30px; /* reduce space under ABOUT title */
+}
+
+#about .profile-img {
+  margin-top: -10px; /* pull image slightly upward */
+}
+
+/* Optional: tweak for mobile screens only */
+@media (max-width: 768px) {
+  #about {
+    padding-top: 30px;
+  }
+  #about .section-title {
+    margin-bottom: 20px;
+  }
+}
+
 /* H3 Text Styling */
 #about h3 {
   font-family: 'VT323', monospace;
