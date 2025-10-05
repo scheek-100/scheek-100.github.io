@@ -96,40 +96,50 @@ h1.sitename {
 /* ==========================================================
    FRAMED SUBTITLES (VT323T)
    ========================================================== */
-/* === Framed Paragraph Subtitles (VT323 Terminal Hybrid) === */
+
+/* === Framed Subtitles (Matches ABOUT Section Style) === */
 .framed-subtitle {
   font-family: 'VT323', monospace;
-  font-size: 1.2rem; /* keep original size */
+  font-size: 1.2rem; /* same as your current size */
   font-weight: bold;
-  color: #39ff14; /* same neon green */
-  display: block; /* full block for clean centering */
-  padding: 6px 14px; /* unchanged */
+  color: #39ff14; /* same neon green as About section */
+  display: block;
+  padding: 6px 14px;
   border: 2px solid #39ff14;
   border-radius: 3px;
-  background: rgba(5, 10, 15, 0.9); /* terminal-style matte background */
+  background: rgba(0, 0, 0, 0.4); /* identical background layer */
   letter-spacing: 0.5px;
+  margin: 12px auto 0 auto;
+  width: 700px;
+  max-width: 90%;
+  text-align: justify;
+  text-align-last: center;
+  position: relative;
 
-  /* === Enhanced glow with crisp black outline === */
+  /* === Same sharpening + neon layering from ABOUT section === */
   text-shadow:
-    0 0 1px #000,   /* subtle dark edge for clarity */
+    0 0 1px #000,   /* inner black edge for sharper text */
     0 0 2px #000,
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14,
     0 0 32px #39ff14;
-
-  /* === Glow frame for balance === */
   box-shadow:
     0 0 6px #39ff14,
     inset 0 0 8px rgba(57, 255, 20, 0.2);
+}
 
-  width: 700px; /* keep existing width */
-  max-width: 90%; /* responsive protection */
-  margin: 12px auto 0 auto; /* centered alignment */
+/* === Subtle blinking cursor for consistency === */
+.framed-subtitle::after {
+  content: "_";
+  color: #39ff14;
+  margin-left: 6px;
+  animation: blink 1.2s infinite;
+}
 
-  text-align: justify;
-  text-align-last: center; /* ensures last line centered */
-  position: relative;
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 /* ==========================================================
