@@ -269,12 +269,68 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* Profile Pic Styling */
-about .profile-img img {
+/* === CYBER GLITCH EFFECT — CLEAN VERSION === */
+.glitch-frame {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #00eaff55, 0 0 45px #00eaff33;
+  animation: neonPulse 3s infinite ease-in-out;
+}
+
+.glitch-img {
+  display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 30px #00eaff55;
+  border-radius: 12px;
+  filter: brightness(1.15) contrast(1.25);
+}
+
+/* Flicker Scanlines Overlay */
+.glitch-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 234, 255, 0.06) 0px,
+    rgba(0, 234, 255, 0.06) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  mix-blend-mode: screen;
+  animation: flicker 2s infinite steps(2, end);
+}
+
+/* RGB Shift Clone Layers */
+.glitch-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("../img/profile-img.png") no-repeat center/cover;
+  mix-blend-mode: screen;
+  opacity: 0.3;
+  animation: rgbShift 4s infinite linear;
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 0.15; }
+  20%, 24%, 55% { opacity: 0.35; }
+}
+
+@keyframes rgbShift {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 0); }
+  40% { transform: translate(2px, 0); }
+  60% { transform: translate(-1px, 0); }
+  80% { transform: translate(1px, 0); }
+}
+
+@keyframes neonPulse {
+  0%, 100% { box-shadow: 0 0 20px #00eaff55, 0 0 40px #00eaff22; }
+  50% { box-shadow: 0 0 35px #00eaffaa, 0 0 70px #00eaff55; }
 }
 
 /* H3 Text Styling */
