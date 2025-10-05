@@ -269,7 +269,7 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
-/* === CYBER TRANSMISSION LINES + HOLOGRAPHIC GRAIN (FINAL) === */
+/* === RANDOMIZED TRANSMISSION DISTORTION LINES === */
 .holo-static {
   position: relative;
   display: inline-block;
@@ -279,7 +279,7 @@ h1.sitename {
   box-shadow: 0 0 25px #00eaff55, 0 0 45px #00eaff33;
 }
 
-/* Still portrait */
+/* Base portrait */
 .holo-img {
   display: block;
   width: 100%;
@@ -288,88 +288,75 @@ h1.sitename {
   filter: brightness(1.2) contrast(1.3) saturate(1.3);
 }
 
-/* Bolder cyan transmission lines */
+/* Random distorted bands overlay */
 .holo-static::before {
   content: '';
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0, 255, 255, 0.12) 0px,
-    rgba(0, 255, 255, 0.12) 3px,
-    transparent 5px,
-    transparent 8px
+    rgba(0, 255, 255, 0.18) 0px,
+    rgba(0, 255, 255, 0.18) 10px,
+    transparent 15px,
+    transparent 40px,
+    rgba(0, 255, 255, 0.1) 45px,
+    transparent 80px
   );
-  animation: transmissionLines 2.8s linear infinite;
   mix-blend-mode: screen;
   opacity: 0.45;
+  animation: distortionBands 5s infinite linear;
   pointer-events: none;
 }
 
-/* Moving light sweep */
+/* Secondary irregular glow bands */
 .holo-static::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
+  background: repeating-linear-gradient(
     to bottom,
-    transparent 0%,
-    rgba(0, 255, 255, 0.4) 6%,
-    transparent 12%
+    transparent 0px,
+    rgba(0, 255, 255, 0.25) 5px,
+    transparent 30px,
+    transparent 80px,
+    rgba(0, 255, 255, 0.15) 85px,
+    transparent 120px
   );
-  animation: signalSweep 3s linear infinite;
   mix-blend-mode: screen;
-  opacity: 0.55;
+  opacity: 0.5;
+  animation: randomFlicker 6s ease-in-out infinite;
   pointer-events: none;
 }
 
-/* === Add holographic shimmer texture layer === */
-.holo-static::before,
-.holo-static::after {
-  will-change: transform, opacity;
-}
-
-.holo-static::after,
-.holo-static::before {
-  transform: translateZ(0);
-}
-
-/* Grain shimmer texture overlay (3rd layer) */
-.holo-static::after,
-.holo-static::before,
-.holo-static .grain {
-  pointer-events: none;
-}
-
+/* Grain shimmer texture */
 .holo-static .grain {
   content: '';
   position: absolute;
   inset: 0;
   background: url('https://upload.wikimedia.org/wikipedia/commons/d/d7/Static-noise-texture.png');
   background-size: cover;
-  opacity: 0.07;
+  opacity: 0.08;
   mix-blend-mode: screen;
   animation: grainShift 1.5s steps(2, end) infinite;
+  pointer-events: none;
 }
 
 /* === ANIMATIONS === */
-@keyframes transmissionLines {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 250px; }
+
+/* Random thick distortion movement */
+@keyframes distortionBands {
+  0% { background-position: 0 0; opacity: 0.5; }
+  15% { background-position: 0 20px; opacity: 0.7; }
+  30% { background-position: 0 60px; opacity: 0.4; }
+  45% { background-position: 0 100px; opacity: 0.6; }
+  60% { background-position: 0 160px; opacity: 0.35; }
+  75% { background-position: 0 200px; opacity: 0.5; }
+  90% { background-position: 0 250px; opacity: 0.65; }
+  100% { background-position: 0 300px; opacity: 0.45; }
 }
 
-@keyframes signalSweep {
-  0% { transform: translateY(-100%); opacity: 0; }
-  10% { opacity: 0.6; }
-  50% { transform: translateY(100%); opacity: 0.6; }
-  90% { opacity: 0.3; }
-  100% { transform: translateY(200%); opacity: 0; }
-}
-
-@keyframes grainShift {
-  0% { background-position: 0 0; }
-  100% { background-position: 50px 50px; }
-}
+/* Random flickering glow bands */
+@keyframes randomF
 
 /* H3 Text Styling */
 #about h3 {
