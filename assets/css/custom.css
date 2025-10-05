@@ -97,17 +97,17 @@ h1.sitename {
    FRAMED SUBTITLES (VT323T)
    ========================================================== */
 
-/* === Framed Subtitles (Matches ABOUT Section Style) === */
+/* === Framed Paragraph Subtitles (Sharpened Glow + Terminal Contrast) === */
 .framed-subtitle {
   font-family: 'VT323', monospace;
-  font-size: 1.2rem; /* same as your current size */
+  font-size: 1.2rem;
   font-weight: bold;
-  color: #39ff14; /* same neon green as About section */
+  color: #39ff14; /* keep the same neon hue */
   display: block;
   padding: 6px 14px;
   border: 2px solid #39ff14;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4); /* identical background layer */
+  background: rgba(0, 0, 0, 0.4); /* matches About section */
   letter-spacing: 0.5px;
   margin: 12px auto 0 auto;
   width: 700px;
@@ -116,14 +116,30 @@ h1.sitename {
   text-align-last: center;
   position: relative;
 
-/* Sharper glow and deeper back shadow for definition */
+  /* === Sharper glow and deeper back shadow for definition === */
   text-shadow:
-    2px 2px 6px rgba(0, 0, 0, 0.9), 
-/* solid dark back shadow for contrast */
-    0 0 1px #00eaff,                
-/* inner precision glow */
-    0 0 4px #00eaff;                
-/* outer neon softness */
+    3px 3px 8px rgba(0, 0, 0, 0.9),  /* deep dark base shadow for clarity */
+    0 0 2px #39ff14,                 /* inner precision glow */
+    0 0 6px #39ff14,                 /* mid glow */
+    0 0 12px #39ff14,                /* outer halo */
+    0 0 24px rgba(57, 255, 20, 0.8); /* soft neon diffusion */
+  
+  box-shadow:
+    0 0 6px #39ff14,
+    inset 0 0 8px rgba(57, 255, 20, 0.2);
+}
+
+/* === Optional cursor for subtle motion consistency === */
+.framed-subtitle::after {
+  content: "_";
+  color: #39ff14;
+  margin-left: 6px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 /* ==========================================================
