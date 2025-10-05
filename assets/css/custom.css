@@ -878,43 +878,65 @@ section:not(#about) p.framed-subtitle {
    CONTACT FORM
    ========================================================== */
 
-#contact .framed-subtitle {
-  all: unset;
-  display: block;
-  font-family: 'Share Tech Mono', monospace;
+/* === Strict Contact Form Scope === */
+#contact form,
+#contact-form {
+  all: initial; /* resets inherited global rules */
+  * {
+    all: unset;
+  }
 }
 
-/* === Form Status Messages (Scoped fix – no bleed to framed subtitles) === */
+#contact-form input,
+#contact-form textarea,
+#contact-form button,
+#contact-form select,
+#contact-form label,
+#contact-form ::placeholder {
+  all: revert; /* restores normal styling defaults */
+}
+
+/* === Now safely reapply your actual contact form design === */
+#contact-form input,
+#contact-form textarea {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  border-radius: 4px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 6px rgba(57, 255, 20, 0.3);
+}
+
+#contact-form ::placeholder {
+  font-family: 'VT323', monospace;
+  color: rgba(57, 255, 20, 0.6);
+}
+
+/* === Form messages isolated === */
 #contact-form .loading,
 #contact-form .error-message,
 #contact-form .sent-message {
   display: none;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 4px;
   text-align: center;
-  font-family: 'VT323', monospace !important;
+  border-radius: 4px;
+  font-family: 'VT323', monospace;
   font-size: 1.1rem;
-  line-height: 1.4;
-  color: inherit;
-  background: transparent;
-  border: none;
-  box-shadow: none;
 }
 
-/* Scoped glow variants */
 #contact-form .loading {
   color: #00f7ff;
   border: 1px solid #00f7ff;
   box-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff;
 }
-
 #contact-form .error-message {
   color: #ff00ff;
   border: 1px solid #ff00ff;
   box-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff;
 }
-
 #contact-form .sent-message {
   color: #39ff14;
   border: 1px solid #39ff14;
@@ -946,6 +968,33 @@ section:not(#about) p.framed-subtitle {
     0 0 20px #00f7ff,
     inset 0 0 12px #00f7ff;
   text-shadow: none;
+}
+
+/* Restore global framed boxes */
+p.framed-subtitle {
+  all: revert !important;
+}
+
+/* Fix portfolio filter buttons */
+.isotope-filters li {
+  all: revert !important;
+  font-family: 'DotGothic16', sans-serif;
+  color: #00f7ff;
+  border: 2px solid #00f7ff;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px #00f7ff;
+  transition: 0.3s ease;
+}
+
+.isotope-filters li.filter-active,
+.isotope-filters li:hover {
+  color: #0a0a0a;
+  background: #00f7ff;
+  box-shadow:
+    0 0 10px #00f7ff,
+    0 0 20px #00f7ff;
 }
 
 /* ==========================================================
