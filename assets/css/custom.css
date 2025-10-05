@@ -269,6 +269,14 @@ h1.sitename {
    ABOUT
    ========================================================== */
 
+/* Profile Pic Styling */
+about .profile-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #00eaff55;
+}
+
 /* H3 Text Styling */
 #about h3 {
   font-family: 'VT323', monospace;
