@@ -123,8 +123,7 @@ section:not(#about) p.framed-subtitle {
     0 0 24px rgba(57, 255, 20, 0.8);/* smooth diffusion */
 
   /* === Centered and Consistent Width === */
-  width: 700px;
-  max-width: 90%;
+  width: fixed;
   margin: 12px auto;
   text-align: justify;
   text-align-last: center;
