@@ -287,6 +287,73 @@ h1.sitename {
   filter: brightness(1.3) contrast(1.5);
 }
 
+/* === ABOUT SECTION SPACING FIX (FOLIO TEMPLATE TUNED) === */
+
+/* Base layout — mobile first */
+#about .row {
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Image column */
+#about .profile-img {
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Hologram image tweaks */
+#about .hologram-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 340px; /* keeps your hologram contained on mobile */
+  border-radius: 12px;
+}
+
+/* Text column */
+#about .content {
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* === Medium screens (tablets and small laptops) === */
+@media (min-width: 768px) {
+  #about .row {
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  #about .profile-img {
+    text-align: left;
+    padding-right: 30px;
+  }
+  #about .hologram-img {
+    max-width: 380px;
+  }
+  #about .content {
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+
+/* === Large screens (desktop and ultrawide) === */
+@media (min-width: 1200px) {
+  #about .row {
+    gap: 4rem;
+  }
+  #about .hologram-img {
+    max-width: 420px;
+  }
+  #about .profile-img {
+    padding-right: 40px;
+  }
+  #about .content {
+    padding-left: 20px;
+  }
+}
+
 /* H3 Text Styling */
 #about h3 {
   font-family: 'VT323', monospace;
