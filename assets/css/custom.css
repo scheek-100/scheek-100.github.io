@@ -97,49 +97,30 @@ h1.sitename {
    FRAMED SUBTITLES (VT323T)
    ========================================================== */
 
-/* === Framed Paragraph Subtitles (Sharpened Glow + Terminal Contrast) === */
-.framed-subtitle {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #39ff14; /* keep the same neon hue */
-  display: block;
-  padding: 6px 14px;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4); /* matches About section */
-  letter-spacing: 0.5px;
-  margin: 12px auto 0 auto;
-  width: 700px;
-  max-width: 90%;
-  text-align: justify;
-  text-align-last: center;
-  position: relative;
-
-  /* === Sharper glow and deeper back shadow for definition === */
+/* === Unify Glow for All Framed Subtitles (About + Services) === */
+#about h3,
+#services .framed-subtitle,
+#services h4 {
   text-shadow:
-    3px 3px 8px rgba(0, 0, 0, 0.9),  /* deep dark base shadow for clarity */
-    0 0 2px #39ff14,                 /* inner precision glow */
+    3px 3px 8px rgba(0, 0, 0, 0.9),  /* deep contrast shadow */
+    0 0 2px #39ff14,                 /* inner crisp glow */
     0 0 6px #39ff14,                 /* mid glow */
     0 0 12px #39ff14,                /* outer halo */
-    0 0 24px rgba(57, 255, 20, 0.8); /* soft neon diffusion */
-  
+    0 0 24px rgba(57, 255, 20, 0.8); /* soft diffusion */
+
   box-shadow:
     0 0 6px #39ff14,
-    inset 0 0 8px rgba(57, 255, 20, 0.2);
+    inset 0 0 8px rgba(57, 255, 20, 0.2); /* faint inner border light */
 }
 
-/* === Optional cursor for subtle motion consistency === */
-.framed-subtitle::after {
-  content: "_";
+/* === Make sure h4 service titles use same neon color & font === */
+#services h4 {
+  font-family: 'VT323', monospace;
   color: #39ff14;
-  margin-left: 6px;
-  animation: blink 1.2s infinite;
-}
-
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 /* ==========================================================
