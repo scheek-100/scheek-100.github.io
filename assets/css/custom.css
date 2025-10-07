@@ -593,6 +593,46 @@ section:not(#about) p.framed-subtitle {
   transform: scale(1.05);
 }
 
+/* ===== FORCE FIX: SERVICES COLOR CONTRAST ===== */
+#services .service-item .title {
+  color: #00ff66 !important; /* bright vivid green */
+  text-shadow:
+    0 0 2px #00ff66,
+    0 0 6px #00ffaa,
+    0 0 12px #00ffff,
+    0 0 24px #00ffff !important;
+  filter: brightness(1.3);
+}
+
+#services .service-item .description {
+  color: #ccffcc !important;
+  text-shadow:
+    0 0 2px #00ff99,
+    0 0 5px #00ffaa,
+    0 0 10px #008844 !important;
+}
+
+/* ===== ICON COLOR FIX ===== */
+#services .service-item .icon {
+  color: #00eaff !important;
+  border-color: #00eaff !important;
+  background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, rgba(0,0,0,0.9) 80%) !important;
+  box-shadow:
+    0 0 8px #00eaff,
+    0 0 16px #00eaff,
+    inset 0 0 8px #00eaff !important;
+}
+
+#services .service-item .icon:hover {
+  background: #00eaff !important;
+  color: #111 !important;
+  box-shadow:
+    0 0 24px #00eaff,
+    0 0 48px #00ffff,
+    inset 0 0 10px #00ffff !important;
+  transform: scale(1.05);
+}
+
 /* ==========================================================
    RESUME - VT323T
    ========================================================== */
