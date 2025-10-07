@@ -559,10 +559,9 @@ section:not(#about) p.framed-subtitle {
   text-transform: uppercase;
   text-align: center;
   text-shadow: 
-    0 0 2px #39ff14,
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 12px #39ff14;
+    0 0 6px #00ffff,
+    0 0 12px #00ffff,
+    0 0 24px #00ffff;
   margin-top: 15px;
 }
 
@@ -574,9 +573,8 @@ section:not(#about) p.framed-subtitle {
   line-height: 1.6;
   margin: 0 auto;
   text-shadow: 
-    0 0 2px #9aff9a,
-    0 0 4px #9aff9a,
-    0 0 6px #9aff9a; /* subtle glow */
+    0 0 2px #00ff99,
+    0 0 6px #003322;
 }
 
 /* Bullet Styling */
