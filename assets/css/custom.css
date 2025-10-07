@@ -547,28 +547,6 @@ section:not(#about) p.framed-subtitle {
   padding: 60px 0;
 }
 
-#services .section-title {
-  font-family: 'VT323', monospace;
-  font-size: 2rem;
-  color: #00eaff;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 0 0 12px #00eaff, 0 0 24px #00eaff;
-  margin-bottom: 1rem;
-}
-
-#services .section-intro {
-  display: inline-block;
-  color: #00ff88;
-  font-family: 'VT323', monospace;
-  background: rgba(0, 255, 0, 0.08);
-  border: 2px solid #00ff88;
-  box-shadow: 0 0 8px #00ff88, inset 0 0 8px #00ff88;
-  padding: 10px 20px;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
 /* Service Item */
 .service-item {
   background: rgba(0, 255, 255, 0.05);
