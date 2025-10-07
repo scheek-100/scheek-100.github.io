@@ -607,6 +607,11 @@ section:not(#about) p.framed-subtitle {
   text-shadow: 0 0 4px #00ffcc;
 }
 
+.service-item {
+  margin: 25px auto;
+  max-width: 360px;
+}
+
 /* ==========================================================
    RESUME - VT323T
    ========================================================== */
