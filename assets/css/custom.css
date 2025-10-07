@@ -612,6 +612,39 @@ section:not(#about) p.framed-subtitle {
   max-width: 360px;
 }
 
+/* Center and Even Out Service Boxes */
+.services-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.service-item {
+  flex: 1 1 300px;
+  max-width: 340px;
+  min-height: 320px;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00eaff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00eaff;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #00eaff, 0 0 40px #00eaff;
+}
+
+/* Adjust spacing on mobile */
+@media (max-width: 768px) {
+  .service-item {
+    margin: 10px auto;
+  }
+}
+
 /* ==========================================================
    RESUME - VT323T
    ========================================================== */
