@@ -550,67 +550,61 @@ section:not(#about) p.framed-subtitle {
   /* centers text */
 }
 
-/* Service Titles */
+/* Service Titles (Brighter + Higher Contrast) */
 .service-item .title {
   font-family: 'VT323', monospace;
   font-size: 1.6rem;
   font-weight: bold;
-  color: #39ff14; /* neon green */
+  color: #7fff00; /* brighter neon green core */
   text-transform: uppercase;
   text-align: center;
   text-shadow:
-    0 0 2px #39ff14,
-    0 0 4px #39ff14,
-    0 0 8px #00ff99,
-    0 0 12px #00ff99; /* tighter, cleaner glow */
+    0 0 2px #7fff00,
+    0 0 6px #00ff88,
+    0 0 12px #00ffcc,
+    0 0 24px #00ffff; /* extended glow for better visibility */
   margin-top: 15px;
 }
 
-/* Service Descriptions */
+/* Service Descriptions (sharper, readable green) */
 .service-item .description {
   font-family: 'VT323', monospace !important;
   font-size: 1.1rem;
-  color: #aaffaa !important; /* slightly brighter pale neon green */
+  color: #b6ffb6 !important; /* increased luminance */
   line-height: 1.6;
   margin: 0 auto;
   text-shadow:
     0 0 1px #00ff99,
-    0 0 3px #00ff99,
-    0 0 6px #006633; /* subtle glow for clarity */
+    0 0 3px #00ffcc,
+    0 0 6px #009966; /* balanced edge glow */
 }
 
-/* Bullet Styling */
-.service-item .bullet {
-  display: inline-block;
-  text-align: left;
-}
-
-/* Service Icons */
+/* Icons - slightly brighter cyan glow */
 .service-item .icon {
   font-size: 42px;
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 2px solid #00eaff;
+  border: 2px solid #00ffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
-  color: #00eaff;
-  text-shadow: 0 0 6px #00eaff, 0 0 12px #00eaff;
-  box-shadow: 0 0 8px #00eaff, inset 0 0 6px #00eaff;
-  background: radial-gradient(circle, rgba(0,255,255,0.05) 0%, rgba(0,0,0,0.9) 80%);
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+  box-shadow: 0 0 12px #00ffff, inset 0 0 8px #00eaff;
+  background: radial-gradient(circle, rgba(0,255,255,0.08) 0%, rgba(0,0,0,0.9) 85%);
   transition: all 0.3s ease;
 }
 
-/* Icon Hover Glow */
+/* Icon Hover Glow (consistent brightness pop) */
 .service-item .icon:hover {
-  background: #00eaff;
-  color: #111;
+  background: #00ffff;
+  color: #12151f;
   box-shadow:
-    0 0 20px #00eaff,
-    0 0 40px #00eaff,
-    inset 0 0 10px #00ffff;
+    0 0 24px #00ffff,
+    0 0 48px #00ffff,
+    inset 0 0 12px #00ffff;
   transform: scale(1.05);
 }
 
