@@ -743,89 +743,87 @@ section:not(#about) p.framed-subtitle {
 }
 
 /* ============================================
-   BLOG ACCORDION STYLING (DotGothic16 + VT323)
+   WRITING (DotGothic16 + VT323)
    ============================================ */
 
-/* Accordion container centered with fixed width */
-#accordionBlog {
+/* #accordionBlog {
   max-width: 800px;
   margin: 0 auto;
-}
+} */
 
-/* Accordion headers (button text) */
-#accordionBlog .accordion-button {
-  font-family: 'DotGothic16', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: #00eaff;
-  background: rgba(0, 0, 0, 0.75);
-  border: 2px solid #00eaff;
-  text-shadow:
-    2px 2px 6px rgba(0, 0, 0, 0.8),
-    0 0 3px #00eaff,
-    0 0 6px #00eaff;
-  box-shadow: inset 0 0 8px rgba(0, 234, 255, 0.6);
-  transition: all 0.3s ease;
-}
-
-#accordionBlog .accordion-button:hover {
-  background: #00eaff;
-  color: #0d0f18;
-  box-shadow:
-    0 0 10px #00eaff,
-    0 0 20px #00eaff;
-}
-
-#accordionBlog .accordion-button:focus {
-  outline: none;
-  box-shadow:
-    0 0 12px #00eaff,
-    0 0 24px #00eaff;
-}
-
-/* Collapsed state styling */
-#accordionBlog .accordion-button.collapsed {
-  background: rgba(0, 0, 0, 0.65);
-  color: #00eaff;
-  border: 2px solid #00eaff;
-}
-
-/* Accordion body (article content) */
-#accordionBlog .accordion-body {
+.neon-box {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1.5px solid #39ff14;
+  border-radius: 6px;
+  color: #39ff14;
   font-family: 'VT323', monospace;
-  font-size: 1.1rem;
-  color: #9aff9a;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 20px;
-  border: 1px solid #00eaff;
-  box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.6);
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.3);
 }
 
-/* Article links styled as glowing buttons */
-#accordionBlog .accordion-body a.btn {
-  font-family: 'DotGothic16', sans-serif;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #0d0f18;
-  background: #00eaff;
-  border: 2px solid #00eaff;
-  border-radius: 4px;
-  padding: 6px 14px;
-  box-shadow:
-    0 0 8px #00eaff,
-    0 0 16px #00eaff;
+/* ARTICLE CARD STYLING */
+.article-card {
+  background: rgba(15, 20, 25, 0.6);
+  border: 2px solid rgba(0, 247, 255, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.25);
 }
 
-#accordionBlog .accordion-body a.btn:hover {
-  background: #0d0f18;
-  color: #00eaff;
-  box-shadow:
-    0 0 10px #00eaff,
-    0 0 20px #00eaff,
-    inset 0 0 10px #00eaff;
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #39ff14, 0 0 60px rgba(0, 247, 255, 0.6);
+}
+
+.article-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(0, 247, 255, 0.4);
+}
+
+.article-content {
+  padding: 20px;
+}
+
+.article-title {
+  color: #9aff9a;
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.article-date {
+  color: #00f7ff;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
+  font-family: 'VT323', monospace;
+}
+
+.btn-neon {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1rem;
+  color: #12151f;
+  background: #00f7ff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'DotGothic16', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-neon:hover {
+  background: #39ff14;
+  color: #0e121b;
+  box-shadow: 0 0 15px #39ff14, 0 0 30px rgba(57, 255, 20, 0.8);
 }
 
 /* ==========================================================
