@@ -88,7 +88,7 @@ h1.sitename {
   transform: translateY(-50%) skewX(30deg);
 }
 
-/* Circuit Nodes (glowing dots along the dividers) */
+/* Circuit Nodes (glowing dots along the dividers)*/
 .section-title h1::before,
 .section-title h1::after,
 .section-header h1::before,
@@ -126,8 +126,8 @@ h1.sitename {
 .section-title h1::after::after,
 .section-header h1::after::after { right: 70%; }
 
-/* SUBTITLES (paragraphs under titles) */
-/* .section-title p,
+/* === SUBTITLES (paragraphs under titles) === */
+.section-title p,
 .section-header p {
   font-family: 'DotGothic16', sans-serif;
   font-size: 15px;
@@ -136,7 +136,7 @@ h1.sitename {
   margin-top: 10px;
   letter-spacing: 1px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-} */
+}
 
 /* ==========================================================
    FRAMED SUBTITLES
