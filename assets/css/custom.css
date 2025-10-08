@@ -107,6 +107,7 @@ section:not(#about) h2.framed-subtitle {
   width: 400px;                /* fixed width (adjust as needed) */
   margin: 0 auto 20px auto;    /* centers it horizontally + spacing below */
   text-align: center;          /* centers the text inside the box */
+  margin-top: 15px;      
   
   padding: 6px 12px;
   border: 2px solid #39ff14;
