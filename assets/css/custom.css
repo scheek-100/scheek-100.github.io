@@ -96,22 +96,23 @@ h1.sitename {
 /* ==========================================================
    FRAMED SUBTITLES
    ========================================================== */
-
-/*@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap'); */
-
-/* Replace VT323 with this */
+/* Other framed subtitles */
 section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
   font-size: 1.8rem; /* same size */
   font-weight: bold;
   color: #39ff14; /* same neon green */
-  display: inline-block;
-  padding: 3px 8px;
+
+  display: block;              /* make it a block element */
+  width: 400px;                /* fixed width (adjust as needed) */
+  margin: 0 auto 20px auto;    /* centers it horizontally + spacing below */
+  text-align: center;          /* centers the text inside the box */
+  
+  padding: 6px 12px;
   border: 2px solid #39ff14;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.4);
   letter-spacing: 0.5px;
-  margin-bottom: 15px;
   position: relative;
 
   /* === Dual-layer glow + crisp shadow === */
@@ -127,6 +128,14 @@ section:not(#about) h2.framed-subtitle {
   box-shadow:
     0 0 6px #39ff14,
     inset 0 0 8px rgba(57, 255, 20, 0.2);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  section:not(#about) h2.framed-subtitle {
+    font-size: 1.4rem;   /* slightly smaller text */
+    padding: 4px 8px;    /* tighter padding */
+  }
 }
 
 /* ==========================================================
