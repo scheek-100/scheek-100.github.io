@@ -31,17 +31,21 @@ h1.sitename {
   position: relative;
   display: inline-block;
   font-family: 'DotGothic16', sans-serif;
-  font-size: 48px;
-  font-weight: 400;
+  font-size: 56px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: #00eaff;
-
-  /* Sharper glow and deeper back shadow for definition */
+  text-align: center;
+  margin-bottom: 25px;
+  /* Neon glow mirroring subtitles for larger text */
   text-shadow:
-    3px 3px 8px rgba(0, 0, 0, 0.9), /* solid dark back shadow for contrast */
-    0 0 2px #00eaff,                /* inner precision glow */
-    0 0 6px #00eaff;                /* outer neon softness */
+    0 0 2px #000,               /* crisp dark outline */
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14,
+    0 0 32px #39ff14,
+    0 0 64px #39ff14;
 }
 
 /* === DIVIDER LINES (tech-inspired, reduced glow) === */
