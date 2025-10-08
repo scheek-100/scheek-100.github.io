@@ -29,7 +29,10 @@ h1.sitename {
 .section-title h1,
 .section-header h1 {
   position: relative;
-  display: inline-block;
+  display: flex; /* inline-block; */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   font-family: 'DotGothic16', sans-serif;
   font-size: 56px;
   font-weight: 700;
@@ -48,7 +51,7 @@ h1.sitename {
     0 0 64px #39ff14;
 }
 
-/* === DIVIDER LINES (tech-inspired, reduced glow) === */
+/* DIVIDER LINES (tech-inspired, reduced glow) */
 .section-title h1::before,
 .section-title h1::after,
 .section-header h1::before,
@@ -85,8 +88,46 @@ h1.sitename {
   transform: translateY(-50%) skewX(30deg);
 }
 
-/* === SUBTITLES (paragraphs under titles) === */
-.section-title p,
+/* Circuit Nodes (glowing dots along the dividers) */
+.section-title h1::before,
+.section-title h1::after,
+.section-header h1::before,
+.section-header h1::after {
+  position: relative; /* allow child pseudo-elements */
+}
+
+.section-title h1::before::before,
+.section-title h1::before::after,
+.section-title h1::after::before,
+.section-title h1::after::after,
+.section-header h1::before::before,
+.section-header h1::before::after,
+.section-header h1::after::before,
+.section-header h1::after::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00eaff;
+  box-shadow: 0 0 6px #00eaff, 0 0 12px #00eaff;
+}
+
+/* Position nodes along the lines */
+.section-title h1::before::before,
+.section-header h1::before::before { left: 20%; }
+.section-title h1::before::after,
+.section-header h1::before::after { left: 70%; }
+
+.section-title h1::after::before,
+.section-header h1::after::before { right: 20%; }
+.section-title h1::after::after,
+.section-header h1::after::after { right: 70%; }
+
+/* SUBTITLES (paragraphs under titles) */
+/* .section-title p,
 .section-header p {
   font-family: 'DotGothic16', sans-serif;
   font-size: 15px;
@@ -95,7 +136,7 @@ h1.sitename {
   margin-top: 10px;
   letter-spacing: 1px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
+} */
 
 /* ==========================================================
    FRAMED SUBTITLES
