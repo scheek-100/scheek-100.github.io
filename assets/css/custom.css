@@ -359,7 +359,7 @@ section:not(#about) p.framed-subtitle {
     0 0 8px rgba(0, 234, 255, 0.6) !important;   /* subtle outer aura */
 }
 
-/* VT323T Subtitle / typed text */
+/* H2 Hero Tagline */
 #hero h2 {
   font-family: "VT323", monospace;
   font-size: 1.5rem;
@@ -373,6 +373,16 @@ section:not(#about) p.framed-subtitle {
 #hero .tagline {
   opacity: 0.85;
   margin-bottom: 1.5rem;
+}
+
+/* Areas of Expertise Text */
+#hero h3 {
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
+  color: #6fd3ff;
+  /* pale blue */
+  text-shadow: 0 0 6px rgba(111, 211, 255, 0.6);
+  margin-bottom: 0.5rem;
 }
 
 /* Social links */
@@ -496,7 +506,7 @@ section:not(#about) p.framed-subtitle {
 }
 
 /* === ABOUT SECTION H3 (VT323 Terminal Glow with Outline) === */
-#about h3 {
+#about h2 {
   font-family: 'VT323', monospace;
   font-size: 1.8rem; /* same size */
   font-weight: bold;
@@ -526,7 +536,7 @@ section:not(#about) p.framed-subtitle {
 }
 
 /* Blinking cursor (kept subtle) */
-#about h3::after {
+#about h2::after {
   content: "_";
   color: #39ff14;
   margin-left: 6px;
