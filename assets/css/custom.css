@@ -51,7 +51,7 @@ h1.sitename {
     0 0 64px #39ff14;
 }
 
-/* DIVIDER LINES (tech-inspired, reduced glow) */
+/* === DIVIDER LINES (tech-inspired with gradient nodes) === */
 .section-title h1::before,
 .section-title h1::after,
 .section-header h1::before,
@@ -61,17 +61,22 @@ h1.sitename {
   top: 50%;
   width: 180px;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #00eaff 20%,
-    #00eaff 80%,
-    transparent
-  );
+  background:
+    /* glowing nodes */
+    radial-gradient(circle at 20% 50%, #00eaff 0 4px, transparent 5px),
+    radial-gradient(circle at 70% 50%, #00eaff 0 4px, transparent 5px),
+    /* base line */
+    linear-gradient(
+      90deg,
+      transparent,
+      #00eaff 20%,
+      #00eaff 80%,
+      transparent
+    );
   box-shadow:
     0 0 4px #00eaff,
     0 0 8px rgba(0, 234, 255, 0.5);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Left divider */
@@ -87,44 +92,6 @@ h1.sitename {
   left: 100%;
   transform: translateY(-50%) skewX(30deg);
 }
-
-/* Circuit Nodes (glowing dots along the dividers)*/
-.section-title h1::before,
-.section-title h1::after,
-.section-header h1::before,
-.section-header h1::after {
-  position: relative; /* allow child pseudo-elements */
-}
-
-.section-title h1::before::before,
-.section-title h1::before::after,
-.section-title h1::after::before,
-.section-title h1::after::after,
-.section-header h1::before::before,
-.section-header h1::before::after,
-.section-header h1::after::before,
-.section-header h1::after::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00eaff;
-  box-shadow: 0 0 6px #00eaff, 0 0 12px #00eaff;
-}
-
-/* Position nodes along the lines */
-.section-title h1::before::before,
-.section-header h1::before::before { left: 20%; }
-.section-title h1::before::after,
-.section-header h1::before::after { left: 70%; }
-
-.section-title h1::after::before,
-.section-header h1::after::before { right: 20%; }
-.section-title h1::after::after,
-.section-header h1::after::after { right: 70%; }
 
 /* === SUBTITLES (paragraphs under titles) === */
 .section-title p,
