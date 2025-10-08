@@ -26,8 +26,8 @@ h1.sitename {
    ========================================================== */
 
 /* Main title text */
-.section-title h2,
-.section-header h2 {
+.section-title h1,
+.section-header h1 {
   position: relative;
   display: inline-block;
   font-family: 'DotGothic16', sans-serif;
@@ -45,10 +45,10 @@ h1.sitename {
 }
 
 /* === DIVIDER LINES (tech-inspired, reduced glow) === */
-.section-title h2::before,
-.section-title h2::after,
-.section-header h2::before,
-.section-header h2::after {
+.section-title h1::before,
+.section-title h1::after,
+.section-header h1::before,
+.section-header h1::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -68,15 +68,15 @@ h1.sitename {
 }
 
 /* Left divider */
-.section-title h2::before,
-.section-header h2::before {
+.section-title h1::before,
+.section-header h1::before {
   right: 100%;
   transform: translateY(-50%) skewX(-30deg);
 }
 
 /* Right divider */
-.section-title h2::after,
-.section-header h2::after {
+.section-title h1::after,
+.section-header h1::after {
   left: 100%;
   transform: translateY(-50%) skewX(30deg);
 }
@@ -342,9 +342,9 @@ section:not(#about) p.framed-subtitle {
 }
 
 /* === HERO SECTION TITLE (DotGothic16 – retro-tech refined) === */
-.hero h2,
-#hero h2,
-#hero .container h2 {
+.hero h1,
+#hero h1,
+#hero .container h1 {
   font-family: 'DotGothic16', sans-serif !important;
   font-weight: 400 !important;
   font-size: 3rem !important;
@@ -360,7 +360,7 @@ section:not(#about) p.framed-subtitle {
 }
 
 /* VT323T Subtitle / typed text */
-#hero p {
+#hero h2 {
   font-family: "VT323", monospace;
   font-size: 1.5rem;
   color: #6fd3ff;
