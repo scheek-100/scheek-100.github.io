@@ -93,6 +93,28 @@ h1.sitename {
   transform: translateY(-50%) skewX(30deg);
 }
 
+@keyframes nodePulse {
+  0% {
+    background:
+      radial-gradient(circle at 20% 50%, #00eaff 0 3px, transparent 4px),
+      radial-gradient(circle at 70% 50%, #00eaff 0 3px, transparent 4px),
+      linear-gradient(90deg, transparent, #00eaff 20%, #00eaff 80%, transparent);
+  }
+  100% {
+    background:
+      radial-gradient(circle at 20% 50%, #00eaff 0 5px, transparent 6px),
+      radial-gradient(circle at 70% 50%, #00eaff 0 5px, transparent 6px),
+      linear-gradient(90deg, transparent, #00eaff 20%, #00eaff 80%, transparent);
+  }
+}
+
+.section-title h1::before,
+.section-title h1::after,
+.section-header h1::before,
+.section-header h1::after {
+  animation: nodePulse 2s infinite alternate;
+}
+
 /* === SUBTITLES (paragraphs under titles) === */
 .section-title p,
 .section-header p {
