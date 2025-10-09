@@ -482,7 +482,36 @@ section:not(#about) h2.framed-subtitle {
 /* ==========================================================
    SERVICES
    ========================================================== */
+/* Background image and overlay for Services section */
+#services {
+  position: relative;
+  background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") no-repeat center center;
+  background-size: cover !important;
+  color: #fff;
+  padding: 80px 0; /* adjust as needed for spacing */
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
 
+#services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(128, 0, 128, 0.55) 0%,   /* top: purple tint */
+    rgba(0, 0, 0, 0.65) 100%      /* bottom: fade to black */
+  );
+  z-index: 0;
+}
+
+/* Background image sits above overlay */
+#services .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Services Text */
 #services {
   text-align: center;
   padding: 60px 0;
