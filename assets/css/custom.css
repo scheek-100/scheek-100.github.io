@@ -353,7 +353,6 @@ section:not(#about) h2.framed-subtitle {
 
 /* Still portrait */
 .holo-img {
-  position: fixed;
   display: block;
   width: 100%;
   height: auto;
