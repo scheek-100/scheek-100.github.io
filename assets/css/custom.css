@@ -341,7 +341,7 @@ section:not(#about) h2.framed-subtitle {
    ABOUT
    ========================================================== */
 
-/* === HOLOGRAM BREAKUP OVERLAY === */
+/* === HOLOGRAM BREAKUP OVERLAY (Refined) === */
 .holo-static {
   position: relative;
   display: inline-block;
@@ -357,28 +357,28 @@ section:not(#about) h2.framed-subtitle {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  filter: brightness(1.2) contrast(1.3) saturate(1.3);
+  filter: brightness(1.15) contrast(1.25) saturate(1.2);
 }
 
-/* Layer 1: thick, drifting distortion bars */
+/* Layer 1: drifting distortion bands (slower, softer) */
 .holo-static::before {
   content: '';
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0, 255, 255, 0.2) 0px,
-    rgba(0, 255, 255, 0.2) 25px,
+    rgba(0, 255, 255, 0.15) 0px,
+    rgba(0, 255, 255, 0.15) 25px,
     transparent 45px,
     transparent 90px
   );
   mix-blend-mode: screen;
-  opacity: 0.5;
-  animation: breakupBands 3.5s linear infinite;
+  opacity: 0.3;
+  animation: breakupBands 12s linear infinite;
   pointer-events: none;
 }
 
-/* Layer 2: random short interference flashes */
+/* Layer 2: subtle interference shimmer (no harsh flashes) */
 .holo-static::after {
   content: '';
   position: absolute;
@@ -386,48 +386,41 @@ section:not(#about) h2.framed-subtitle {
   background: repeating-linear-gradient(
     to bottom,
     transparent 0px,
-    rgba(0, 255, 255, 0.35) 4px,
+    rgba(0, 255, 255, 0.25) 4px,
     transparent 15px
   );
   mix-blend-mode: screen;
-  opacity: 0.45;
-  animation: interferenceFlash 2.3s ease-in-out infinite;
+  opacity: 0.25;
+  animation: interferenceFlash 8s ease-in-out infinite;
   pointer-events: none;
 }
 
-/* Layer 3: subtle static grain shimmer */
+/* Layer 3: faint static grain shimmer */
 .holo-static .grain {
   position: absolute;
   inset: 0;
   background: url('https://upload.wikimedia.org/wikipedia/commons/d/d7/Static-noise-texture.png');
   background-size: cover;
-  opacity: 0.1;
+  opacity: 0.08;
   mix-blend-mode: screen;
-  animation: grainShift 1.2s steps(2, end) infinite;
+  animation: grainShift 4s steps(2, end) infinite;
   pointer-events: none;
 }
 
-/* === ANIMATIONS === */
+/* === ANIMATIONS (Refined) === */
 
-/* Drifting distortion bands – uneven motion */
+/* Drifting distortion bands – slower, ambient */
 @keyframes breakupBands {
-  0%   { background-position: 0 0; opacity: 0.4; }
-  20%  { opacity: 0.6; }
-  40%  { background-position: 0 200px; opacity: 0.5; }
-  60%  { opacity: 0.7; }
-  80%  { background-position: 0 400px; opacity: 0.4; }
-  100% { background-position: 0 600px; opacity: 0.5; }
+  0%   { background-position: 0 0; opacity: 0.25; }
+  40%  { background-position: 0 200px; opacity: 0.35; }
+  60%  { background-position: 0 200px; opacity: 0.35; } /* hold */
+  100% { background-position: 0 400px; opacity: 0.25; }
 }
 
-/* Random fast flashes – “signal breakups” */
+/* Gentle shimmer instead of harsh flashes */
 @keyframes interferenceFlash {
-  0%, 100% { opacity: 0.35; }
-  10% { opacity: 0.7; filter: brightness(1.6); }
-  25% { opacity: 0.4; }
-  40% { opacity: 0.8; filter: brightness(1.8); }
-  55% { opacity: 0.5; }
-  70% { opacity: 0.75; filter: brightness(1.5); }
-  85% { opacity: 0.4; }
+  0%, 100% { opacity: 0.25; filter: brightness(1.1); }
+  50% { opacity: 0.4; filter: brightness(1.25); }
 }
 
 /* Faint static shimmer */
