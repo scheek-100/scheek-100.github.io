@@ -145,37 +145,43 @@
   });
 
   /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+/**
+ * Initialize Isotope layout and filters
+ */
+document.querySelectorAll('.isotope-layout').forEach((layoutContainer) => {
+  const container = layoutContainer.querySelector('.isotope-container');
+  const filters = layoutContainer.querySelectorAll('.isotope-filters li');
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
+  if (!container || filters.length === 0) return;
+
+  const layoutMode = layoutContainer.getAttribute('data-layout') || 'masonry';
+  const defaultFilter = layoutContainer.getAttribute('data-default-filter') || '*';
+  const sortOrder = layoutContainer.getAttribute('data-sort') || 'original-order';
+
+  imagesLoaded(container, () => {
+    const iso = new Isotope(container, {
+      itemSelector: '.isotope-item',
+      layoutMode: layoutMode,
+      filter: defaultFilter,
+      sortBy: sortOrder
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
+    filters.forEach((filterBtn) => {
+      filterBtn.addEventListener('click', () => {
+        layoutContainer.querySelector('.filter-active')?.classList.remove('filter-active');
+        filterBtn.classList.add('filter-active');
+
+        const selectedFilter = filterBtn.getAttribute('data-filter');
+        iso.arrange({ filter: selectedFilter });
+
         if (typeof aosInit === 'function') {
           aosInit();
         }
-      }, false);
+      });
     });
-
   });
+});
+
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
