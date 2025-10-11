@@ -541,13 +541,26 @@ section:not(#about) h2.framed-subtitle {
   z-index: 1;
 }
 
-/* Section title */
-#services .section-title h1{
-  font-family:"DotGothic16", system-ui, sans-serif;
-  color:#59b8ff; margin:0 0 .5rem;
+/* Text and Icons */
+.service-card i{
+  font-size:40px; line-height:1; color:#59b8ff; margin-bottom:6px;
 }
-#services .section-title h2{
-  color:#bfe6ff; font-weight:500; max-width:72ch; margin:0 auto 2rem;
+.service-card h3{
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #39ff14;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px #39ff14, 0 0 16px #00ffcc;
+  margin-bottom: 10px;
+}
+.service-card p{
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #d9fff3;
+  margin:0; 
+  line-height:1.55;
+  text-shadow: 0 0 4px #00ffcc;
 }
 
 /* Cards grid */
@@ -578,19 +591,6 @@ section:not(#about) h2.framed-subtitle {
 .service-card:hover{
   transform: translateY(-4px);
   box-shadow: 0 14px 28px rgba(0,0,0,.45), 0 0 24px #00eaff33;
-}
-
-/* Icon + text */
-.service-card i{
-  font-size:40px; line-height:1; color:#59b8ff; margin-bottom:6px;
-}
-.service-card h3{
-  font-family:"DotGothic16", system-ui, sans-serif;
-  font-size:1.1rem; color:#e9f7ff; margin:0 0 4px;
-  letter-spacing:.3px;
-}
-.service-card p{
-  color:#cfe8ff; margin:0; line-height:1.55;
 }
 
 /* Mobile spacing */
