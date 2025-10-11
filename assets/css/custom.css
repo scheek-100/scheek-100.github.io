@@ -718,7 +718,37 @@ section:not(#about) h2.framed-subtitle {
 /* ============================================
    TECH PORTFOLIO
    ============================================ */
+/* Tech Portfolio Particle Background */
+.portfolio {
+  position: relative;
+  z-index: 1;
+  background: url('assets/img/technology_particle_background.jpg') no-repeat center center / cover !important;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: particleDrift 60s linear infinite;
+  padding: 60px 20px;
+}
 
+/* Particle Drift Animation */
+@keyframes particleDrift {
+  0% { background-position: center center; }
+  100% { background-position: center 200px; }
+}
+
+/* Background pic gradient overlay for depth and readability */
+.portfolio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 40, 0.7) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+  
 /* Portfolio filter tabs with VT323 neon style */
 .portfolio-filters li {
   font-family: 'VT323', monospace;
@@ -880,7 +910,15 @@ section:not(#about) h2.framed-subtitle {
 /* ==========================================================
    TESTIMONIALS
    ========================================================== */
-/* Cyberpunk Barcode */
+  /* Testimonials Background Picture */
+.testimonials-section {
+  background-image: url('assets/img/testimonials-geometric-background.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(0.6); /* or use a dark blue overlay */
+}
+
+   /* Cyberpunk Barcode */
 .testimonials .testimonial-item .cyber-barcode {
   width: 160px;
   /* similar width to stars row */
@@ -922,11 +960,18 @@ section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
   color: #39ff14; 
 }
+/* Testimonials Glass Overlay */
+.testimonial-glass {
+  background: rgba(10, 10, 30, 0.6); /* deep translucent blue */
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+}
 
-/* ==========================
-   HOLOGRAM FRAME EFFECT
-   ========================== */
 
+/* Hologram Framing for Testimonials */
 .testimonial-item {
   position: relative;
   background: rgba(10, 10, 30, 0.4); /* subtle dark transparency */
@@ -982,6 +1027,18 @@ section:not(#about) h2.framed-subtitle {
     0 0 18px #00f7ff,
     inset 0 0 15px rgba(0, 247, 255, 0.6);
   transform: scale(1.01);
+}
+
+/* Testimonials Pagination Bullets */
+.swiper-pagination-bullet {
+  background-color: #00eaff !important; /* neon blue */
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  box-shadow: 0 0 6px #00eaff;
 }
 
 /* ==========================================================
