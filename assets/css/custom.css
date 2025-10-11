@@ -509,11 +509,75 @@ section:not(#about) h2.framed-subtitle {
   25%, 75% { opacity: 0; }
 }
 
+/* ======= Services Carousel Neon Glow ======= */
+
+.services {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.carousel-title {
+  font-family: 'DotGothic16', monospace;
+  color: #00ffff;
+  font-size: 1.5rem;
+  text-shadow: 0 0 12px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  margin-bottom: 0.75rem;
+}
+
+.carousel-text {
+  font-family: 'VT323', monospace;
+  color: #00ff88;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  max-width: 600px;
+  text-shadow: 0 0 8px #00ff88;
+}
+
+/* Card container style for each carousel item */
+.carousel-item {
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
+  background-color: rgba(0, 10, 20, 0.5);
+  transition: all 0.4s ease;
+}
+
+/* Neon glow hover effect */
+.carousel-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffcc inset;
+}
+
+/* Soft pulsing animation for subtle motion */
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
+  }
+  50% {
+    box-shadow: 0 0 25px #00ffcc, 0 0 50px #00ffff inset;
+  }
+  100% {
+    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
+  }
+}
+
+.carousel-item {
+  animation: neonPulse 4s infinite ease-in-out;
+}
+
+/* Carousel control styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) drop-shadow(0 0 8px #00ffff);
+}
+
 /* ==========================================================
-   SERVICES
+   RESUME - VT323T
    ========================================================== */
-/* Background image and overlay for Services section */
-#services {
+
+/* Background image and overlay for Resume section */
+#resume {
   position: relative;
   background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") no-repeat center center;
   background-size: cover !important;
@@ -524,101 +588,22 @@ section:not(#about) h2.framed-subtitle {
   overflow: hidden;
 }
 
-#services::before {
+#resume::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(0, 170, 255, 0.4) 0%,   /* top: soft neon blue */
-    rgba(0, 0, 0, 0.6) 100%      /* bottom: fade to black */
+    rgba(0, 170, 255, 0.4) 0%, /* top: soft neon blue */
+    rgba(0, 0, 0, 0.6) 100% /* bottom: fade to black */
   );
   z-index: 0;
 }
 
 /* Background image sits above overlay */
-#services .container {
+#resume .container {
   position: relative;
   z-index: 1;
 }
-
-/* Text and Icons */
-.service-card i{
-  font-size:40px; 
-  line-height:1; 
-  color: #00f7ff; 
-  margin-bottom:6px;
-  background: rgba(0, 247, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-/* Hover Color */
-#services .service-card i:hover{
-  background: #00f7ff;
-  color: #12151f;
-  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
-}
-
-/* H3 Text */
-.service-card h3{
-  font-family: 'VT323', monospace;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #39ff14;
-  text-transform: uppercase;
-  text-shadow: 0 0 8px #39ff14, 0 0 16px #00ffcc;
-  margin-bottom: 10px;
-}
-
-/* Paragraph Text */
-.service-card p{
-  font-family: 'VT323', monospace;
-  font-size: 1.1rem;
-  color: #d9fff3;
-  margin:0; 
-  line-height:1.55;
-  text-shadow: 0 0 4px #00ffcc;
-}
-
-/* Cards grid */
-.services-grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:24px;
-}
-@media (min-width: 576px){
-  .services-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-@media (min-width: 992px){
-  .services-grid{ grid-template-columns: repeat(4, minmax(0,1fr)); }
-}
-
-/* Card */
-.service-card{
-  display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
-  gap:10px;
-  min-height: 240px;
-  padding:24px 18px;
-  background: rgba(8,12,16,.86);
-  border:1px solid #00eaff;
-  border-radius:14px;
-  box-shadow: 0 0 10px #00eaff1f, inset 0 0 12px #00eaff1a;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.service-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.45), 0 0 24px #00eaff33;
-}
-
-/* Mobile spacing */
-@media (max-width: 575.98px){
-  #services{ padding:60px 0; }
-  .service-card{ min-height:unset; }
-}
-
-/* ==========================================================
-   RESUME - VT323T
-   ========================================================== */
 
 /* Resume section h5 styling */
 #resume h5 {
@@ -859,33 +844,6 @@ section:not(#about) h2.framed-subtitle {
    TESTIMONIALS
    ========================================================== */
 
-/* Testimonials background */
-#testimonials {
-  background-image: url('assets/img/blurry-wet-carlights-background.jpg');
-  background-size: cover !important;
-  color:#e6f2ff;
-  padding: 80px 0;
-  overflow: hidden;
-}
-
-/* Dark overlay + teal tint + soft vignette */
-#testimonials::before{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    radial-gradient(ellipse at 50% 42%, rgba(0,0,0,.78), rgba(0,0,0,.90)),
-    linear-gradient(0deg, rgba(0,28,36,.35), rgba(0,28,36,.35));
-  backdrop-filter: blur(3px);           /* soften busy highlights */
-  -webkit-backdrop-filter: blur(3px);
-  z-index:0;
-}
-
-/* Background image sits above overlay */
-#testimonials .container {
-  position: relative;
-  z-index: 1;
-}
-
 /* Cyberpunk Barcode */
 .testimonials .testimonial-item .cyber-barcode {
   width: 160px;
@@ -935,6 +893,18 @@ section:not(#about) h2.framed-subtitle {
   font-size: 18px;
   color: #9aff9a; /* match your pale green */
   line-height: 1.6;
+}
+
+/* Swiper pagination bullets */
+.swiper-pagination-bullet {
+  background-color: #00eaff !important;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  box-shadow: 0 0 6px #00eaff;
 }
 
 /* hologram Effect */
@@ -994,17 +964,6 @@ section:not(#about) h2.framed-subtitle {
     0 0 18px #00f7ff,
     inset 0 0 15px rgba(0, 247, 255, 0.6);
   transform: scale(1.01);
-}
-/* Swiper pagination bullets */
-.swiper-pagination-bullet {
-  background-color: #00eaff !important;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  box-shadow: 0 0 6px #00eaff;
 }
 
 /* ==========================================================
