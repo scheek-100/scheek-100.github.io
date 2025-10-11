@@ -910,72 +910,41 @@ section:not(#about) h2.framed-subtitle {
 /* ==========================================================
    TESTIMONIALS
    ========================================================== */
-  /* Testimonials Background Picture */
-.testimonials-section {
+
+/* Section background */
+.testimonials {
   background-image: url('assets/img/testimonials-geometric-background.jpg');
   background-size: cover;
   background-position: center;
-  filter: grayscale(100%) brightness(0.6); /* or use a dark blue overlay */
+  background-repeat: no-repeat;
+  filter: grayscale(100%) brightness(0.6);
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
 }
 
-   /* Cyberpunk Barcode */
-.testimonials .testimonial-item .cyber-barcode {
-  width: 160px;
-  /* similar width to stars row */
-  height: 24px;
-  margin: 0 auto 15px auto;
-  /* same spacing as .stars */
-  background: repeating-linear-gradient(90deg,
-      #00f7ff 0 3px,
-      /* neon cyan bar */
-      transparent 3px 6px,
-      #a020f0 6px 9px,
-      /* purple bar */
-      transparent 9px 12px);
-  border: 1px solid #00f7ff;
-  border-radius: 2px;
-  box-shadow:
-    0 0 6px #00f7ff,
-    0 0 12px #a020f0,
-    0 0 24px #00f7ff;
-}
-
-#testimonials .quote-icon-left,
-#testimonials .quote-icon-right {
-  color: #39ff14; 
-  font-size: 1.5rem; /* make the quotes pop */
-  vertical-align: middle;
-}
-
-/* Testimonials section h3 styling */
-#testimonials h3 {
+/* Section title */
+.testimonials .section-title h1 {
   font-family: 'VT323', monospace;
-  font-weight: bold;
+  color: #39ff14;
+  text-shadow:
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14;
+}
+
+.testimonials .section-title h2.framed-subtitle {
+  font-family: 'VT323', monospace;
   color: #90ee90;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
 }
 
-/* Testimonials h4 styling */
-#testimonials h4 {
-  font-family: 'VT323', monospace;
-  color: #39ff14; 
-}
-/* Testimonials Glass Overlay */
-.testimonial-glass {
-  background: rgba(10, 10, 30, 0.6); /* deep translucent blue */
-  border-radius: 12px;
-  padding: 20px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
-  border: 1px solid rgba(0, 247, 255, 0.2);
-}
-
-
-/* Hologram Framing for Testimonials */
+/* Testimonial container */
 .testimonial-item {
   position: relative;
-  background: rgba(10, 10, 30, 0.4); /* subtle dark transparency */
-  border: 2px solid #39ff14; /* neon green border */
+  border: 2px solid #39ff14;
   border-radius: 10px;
   padding: 30px 20px;
   margin: 40px auto;
@@ -986,9 +955,20 @@ section:not(#about) h2.framed-subtitle {
     inset 0 0 10px rgba(0, 247, 255, 0.4);
   transition: all 0.3s ease;
   text-align: center;
+  background: transparent;
 }
 
-/* Add faint holographic animation */
+/* Inner glass overlay */
+.testimonial-glass-inner {
+  background: rgba(10, 10, 30, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+}
+
+/* Holographic animation */
 .testimonial-item::before {
   content: "";
   position: absolute;
@@ -1003,6 +983,7 @@ section:not(#about) h2.framed-subtitle {
   border-radius: 10px;
   animation: holo-glow 6s linear infinite;
   pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes holo-glow {
@@ -1020,7 +1001,7 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* Add slight flicker when hovering */
+/* Hover flicker */
 .testimonial-item:hover {
   box-shadow:
     0 0 8px #39ff14,
@@ -1029,9 +1010,70 @@ section:not(#about) h2.framed-subtitle {
   transform: scale(1.01);
 }
 
-/* Testimonials Pagination Bullets */
+/* Avatar image */
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #00eaff;
+  box-shadow: 0 0 8px #00eaff;
+}
+
+/* Name and title */
+.testimonials h3 {
+  font-family: 'VT323', monospace;
+  font-weight: bold;
+  color: #90ee90;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.testimonials h4 {
+  font-family: 'VT323', monospace;
+  color: #39ff14;
+  margin-bottom: 15px;
+}
+
+/* Cyberpunk barcode divider */
+.testimonials .cyber-barcode {
+  width: 160px;
+  height: 24px;
+  margin: 0 auto 15px auto;
+  background: repeating-linear-gradient(90deg,
+    #00f7ff 0 3px,
+    transparent 3px 6px,
+    #a020f0 6px 9px,
+    transparent 9px 12px);
+  border: 1px solid #00f7ff;
+  border-radius: 2px;
+  box-shadow:
+    0 0 6px #00f7ff,
+    0 0 12px #a020f0,
+    0 0 24px #00f7ff;
+}
+
+/* Quote icons */
+#testimonials .quote-icon-left,
+#testimonials .quote-icon-right {
+  color: #39ff14;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+/* Paragraph text */
+.testimonials p {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #e0ffe0;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Swiper pagination bullets */
 .swiper-pagination-bullet {
-  background-color: #00eaff !important; /* neon blue */
+  background-color: #00eaff !important;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
