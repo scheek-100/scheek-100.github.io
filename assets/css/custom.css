@@ -827,11 +827,6 @@ section:not(#about) h2.framed-subtitle {
    WRITING (DotGothic16 + VT323)
    ============================================ */
 
-/* #accordionBlog {
-  max-width: 800px;
-  margin: 0 auto;
-} */
-
 .neon-box {
   display: inline-block;
   padding: 10px 20px;
@@ -981,10 +976,16 @@ section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
   color: #39ff14; 
 }
+/* Paragraph Styling */
+#testimonials p,
+#testimonials p span {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: #9aff9a; /* match your pale green */
+  line-height: 1.6;
+}
 
-/* ==========================
-   HOLOGRAM FRAME EFFECT
-   ========================== */
+/* hologram Effect */
 
 .testimonial-item {
   position: relative;
