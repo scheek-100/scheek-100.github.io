@@ -543,8 +543,22 @@ section:not(#about) h2.framed-subtitle {
 
 /* Text and Icons */
 .service-card i{
-  font-size:40px; line-height:1; color:#59b8ff; margin-bottom:6px;
+  font-size:40px; 
+  line-height:1; 
+  color: #00f7ff; 
+  margin-bottom:6px;
+  background: rgba(0, 247, 255, 0.2);
+  transition: all 0.3s ease;
 }
+
+/* Hover Color */
+#services .service-card i:hover{
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+/* H3 Text */
 .service-card h3{
   font-family: 'VT323', monospace;
   font-size: 1.4rem;
@@ -554,6 +568,8 @@ section:not(#about) h2.framed-subtitle {
   text-shadow: 0 0 8px #39ff14, 0 0 16px #00ffcc;
   margin-bottom: 10px;
 }
+
+/* Paragraph Text */
 .service-card p{
   font-family: 'VT323', monospace;
   font-size: 1.1rem;
@@ -588,6 +604,7 @@ section:not(#about) h2.framed-subtitle {
   box-shadow: 0 0 10px #00eaff1f, inset 0 0 12px #00eaff1a;
   transition: transform .2s ease, box-shadow .2s ease;
 }
+
 .service-card:hover{
   transform: translateY(-4px);
   box-shadow: 0 14px 28px rgba(0,0,0,.45), 0 0 24px #00eaff33;
