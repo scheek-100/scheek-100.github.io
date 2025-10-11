@@ -70,7 +70,6 @@
         <ul>
           <li><a href="#hero" class="active">HOME</a></li>
           <li><a href="#about">ABOUT</a></li>
-          <li><a href="#services">SERVICES</a></li>
           <li><a href="#resume">RESUME</a></li>
           <li><a href="#portfolio">TECH PORTFOLIO</a></li>
           <li><a href="#writing">WRITING</a></li>
@@ -133,8 +132,7 @@
     </section><!-- /About Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services section dark-background" style="background:url('assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png') no-repeat center center / cover !important;
-                           background-size:cover;" alt="" data-aos="fade-in">
+    <section id="services" class="services section-black" data-aos="fade-in">
 
       <div class="container">
         <!-- Section Title -->
@@ -144,40 +142,67 @@
             organizations communicate clearly, streamline integrations, and strengthen engineering practices.</h2>
         </div><!-- End Section Title -->
 
-        <div class="services-grid">
-          <!-- Service 1 -->
-          <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+  <!-- Neon Carousel -->
+    <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-aos="fade-up">
+
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active text-center">
+          <div class="service-card neon-card">
             <i class="bi bi-code-slash"></i>
             <h3>API Integration & Architecture</h3>
             <p>Secure, scalable, and well-documented systems with GraphQL, REST, and CDN optimization.</p>
           </div>
+        </div>
 
-          <!-- Service 2 -->
-          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <!-- Slide 2 -->
+        <div class="carousel-item text-center">
+          <div class="service-card neon-card">
             <i class="bi bi-journal-text"></i>
             <h3>Science & Tech Writing</h3>
             <p>Engaging articles and documentation that translate complexity into clarity for diverse audiences.</p>
           </div>
+        </div>
 
-          <!-- Service 3 -->
-          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <!-- Slide 3 -->
+        <div class="carousel-item text-center">
+          <div class="service-card neon-card">
             <i class="bi bi-diagram-3"></i>
             <h3>Technical Program Management</h3>
             <p>Cross-functional leadership, risk mitigation, and incident response across high-impact platforms.</p>
           </div>
+        </div>
 
-          <!-- Service 4 -->
-          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <!-- Slide 4 -->
+        <div class="carousel-item text-center">
+          <div class="service-card neon-card">
             <i class="bi bi-lightbulb"></i>
             <h3>Mentorship & Strategy</h3>
             <p>Guiding early-career technologists and shaping scalable, ethical systems with narrative clarity.</p>
           </div>
         </div>
 
-    </section><!-- /Services Section -->
+      </div><!-- End Carousel Inner -->
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div><!-- End Carousel -->
+
+  </div><!-- End Container -->
+</section><!-- /Services Section -->
 
     <!-- Resume Section -->
-    <section id="resume" class="resume section-black">
+    <section id="resume" class="resume section dark-background" style="background:url('assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png') no-repeat center center / cover !important; background-size:cover;" alt="">
+
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h1>RESUME</h1>
@@ -426,8 +451,7 @@
     <!-- End Writing Section -->
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials dark-background" style="background:url('assets/img/blurry-wet-carlights-background.jpg') no-repeat center center / cover !important;
-                               background-size:cover;" alt="" data-aos="fade-in">
+    <section id="testimonials" class="testimonials dark-background" data-aos="fade-in">
       <div class="container">
 
         <!-- Section Title  -->
