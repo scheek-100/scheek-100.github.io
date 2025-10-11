@@ -24,6 +24,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -133,7 +134,7 @@
 
     <!-- Services Section -->
     <section id="services" class="services section dark-background" style="background:url('assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png') no-repeat center center / cover !important;
-                   background-size:cover;" alt="" data-aos="fade-in">
+                       background-size:cover;" alt="" data-aos="fade-in">
 
       <div class="container">
         <!-- Section Title -->
@@ -143,42 +144,36 @@
             organizations communicate clearly, streamline integrations, and strengthen engineering practices.</h2>
         </div><!-- End Section Title -->
 
-        <div class="row justify-content-center text-center services-row">
+        <div class="services-grid">
           <!-- Service 1 -->
-          <div class="col-md-4 col-sm-12 service-item d-flex flex-column align-items-center" data-aos="fade-up"
-            data-aos-delay="100">
-            <div class="icon cyber-icon"><i class="bi bi-lightbulb-fill"></i></div>
-            <h3 class="title">Technical Consulting & Integrations</h3>
-            <p class="description">
-              <span class="bullet">&bull; Streamline API architecture, systems engineering, and data feeds through clear
-                documentation and integration support.</span>
-            </p>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+            <i class="bi bi-code-slash"></i>
+            <h3>API Integration & Architecture</h3>
+            <p>Secure, scalable, and well-documented systems with GraphQL, REST, and CDN optimization.</p>
           </div>
 
           <!-- Service 2 -->
-          <div class="col-md-4 col-sm-12 service-item d-flex flex-column align-items-center" data-aos="fade-up"
-            data-aos-delay="200">
-            <div class="icon cyber-icon"><i class="bi bi-vector-pen"></i></div>
-            <h3 class="title">Science & Technology Writing</h3>
-            <p class="description">
-              <span class="bullet">&bull; Translate complex technical and scientific concepts into engaging,
-                research-driven narratives.</span>
-            </p>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-journal-text"></i>
+            <h3>Science & Tech Writing</h3>
+            <p>Engaging articles and documentation that translate complexity into clarity for diverse audiences.</p>
           </div>
 
           <!-- Service 3 -->
-          <div class="col-md-4 col-sm-12 service-item d-flex flex-column align-items-center" data-aos="fade-up"
-            data-aos-delay="400">
-            <div class="icon cyber-icon"><i class="bi bi-person-arms-up"></i></div>
-            <h3 class="title">Mentorship & Advisory</h3>
-            <p class="description">
-              <span class="bullet">&bull; Provide guidance on technical career paths, resume development, and
-                integration
-                best
-                practices.</span>
-            </p>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-diagram-3"></i>
+            <h3>Technical Program Management</h3>
+            <p>Cross-functional leadership, risk mitigation, and incident response across high-impact platforms.</p>
           </div>
-        </div><!-- End container -->
+
+          <!-- Service 4 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-lightbulb"></i>
+            <h3>Mentorship & Strategy</h3>
+            <p>Guiding early-career technologists and shaping scalable, ethical systems with narrative clarity.</p>
+          </div>
+        </div>
+
     </section><!-- /Services Section -->
 
     <!-- Resume Section -->
@@ -301,41 +296,43 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio dark-background" style="background:url('assets/img/technology_particle_background.jpg') no-repeat center center / cover !important;
                            background-size:cover;" alt="" data-aos="fade-in">
-    
+
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h1>TECH<br>PORTFOLIO</h1>
         <h2 class="framed-subtitle">Applying engineering to real-world challenges, involving APIs and programming
           projects. More projects coming soon!</h2>
       </div><!-- End Section Title -->
-    
+
       <!-- Portfolio Container -->
       <div class="container">
-    
+
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-    
+
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-apis">APIs</li>
             <li data-filter=".filter-coding">Coding</li>
           </ul><!-- End Portfolio Filters -->
-    
+
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="100">
-    
+
             <!-- Portfolio Item 1 -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-apis">
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/reddit-api-project.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Reddit API Project</h4>
-                  <p>A tool that monitors Reddit threads and user posts to track successful career outcomes from people I've
+                  <p>A tool that monitors Reddit threads and user posts to track successful career outcomes from people
+                    I've
                     advised. Project coming soon...</p>
                   <a href="assets/img/portfolio/reddit-api-project.png" title="Reddit API Project"
-                    data-gallery="portfolio-gallery-apis" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    data-gallery="portfolio-gallery-apis" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
-    
+
             <!-- Portfolio Item 2 -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-coding">
               <div class="portfolio-content h-100">
@@ -344,24 +341,27 @@
                   <h4>Personal Dashboard Project</h4>
                   <p>A personal dashboard that aggregates data from multiple sources. Project coming soon...</p>
                   <a href="assets/img/portfolio/personal-dashboard-project.png" title="Personal Dashboard Project"
-                    data-gallery="portfolio-gallery-coding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    data-gallery="portfolio-gallery-coding" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
-    
+
             <!-- Portfolio Item 3 -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-apis">
               <div class="portfolio-content h-100">
                 <img src="assets/img/portfolio/api-data-pipline-project.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>API Data Pipeline Project</h4>
-                  <p>A data pipeline that tracks and logs API usage, performance metrics, and anomalies. Project coming soon...</p>
+                  <p>A data pipeline that tracks and logs API usage, performance metrics, and anomalies. Project coming
+                    soon...</p>
                   <a href="assets/img/portfolio/api-data-pipline-project.png" title="API Data Pipeline Project"
-                    data-gallery="portfolio-gallery-apis" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                    data-gallery="portfolio-gallery-apis" class="glightbox preview-link"><i
+                      class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
-    
+
           </div><!-- End Portfolio Container -->
         </div>
       </div>
@@ -429,13 +429,13 @@
     <section id="testimonials" class="testimonials dark-background" style="background:url('assets/img/blurry-wet-carlights-background.jpg') no-repeat center center / cover !important;
                                background-size:cover;" alt="" data-aos="fade-in">
       <div class="container">
-    
+
         <!-- Section Title  -->
         <div class="section-title" data-aos="fade-up">
           <h1>TESTIMONIALS</h1>
           <h2 class="framed-subtitle">Results recognized by former colleagues, coworkers, and clients.</h2>
         </div><!-- End Section Title -->
-    
+
         <div data-aos="fade-up" data-aos-delay="100">
           <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
@@ -453,9 +453,9 @@
                   }
                 }
               </script>
-    
+
             <div class="swiper-wrapper">
-    
+
               <!-- Testiomonial 1-->
               <div class="swiper-slide">
                 <div class="testimonial-item">
@@ -480,7 +480,7 @@
                   </div>
                 </div>
               </div>
-    
+
               <!-- Testimonial 2 -->
               <div class="swiper-slide">
                 <div class="testimonial-item">
@@ -501,14 +501,15 @@
                         has
                         a positive attitude and is always willing to help whenever needed. She is also not afraid to ask
                         the
-                        hard questions and point out areas where we can all improve. She is a humble leader who always has
+                        hard questions and point out areas where we can all improve. She is a humble leader who always
+                        has
                         the best in mind of everyone she works with.</span>
                       <i class="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
                 </div>
               </div><!-- End swiper-wrapper -->
-    
+
               <div class="swiper-pagination"></div>
             </div><!-- End swiper -->
           </div><!-- End testimonial-glass -->
@@ -622,6 +623,16 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!-- Services Section JS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-in-out',
+  });
+  </script>
+
   <!-- Contact Section JS Script -->
   <script>
     const form = document.getElementById('contact-form');
@@ -661,7 +672,7 @@
         errorMessage.textContent = "Network error — please try again later.";
         errorMessage.style.display = 'block';
       }
-    });
+  });
   </script>
 
 </body>
