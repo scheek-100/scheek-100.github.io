@@ -512,26 +512,34 @@ section:not(#about) h2.framed-subtitle {
 /* ==========================================================
    SERVICES
    ========================================================== */
-/* Services Background */
-#services{
-  position:relative;
-  background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") center/cover no-repeat;
-  color:#e6f2ff;
-  padding:80px 0;
-  overflow:hidden;
-  text-align:center;
-  z-index:0; /* overlay sits above bg but below content */
+/* Background image and overlay for Services section */
+#services {
+  position: relative;
+  background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") no-repeat center center;
+  background-size: cover !important;
+  color: #fff;
+  padding: 80px 0; /* adjust as needed for spacing */
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
 }
-#services::before{
-  content:""; position:absolute; inset:0;
-  background:
-    radial-gradient(ellipse at 50% 40%, rgba(0,0,0,.78), rgba(0,0,0,.92)),
-    linear-gradient(0deg, rgba(0,28,36,.35), rgba(0,28,36,.35));
-  z-index:0;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+
+#services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 170, 255, 0.4) 0%,   /* top: soft neon blue */
+    rgba(0, 0, 0, 0.6) 100%      /* bottom: fade to black */
+  );
+  z-index: 0;
 }
-#services .container{ position:relative; z-index:1; }
+
+/* Background image sits above overlay */
+#services .container {
+  position: relative;
+  z-index: 1;
+}
 
 /* Section title */
 #services .section-title h1{
