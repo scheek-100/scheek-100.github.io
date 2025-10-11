@@ -509,7 +509,11 @@ section:not(#about) h2.framed-subtitle {
   25%, 75% { opacity: 0; }
 }
 
-/* ======= Services Carousel Neon Glow ======= */
+/* ==========================================================
+   SERVICES CAROUSEL SECTION
+   ========================================================== */
+
+/* Services Carousel Neon Glow */
 
 .services {
   margin-top: 4rem;
@@ -567,6 +571,62 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* Carousel control styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) drop-shadow(0 0 8px #00ffff);
+}
+
+
+/* Services Carousel Neon Style */
+
+#services .carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+.neon-card {
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 700px;
+  background-color: rgba(0, 10, 20, 0.6);
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff inset;
+  animation: neonPulse 4s infinite ease-in-out;
+  transition: all 0.4s ease;
+}
+
+.neon-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffcc inset;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff inset;
+  }
+  50% {
+    box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffff inset;
+  }
+  100% {
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff inset;
+  }
+}
+
+.neon-card h3 {
+  font-family: 'DotGothic16', monospace;
+  color: #00ffff;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 12px #00ffff;
+}
+
+.neon-card p {
+  font-family: 'VT323', monospace;
+  color: #00ff88;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px #00ff88;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   filter: invert(1) drop-shadow(0 0 8px #00ffff);
@@ -895,7 +955,7 @@ section:not(#about) h2.framed-subtitle {
   line-height: 1.6;
 }
 
-/* Swiper pagination bullets */
+/* Swiper pagination bullets commented out
 .swiper-pagination-bullet {
   background-color: #00eaff !important;
   opacity: 0.6;
@@ -905,7 +965,7 @@ section:not(#about) h2.framed-subtitle {
 .swiper-pagination-bullet-active {
   opacity: 1;
   box-shadow: 0 0 6px #00eaff;
-}
+} */
 
 /* hologram Effect */
 
