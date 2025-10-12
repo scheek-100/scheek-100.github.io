@@ -1076,60 +1076,87 @@ section:not(#about) h2.framed-subtitle {
    TESTIMONIALS
    ========================================================== */
 
-/* ================================
-   Testimonials layout and framing
-   ================================ */
-
-/* Section container normalizer */
-#testimonials .container {
-  position: relative;
-  z-index: 1;
+/* Section and title */
+#testimonials {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-/* Title block alignment */
 #testimonials .section-title {
-  text-align: center;
   margin-bottom: 24px;
 }
 
 #testimonials .section-title h1 {
-  margin-bottom: 8px;
+  font-family: 'VT323', monospace;
+  font-size: 2.2rem;
+  color: #39ff14;
+  text-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+  margin-bottom: 10px;
 }
 
 #testimonials .framed-subtitle {
   display: inline-block;
-  padding: 6px 12px;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #39ff14;
   border: 2px solid #39ff14;
   border-radius: 6px;
-  color: #39ff14;
-  text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14;
+  padding: 6px 12px;
+  text-shadow: 0 0 4px #39ff14;
   box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
-  background: transparent;
 }
 
-/* Swiper wrapper should not clip or misplace bullets */
+/* Swiper container reserves space for bullets and acts as positioning context */
 #testimonials .swiper {
   position: relative;
-  padding-bottom: 48px;
-  /* space for bullets */
+  padding-bottom: 56px;
+  /* space for pagination bullets */
   overflow: visible;
-  /* allow glow to render */
+  /* let neon glows render fully */
 }
 
-/* Ensure slides auto width behaves predictably */
-#testimonials .swiper-wrapper {
-  align-items: stretch;
+/* Slides centered */
+#testimonials .swiper-slide {
+  display: flex;
+  justify-content: center;
 }
 
-/* Testimonial card (neon frame corrected) */
+/* Pagination centered beneath content */
+#testimonials .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  width: auto;
+  z-index: 10;
+}
+
+#testimonials .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #00eaff !important;
+  opacity: 0.5;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 234, 255, 0.8);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#testimonials .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+/* Testimonial card (neon frame) */
 #testimonials .testimonial-item {
   position: relative;
-  background: rgba(10, 10, 30, 0.35);
+  background: rgba(10, 10, 30, 0.45);
   border: 2px solid #39ff14;
   border-radius: 12px;
-  padding: 28px 22px;
-  margin: 24px auto;
-  max-width: 900px;
+  padding: 24px 18px;
+  margin: 20px auto;
+  max-width: 860px;
   text-align: center;
   box-shadow:
     0 0 4px #39ff14,
@@ -1138,20 +1165,13 @@ section:not(#about) h2.framed-subtitle {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Inner glass panel stays inset and centered */
-#testimonials .testimonial-glass-inner {
-  position: relative;
-  margin: 0 auto;
-  max-width: 720px;
-}
-
-/* Hologram effect tuned so it doesn’t spill past border */
+/* Hologram glow kept inside border */
 #testimonials .testimonial-item::before {
   content: "";
   position: absolute;
-  inset: 4px;
-  /* keep glow inside border */
-  border-radius: 10px;
+  inset: 6px;
+  /* inset prevents spill past border */
+  border-radius: 8px;
   background: linear-gradient(135deg,
       rgba(0, 247, 255, 0.15),
       rgba(57, 255, 20, 0.12),
@@ -1188,8 +1208,8 @@ section:not(#about) h2.framed-subtitle {
 
 /* Avatar and headings */
 #testimonials .testimonial-img {
-  width: 88px;
-  height: 88px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
@@ -1199,6 +1219,7 @@ section:not(#about) h2.framed-subtitle {
 
 #testimonials h3 {
   font-family: 'VT323', monospace;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #90ee90;
   text-transform: uppercase;
@@ -1207,14 +1228,15 @@ section:not(#about) h2.framed-subtitle {
 
 #testimonials h4 {
   font-family: 'VT323', monospace;
+  font-size: 1rem;
   color: #39ff14;
   margin-bottom: 12px;
 }
 
-/* Barcode divider alignment and glow */
+/* Barcode divider */
 #testimonials .cyber-barcode {
-  width: 160px;
-  height: 24px;
+  width: 140px;
+  height: 20px;
   margin: 0 auto 16px;
   background: repeating-linear-gradient(90deg,
       #00f7ff 0 3px,
@@ -1223,15 +1245,16 @@ section:not(#about) h2.framed-subtitle {
       transparent 9px 12px);
   border: 1px solid #00f7ff;
   border-radius: 2px;
-  box-shadow: 0 0 6px #00f7ff, 0 0 12px #a020f0, 0 0 24px #00f7ff;
+  box-shadow: 0 0 6px #00f7ff, 0 0 12px #a020f0, 0 0 18px #00f7ff;
 }
 
+/* Quote text */
 #testimonials p,
 #testimonials p span {
   font-family: 'VT323', monospace;
-  font-size: 18px;
+  font-size: 1rem;
   color: #9aff9a;
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -1239,65 +1262,56 @@ section:not(#about) h2.framed-subtitle {
 #testimonials .quote-icon-left,
 #testimonials .quote-icon-right {
   color: #39ff14;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   vertical-align: middle;
 }
 
-/* ================================
-   Swiper pagination fix
-   ================================ */
-
-/* Place bullets centered below the slides */
-#testimonials .swiper-pagination {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  transform: translateX(-50%);
-  width: auto;
-  /* shrink to content */
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  z-index: 2;
-}
-
-/* Bullet styling (neon) */
-#testimonials .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background-color: #00eaff !important;
-  opacity: 0.5;
-  box-shadow: 0 0 6px rgba(0, 234, 255, 0.8);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-#testimonials .swiper-pagination-bullet-active {
-  opacity: 1;
-  transform: scale(1.25);
-}
-
-/* Ensure slides don't push bullets out of place */
-#testimonials .swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-
-/* ================================
-   Responsive tweaks
-   ================================ */
-@media (max-width: 768px) {
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 1024px) {
   #testimonials .testimonial-item {
-    margin: 16px auto;
-    padding: 22px 16px;
+    max-width: 92%;
+  }
+}
+
+@media (max-width: 768px) {
+  #testimonials .section-title h1 {
+    font-size: 1.7rem;
   }
 
-  #testimonials .testimonial-glass-inner {
+  #testimonials .framed-subtitle {
+    font-size: 0.92rem;
+    padding: 4px 8px;
+    display: block;
     max-width: 92%;
+    margin: 0 auto;
+  }
+
+  #testimonials .testimonial-item {
+    margin: 16px auto;
+    padding: 20px 14px;
+  }
+
+  #testimonials .testimonial-img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  #testimonials h3 {
+    font-size: 1.05rem;
+  }
+
+  #testimonials h4 {
+    font-size: 0.95rem;
   }
 
   #testimonials p,
   #testimonials p span {
-    font-size: 16px;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    max-width: 92%;
   }
 
   #testimonials .swiper {
@@ -1305,8 +1319,31 @@ section:not(#about) h2.framed-subtitle {
   }
 
   #testimonials .swiper-pagination {
-    bottom: 6px;
+    bottom: 8px;
     gap: 6px;
+  }
+
+  #testimonials .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  #testimonials .section-title h1 {
+    font-size: 1.5rem;
+  }
+
+  #testimonials .framed-subtitle {
+    font-size: 0.88rem;
+  }
+
+  #testimonials .swiper {
+    padding-bottom: 40px;
+  }
+
+  #testimonials .swiper-pagination {
+    bottom: 6px;
   }
 }
 
