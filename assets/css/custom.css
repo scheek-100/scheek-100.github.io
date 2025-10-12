@@ -865,6 +865,11 @@ iframe[src*="datawrapper.dwcdn.net"] {
   box-shadow: 0 0 25px rgba(0, 246, 255, 0.4);
 }
 
+.portfolio-item iframe {
+  z-index: 1;
+  position: relative;
+}
+
 /* Text Content */
 .portfolio-content {
   padding: 1.5rem;
