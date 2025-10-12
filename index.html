@@ -318,87 +318,107 @@
     </section>
     <!-- /Resume Section -->
 
-    <!-- Portfolio Section -->
+    <!-- Tech Portfolio Section -->
     <section id="portfolio" class="portfolio dark-background" style="background:url('assets/img/technology_particle_background.jpg') no-repeat center center / cover !important;
-                           background-size:cover;" alt="" data-aos="fade-in">
-
+                               background-size:cover;" alt="" data-aos="fade-in">
+    
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h1>TECH<br>PORTFOLIO</h1>
         <h2 class="framed-subtitle">Applying engineering to real-world challenges, involving APIs and programming
           projects. More projects coming soon!</h2>
       </div><!-- End Section Title -->
-
-      <!-- Portfolio Container -->
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-apis">APIs</li>
-            <li data-filter=".filter-coding">Coding</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="100">
-
-            <!-- Portfolio Item 1 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-apis">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/reddit-api-project.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Reddit API Project</h4>
-                  <p>A tool that monitors Reddit threads and user posts to track successful career outcomes from people
-                    I've
-                    advised. Project coming soon...</p>
-                  <a href="assets/img/portfolio/reddit-api-project.png" title="Reddit API Project"
-                    data-gallery="portfolio-gallery-apis" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                </div>
+    
+      <!--Content-->
+      <div class="animated bounceInUp delay-1s">
+    
+        <!-- Featured Project -->
+        <div class="row" id="work-row">
+          <div class="col-md-6 col-sm-12 bounceInLeft delay-2s">
+            <center>
+              <div class="work-hero">
+                <iframe title="Healthcare Data Breach Map" aria-label="Map" src="https://www.datawrapper.de/_/ZT1co/"
+                  scrolling="no" frameborder="0" style="width:100%; min-width:600px; border:none; height:1000px;">
+                </iframe>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Portfolio Item 2 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-coding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/personal-dashboard-project.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Personal Dashboard Project</h4>
-                  <p>A personal dashboard that aggregates data from multiple sources. Project coming soon...</p>
-                  <a href="assets/img/portfolio/personal-dashboard-project.png" title="Personal Dashboard Project"
-                    data-gallery="portfolio-gallery-coding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                </div>
+            </center>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="work-des">
+              <h1>Healthcare Data Breach Map</h1>
+              <p>U.S. States and territories choropleth map visualizing healthcare data breaches from Oct 2024 - 2025 by
+                state, built with Datawrapper, Google Sheets, and pivot table.</p>
+              <div class="technologies">
+                <h2>Technologies Used</h2>
+                <span class="tech-stack">Datawrapper</span>
+                <span class="tech-stack">Google Sheets</span>
+                <span class="tech-stack">Pivot Table</span>
               </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- Portfolio Item 3 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-apis">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/api-data-pipline-project.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>API Data Pipeline Project</h4>
-                  <p>A data pipeline that tracks and logs API usage, performance metrics, and anomalies. Project coming
-                    soon...</p>
-                  <a href="assets/img/portfolio/api-data-pipline-project.png" title="API Data Pipeline Project"
-                    data-gallery="portfolio-gallery-apis" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
+            </div>
+          </div>
         </div>
-      </div>
-    </section><!-- /Portfolio Section -->
-
-    <!-- Writing Section -->
-    <section id="writing" class="writing section-black py-5">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h1>WRITING</h1>
-        <h2 class="framed-subtitle">Recent published work on Medium — expand to preview each article.</h2>
-      </div>
+    
+        <!-- Row 1 -->
+        <div class="row work-double-row">
+          <div class="col-md-6 col-sm-12 bounceInLeft delay-3s">
+            <div class="work-hero-card">
+              <img class="work-card-hero-img" src="assets/img/portfolio/api-project-placeholder.jpg"
+                alt="API Data Pipeline">
+              <h1>API Monitoring Data Pipeline</h1>
+              <div id="work-text">API</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 bounceInRight delay-3s">
+            <div class="work-hero-card">
+              <img class="work-card-hero-img" src="assets/img/portfolio/api-project-placeholder.jpg"
+                alt="Reddit Resume Impact Tracking">
+              <h1>Reddit Resume Impact Tracking</h1>
+              <div id="work-text">API</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Row 2 -->
+        <div class="row work-double-row">
+          <div class="col-md-6 col-sm-12 bounceInLeft delay-3s">
+            <div class="work-hero-card">
+              <img class="work-card-hero-img" src="assets/img/portfolio/datavisual-placeholder.jpg"
+                alt="Healthcare Data Breach Case Studies">
+              <h1>Healthcare Data Breach Case Studies</h1>
+              <div id="work-text">DATA VISUALIZATION</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 bounceInRight delay-3s">
+            <div class="work-hero-card">
+              <img class="work-card-hero-img" src="assets/img/portfolio/datavisual-placeholder.jpg"
+                alt="Untitled Project 1">
+              <h1>Untitled Project 1</h1>
+              <div id="work-text">DATA VISUALIZATION</div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Row 3 -->
+        <div class="row work-double-row">
+          <div class="col-md-6 col-sm-12 bounceInLeft delay-3s">
+            <div class="work-hero-card">
+              <img class="work-card-hero-img" src="assets/img/portfolio/automation-placeholder.jpg"
+                alt="Untitled Project 2">
+              <h1>Untitled Project 2</h1>
+              <div id="work-text">AUTOMATION</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 bounceInRight delay-3s">
+            <div class="work-hero-card">
+              <img class="work-card-hero-img" src="assets/img/portfolio/automation-placeholder.jpg"
+                alt="Untitled Project 3">
+              <h1>Untitled Project 3</h1>
+              <div id="work-text">AUTOMATION</div>
+            </div>
+          </div>
+        </div>
+    
+      </div><!-- End of Tech Portfolio Section-->
 
       <!-- Blog Container -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
