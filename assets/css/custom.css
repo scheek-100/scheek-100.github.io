@@ -835,21 +835,46 @@ section:not(#about) h2.framed-subtitle {
 /* Featured iframe/image styling */
 .work-hero iframe,
 .work-hero img {
+  display: block;
   width: 100%;
-  height: 480px;
-  /* visual balance for hero */
+  max-width: 1000px;              /* cap width on very large screens */
+  height: 480px;                  /* default desktop height */
+  margin: 0 auto;                 /* center horizontally */
   border: none;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: block;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Hover feedback */
 .work-hero iframe:hover,
 .work-hero img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+  transform: scale(1.015);
+  box-shadow: 0 0 28px rgba(57, 255, 20, 0.8);
+}
+
+/* ================================
+   Responsive tweaks
+   ================================ */
+@media (max-width: 1024px) {
+  .work-hero iframe,
+  .work-hero img {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-hero iframe,
+  .work-hero img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-hero iframe,
+  .work-hero img {
+    height: 240px;
+  }
 }
 
 /* Featured text block under the hero */
