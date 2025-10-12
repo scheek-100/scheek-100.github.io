@@ -695,7 +695,8 @@ section:not(#about) h2.framed-subtitle {
 /* ============================================
    TECH PORTFOLIO
    ============================================ */
-/* Tech Portfolio Particle Background */
+
+/* Portfolio Section Background */
 .portfolio {
   position: relative;
   z-index: 1;
@@ -706,7 +707,6 @@ section:not(#about) h2.framed-subtitle {
   overflow: hidden;
 }
 
-/* Background pic gradient overlay for depth and readability */
 .portfolio::before {
   content: "";
   position: absolute;
@@ -719,82 +719,125 @@ section:not(#about) h2.framed-subtitle {
   z-index: 0;
   pointer-events: none;
 }
-  
-/* Portfolio filter tabs with VT323 neon style */
-.portfolio-filters li {
+
+/* Featured Project (work-hero) */
+.work-hero {
+  border-radius: 10px;
+  width: 90%;
+  transition: width 0.5s ease;
+  margin: 0 auto;
+  z-index: 1;
+}
+.work-hero:hover {
+  width: 95%;
+}
+.work-hero img,
+.work-hero iframe {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  transition: all 0.4s ease;
+}
+.work-hero img:hover,
+.work-hero iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+}
+
+/* Project Cards (work-hero-card) */
+.work-hero-card {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(57, 255, 20, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  height: 100%;
+  padding-bottom: 15px;
+}
+.work-hero-card:hover {
+  width: 85%;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+  transform: scale(1.02);
+}
+.work-card-hero-img,
+.work-hero-card iframe {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Titles & Labels*/
+.work-hero-card h1,
+.work-des h1 {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-
-  /* dim neon green for inactive */
-  color: rgba(57, 255, 20, 0.6); 
-  text-shadow:
-    0 0 2px rgba(57, 255, 20, 0.5),
-    0 0 4px rgba(57, 255, 20, 0.3);
-  transition: all 0.3s ease;
-}
-
-/* Portfolio Filters */
-.portfolio-filters li {
-  font-family: 'VT323', monospace;
-  font-size: 1.1rem;
+  text-align: center;
   color: #39ff14;
-  padding: 6px 12px;
-  margin: 0 8px;
-  border: 1px solid rgba(57, 255, 20, 0.4);
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
+  text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14, 0 0 16px #39ff14;
+  margin-top: 15px;
+}
+#work-text {
+  text-align: center;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: rgba(57, 255, 20, 0.8);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-.portfolio-filters li.filter-active {
-  border-color: #39ff14;
+/*Tech Stack Tags */
+.tech-stack {
+  cursor: pointer;
+  margin-right: 10px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(57, 255, 20, 0.4);
+  padding: 2px 6px;
+  font-size: 0.8em;
+  color: #39ff14;
+  text-shadow: 0 0 4px #39ff14;
+  border-radius: 4px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.tech-stack:hover {
+  background: rgba(57, 255, 20, 0.2);
   box-shadow: 0 0 8px #39ff14;
 }
 
-/* Neon transparent box for portfolio section labels */
-.portfolio-info h4 {
-  font-family: 'VT323', monospace;
-  font-weight: bold;
-  font-size: 1.4rem;   /* adjust size */
-  text-transform: uppercase;
-
-  /* neon green text */
-  color: #39ff14;
-  text-shadow:
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14;
-
-  /* border hugging text */
-  display: inline-block;
-  padding: 4px 12px;
-  margin: 0 0 12px 0;
-  border: 2px solid #39ff14;
-  border-radius: 6px;
-
-  /* force no background */
-  background-color: transparent !important;
-
-  /* border glow only (removed inset so no fill) */
-  box-shadow:
-    0 0 6px #39ff14,
-    0 0 12px #39ff14;
+/* Layout Spacing */
+.work-double-row {
+  padding-left: 120px;
+  padding-right: 120px;
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
 }
-
-/*Isotope Container */
-.isotope-layout {
+#work-row {
+  padding-left: 135px;
+  padding-right: 135px;
+  width: 100vw;
   position: relative;
   z-index: 1;
 }
 
-.isotope-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+/* Responsive Tweaks */
+@media (max-width: 1024px) {
+  .work-double-row,
+  #work-row {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .work-hero iframe {
+    height: 350px;
+  }
+  .work-hero-card iframe {
+    height: 250px;
+  }
 }
 
 /* ============================================
