@@ -351,14 +351,12 @@
 
 <!-- Project 1 Row 1 -->
   <div class="portfolio-item" data-aos="fade-up">
-    <iframe title="Healthcare Data Breaches by State"
-aria-label="Choropleth map"
-    id="datawrapper-chart-ZT1co"
-      src="https://datawrapper.dwcdn.net/ZT1co/1/"
-      frameborder="0"
-      scrolling="no"
-      style="width:100%; border:none;   border-radius:14px; background:#fff;"
-     height="600"></iframe>
+  <iframe title="Healthcare Data Breaches by State (Total Number, October 2024 - October 2025" aria-label="Choropleth map" id="datawrapper-chart-ZT1co" src="https://datawrapper.dwcdn.net/ZT1co/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="574" data-external="1"></iframe>
+
+<!-- Datawrapper JS Script -->
+<script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+<!-- End of Datawrapper JS Script -->
+
     <div class="portfolio-content">
       <h3>Healthcare Data Breach Map</h3>
       <p>U.S. states choropleth map showing healthcare data breaches (Oct 2024–2025), built using Datawrapper and Google Sheets.</p>
@@ -699,22 +697,6 @@ aria-label="Choropleth map"
         loading.style.display = 'none';
         errorMessage.textContent = "Network error — please try again later.";
         errorMessage.style.display = 'block';
-      }
-    });
-  </script>
-
-  <!-- Script Datawrapper/Data Vis Projects-->
-  <script type="text/javascript">
-    window.addEventListener("message", function (event) {
-      if (event.data["datawrapper-height"] !== undefined) {
-        var iframes = document.querySelectorAll("iframe");
-        for (var chartId in event.data["datawrapper-height"]) {
-          for (var i = 0; i < iframes.length; i++) {
-            if (iframes[i].contentWindow === event.source) {
-              iframes[i].style.height = event.data["datawrapper-height"][chartId] + "px";
-            }
-          }
-        }
       }
     });
   </script>
