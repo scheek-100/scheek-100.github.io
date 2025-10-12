@@ -696,31 +696,77 @@ section:not(#about) h2.framed-subtitle {
    TECH PORTFOLIO
    ============================================ */
 
-/* Featured Project (work-hero) */
-.work-hero {
-  border-radius: 10px;
-  width: 90%;
-  transition: width 0.5s ease;
+   /* ================================
+   Featured project (container)
+   ================================ */
+#work-row {
+  /* Center the column and prevent horizontal overflow */
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  width: 100%;              /* avoid 100vw causing overflow with scrollbars */
   margin: 0 auto;
+  position: relative;
   z-index: 1;
 }
-.work-hero:hover {
-  width: 95%;
-}
-.work-hero img,
-.work-hero iframe {
+
+/* Featured media wrapper */
+.work-hero {
+  border-radius: 10px;
+  max-width: 1000px;        /* cap the featured width */
   width: 100%;
+  margin: 0 auto;           /* center within the row */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Remove width-based hover (it caused layout shift); use scale instead */
+.work-hero:hover {
+  transform: scale(1.01);
+}
+
+/* Featured iframe/image styling */
+.work-hero iframe,
+.work-hero img {
+  width: 100%;
+  height: 480px;            /* visual balance for hero */
+  border: none;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
 }
-.work-hero img:hover,
-.work-hero iframe:hover {
+
+/* Hover feedback */
+.work-hero iframe:hover,
+.work-hero img:hover {
   transform: scale(1.02);
   box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
 }
 
-/* Project Cards (work-hero-card) */
+/* Featured text block under the hero */
+.work-feature-text {
+  max-width: 800px;         /* keep copy width readable */
+  margin: 20px auto 0;
+}
+
+.work-feature-text h1 {
+  font-family: 'VT323', monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #39ff14;
+  text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14, 0 0 16px #39ff14;
+  margin-bottom: 10px;
+}
+
+.work-feature-text p {
+  color: #ccc;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* ================================
+   Project cards (unchanged baseline, cleaned)
+   ================================ */
 .work-hero-card {
   display: block;
   margin: 0 auto;
@@ -730,27 +776,28 @@ section:not(#about) h2.framed-subtitle {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, width 0s;
   height: 100%;
   padding-bottom: 15px;
 }
 
+/* Avoid width changes on hover to prevent layout jump; use scale */
 .work-hero-card:hover {
-  width: 85%;
   box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
   transform: scale(1.02);
 }
+
 .work-card-hero-img,
 .work-hero-card iframe {
   width: 100%;
+  height: 320px;            /* consistent card media height */
   border-radius: 10px 10px 0 0;
   display: block;
   margin: 0 auto;
 }
 
-/* Titles & Labels*/
-.work-hero-card h1,
-.work-des h1 {
+/* Titles & labels */
+.work-hero-card h1 {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   font-weight: bold;
@@ -759,6 +806,7 @@ section:not(#about) h2.framed-subtitle {
   text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14, 0 0 16px #39ff14;
   margin-top: 15px;
 }
+
 #work-text {
   text-align: center;
   font-size: 0.9rem;
@@ -768,7 +816,7 @@ section:not(#about) h2.framed-subtitle {
   margin-bottom: 10px;
 }
 
-/*Tech Stack Tags */
+/* Tech stack tags */
 .tech-stack {
   cursor: pointer;
   margin-right: 10px;
@@ -786,7 +834,9 @@ section:not(#about) h2.framed-subtitle {
   box-shadow: 0 0 8px #39ff14;
 }
 
-/* Layout Spacing */
+/* ================================
+   Layout spacing
+   ================================ */
 .work-double-row {
   padding-left: 120px;
   padding-right: 120px;
@@ -794,41 +844,35 @@ section:not(#about) h2.framed-subtitle {
   position: relative;
   z-index: 1;
 }
-#work-row {
-  padding-left: 135px;
-  padding-right: 135px;
-  width: 100vw;
-  position: relative;
-  z-index: 1;
-}
 
-/* Featured project Datawrapper embed */
-.work-hero iframe {
-  width: 100%;
-  max-width: 1000px;   /* prevents it from stretching too wide on large screens */
-  height: 480px;
-  margin: 0 auto;
-  display: block;
-}
-
-/* Regular project cards */
-.work-hero-card iframe {
-  width: 100%;
-  height: 320px;
-}
-
-/* Responsive Tweaks */
+/* ================================
+   Responsive tweaks
+   ================================ */
 @media (max-width: 1024px) {
   .work-double-row,
   #work-row {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .work-hero iframe {
+  .work-hero iframe,
+  .work-hero img {
     height: 350px;
   }
-  .work-hero-card iframe {
+  .work-hero-card iframe,
+  .work-card-hero-img {
     height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .work-hero {
+    max-width: 100%;
+  }
+  .work-feature-text h1 {
+    font-size: 1.4rem;
+  }
+  .work-feature-text p {
+    font-size: 0.95rem;
   }
 }
 
