@@ -5,12 +5,15 @@
 
 /* Preloader Color */
 #preloader {
-  background-color: #000; /* background behind the loader */
+  background-color: #000;
+  /* background behind the loader */
 }
 
 .spinner {
-  border: 4px solid rgba(255, 255, 255, 0.2); /* outer ring */
-  border-top: 4px solid #39ff14; /* neon green spinner color */
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  /* outer ring */
+  border-top: 4px solid #39ff14;
+  /* neon green spinner color */
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -28,14 +31,18 @@ h1.sitename {
   font-weight: 400;
   margin-bottom: 15px;
   text-transform: uppercase;
-  color: #00eaff; /* slightly deeper cyan for realism */
+  color: #00eaff;
+  /* slightly deeper cyan for realism */
   letter-spacing: 2px;
 
   /* Crisp digital glow + dark shadow for contrast */
   text-shadow:
-    3px 3px 8px rgba(0, 0, 0, 0.85), /* dark back shadow to sharpen edges */
-    0 0 3px #00eaff,                 /* subtle inner glow */
-    0 0 6px #00eaff;                 /* minimal outer glow */
+    3px 3px 8px rgba(0, 0, 0, 0.85),
+    /* dark back shadow to sharpen edges */
+    0 0 3px #00eaff,
+    /* subtle inner glow */
+    0 0 6px #00eaff;
+  /* minimal outer glow */
 }
 
 /* ==========================================================
@@ -46,7 +53,8 @@ h1.sitename {
 .section-title h1,
 .section-header h1 {
   position: relative;
-  display: flex; /* inline-block; */
+  display: flex;
+  /* inline-block; */
   align-items: center;
   justify-content: center;
   gap: 20px;
@@ -60,7 +68,8 @@ h1.sitename {
   margin-bottom: 25px;
   /* Neon glow mirroring subtitles for larger text */
   text-shadow:
-    0 0 2px #000,               /* crisp dark outline */
+    0 0 2px #000,
+    /* crisp dark outline */
     0 0 4px #39ff14,
     0 0 8px #39ff14,
     0 0 16px #39ff14,
@@ -83,13 +92,11 @@ h1.sitename {
     radial-gradient(circle at 20% 50%, #00eaff 0 4px, transparent 5px),
     radial-gradient(circle at 70% 50%, #00eaff 0 4px, transparent 5px),
     /* base line */
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       transparent,
       #00eaff 20%,
       #00eaff 80%,
-      transparent
-    );
+      transparent);
   box-shadow:
     0 0 4px #00eaff,
     0 0 8px rgba(0, 234, 255, 0.5);
@@ -128,16 +135,22 @@ h1.sitename {
 /* Other framed subtitles */
 section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
-  font-size: 1.8rem; /* same size */
+  font-size: 1.8rem;
+  /* same size */
   font-weight: bold;
-  color: #39ff14; /* same neon green */
+  color: #39ff14;
+  /* same neon green */
 
-  display: block;              /* make it a block element */
-  width: 400px;                /* fixed width (adjust as needed) */
-  margin: 0 auto 20px auto;    /* centers it horizontally + spacing below */
-  text-align: center;          /* centers the text inside the box */
-  margin-top: 15px;      
-  
+  display: block;
+  /* make it a block element */
+  width: 400px;
+  /* fixed width (adjust as needed) */
+  margin: 0 auto 20px auto;
+  /* centers it horizontally + spacing below */
+  text-align: center;
+  /* centers the text inside the box */
+  margin-top: 15px;
+
   padding: 6px 12px;
   border: 2px solid #39ff14;
   border-radius: 3px;
@@ -163,8 +176,10 @@ section:not(#about) h2.framed-subtitle {
 /* Mobile adjustments */
 @media (max-width: 600px) {
   section:not(#about) h2.framed-subtitle {
-    font-size: 1.4rem;   /* slightly smaller text */
-    padding: 4px 8px;    /* tighter padding */
+    font-size: 1.4rem;
+    /* slightly smaller text */
+    padding: 4px 8px;
+    /* tighter padding */
   }
 }
 
@@ -193,40 +208,50 @@ section:not(#about) h2.framed-subtitle {
 
 /* Desktop Nav */
 @media (min-width: 1200px) {
+
   .navmenu a,
   .navmenu a:focus {
     font-family: 'DotGothic16', sans-serif;
     font-size: 17px;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #00eaff; /* refined cyan */
+    color: #00eaff;
+    /* refined cyan */
     background-color: transparent;
     transition: all 0.3s ease;
     text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8), /* crisp back shadow */
+      1px 1px 4px rgba(0, 0, 0, 0.8),
+      /* crisp back shadow */
       0 0 3px #00eaff,
-      0 0 6px #00eaff; /* soft inner glow */
+      0 0 6px #00eaff;
+    /* soft inner glow */
   }
 
-  .navmenu li:hover > a,
+  .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #39ff14; /* neon green accent */
-    background-color: rgba(0, 0, 0, 0.7); /* subtle dark hover plate */
+    color: #39ff14;
+    /* neon green accent */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* subtle dark hover plate */
     border-radius: 4px;
     text-shadow:
       1px 1px 4px rgba(0, 0, 0, 0.8),
       0 0 5px #39ff14,
-      0 0 12px #39ff14; /* contained glow */
-    box-shadow: 0 0 6px rgba(57, 255, 20, 0.6); /* mild edge aura */
+      0 0 12px #39ff14;
+    /* contained glow */
+    box-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
+    /* mild edge aura */
   }
 }
 
 /* Mobile Nav */
 @media (max-width: 1199px) {
   .navmenu ul {
-    background-color: rgba(10, 10, 30, 0.95); /* dark glass panel */
-    backdrop-filter: blur(4px); /* subtle futuristic blur */
+    background-color: rgba(10, 10, 30, 0.95);
+    /* dark glass panel */
+    backdrop-filter: blur(4px);
+    /* subtle futuristic blur */
   }
 
   .navmenu a,
@@ -234,7 +259,8 @@ section:not(#about) h2.framed-subtitle {
     font-family: 'DotGothic16', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    color: #00eaff; /* calm cyan */
+    color: #00eaff;
+    /* calm cyan */
     letter-spacing: 1px;
     text-shadow:
       1px 1px 4px rgba(0, 0, 0, 0.8),
@@ -245,7 +271,8 @@ section:not(#about) h2.framed-subtitle {
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #39ff14; /* signal green */
+    color: #39ff14;
+    /* signal green */
     text-shadow:
       1px 1px 4px rgba(0, 0, 0, 0.8),
       0 0 5px #39ff14,
@@ -302,9 +329,12 @@ section:not(#about) h2.framed-subtitle {
 
   /* Sharper digital glow with dark contrast */
   text-shadow:
-    3px 3px 8px rgba(0, 0, 0, 0.85) !important,  /* deep back shadow */
-    0 0 3px #00eaff !important,                  /* tight inner glow */
-    0 0 8px rgba(0, 234, 255, 0.6) !important;   /* subtle outer aura */
+    3px 3px 8px rgba(0, 0, 0, 0.85) !important,
+    /* deep back shadow */
+    0 0 3px #00eaff !important,
+    /* tight inner glow */
+    0 0 8px rgba(0, 234, 255, 0.6) !important;
+  /* subtle outer aura */
 }
 
 /* H2 Hero Tagline */
@@ -383,13 +413,11 @@ section:not(#about) h2.framed-subtitle {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 255, 255, 0.25) 0px,
-    rgba(0, 255, 255, 0.25) 2px,
-    transparent 4px,
-    transparent 8px
-  );
+  background: repeating-linear-gradient(to bottom,
+      rgba(0, 255, 255, 0.25) 0px,
+      rgba(0, 255, 255, 0.25) 2px,
+      transparent 4px,
+      transparent 8px);
   mix-blend-mode: screen;
   opacity: 0.3;
   animation: scanlineFlicker 1.5s linear infinite;
@@ -401,12 +429,10 @@ section:not(#about) h2.framed-subtitle {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    rgba(0, 255, 255, 0.35) 4px,
-    transparent 15px
-  );
+  background: repeating-linear-gradient(to bottom,
+      transparent 0px,
+      rgba(0, 255, 255, 0.35) 4px,
+      transparent 15px);
   mix-blend-mode: screen;
   opacity: 0.3;
   animation: interferenceFlash 3s ease-in-out infinite;
@@ -429,49 +455,114 @@ section:not(#about) h2.framed-subtitle {
 
 /* Jittery horizontal shift */
 @keyframes jitterShift {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  50% { transform: translateX(2px); }
-  75% { transform: translateX(-1px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-2px);
+  }
+
+  50% {
+    transform: translateX(2px);
+  }
+
+  75% {
+    transform: translateX(-1px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Scanline flicker */
 @keyframes scanlineFlicker {
-  0% { background-position: 0 0; opacity: 0.3; }
-  50% { background-position: 0 100px; opacity: 0.6; }
-  100% { background-position: 0 200px; opacity: 0.3; }
+  0% {
+    background-position: 0 0;
+    opacity: 0.3;
+  }
+
+  50% {
+    background-position: 0 100px;
+    opacity: 0.6;
+  }
+
+  100% {
+    background-position: 0 200px;
+    opacity: 0.3;
+  }
 }
 
 /* Brightness pulses */
 @keyframes interferenceFlash {
-  0%, 100% { opacity: 0.2; filter: brightness(1.1); }
-  10% { opacity: 0.6; filter: brightness(1.8); }
-  25% { opacity: 0.3; }
-  40% { opacity: 0.7; filter: brightness(2.0); }
-  55% { opacity: 0.4; }
-  70% { opacity: 0.8; filter: brightness(1.6); }
-  85% { opacity: 0.3; }
+
+  0%,
+  100% {
+    opacity: 0.2;
+    filter: brightness(1.1);
+  }
+
+  10% {
+    opacity: 0.6;
+    filter: brightness(1.8);
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.7;
+    filter: brightness(2.0);
+  }
+
+  55% {
+    opacity: 0.4;
+  }
+
+  70% {
+    opacity: 0.8;
+    filter: brightness(1.6);
+  }
+
+  85% {
+    opacity: 0.3;
+  }
 }
 
 /* Glow pulse */
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 25px #00eaff55, 0 0 45px #00eaff33; }
-  50% { box-shadow: 0 0 35px #00eaff88, 0 0 60px #00eaff55; }
+
+  0%,
+  100% {
+    box-shadow: 0 0 25px #00eaff55, 0 0 45px #00eaff33;
+  }
+
+  50% {
+    box-shadow: 0 0 35px #00eaff88, 0 0 60px #00eaff55;
+  }
 }
 
 /* Static shimmer */
 @keyframes grainShift {
-  0% { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 60px;
+  }
 }
 
 /* === ABOUT SECTION H3 (VT323 Terminal Glow with Outline) === */
 #about h2 {
   font-family: 'VT323', monospace;
-  font-size: 1.8rem; /* same size */
+  font-size: 1.8rem;
+  /* same size */
   font-weight: bold;
-  color: #39ff14; /* same neon green */
+  color: #39ff14;
+  /* same neon green */
   display: inline-block;
   padding: 3px 8px;
   border: 2px solid #39ff14;
@@ -505,8 +596,17 @@ section:not(#about) h2.framed-subtitle {
 }
 
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
 
 /* ==========================================================
@@ -519,7 +619,8 @@ section:not(#about) h2.framed-subtitle {
   background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") no-repeat center center;
   background-size: cover !important;
   color: #fff;
-  padding: 80px 0; /* adjust as needed for spacing */
+  padding: 80px 0;
+  /* adjust as needed for spacing */
   text-align: center;
   z-index: 1;
   overflow: hidden;
@@ -529,10 +630,11 @@ section:not(#about) h2.framed-subtitle {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(0, 170, 255, 0.4) 0%, /* top: soft neon blue */
-    rgba(0, 0, 0, 0.6) 100% /* bottom: fade to black */
-  );
+  background: linear-gradient(rgba(0, 170, 255, 0.4) 0%,
+      /* top: soft neon blue */
+      rgba(0, 0, 0, 0.6) 100%
+      /* bottom: fade to black */
+    );
   z-index: 0;
 }
 
@@ -602,9 +704,11 @@ section:not(#about) h2.framed-subtitle {
   0% {
     box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
   }
+
   50% {
     box-shadow: 0 0 25px #00ffcc, 0 0 50px #00ffff inset;
   }
+
   100% {
     box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
   }
@@ -628,10 +732,11 @@ section:not(#about) h2.framed-subtitle {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(0, 170, 255, 0.4) 0%, /* top: soft neon blue */
-    rgba(0, 0, 0, 0.6) 100% /* bottom: fade to black */
-  );
+  background: linear-gradient(rgba(0, 170, 255, 0.4) 0%,
+      /* top: soft neon blue */
+      rgba(0, 0, 0, 0.6) 100%
+      /* bottom: fade to black */
+    );
   z-index: 0;
 }
 
@@ -696,7 +801,7 @@ section:not(#about) h2.framed-subtitle {
    TECH PORTFOLIO
    ============================================ */
 
-   /* ================================
+/* ================================
    Featured project (container)
    ================================ */
 #work-row {
@@ -704,7 +809,8 @@ section:not(#about) h2.framed-subtitle {
   text-align: center;
   padding-left: 60px;
   padding-right: 60px;
-  width: 100%;              /* avoid 100vw causing overflow with scrollbars */
+  width: 100%;
+  /* avoid 100vw causing overflow with scrollbars */
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -713,9 +819,11 @@ section:not(#about) h2.framed-subtitle {
 /* Featured media wrapper */
 .work-hero {
   border-radius: 10px;
-  max-width: 1000px;        /* cap the featured width */
+  max-width: 1000px;
+  /* cap the featured width */
   width: 100%;
-  margin: 0 auto;           /* center within the row */
+  margin: 0 auto;
+  /* center within the row */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -728,7 +836,8 @@ section:not(#about) h2.framed-subtitle {
 .work-hero iframe,
 .work-hero img {
   width: 100%;
-  height: 480px;            /* visual balance for hero */
+  height: 480px;
+  /* visual balance for hero */
   border: none;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
@@ -745,7 +854,8 @@ section:not(#about) h2.framed-subtitle {
 
 /* Featured text block under the hero */
 .work-feature-text {
-  max-width: 800px;         /* keep copy width readable */
+  max-width: 800px;
+  /* keep copy width readable */
   margin: 20px auto 0;
 }
 
@@ -771,7 +881,7 @@ section:not(#about) h2.framed-subtitle {
   display: block;
   margin: 0 auto;
   width: 80%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(57, 255, 20, 0.4);
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
@@ -790,7 +900,8 @@ section:not(#about) h2.framed-subtitle {
 .work-card-hero-img,
 .work-hero-card iframe {
   width: 100%;
-  height: 320px;            /* consistent card media height */
+  height: 320px;
+  /* consistent card media height */
   border-radius: 10px 10px 0 0;
   display: block;
   margin: 0 auto;
@@ -820,7 +931,7 @@ section:not(#about) h2.framed-subtitle {
 .tech-stack {
   cursor: pointer;
   margin-right: 10px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(57, 255, 20, 0.4);
   padding: 2px 6px;
   font-size: 0.8em;
@@ -829,6 +940,7 @@ section:not(#about) h2.framed-subtitle {
   border-radius: 4px;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
 .tech-stack:hover {
   background: rgba(57, 255, 20, 0.2);
   box-shadow: 0 0 8px #39ff14;
@@ -849,15 +961,18 @@ section:not(#about) h2.framed-subtitle {
    Responsive tweaks
    ================================ */
 @media (max-width: 1024px) {
+
   .work-double-row,
   #work-row {
     padding-left: 30px;
     padding-right: 30px;
   }
+
   .work-hero iframe,
   .work-hero img {
     height: 350px;
   }
+
   .work-hero-card iframe,
   .work-card-hero-img {
     height: 250px;
@@ -868,9 +983,11 @@ section:not(#about) h2.framed-subtitle {
   .work-hero {
     max-width: 100%;
   }
+
   .work-feature-text h1 {
     font-size: 1.4rem;
   }
+
   .work-feature-text p {
     font-size: 0.95rem;
   }
@@ -959,126 +1076,238 @@ section:not(#about) h2.framed-subtitle {
    TESTIMONIALS
    ========================================================== */
 
-/* Cyberpunk Barcode */
-.testimonials .testimonial-item .cyber-barcode {
-  width: 160px;
-  /* similar width to stars row */
-  height: 24px;
-  margin: 0 auto 15px auto;
-  /* same spacing as .stars */
-  background: repeating-linear-gradient(90deg,
-      #00f7ff 0 3px,
-      /* neon cyan bar */
-      transparent 3px 6px,
-      #a020f0 6px 9px,
-      /* purple bar */
-      transparent 9px 12px);
-  border: 1px solid #00f7ff;
-  border-radius: 2px;
-  box-shadow:
-    0 0 6px #00f7ff,
-    0 0 12px #a020f0,
-    0 0 24px #00f7ff;
-}
+/* ================================
+   Testimonials layout and framing
+   ================================ */
 
-#testimonials .quote-icon-left,
-#testimonials .quote-icon-right {
-  color: #39ff14; 
-  font-size: 1.5rem; /* make the quotes pop */
-  vertical-align: middle;
-}
-
-/* Testimonials section h3 styling */
-#testimonials h3 {
-  font-family: 'VT323', monospace;
-  font-weight: bold;
-  color: #90ee90;
-  text-transform: uppercase;
-}
-
-/* Testimonials h4 styling */
-#testimonials h4 {
-  font-family: 'VT323', monospace;
-  color: #39ff14; 
-}
-/* Paragraph Styling */
-#testimonials p,
-#testimonials p span {
-  font-family: 'VT323', monospace;
-  font-size: 18px;
-  color: #9aff9a; /* match your pale green */
-  line-height: 1.6;
-}
-
-/* Swiper pagination bullets commented out
-.swiper-pagination-bullet {
-  background-color: #00eaff !important;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  box-shadow: 0 0 6px #00eaff;
-} */
-
-/* hologram Effect */
-
-.testimonial-item {
+/* Section container normalizer */
+#testimonials .container {
   position: relative;
-  background: rgba(10, 10, 30, 0.4); /* subtle dark transparency */
-  border: 2px solid #39ff14; /* neon green border */
-  border-radius: 10px;
-  padding: 30px 20px;
-  margin: 40px auto;
+  z-index: 1;
+}
+
+/* Title block alignment */
+#testimonials .section-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#testimonials .section-title h1 {
+  margin-bottom: 8px;
+}
+
+#testimonials .framed-subtitle {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 2px solid #39ff14;
+  border-radius: 6px;
+  color: #39ff14;
+  text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14;
+  box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+  background: transparent;
+}
+
+/* Swiper wrapper should not clip or misplace bullets */
+#testimonials .swiper {
+  position: relative;
+  padding-bottom: 48px;
+  /* space for bullets */
+  overflow: visible;
+  /* allow glow to render */
+}
+
+/* Ensure slides auto width behaves predictably */
+#testimonials .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* Testimonial card (neon frame corrected) */
+#testimonials .testimonial-item {
+  position: relative;
+  background: rgba(10, 10, 30, 0.35);
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  padding: 28px 22px;
+  margin: 24px auto;
   max-width: 900px;
+  text-align: center;
   box-shadow:
     0 0 4px #39ff14,
     0 0 12px #39ff14,
-    inset 0 0 10px rgba(0, 247, 255, 0.4);
-  transition: all 0.3s ease;
-  text-align: center;
+    inset 0 0 10px rgba(0, 247, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Add faint holographic animation */
-.testimonial-item::before {
+/* Inner glass panel stays inset and centered */
+#testimonials .testimonial-glass-inner {
+  position: relative;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+/* Hologram effect tuned so it doesn’t spill past border */
+#testimonials .testimonial-item::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 247, 255, 0.15),
-    rgba(57, 255, 20, 0.1),
-    rgba(0, 247, 255, 0.15)
-  );
-  opacity: 0.5;
+  inset: 4px;
+  /* keep glow inside border */
   border-radius: 10px;
+  background: linear-gradient(135deg,
+      rgba(0, 247, 255, 0.15),
+      rgba(57, 255, 20, 0.12),
+      rgba(0, 247, 255, 0.15));
+  opacity: 0.5;
   animation: holo-glow 6s linear infinite;
   pointer-events: none;
 }
 
 @keyframes holo-glow {
   0% {
-    opacity: 0.3;
+    opacity: 0.35;
     filter: hue-rotate(0deg);
   }
+
   50% {
     opacity: 0.6;
     filter: hue-rotate(120deg);
   }
+
   100% {
-    opacity: 0.3;
+    opacity: 0.35;
     filter: hue-rotate(360deg);
   }
 }
 
-/* Add slight flicker when hovering */
-.testimonial-item:hover {
+#testimonials .testimonial-item:hover {
+  transform: scale(1.01);
   box-shadow:
     0 0 8px #39ff14,
     0 0 18px #00f7ff,
     inset 0 0 15px rgba(0, 247, 255, 0.6);
-  transform: scale(1.01);
+}
+
+/* Avatar and headings */
+#testimonials .testimonial-img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 12px;
+  box-shadow: 0 0 8px rgba(0, 247, 255, 0.6);
+}
+
+#testimonials h3 {
+  font-family: 'VT323', monospace;
+  font-weight: bold;
+  color: #90ee90;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+#testimonials h4 {
+  font-family: 'VT323', monospace;
+  color: #39ff14;
+  margin-bottom: 12px;
+}
+
+/* Barcode divider alignment and glow */
+#testimonials .cyber-barcode {
+  width: 160px;
+  height: 24px;
+  margin: 0 auto 16px;
+  background: repeating-linear-gradient(90deg,
+      #00f7ff 0 3px,
+      transparent 3px 6px,
+      #a020f0 6px 9px,
+      transparent 9px 12px);
+  border: 1px solid #00f7ff;
+  border-radius: 2px;
+  box-shadow: 0 0 6px #00f7ff, 0 0 12px #a020f0, 0 0 24px #00f7ff;
+}
+
+#testimonials p,
+#testimonials p span {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: #9aff9a;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+#testimonials .quote-icon-left,
+#testimonials .quote-icon-right {
+  color: #39ff14;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+/* ================================
+   Swiper pagination fix
+   ================================ */
+
+/* Place bullets centered below the slides */
+#testimonials .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  width: auto;
+  /* shrink to content */
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Bullet styling (neon) */
+#testimonials .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #00eaff !important;
+  opacity: 0.5;
+  box-shadow: 0 0 6px rgba(0, 234, 255, 0.8);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#testimonials .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+/* Ensure slides don't push bullets out of place */
+#testimonials .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* ================================
+   Responsive tweaks
+   ================================ */
+@media (max-width: 768px) {
+  #testimonials .testimonial-item {
+    margin: 16px auto;
+    padding: 22px 16px;
+  }
+
+  #testimonials .testimonial-glass-inner {
+    max-width: 92%;
+  }
+
+  #testimonials p,
+  #testimonials p span {
+    font-size: 16px;
+  }
+
+  #testimonials .swiper {
+    padding-bottom: 44px;
+  }
+
+  #testimonials .swiper-pagination {
+    bottom: 6px;
+    gap: 6px;
+  }
 }
 
 /* ==========================================================
@@ -1178,9 +1407,20 @@ section:not(#about) h2.framed-subtitle {
 
 /* Glow Animation */
 @keyframes neonPulse {
-  0% { box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14; opacity: 0.9; }
-  50% { box-shadow: 0 0 16px #39ff14, 0 0 36px #39ff14; opacity: 1; }
-  100% { box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14; opacity: 0.9; }
+  0% {
+    box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+    opacity: 0.9;
+  }
+
+  50% {
+    box-shadow: 0 0 16px #39ff14, 0 0 36px #39ff14;
+    opacity: 1;
+  }
+
+  100% {
+    box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+    opacity: 0.9;
+  }
 }
 
 /* Responsive */
@@ -1188,6 +1428,7 @@ section:not(#about) h2.framed-subtitle {
   #contact form {
     padding: 18px;
   }
+
   #contact input,
   #contact textarea {
     font-size: 1.1rem;
@@ -1231,11 +1472,15 @@ section:not(#about) h2.framed-subtitle {
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #00eaff; /* deeper cyan tone for realism */
+  color: #00eaff;
+  /* deeper cyan tone for realism */
   text-shadow:
-    2px 2px 6px rgba(0, 0, 0, 0.85), /* dark base shadow */
-    0 0 3px #00eaff,                 /* inner glow */
-    0 0 6px #00eaff;                 /* soft outer edge */
+    2px 2px 6px rgba(0, 0, 0, 0.85),
+    /* dark base shadow */
+    0 0 3px #00eaff,
+    /* inner glow */
+    0 0 6px #00eaff;
+  /* soft outer edge */
 }
 
 /* Body text (VT323) */
