@@ -858,6 +858,13 @@ section:not(#about) h2.framed-subtitle {
   display: block;
 }
 
+/* Force white background for Datawrapper embeds */
+iframe[src*="datawrapper.dwcdn.net"] {
+  background-color: #fff !important;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 246, 255, 0.4);
+}
+
 /* Text Content */
 .portfolio-content {
   padding: 1.5rem;
