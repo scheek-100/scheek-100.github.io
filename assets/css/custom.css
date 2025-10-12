@@ -696,30 +696,6 @@ section:not(#about) h2.framed-subtitle {
    TECH PORTFOLIO
    ============================================ */
 
-/* Portfolio Section Background */
-.portfolio {
-  position: relative;
-  z-index: 1;
-  background: url('assets/img/technology_particle_background.jpg') no-repeat center center / cover !important;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 80px 20px;
-  overflow: hidden;
-}
-
-.portfolio::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 40, 0.7) 100%
-  );
-  z-index: 0;
-  pointer-events: none;
-}
-
 /* Featured Project (work-hero) */
 .work-hero {
   border-radius: 10px;
