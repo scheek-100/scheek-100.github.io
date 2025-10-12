@@ -821,7 +821,7 @@ section:not(#about) h2.framed-subtitle {
   border-radius: 14px;
   box-shadow: 0 0 25px rgba(0, 246, 255, 0.25);
   transition: all 0.35s ease;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: left;
   position: relative;
   display: flex;
