@@ -125,7 +125,47 @@ h1.sitename {
   transform: translateY(-50%) skewX(30deg);
 }
 
+/* H1 HERO FONT */
+.hero h1,
+#hero h1,
+#hero .container h1 {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 3rem !important; /* roughly 48px */
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #00eaff !important;
+
+  /* Crisp TRON-style glow */
+  text-shadow:
+    0 0 3px rgba(0, 234, 255, 0.9) !important,
+    0 0 8px rgba(0, 234, 255, 0.6) !important,
+    0 0 16px rgba(0, 234, 255, 0.4) !important;
+}
+
 /* ==== H2 TEXT (SUBTITLES) ==== */
+
+/* H2 HERO FONT */
+/* H2 Hero Tagline */
+#hero h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #6fd3ff; /* pale blue */
+  text-transform: uppercase;
+  text-shadow:
+    0 0 2px rgba(111, 211, 255, 0.8),
+    0 0 6px rgba(111, 211, 255, 0.6),
+    0 0 12px rgba(111, 211, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* Tagline container */
+#hero .tagline {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
 /* Other framed subtitles */
 section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
@@ -190,7 +230,24 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* ==== H3 TEXT ==== */
-/* Footer Font */
+
+/* H3 HERO FONT */
+/* H3 Areas of Expertise Text */
+#hero h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: #6fd3ff; /* pale blue */
+  text-transform: uppercase;
+  text-shadow:
+    0 0 2px rgba(111, 211, 255, 0.8),
+    0 0 6px rgba(111, 211, 255, 0.6),
+    0 0 12px rgba(111, 211, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* H3 FOOTER FONT */
 footer h3 {
   font-family: 'Orbitron', sans-serif;
   font-size: 56px;
@@ -206,7 +263,6 @@ footer h3 {
 }
 
 /* === PARAGRAPHS === */
-
 /* Pale green VT323 for content text only */
 .section-black p,
 .section-black .description,
@@ -335,53 +391,6 @@ footer h3 {
 #hero .container {
   position: relative;
   z-index: 3;
-}
-
-/* === HERO SECTION TITLE (DotGothic16 – retro-tech refined) === */
-.hero h1,
-#hero h1,
-#hero .container h1 {
-  font-family: 'DotGothic16', sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 3rem !important;
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  color: #00eaff !important;
-
-  /* Sharper digital glow with dark contrast */
-  text-shadow:
-    3px 3px 8px rgba(0, 0, 0, 0.85) !important,
-    /* deep back shadow */
-    0 0 3px #00eaff !important,
-    /* tight inner glow */
-    0 0 8px rgba(0, 234, 255, 0.6) !important;
-  /* subtle outer aura */
-}
-
-/* H2 Hero Tagline */
-#hero h2 {
-  font-family: "VT323", monospace;
-  font-size: 1.5rem;
-  color: #6fd3ff;
-  /* pale blue */
-  text-shadow: 0 0 6px rgba(111, 211, 255, 0.6);
-  margin-bottom: 0.5rem;
-}
-
-/* Tagline */
-#hero .tagline {
-  opacity: 0.85;
-  margin-bottom: 1.5rem;
-}
-
-/* Areas of Expertise Text */
-#hero h3 {
-  font-family: "VT323", monospace;
-  font-size: 1.5rem;
-  color: #6fd3ff;
-  /* pale blue */
-  text-shadow: 0 0 6px rgba(111, 211, 255, 0.6);
-  margin-bottom: 0.5rem;
 }
 
 /* Social links */
