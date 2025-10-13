@@ -315,50 +315,53 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* ==========================================================
-   FOLIO FRAMEWORK FIX – Removes mobile black bar under header
+   FOLIO MOBILE NAV FIX (black bar removed, toggle restored)
    ========================================================== */
-
-/* Hide dark bar when mobile nav is closed */
 @media (max-width: 1199px) {
 
-  /* Default menu container cleanup */
   .navmenu {
     background: transparent !important;
     position: relative;
     z-index: 1000;
   }
 
-  /* Keep the menu hidden until toggled */
+  /* Keep the menu mounted, just invisible by default */
   .navmenu ul {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: flex;                    /* must stay flex for Folio's JS */
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(10, 10, 30, 0.95);
-    backdrop-filter: blur(4px);
+    list-style: none;
     margin: 0;
     padding: 1rem 0;
-    list-style: none;
+    background-color: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
   }
 
-  /* Show the dropdown when the Folio JS adds “mobile-nav-active” */
-  .mobile-nav-active .navmenu ul {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    visibility: visible;
+  /* When Folio toggles the menu open */
+  body.mobile-nav-active .navmenu ul {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
-  /* Prevent background behind toggle button */
+  /* Hamburger icon cleanup */
   .mobile-nav-toggle {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    position: relative;
+    z-index: 1100;
   }
 }
 
