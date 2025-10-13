@@ -210,43 +210,45 @@ section:not(#about) h2.framed-subtitle {
 /* ==========================================================
    NAVIGATION MENU
    ========================================================== */
-
 /* === NAVIGATION MENU (DotGothic16 – refined tech aesthetic) === */
 
 /* Desktop Nav */
 @media (min-width: 1200px) {
 
-.navmenu a,
-.navmenu a:focus {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: #00eaff; /* refined cyan */
-  background-color: transparent;
-  transition: all 0.3s ease;
-  text-shadow:
-    0 0 2px rgba(0, 234, 255, 0.6),
-    0 0 6px rgba(0, 234, 255, 0.4);
-}
+  .navmenu a,
+  .navmenu a:focus {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #00eaff;
+    /* refined cyan */
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-shadow:
+      0 0 2px rgba(0, 234, 255, 0.6),
+      0 0 6px rgba(0, 234, 255, 0.4);
+  }
 
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
     color: #39ff14;
     /* neon green accent */
-    background-color: rgba(0, 0, 0, 0.7);
-    /* subtle dark hover plate */
-    border-radius: 4px;
+    background: transparent;
+    /* no highlight box */
+    border: none;
+    box-shadow: none;
+    /* remove outer glow frame */
     text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8),
-      0 0 5px #39ff14,
-      0 0 12px #39ff14;
-    /* contained glow */
-    box-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
-    /* mild edge aura */
+      0 0 4px #39ff14,
+      0 0 10px rgba(57, 255, 20, 0.7),
+      0 0 20px rgba(57, 255, 20, 0.4);
+    /* smooth green glow */
+    transition: color 0.25s ease, text-shadow 0.25s ease;
   }
+
 }
 
 /* Mobile Nav */
@@ -260,16 +262,18 @@ section:not(#about) h2.framed-subtitle {
 
   .navmenu a,
   .navmenu a:focus {
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
     color: #00eaff;
     /* calm cyan */
-    letter-spacing: 1px;
-    text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8),
-      0 0 3px #00eaff;
+    background-color: transparent;
     transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow:
+      0 0 2px rgba(0, 234, 255, 0.6),
+      0 0 6px rgba(0, 234, 255, 0.4);
   }
 
   .navmenu a:hover,
