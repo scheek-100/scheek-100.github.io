@@ -344,6 +344,39 @@ footer h3 {
 }
 
 /* ==========================================================
+   RESPONSIVE SECTION TITLES (All Sections) FOR SMALLER PLATFORMS
+   ========================================================== */
+
+/* Medium screens (tablets and small laptops) */
+@media (max-width: 992px) {
+  .section-title h1,
+  .section-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Small screens (phones and small tablets) */
+@media (max-width: 768px) {
+  .section-title h1,
+  .section-header h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Extra small screens (very narrow phones) */
+@media (max-width: 480px) {
+  .section-title h1,
+  .section-header h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* H2 TEXT FOR SMALL PLATFORMS */
+.section-title h2 {
+  font-size: 1rem;
+}
+
+/* ==========================================================
    NAVIGATION MENU
    ========================================================== */
 /* === NAVIGATION MENU (DotGothic16 – refined tech aesthetic) === */
@@ -1219,11 +1252,6 @@ iframe[src*="datawrapper.dwcdn.net"] {
   }
 }
 
-@media (max-width: 768px) {
-  #testimonials .section-title h1 {
-    font-size: 1.7rem;
-  }
-
   #testimonials .framed-subtitle {
     font-size: 0.92rem;
     padding: 4px 8px;
@@ -1272,11 +1300,6 @@ iframe[src*="datawrapper.dwcdn.net"] {
     height: 7px;
   }
 }
-
-@media (max-width: 480px) {
-  #testimonials .section-title h1 {
-    font-size: 1.5rem;
-  }
 
   #testimonials .framed-subtitle {
     font-size: 0.88rem;
