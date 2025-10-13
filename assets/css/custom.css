@@ -229,16 +229,25 @@ p {
   letter-spacing: 0.5px;
 }
 
-/*.section-title p,
-.section-header p {
-  font-family: 'DotGothic16', sans-serif;
-  font-size: 15px;
-  color: #b5c7cc;
-  text-align: center;
-  margin-top: 10px;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-} */
+/* FOOTER (Small Font) */
+footer,
+footer p,
+footer small {
+  font-family: 'VT323', monospace;
+  color: #9ee9ff;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #6fd3ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #39ff14; /* neon green hover */
+}
 
 /* === ABOUT SECTION H3 (VT323 Terminal Glow with Outline) === */
 #about h2 {
@@ -333,20 +342,6 @@ footer h3 {
     0 0 8px #39ff14,
     0 0 16px #39ff14;
 }
-
-/* === PARAGRAPHS === */
-/* Pale green VT323 for content text only */
-/* .section-black p,
-.section-black .description,
-.section-black .resume-item p,
-.section-black .blog .description {
-  font-family: 'VT323', monospace;
-  font-size: 18px;
-  /* tweak for readability */
- /* color: #9aff9a; */
-  /* pale green */
-  /*line-height: 1.6; */
-/* } */
 
 /* ==========================================================
    NAVIGATION MENU
