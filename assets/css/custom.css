@@ -55,8 +55,8 @@ h1.sitename {
   font-family: 'Orbitron', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  letter-spacing: 3px;
   text-transform: uppercase;
+  letter-spacing: 3px;
   color: #00eaff;
   position: relative;
   display: inline-block;
@@ -64,21 +64,20 @@ h1.sitename {
   margin: 2rem auto;
   text-align: center;
 
-  /* Neon glow text */
+  /* Sharper, reduced-glow neon effect */
   text-shadow:
-    0 0 5px #00eaff,
-    0 0 10px #00eaff,
-    0 0 20px #00eaff,
-    0 0 40px #00eaff;
+    0 0 2px #00eaff,
+    0 0 4px rgba(0, 234, 255, 0.6),
+    0 0 8px rgba(0, 234, 255, 0.4);
 
-  /* Glassy container */
-  background: rgba(0, 10, 20, 0.45); /* dark translucent */
-  border: 1px solid rgba(0, 255, 255, 0.4);
+  /* Subtle glass background */
+  background: rgba(0, 10, 20, 0.35);
+  border: 1px solid rgba(0, 255, 255, 0.25);
   border-radius: 10px;
   box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.3),
-    inset 0 0 15px rgba(0, 255, 255, 0.15);
-  backdrop-filter: blur(6px);
+    0 0 10px rgba(0, 255, 255, 0.2),
+    inset 0 0 6px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
 }
 
 /* === DIVIDER LINES (tech-inspired with gradient nodes) === */
