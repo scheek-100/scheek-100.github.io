@@ -207,96 +207,111 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* ==========================================================
-   NAVIGATION MENU
+   NAVIGATION MENU (Orbitron – Clean TRON Aesthetic)
    ========================================================== */
 
-/* === NAVIGATION MENU (Orbitron – unified neon aesthetic) === */
-
-/* Desktop Nav */
+/* Desktop Navigation */
 @media (min-width: 1200px) {
+
+  .navmenu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* even spacing between all menu items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navmenu li {
+    display: inline-block;
+  }
 
   .navmenu a,
   .navmenu a:focus {
     font-family: 'Orbitron', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #00eaff; /* cyan accent */
-    background-color: transparent;
+    letter-spacing: 1.5px;
+    color: #00eaff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    background: transparent;
     transition: all 0.3s ease;
     text-shadow:
       0 0 2px #00eaff,
       0 0 6px rgba(0, 234, 255, 0.6);
   }
 
-/* Navigation Button Framing */  
-.navmenu li:hover > a,
-.navmenu .active,
-.navmenu .active:focus {
-  color: #39ff14;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 6px;
-  padding: 0.6rem 1rem; /* same as normal state */
-  box-shadow:
-    0 0 6px rgba(57, 255, 20, 0.5),
-    0 0 12px rgba(57, 255, 20, 0.3);
-  text-shadow:
-    0 0 3px #39ff14,
-    0 0 8px rgba(57, 255, 20, 0.6);
-  transition: all 0.25s ease;
+  /* Hover + Active states */
+  .navmenu li:hover > a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: #39ff14; /* neon green accent */
+    background-color: rgba(0, 0, 0, 0.65); /* soft dark backing */
+    border-radius: 6px;
+    padding: 0.6rem 1rem; /* consistent with default state */
+    box-shadow:
+      0 0 6px rgba(57, 255, 20, 0.5),
+      0 0 12px rgba(57, 255, 20, 0.3);
+    text-shadow:
+      0 0 3px #39ff14,
+      0 0 8px rgba(57, 255, 20, 0.6);
+    transition: all 0.25s ease;
+  }
 }
 
-/* Mobile Nav */
+/* Mobile Navigation */
 @media (max-width: 1199px) {
 
   .navmenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    list-style: none;
     background-color: rgba(10, 10, 30, 0.95); /* dark glass panel */
-    backdrop-filter: blur(4px); /* subtle blur for futuristic panel effect */
+    backdrop-filter: blur(4px);
+    margin: 0;
+    padding: 1rem 0;
+  }
+
+  .navmenu li {
+    width: 100%;
+    text-align: center;
   }
 
   .navmenu a,
   .navmenu a:focus {
+    display: block;
     font-family: 'Orbitron', sans-serif;
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: #00eaff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
     text-shadow:
       0 0 2px #00eaff,
       0 0 6px rgba(0, 234, 255, 0.6);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
     color: #39ff14;
+    background-color: rgba(0, 0, 0, 0.65);
+    box-shadow:
+      0 0 6px rgba(57, 255, 20, 0.5),
+      0 0 12px rgba(57, 255, 20, 0.3);
     text-shadow:
       0 0 3px #39ff14,
-      0 0 10px rgba(57, 255, 20, 0.6);
+      0 0 8px rgba(57, 255, 20, 0.6);
   }
-}
-
-/* Fix navigation sticking */
-.navmenu ul {
-  display: flex;
-  gap: 1rem; /* evenly separates all items */
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navmenu li {
-  display: inline-block;
-}
-
-.navmenu a {
-  padding: 0.6rem 1rem; /* uniform clickable area */
-  border-radius: 4px;
 }
 
 /* ==========================================================
