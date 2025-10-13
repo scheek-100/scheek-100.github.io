@@ -46,35 +46,39 @@ h1.sitename {
 }
 
 /* ==========================================================
-   SECTION TITLES (DotGothic16)
+  FONT - GLOBAL
    ========================================================== */
 
-/* Main title text */
+/* === H1 TEXT === */
 .section-title h1,
 .section-header h1 {
-  position: relative;
-  display: flex;
-  /* inline-block; */
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-size: 56px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 3px;
+  text-transform: uppercase;
   color: #00eaff;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
   text-align: center;
-  margin-bottom: 25px;
-  /* Neon glow mirroring subtitles for larger text */
+
+  /* Neon glow text */
   text-shadow:
-    0 0 2px #000,
-    /* crisp dark outline */
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14,
-    0 0 32px #39ff14,
-    0 0 64px #39ff14;
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00eaff,
+    0 0 40px #00eaff;
+
+  /* Glassy container */
+  background: rgba(0, 10, 20, 0.45); /* dark translucent */
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 10px;
+  box-shadow:
+    0 0 25px rgba(0, 255, 255, 0.3),
+    inset 0 0 15px rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
 }
 
 /* === DIVIDER LINES (tech-inspired with gradient nodes) === */
