@@ -49,7 +49,7 @@ h1.sitename {
   FONT - GLOBAL
    ========================================================== */
 
-/* === H1 TEXT === */
+/* === H1 TEXT (TITLES) === */
 .section-title h1,
 .section-header h1 {
   font-family: 'Orbitron', sans-serif;
@@ -128,21 +128,7 @@ h1.sitename {
   transform: translateY(-50%) skewX(30deg);
 }
 
-/* === SUBTITLES (paragraphs under titles) === */
-.section-title p,
-.section-header p {
-  font-family: 'DotGothic16', sans-serif;
-  font-size: 15px;
-  color: #b5c7cc;
-  text-align: center;
-  margin-top: 10px;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-/* ==========================================================
-   FRAMED SUBTITLES
-   ========================================================== */
+/* ==== H2 TEXT (SUBTITLES) ==== */
 /* Other framed subtitles */
 section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
@@ -169,7 +155,7 @@ section:not(#about) h2.framed-subtitle {
   letter-spacing: 0.5px;
   position: relative;
 
-  /* === Dual-layer glow + crisp shadow === */
+  /* Dual-layer glow + crisp shadow */
   text-shadow:
     /* inner dark outline for clarity */
     0 0 1px #000,
@@ -194,10 +180,19 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* ==========================================================
-   PARAGRAPHS (VT323T)
-   ========================================================== */
+/* H2 - Subtitles Font */
+.section-title p,
+.section-header p {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 15px;
+  color: #b5c7cc;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
 
+/* === PARAGRAPHS === */
 /* Pale green VT323 for content text only */
 .section-black p,
 .section-black .description,
@@ -215,67 +210,58 @@ section:not(#about) h2.framed-subtitle {
    NAVIGATION MENU
    ========================================================== */
 
-/* === NAVIGATION MENU (DotGothic16 – refined tech aesthetic) === */
+/* === NAVIGATION MENU (Orbitron – unified neon aesthetic) === */
 
 /* Desktop Nav */
 @media (min-width: 1200px) {
 
   .navmenu a,
   .navmenu a:focus {
-    font-family: 'DotGothic16', sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #00eaff;
-    /* refined cyan */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #00eaff; /* cyan accent */
     background-color: transparent;
     transition: all 0.3s ease;
     text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8),
-      /* crisp back shadow */
-      0 0 3px #00eaff,
-      0 0 6px #00eaff;
-    /* soft inner glow */
+      0 0 2px #00eaff,
+      0 0 6px rgba(0, 234, 255, 0.6);
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: #39ff14;
-    /* neon green accent */
+    color: #39ff14; /* neon green highlight */
     background-color: rgba(0, 0, 0, 0.7);
-    /* subtle dark hover plate */
     border-radius: 4px;
     text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8),
-      0 0 5px #39ff14,
-      0 0 12px #39ff14;
-    /* contained glow */
-    box-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
-    /* mild edge aura */
+      0 0 3px #39ff14,
+      0 0 10px rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
   }
 }
 
 /* Mobile Nav */
 @media (max-width: 1199px) {
+
   .navmenu ul {
-    background-color: rgba(10, 10, 30, 0.95);
-    /* dark glass panel */
-    backdrop-filter: blur(4px);
-    /* subtle futuristic blur */
+    background-color: rgba(10, 10, 30, 0.95); /* dark glass panel */
+    backdrop-filter: blur(4px); /* subtle blur for futuristic panel effect */
   }
 
   .navmenu a,
   .navmenu a:focus {
-    font-family: 'DotGothic16', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
     color: #00eaff;
-    /* calm cyan */
-    letter-spacing: 1px;
     text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8),
-      0 0 3px #00eaff;
+      0 0 2px #00eaff,
+      0 0 6px rgba(0, 234, 255, 0.6);
     transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
@@ -283,11 +269,9 @@ section:not(#about) h2.framed-subtitle {
   .navmenu .active,
   .navmenu .active:focus {
     color: #39ff14;
-    /* signal green */
     text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8),
-      0 0 5px #39ff14,
-      0 0 10px #39ff14;
+      0 0 3px #39ff14,
+      0 0 10px rgba(57, 255, 20, 0.6);
   }
 }
 
