@@ -67,8 +67,8 @@ h1.sitename {
   /* === Dual-layer glow + crisp shadow === */
   text-shadow:
     /* inner dark outline for clarity */
-    0 0 1px #000,
-    0 0 2px #000,
+    0 0 1px #ffffff,
+    0 0 2px #ffffff,
     /* outer glow layers */
     0 0 4px #39ff14,
     0 0 8px #39ff14,
