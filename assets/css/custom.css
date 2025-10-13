@@ -217,7 +217,7 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* H2 - Subtitles Font */
+/* Paragraphs Font */
 .section-title p,
 .section-header p {
   font-family: 'DotGothic16', sans-serif;
@@ -229,8 +229,61 @@ section:not(#about) h2.framed-subtitle {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* ==== H3 TEXT ==== */
+/* === ABOUT SECTION H3 (VT323 Terminal Glow with Outline) === */
+#about h2 {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  /* same size */
+  font-weight: bold;
+  color: #39ff14;
+  /* same neon green */
+  display: inline-block;
+  padding: 3px 8px;
+  border: 2px solid #39ff14;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  position: relative;
 
+  /* === Dual-layer glow + crisp shadow === */
+  text-shadow:
+    /* inner dark outline for clarity */
+    0 0 1px #000,
+    0 0 2px #000,
+    /* outer glow layers */
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14,
+    0 0 32px #39ff14;
+  box-shadow:
+    0 0 6px #39ff14,
+    inset 0 0 8px rgba(57, 255, 20, 0.2);
+}
+
+/* Blinking cursor (kept subtle) */
+#about h2::after {
+  content: "_";
+  color: #39ff14;
+  margin-left: 6px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* ==== H3 TEXT ==== */
 /* H3 HERO FONT */
 /* H3 Areas of Expertise Text */
 #hero h3 {
@@ -590,60 +643,6 @@ footer h3 {
 
   100% {
     background-position: 60px 60px;
-  }
-}
-
-/* === ABOUT SECTION H3 (VT323 Terminal Glow with Outline) === */
-#about h2 {
-  font-family: 'VT323', monospace;
-  font-size: 1.8rem;
-  /* same size */
-  font-weight: bold;
-  color: #39ff14;
-  /* same neon green */
-  display: inline-block;
-  padding: 3px 8px;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.5px;
-  margin-bottom: 15px;
-  position: relative;
-
-  /* === Dual-layer glow + crisp shadow === */
-  text-shadow:
-    /* inner dark outline for clarity */
-    0 0 1px #000,
-    0 0 2px #000,
-    /* outer glow layers */
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14,
-    0 0 32px #39ff14;
-  box-shadow:
-    0 0 6px #39ff14,
-    inset 0 0 8px rgba(57, 255, 20, 0.2);
-}
-
-/* Blinking cursor (kept subtle) */
-#about h2::after {
-  content: "_";
-  color: #39ff14;
-  margin-left: 6px;
-  animation: blink 1.2s infinite;
-}
-
-@keyframes blink {
-
-  0%,
-  50%,
-  100% {
-    opacity: 1;
-  }
-
-  25%,
-  75% {
-    opacity: 0;
   }
 }
 
