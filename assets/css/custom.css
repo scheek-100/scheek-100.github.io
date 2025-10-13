@@ -217,8 +217,19 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* Paragraphs Font */
-.section-title p,
+/* ==========================================================
+   GLOBAL PARAGRAPH STYLING
+   ========================================================== */
+
+p {
+  font-family: 'VT323', monospace;
+  color: #9ee9ff;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/*.section-title p,
 .section-header p {
   font-family: 'DotGothic16', sans-serif;
   font-size: 15px;
@@ -227,7 +238,7 @@ section:not(#about) h2.framed-subtitle {
   margin-top: 10px;
   letter-spacing: 1px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
+} */
 
 /* === ABOUT SECTION H3 (VT323 Terminal Glow with Outline) === */
 #about h2 {
@@ -325,17 +336,17 @@ footer h3 {
 
 /* === PARAGRAPHS === */
 /* Pale green VT323 for content text only */
-.section-black p,
+/* .section-black p,
 .section-black .description,
 .section-black .resume-item p,
 .section-black .blog .description {
   font-family: 'VT323', monospace;
   font-size: 18px;
   /* tweak for readability */
-  color: #9aff9a;
+ /* color: #9aff9a; */
   /* pale green */
-  line-height: 1.6;
-}
+  /*line-height: 1.6; */
+/* } */
 
 /* ==========================================================
    NAVIGATION MENU
@@ -783,54 +794,54 @@ footer h3 {
   z-index: 1;
 }
 
-/* Resume section h5 styling */
+/* Resume section h5 styling - Role/Tag labels */
 #resume h5 {
-  font-family: 'VT323', monospace;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
   color: #12151f;
   background-color: #90ee90;
   display: inline-flex;
-  /* tighter than inline-block */
   align-items: center;
-  padding: 2px 6px;
-  /* minimal padding */
+  padding: 3px 8px;
   border-radius: 3px;
   margin: 0;
-  /* remove excess margin */
   box-shadow: 0 0 4px #90ee90, 0 0 8px #90ee90;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Resume section h3 styling */
+/* Resume section h3 styling - Section titles */
 #resume h3 {
-  font-family: 'VT323', monospace;
-  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
   font-size: 1.6rem;
   color: #90ee90;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
   display: inline-flex;
-  /* hug text */
   align-items: center;
   padding: 4px 10px;
   margin: 0 0 12px 0;
-  /* keep spacing below only */
   border: 2px solid #90ee90;
   border-radius: 4px;
-  box-shadow: 0 0 6px #90ee90, 0 0 12px #90ee90 inset;
+  box-shadow:
+    0 0 6px #90ee90,
+    inset 0 0 12px rgba(144, 238, 144, 0.5);
 }
 
-/* Resume section h4 styling */
+/* Resume section h4 styling - Job/Position titles */
 .resume-item h4 {
-  font-family: 'VT323', monospace;
-  font-size: 1.6rem;
-  /* adjust size as needed */
-  font-weight: bold;
-  color: #39ff14;
-  /* neon green */
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #39ff14; /* neon green */
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-shadow:
     0 0 4px #39ff14,
     0 0 8px #39ff14,
-    0 0 16px #39ff14;
+    0 0 16px rgba(57, 255, 20, 0.6);
   margin-bottom: 8px;
 }
 
@@ -1187,7 +1198,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
 }
 
 /* Quote text */
-#testimonials p,
+/* #testimonials p,
 #testimonials p span {
   font-family: 'VT323', monospace;
   font-size: 1rem;
@@ -1195,7 +1206,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
   line-height: 1.5;
   max-width: 720px;
   margin: 0 auto;
-}
+} */
 
 #testimonials .quote-icon-left,
 #testimonials .quote-icon-right {
@@ -1245,12 +1256,12 @@ iframe[src*="datawrapper.dwcdn.net"] {
     font-size: 0.95rem;
   }
 
-  #testimonials p,
+  /* #testimonials p,
   #testimonials p span {
     font-size: 0.95rem;
     line-height: 1.45;
     max-width: 92%;
-  }
+  } */
 
   #testimonials .swiper {
     padding-bottom: 44px;
@@ -1440,16 +1451,16 @@ iframe[src*="datawrapper.dwcdn.net"] {
 }
 
 /* Body text (VT323) */
-#footer p,
+/* #footer p,
 #footer .copyright,
 #footer .credits {
   font-family: 'VT323', monospace;
   font-size: 18px;
   color: #9aff9a;
   /* pale green */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  /*text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
   margin-bottom: 20px;
-}
+} */
 
 /* Social links */
 #footer .social-links a {
