@@ -315,6 +315,54 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* ==========================================================
+   FOLIO FRAMEWORK FIX – Removes mobile black bar under header
+   ========================================================== */
+
+/* Hide dark bar when mobile nav is closed */
+@media (max-width: 1199px) {
+
+  /* Default menu container cleanup */
+  .navmenu {
+    background: transparent !important;
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* Keep the menu hidden until toggled */
+  .navmenu ul {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(4px);
+    margin: 0;
+    padding: 1rem 0;
+    list-style: none;
+  }
+
+  /* Show the dropdown when the Folio JS adds “mobile-nav-active” */
+  .mobile-nav-active .navmenu ul {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Prevent background behind toggle button */
+  .mobile-nav-toggle {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ==========================================================
    HERO
    ========================================================== */
 /* Ensure hero image acts as background */
