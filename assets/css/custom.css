@@ -216,23 +216,20 @@ section:not(#about) h2.framed-subtitle {
 /* Desktop Nav */
 @media (min-width: 1200px) {
 
-  .navmenu a,
-  .navmenu a:focus {
-    font-family: 'DotGothic16', sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #00eaff;
-    /* refined cyan */
-    background-color: transparent;
-    transition: all 0.3s ease;
-    text-shadow:
-      1px 1px 4px rgba(0, 0, 0, 0.8),
-      /* crisp back shadow */
-      0 0 3px #00eaff,
-      0 0 6px #00eaff;
-    /* soft inner glow */
-  }
+.navmenu a,
+.navmenu a:focus {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #00eaff; /* refined cyan */
+  background-color: transparent;
+  transition: all 0.3s ease;
+  text-shadow:
+    0 0 2px rgba(0, 234, 255, 0.6),
+    0 0 6px rgba(0, 234, 255, 0.4);
+}
 
   .navmenu li:hover>a,
   .navmenu .active,
