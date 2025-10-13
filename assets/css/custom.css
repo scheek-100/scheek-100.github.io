@@ -230,17 +230,21 @@ section:not(#about) h2.framed-subtitle {
       0 0 6px rgba(0, 234, 255, 0.6);
   }
 
-  .navmenu li:hover > a,
-  .navmenu .active,
-  .navmenu .active:focus {
-    color: #39ff14; /* neon green highlight */
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 4px;
-    text-shadow:
-      0 0 3px #39ff14,
-      0 0 10px rgba(57, 255, 20, 0.6);
-    box-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
-  }
+/* Navigation Button Framing */  
+.navmenu li:hover > a,
+.navmenu .active,
+.navmenu .active:focus {
+  color: #39ff14;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  padding: 0.6rem 1rem; /* same as normal state */
+  box-shadow:
+    0 0 6px rgba(57, 255, 20, 0.5),
+    0 0 12px rgba(57, 255, 20, 0.3);
+  text-shadow:
+    0 0 3px #39ff14,
+    0 0 8px rgba(57, 255, 20, 0.6);
+  transition: all 0.25s ease;
 }
 
 /* Mobile Nav */
@@ -273,6 +277,26 @@ section:not(#about) h2.framed-subtitle {
       0 0 3px #39ff14,
       0 0 10px rgba(57, 255, 20, 0.6);
   }
+}
+
+/* Fix navigation sticking */
+.navmenu ul {
+  display: flex;
+  gap: 1rem; /* evenly separates all items */
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu li {
+  display: inline-block;
+}
+
+.navmenu a {
+  padding: 0.6rem 1rem; /* uniform clickable area */
+  border-radius: 4px;
 }
 
 /* ==========================================================
