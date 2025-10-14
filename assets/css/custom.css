@@ -1412,65 +1412,53 @@ iframe[src*="datawrapper.dwcdn.net"] {
     0 0 20px rgba(0, 234, 255, 0.6);
 }
 
-/* SUCCESS MESSAGE (inline alert style) */
+/* Unified Message Area */
+#contact .status-messages {
+  margin-bottom: 15px;
+}
+
+/* Success message */
 #contact .sent-message {
   display: none;
-  margin-top: 15px;
   color: #39ff14;
-  background: rgba(0, 255, 50, 0.08); /* soft translucent green instead of solid */
+  background: rgba(0, 255, 50, 0.08);
   padding: 10px 15px;
   border-radius: 6px;
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   text-align: center;
-  box-shadow: 0 0 8px rgba(57, 255, 20, 0.4); /* lighter aura */
-  animation: neonPulse 1.5s ease-in-out;
-  width: 100%;
-  max-width: 100%;
+  box-shadow: 0 0 6px rgba(57, 255, 20, 0.4);
+  animation: fadeInSuccess 0.4s ease-in-out;
 }
 
-/* Error Message */
+/* Error message */
 #contact .error-message {
   display: none;
-  margin-top: 15px;
   color: #ff66c4;
-  background: rgba(255, 0, 144, 0.15);
+  background: rgba(255, 0, 144, 0.1);
   padding: 10px 15px;
   border-radius: 6px;
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   text-align: center;
-  box-shadow: 0 0 8px #ff66c4, 0 0 18px rgba(255, 102, 196, 0.4);
+  box-shadow: 0 0 6px rgba(255, 102, 196, 0.3);
+  animation: fadeInError 0.4s ease-in-out;
 }
 
-/* Glow Animation */
-@keyframes neonPulse {
-  0% {
-    box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
-    opacity: 0.9;
-  }
-
-  50% {
-    box-shadow: 0 0 16px #39ff14, 0 0 36px #39ff14;
-    opacity: 1;
-  }
-
-  100% {
-    box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
-    opacity: 0.9;
-  }
+/* Fade-in animations */
+@keyframes fadeInSuccess {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInError {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
-@media (max-width: 576px) {
-  #contact form {
-    padding: 18px;
-  }
-
-  #contact input,
-  #contact textarea {
-    font-size: 1.1rem;
-  }
+/* Message Status */
+#contact .status-messages {
+  transition: all 0.3s ease;
+  min-height: 40px; /* keeps layout steady even when hidden */
 }
 
 /* === Autofill Fix (Chrome, Edge, Safari) === */
