@@ -764,6 +764,17 @@ section:not(#about) h2.framed-subtitle {
   .services-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Mobile: stack cards (1 per row) */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* One per row on smaller screens */
+  }
+
+  .service-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }
 
 /* ==========================================================
@@ -1055,12 +1066,23 @@ section:not(#about) h2.framed-subtitle {
 /* Grid layout */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
   gap: 2.5rem;
   justify-items: center;
   align-items: stretch;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+/* Each card keeps its proportions */
+.service-card {
+  width: 100%;
+  max-width: 450px;
+  min-height: 280px; /* locks vertical size consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Each glowing box */
@@ -1102,14 +1124,6 @@ section:not(#about) h2.framed-subtitle {
                 0 0 20px rgba(0, 246, 255, 0.15);
   }
 }
-
-/* Responsive layout */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 /* === RESUME SECTION STYLING === */
 #resume::before {
