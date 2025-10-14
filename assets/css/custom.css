@@ -435,58 +435,34 @@ section:not(#about) h2.framed-subtitle {
   text-align: center;
 }
 
-/* Carousel title text (Orbitron) */
-.carousel-title {
-  font-family: 'Orbitron', sans-serif;
-  color: #00eaff; /* refined cyan */
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  text-shadow:
-    0 0 3px rgba(0, 234, 255, 0.8),
-    0 0 8px rgba(0, 234, 255, 0.5),
-    0 0 16px rgba(0, 234, 255, 0.3);
-  margin-bottom: 0.75rem;
-}
-
-/* Carousel paragraph text (VT323) */
-.carousel-text {
-  font-family: 'VT323', monospace;
-  color: #9ee9ff; /* soft aqua-gray for readability */
-  font-size: 1.1rem;
-  margin: 0 auto;
-  max-width: 600px;
-  text-shadow:
-    0 0 3px rgba(158, 233, 255, 0.8),
-    0 0 8px rgba(158, 233, 255, 0.4);
-  opacity: 0.95;
-}
-
-/* Card titles (Orbitron) */
-.neon-card h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
+/* Services Icon */
+.service-card i {
+  font-size: 2rem;
   color: #00eaff;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-top: 1rem;
-  margin-bottom: 0.75rem;
-  text-shadow:
-    0 0 3px rgba(0, 234, 255, 0.8),
-    0 0 8px rgba(0, 234, 255, 0.5),
-    0 0 16px rgba(0, 234, 255, 0.3);
+  text-shadow: 0 0 6px #00eaff, 0 0 12px rgba(0, 234, 255, 0.8);
+  margin-bottom: 1rem;
 }
 
-/* Card paragraph text (VT323) */
-.neon-card p {
-  font-family: 'VT323', monospace;
-  color: #9ee9ff;
-  font-size: 1.05rem;
+/* Title */
+.service-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1.4rem;
+  color: #00eaff;
   text-shadow:
-    0 0 3px rgba(158, 233, 255, 0.8),
-    0 0 8px rgba(158, 233, 255, 0.4);
-  opacity: 0.9;
+    0 0 6px #00eaff,
+    0 0 12px rgba(0, 234, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+/* Description */
+.service-card p {
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+  color: #9ee9ff;
+  text-shadow: 0 0 6px rgba(158, 233, 255, 0.8);
+  margin: 0;
 }
 
 /* === RESUME SECTION FONT === */
@@ -742,6 +718,7 @@ section:not(#about) h2.framed-subtitle {
    GLOBAL RESPONSIVE - WEB BROWSER, MOBILE & TABLETS DISPLAY
    ========================================================== */
 
+/* SECTION TITLES - H1 TEXT */
 /* Medium screens (tablets and small laptops) */
 @media (max-width: 992px) {
   .section-title h1,
@@ -766,7 +743,8 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* H2 TEXT FOR SMALL PLATFORMS */
+/* SUBTITLES - H2 TEXT */
+/* H2 Text for Small Platforms */
 .section-title h2 {
   font-size: 1rem;
 }
@@ -778,6 +756,13 @@ section:not(#about) h2.framed-subtitle {
     /* slightly smaller text */
     padding: 4px 8px;
     /* tighter padding */
+  }
+}
+
+/* SERVICES */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1041,87 +1026,90 @@ section:not(#about) h2.framed-subtitle {
   z-index: 1;
 }
 
-/* Card container style for each carousel item */
-.carousel-item {
-  border: 2px solid #00ffff;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
-  background-color: rgba(0, 10, 20, 0.5);
-  transition: all 0.4s ease;
+/* ==========================================================
+   SERVICES GRID (Glowing 2x2 Cards + Animated Shimmer)
+   ========================================================== */
+
+#services {
+  background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
 }
 
-/* Neon glow hover effect */
-.carousel-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffcc inset;
+#services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 170, 255, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 0;
 }
 
-/* Soft pulsing animation for subtle motion */
-@keyframes neonPulse {
-  0% {
-    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
-  }
-
-  50% {
-    box-shadow: 0 0 25px #00ffcc, 0 0 50px #00ffff inset;
-  }
-
-  100% {
-    box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff inset;
-  }
+#services .container {
+  position: relative;
+  z-index: 1;
 }
 
-.carousel-item {
-  animation: neonPulse 4s infinite ease-in-out;
-}
-
-/* Carousel control styling */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1) drop-shadow(0 0 8px #00ffff);
-}
-
-/* Services Carousel Glow and Fixed Width === */
-
-#services .carousel,
-#services .carousel-item {
-  max-width: 900px;
+/* Grid layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: stretch;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Neon arrows */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: drop-shadow(0 0 10px #00ffff);
-  transition: 0.3s;
+/* Each glowing box */
+.service-card {
+  background: rgba(10, 10, 15, 0.9);
+  border: 1px solid rgba(0, 246, 255, 0.6);
+  border-radius: 14px;
+  box-shadow:
+    0 0 15px rgba(0, 246, 255, 0.3),
+    0 0 25px rgba(0, 246, 255, 0.2);
+  padding: 2rem;
+  transition: all 0.4s ease;
+  width: 100%;
+  max-width: 420px;
+  animation: shimmerPulse 3.5s infinite ease-in-out;
 }
 
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-  filter: drop-shadow(0 0 15px #39ff14);
-  transform: scale(1.1);
+/* Hover boost */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 30px #00ffcc,
+    0 0 60px rgba(0, 255, 204, 0.6);
+  border-color: #00ffcc;
 }
 
-/* Icons inside cards/titles */
-#services i {
-  color: #00ffff;
-  text-shadow: 0 0 6px #00ffff;
-  transition: 0.3s;
-}
-
-#services i:hover {
-  color: #39ff14;
-  text-shadow: 0 0 10px #39ff14;
-}
-
-/* Responsive tweak */
-@media (max-width: 768px) {
-  #services .carousel,
-  #services .carousel-item {
-    max-width: 95%;
+/* Subtle glowing shimmer animation */
+@keyframes shimmerPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
+                0 0 20px rgba(0, 246, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.4),
+                0 0 50px rgba(0, 255, 204, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
+                0 0 20px rgba(0, 246, 255, 0.15);
   }
 }
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* === RESUME SECTION STYLING === */
 #resume::before {
