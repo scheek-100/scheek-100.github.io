@@ -1373,28 +1373,43 @@ iframe[src*="datawrapper.dwcdn.net"] {
   background: rgba(0, 0, 0, 0.6);
 }
 
-/* Submit Button */
+/* SUBMIT BUTTON */
 #contact button[type="submit"] {
   width: 100%;
-  background: #00f7ff;
-  color: #0e121b;
+  background: #00eaff; /* refined TRON cyan */
+  color: #0e121b; /* dark text for contrast */
   border: none;
   border-radius: 10px;
-  font-family: 'DotGothic16', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   padding: 14px 18px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 16px #00f7ff, 0 0 36px rgba(0, 247, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow:
+    0 0 12px rgba(0, 234, 255, 0.7),
+    0 0 24px rgba(0, 234, 255, 0.5),
+    0 0 48px rgba(0, 234, 255, 0.3);
 }
 
+/* Hover + Active Pulse */
 #contact button[type="submit"]:hover {
-  background: #00f7ff;
-  color: #12151f;
-  box-shadow: 0 0 20px #00f7ff, 0 0 45px rgba(0, 247, 255, 0.6);
+  background: #39ff14; /* neon green */
+  color: #0e121b;
+  box-shadow:
+    0 0 16px #39ff14,
+    0 0 32px rgba(57, 255, 20, 0.7),
+    0 0 64px rgba(57, 255, 20, 0.4);
   transform: translateY(-2px);
+}
+
+#contact button[type="submit"]:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 0 10px #00eaff,
+    0 0 20px rgba(0, 234, 255, 0.6);
 }
 
 /* SUCCESS MESSAGE */
