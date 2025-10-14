@@ -429,42 +429,64 @@ section:not(#about) h2.framed-subtitle {
 
 /* === SERVICES SECTION FONT === */
 
-/* Services Carousel Font */
+/* Section base */
 .services {
   margin-top: 4rem;
   text-align: center;
 }
 
+/* Carousel title text (Orbitron) */
 .carousel-title {
-  font-family: 'DotGothic16', monospace;
-  color: #00ffff;
-  font-size: 1.5rem;
-  text-shadow: 0 0 12px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  color: #00eaff; /* refined cyan */
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-shadow:
+    0 0 3px rgba(0, 234, 255, 0.8),
+    0 0 8px rgba(0, 234, 255, 0.5),
+    0 0 16px rgba(0, 234, 255, 0.3);
   margin-bottom: 0.75rem;
 }
 
+/* Carousel paragraph text (VT323) */
 .carousel-text {
   font-family: 'VT323', monospace;
-  color: #00ff88;
+  color: #9ee9ff; /* soft aqua-gray for readability */
   font-size: 1.1rem;
   margin: 0 auto;
   max-width: 600px;
-  text-shadow: 0 0 8px #00ff88;
+  text-shadow:
+    0 0 3px rgba(158, 233, 255, 0.8),
+    0 0 8px rgba(158, 233, 255, 0.4);
+  opacity: 0.95;
 }
 
+/* Card titles (Orbitron) */
 .neon-card h3 {
-  font-family: 'DotGothic16', monospace;
-  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: #00eaff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
   margin-top: 1rem;
   margin-bottom: 0.75rem;
-  text-shadow: 0 0 12px #00ffff;
+  text-shadow:
+    0 0 3px rgba(0, 234, 255, 0.8),
+    0 0 8px rgba(0, 234, 255, 0.5),
+    0 0 16px rgba(0, 234, 255, 0.3);
 }
 
+/* Card paragraph text (VT323) */
 .neon-card p {
   font-family: 'VT323', monospace;
-  color: #00ff88;
-  font-size: 1.1rem;
-  text-shadow: 0 0 6px #00ff88;
+  color: #9ee9ff;
+  font-size: 1.05rem;
+  text-shadow:
+    0 0 3px rgba(158, 233, 255, 0.8),
+    0 0 8px rgba(158, 233, 255, 0.4);
+  opacity: 0.9;
 }
 
 /* === RESUME SECTION FONT === */
