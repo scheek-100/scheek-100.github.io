@@ -759,24 +759,6 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* SERVICES */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Mobile: stack cards (1 per row) */
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: 1fr; /* One per row on smaller screens */
-  }
-
-  .service-card {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-}
-
 /* ==========================================================
    END OF GLOBAL RESPONSIVE - WEB BROWSER, MOBILE & TABLETS DISPLAY
    ========================================================== */
@@ -1004,7 +986,7 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* === SERVICSS SECTION STYLING === */
+/* === SERVICES SECTION STYLING === */
 
 /* Background image and overlay for Services section */
 #services {
@@ -1037,36 +1019,10 @@ section:not(#about) h2.framed-subtitle {
   z-index: 1;
 }
 
-/* ==========================================================
-   SERVICES GRID (Glowing 2x2 Cards + Animated Shimmer)
-   ========================================================== */
-
-#services {
-  background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") no-repeat center center;
-  background-size: cover;
-  position: relative;
-  color: #fff;
-  padding: 80px 0;
-  text-align: center;
-}
-
-#services::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(0, 170, 255, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
-  z-index: 0;
-}
-
-#services .container {
-  position: relative;
-  z-index: 1;
-}
-
 /* Grid layout */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
   justify-items: center;
   align-items: stretch;
@@ -1074,18 +1030,7 @@ section:not(#about) h2.framed-subtitle {
   margin: 0 auto;
 }
 
-/* Each card keeps its proportions */
-.service-card {
-  width: 100%;
-  max-width: 450px;
-  min-height: 280px; /* locks vertical size consistency */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Each glowing box */
+/* Service cards */
 .service-card {
   background: rgba(10, 10, 15, 0.9);
   border: 1px solid rgba(0, 246, 255, 0.6);
@@ -1093,14 +1038,18 @@ section:not(#about) h2.framed-subtitle {
   box-shadow:
     0 0 15px rgba(0, 246, 255, 0.3),
     0 0 25px rgba(0, 246, 255, 0.2);
-  padding: 2rem;
-  transition: all 0.4s ease;
   width: 100%;
-  max-width: 420px;
+  max-width: 450px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   animation: shimmerPulse 3.5s infinite ease-in-out;
+  transition: all 0.35s ease;
 }
 
-/* Hover boost */
+/* Hover */
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow:
@@ -1109,19 +1058,33 @@ section:not(#about) h2.framed-subtitle {
   border-color: #00ffcc;
 }
 
-/* Subtle glowing shimmer animation */
+/* Responsive stack */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Shimmer animation */
 @keyframes shimmerPulse {
   0% {
-    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
-                0 0 20px rgba(0, 246, 255, 0.15);
+    box-shadow:
+      0 0 10px rgba(0, 246, 255, 0.25),
+      0 0 20px rgba(0, 246, 255, 0.15);
   }
   50% {
-    box-shadow: 0 0 25px rgba(0, 255, 204, 0.4),
-                0 0 50px rgba(0, 255, 204, 0.2);
+    box-shadow:
+      0 0 25px rgba(0, 255, 204, 0.4),
+      0 0 50px rgba(0, 255, 204, 0.25);
   }
   100% {
-    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
-                0 0 20px rgba(0, 246, 255, 0.15);
+    box-shadow:
+      0 0 10px rgba(0, 246, 255, 0.25),
+      0 0 20px rgba(0, 246, 255, 0.15);
   }
 }
 
