@@ -24,7 +24,7 @@
   FONT - GLOBAL
    ========================================================== */
 
-/* === H1 TEXT (TITLES) === */
+/* === SITENAME FONT === */
 /* H1 Sitename Text */
 h1.sitename {
   font-family: 'Orbitron', sans-serif;
@@ -37,15 +37,9 @@ h1.sitename {
     3px 3px 8px rgba(0, 0, 0, 0.85),
     0 0 3px #00eaff,
     0 0 8px #00eaff;
-
-  /* Crisp digital glow + dark shadow for contrast */
-  /* text-shadow: */
-  /* dark back shadow to sharpen edges */
-  /* 0 0 3px #00eaff, */
-  /* subtle inner glow */
-  /* 0 0 6px #00eaff; */
 }
 
+/* === SECTION TITLES FONT === */
 /* H1 Section Titles & Headers */
 .section-title h1,
 .section-header h1 {
@@ -85,7 +79,7 @@ h1.sitename {
   backdrop-filter: blur(4px);
 }
 
-/* === DIVIDER LINES (tech-inspired with gradient nodes) === */
+/* === SECTION DIVIDER LINES FONT === */
 .section-title h1::before,
 .section-title h1::after,
 .section-header h1::before,
@@ -125,102 +119,7 @@ h1.sitename {
   transform: translateY(-50%) skewX(30deg);
 }
 
-/* H1 HERO FONT */
-.hero h1,
-#hero h1,
-#hero .container h1 {
-  font-family: 'Orbitron', sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 3rem !important; /* roughly 48px */
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  color: #00eaff !important;
-
-  /* Crisp TRON-style glow */
-  text-shadow:
-    0 0 3px rgba(0, 234, 255, 0.9) !important,
-    0 0 8px rgba(0, 234, 255, 0.6) !important,
-    0 0 16px rgba(0, 234, 255, 0.4) !important;
-}
-
-/* ==== H2 TEXT (SUBTITLES) ==== */
-
-/* H2 HERO FONT */
-/* H2 Hero Tagline */
-#hero h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  color: #6fd3ff; /* pale blue */
-  text-transform: uppercase;
-  text-shadow:
-    0 0 2px rgba(111, 211, 255, 0.8),
-    0 0 6px rgba(111, 211, 255, 0.6),
-    0 0 12px rgba(111, 211, 255, 0.3);
-  margin-bottom: 0.5rem;
-}
-
-/* Tagline container */
-#hero .tagline {
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
-}
-/* Other framed subtitles */
-section:not(#about) h2.framed-subtitle {
-  font-family: 'VT323', monospace;
-  font-size: 1.8rem;
-  /* same size */
-  font-weight: bold;
-  color: #39ff14;
-  /* same neon green */
-
-  display: block;
-  /* make it a block element */
-  width: 400px;
-  /* fixed width (adjust as needed) */
-  margin: 0 auto 20px auto;
-  /* centers it horizontally + spacing below */
-  text-align: center;
-  /* centers the text inside the box */
-  margin-top: 15px;
-
-  padding: 6px 12px;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.5px;
-  position: relative;
-
-  /* Dual-layer glow + crisp shadow */
-  text-shadow:
-    /* inner dark outline for clarity */
-    0 0 1px #000,
-    0 0 2px #000,
-    /* outer glow layers */
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14,
-    0 0 32px #39ff14;
-  box-shadow:
-    0 0 6px #39ff14,
-    inset 0 0 8px rgba(57, 255, 20, 0.2);
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  section:not(#about) h2.framed-subtitle {
-    font-size: 1.4rem;
-    /* slightly smaller text */
-    padding: 4px 8px;
-    /* tighter padding */
-  }
-}
-
-/* ==========================================================
-   GLOBAL PARAGRAPH STYLING
-   ========================================================== */
-
+/* === GLOBAL PARAGRAPHS FONT === */
 p {
   font-family: 'VT323', monospace;
   color: #9ee9ff;
@@ -229,157 +128,7 @@ p {
   letter-spacing: 0.5px;
 }
 
-/* FOOTER (Small Font) */
-footer,
-footer p,
-footer small {
-  font-family: 'VT323', monospace;
-  color: #9ee9ff;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-}
-
-footer a {
-  color: #6fd3ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #39ff14; /* neon green hover */
-}
-
-/* === ABOUT SECTION H3 (VT323 Terminal Glow with Outline) === */
-#about h2 {
-  font-family: 'VT323', monospace;
-  font-size: 1.8rem;
-  /* same size */
-  font-weight: bold;
-  color: #39ff14;
-  /* same neon green */
-  display: inline-block;
-  padding: 3px 8px;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.5px;
-  margin-bottom: 15px;
-  position: relative;
-
-  /* === Dual-layer glow + crisp shadow === */
-  text-shadow:
-    /* inner dark outline for clarity */
-    0 0 1px #000,
-    0 0 2px #000,
-    /* outer glow layers */
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14,
-    0 0 32px #39ff14;
-  box-shadow:
-    0 0 6px #39ff14,
-    inset 0 0 8px rgba(57, 255, 20, 0.2);
-}
-
-/* Blinking cursor (kept subtle) */
-#about h2::after {
-  content: "_";
-  color: #39ff14;
-  margin-left: 6px;
-  animation: blink 1.2s infinite;
-}
-
-@keyframes blink {
-
-  0%,
-  50%,
-  100% {
-    opacity: 1;
-  }
-
-  25%,
-  75% {
-    opacity: 0;
-  }
-}
-
-/* ==== H3 TEXT ==== */
-/* H3 HERO FONT */
-/* H3 Areas of Expertise Text */
-#hero h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 400;
-  letter-spacing: 1.2px;
-  color: #6fd3ff; /* pale blue */
-  text-transform: uppercase;
-  text-shadow:
-    0 0 2px rgba(111, 211, 255, 0.8),
-    0 0 6px rgba(111, 211, 255, 0.6),
-    0 0 12px rgba(111, 211, 255, 0.3);
-  margin-bottom: 0.5rem;
-}
-
-/* Hero Font H1 - H3 Shadow */
-#hero h1, #hero h2, #hero h3 {
-  text-shadow:
-    0 0 3px rgba(0, 234, 255, 0.9),
-    0 0 6px rgba(0, 234, 255, 0.5),
-    0 2px 10px rgba(0, 0, 0, 0.75); /* subtle dark grounding */
-}
-
-/* H3 FOOTER FONT */
-footer h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 56px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #00eaff;
-  text-shadow:
-    0 0 2px #000,
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14;
-}
-
-/* ==========================================================
-   RESPONSIVE SECTION TITLES (All Sections) FOR SMALLER PLATFORMS
-   ========================================================== */
-
-/* Medium screens (tablets and small laptops) */
-@media (max-width: 992px) {
-  .section-title h1,
-  .section-header h1 {
-    font-size: 2.2rem;
-  }
-}
-
-/* Small screens (phones and small tablets) */
-@media (max-width: 768px) {
-  .section-title h1,
-  .section-header h1 {
-    font-size: 1.7rem;
-  }
-}
-
-/* Extra small screens (very narrow phones) */
-@media (max-width: 480px) {
-  .section-title h1,
-  .section-header h1 {
-    font-size: 1.4rem;
-  }
-}
-
-/* H2 TEXT FOR SMALL PLATFORMS */
-.section-title h2 {
-  font-size: 1rem;
-}
-
-/* ==========================================================
-   NAVIGATION MENU
-   ========================================================== */
-/* === NAVIGATION MENU (DotGothic16 – refined tech aesthetic) === */
+/* === NAVIGATION MENU FONT === */
 
 /* Desktop Nav */
 @media (min-width: 1200px) {
@@ -457,9 +206,516 @@ footer h3 {
   }
 }
 
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 1024px) {
+  #testimonials .testimonial-item {
+    max-width: 92%;
+  }
+}
+
+  #testimonials .framed-subtitle {
+    font-size: 0.92rem;
+    padding: 4px 8px;
+    display: block;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+
+  #testimonials .testimonial-item {
+    margin: 16px auto;
+    padding: 20px 14px;
+  }
+
+  #testimonials .testimonial-img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+  }
+
+  #testimonials .swiper {
+    padding-bottom: 44px;
+  }
+
+  #testimonials .swiper-pagination {
+    bottom: 8px;
+    gap: 6px;
+  }
+
+  #testimonials .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+  #testimonials .framed-subtitle {
+    font-size: 0.88rem;
+  }
+
+  #testimonials .swiper {
+    padding-bottom: 40px;
+  }
+
+  #testimonials .swiper-pagination {
+    bottom: 6px;
+  }
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+/* === HERO SECTION FONT === */
+
+/* H1 Hero Font */
+.hero h1,
+#hero h1,
+#hero .container h1 {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 3rem !important; /* roughly 48px */
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #00eaff !important;
+
+  /* Crisp TRON-style glow */
+  text-shadow:
+    0 0 3px rgba(0, 234, 255, 0.9) !important,
+    0 0 8px rgba(0, 234, 255, 0.6) !important,
+    0 0 16px rgba(0, 234, 255, 0.4) !important;
+}
+
+/* H2 Hero Font */
+/* Tagline */
+#hero h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #6fd3ff; /* pale blue */
+  text-transform: uppercase;
+  text-shadow:
+    0 0 2px rgba(111, 211, 255, 0.8),
+    0 0 6px rgba(111, 211, 255, 0.6),
+    0 0 12px rgba(111, 211, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* Tagline container */
+#hero .tagline {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+/* Other framed subtitles */
+section:not(#about) h2.framed-subtitle {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  /* same size */
+  font-weight: bold;
+  color: #39ff14;
+  /* same neon green */
+
+  display: block;
+  /* make it a block element */
+  width: 400px;
+  /* fixed width (adjust as needed) */
+  margin: 0 auto 20px auto;
+  /* centers it horizontally + spacing below */
+  text-align: center;
+  /* centers the text inside the box */
+  margin-top: 15px;
+
+  padding: 6px 12px;
+  border: 2px solid #39ff14;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+  position: relative;
+
+  /* Dual-layer glow + crisp shadow */
+  text-shadow:
+    /* inner dark outline for clarity */
+    0 0 1px #000,
+    0 0 2px #000,
+    /* outer glow layers */
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14,
+    0 0 32px #39ff14;
+  box-shadow:
+    0 0 6px #39ff14,
+    inset 0 0 8px rgba(57, 255, 20, 0.2);
+}
+
+/* H3 Hero Font */
+#hero h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: #6fd3ff; /* pale blue */
+  text-transform: uppercase;
+  text-shadow:
+    0 0 2px rgba(111, 211, 255, 0.8),
+    0 0 6px rgba(111, 211, 255, 0.6),
+    0 0 12px rgba(111, 211, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* Hero Font H1 - H3 Shadow */
+#hero h1, #hero h2, #hero h3 {
+  text-shadow:
+    0 0 3px rgba(0, 234, 255, 0.9),
+    0 0 6px rgba(0, 234, 255, 0.5),
+    0 2px 10px rgba(0, 0, 0, 0.75); /* subtle dark grounding */
+}
+
+/* === ABOUT SECTION FONT === */
+
+/* H2 About */
+#about h2 {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  /* same size */
+  font-weight: bold;
+  color: #39ff14;
+  /* same neon green */
+  display: inline-block;
+  padding: 3px 8px;
+  border: 2px solid #39ff14;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  position: relative;
+
+  /* === Dual-layer glow + crisp shadow === */
+  text-shadow:
+    /* inner dark outline for clarity */
+    0 0 1px #000,
+    0 0 2px #000,
+    /* outer glow layers */
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14,
+    0 0 32px #39ff14;
+  box-shadow:
+    0 0 6px #39ff14,
+    inset 0 0 8px rgba(57, 255, 20, 0.2);
+}
+
+/* Blinking cursor (kept subtle) */
+#about h2::after {
+  content: "_";
+  color: #39ff14;
+  margin-left: 6px;
+  animation: blink 1.2s infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+/* === SERVICES SECTION FONT === */
+
+/* Services Carousel Font */
+.services {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.carousel-title {
+  font-family: 'DotGothic16', monospace;
+  color: #00ffff;
+  font-size: 1.5rem;
+  text-shadow: 0 0 12px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  margin-bottom: 0.75rem;
+}
+
+.carousel-text {
+  font-family: 'VT323', monospace;
+  color: #00ff88;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  max-width: 600px;
+  text-shadow: 0 0 8px #00ff88;
+}
+
+.neon-card h3 {
+  font-family: 'DotGothic16', monospace;
+  color: #00ffff;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 12px #00ffff;
+}
+
+.neon-card p {
+  font-family: 'VT323', monospace;
+  color: #00ff88;
+  font-size: 1.1rem;
+  text-shadow: 0 0 6px #00ff88;
+}
+
+/* === RESUME SECTION FONT === */
+
+/* Resume section h5 styling - Role/Tag labels */
+#resume h5 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #12151f;
+  background-color: #90ee90;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin: 0;
+  box-shadow: 0 0 4px #90ee90, 0 0 8px #90ee90;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Resume section h3 styling - Section titles */
+#resume h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #90ee90;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  margin: 0 0 12px 0;
+  border: 2px solid #90ee90;
+  border-radius: 4px;
+  box-shadow:
+    0 0 6px #90ee90,
+    inset 0 0 12px rgba(144, 238, 144, 0.5);
+}
+
+/* Resume section h4 styling - Job/Position titles */
+.resume-item h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #39ff14; /* neon green */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 4px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px rgba(57, 255, 20, 0.6);
+  margin-bottom: 8px;
+}
+
+/* === TECH PORTFOLIO SECTION FONT === */
+.portfolio-section {
+  background: #000;
+  padding: 4rem 2rem;
+  color: #e5e5e5;
+  font-family: 'VT323', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Text Content */
+.portfolio-content {
+  padding: 1.5rem;
+}
+
+.portfolio-content h3 {
+  font-family: 'DotGothic16', sans-serif;
+  font-size: 1.6rem;
+  color: #00f6ff;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Tags */
+.tags {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.tags span {
+  background: rgba(0, 246, 255, 0.08);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  color: #00f6ff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-right: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === WRITING/BLOG SECTION FONT === */
+
+/* Neon Writing Box and Text */
+.neon-box {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1.5px solid #39ff14;
+  border-radius: 6px;
+  color: #39ff14;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.3);
+}
+/* Article Title, Inline Block and Date Font */
+.article-title {
+  color: #9aff9a;
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.article-date {
+  color: #00f7ff;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
+  font-family: 'VT323', monospace;
+}
+
+.btn-neon {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1rem;
+  color: #12151f;
+  background: #00f7ff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'DotGothic16', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* === TESTIMONIALS SECTION FONT === */
+
+#testimonials .framed-subtitle {
+  display: inline-block;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  border-radius: 6px;
+  padding: 6px 12px;
+  text-shadow: 0 0 4px #39ff14;
+  box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+}
+
+#testimonials h3 {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #90ee90;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+#testimonials h4 {
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #39ff14;
+  margin-bottom: 12px;
+}
+
+#testimonials .quote-icon-left,
+#testimonials .quote-icon-right {
+  color: #39ff14;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+  #testimonials h3 {
+    font-size: 1.05rem;
+  }
+
+  #testimonials h4 {
+    font-size: 0.95rem;
+  }
+
+/* === CONTACT SECTION FONT === */
+
+/* === FOOTER SECTION FONT === */
+
 /* ==========================================================
-   HERO
+   END OF GLOBAL TEXT
    ========================================================== */
+
+/* ==========================================================
+   GLOBAL RESPONSIVE - WEB BROWSER, MOBILE & TABLETS DISPLAY
+   ========================================================== */
+
+/* Medium screens (tablets and small laptops) */
+@media (max-width: 992px) {
+  .section-title h1,
+  .section-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Small screens (phones and small tablets) */
+@media (max-width: 768px) {
+  .section-title h1,
+  .section-header h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Extra small screens (very narrow phones) */
+@media (max-width: 480px) {
+  .section-title h1,
+  .section-header h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* H2 TEXT FOR SMALL PLATFORMS */
+.section-title h2 {
+  font-size: 1rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  section:not(#about) h2.framed-subtitle {
+    font-size: 1.4rem;
+    /* slightly smaller text */
+    padding: 4px 8px;
+    /* tighter padding */
+  }
+}
+
+/* ==========================================================
+   END OF GLOBAL RESPONSIVE - WEB BROWSER, MOBILE & TABLETS DISPLAY
+   ========================================================== */
+
+/* === HERO SRCTION STYLING === */
 /* Ensure hero image acts as background */
 #hero {
   position: relative;
@@ -514,11 +770,8 @@ footer h3 {
   box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
 
-/* ==========================================================
-   ABOUT
-   ========================================================== */
-
-/* === HOLOGRAM=== */
+/* === ABOUT SRCTION STYLING === */
+/* HOLOGRAM */
 .holo-static {
   position: relative;
   display: inline-block;
@@ -581,7 +834,7 @@ footer h3 {
   pointer-events: none;
 }
 
-/* === ANIMATIONS === */
+/* About Section Animations */
 
 /* Jittery horizontal shift */
 @keyframes jitterShift {
@@ -685,9 +938,7 @@ footer h3 {
   }
 }
 
-/* ==========================================================
-   SERVICES CAROUSEL SECTION
-   ========================================================== */
+/* === SERVICSS SECTION STYLING === */
 
 /* Background image and overlay for Services section */
 #services {
@@ -718,45 +969,6 @@ footer h3 {
 #services .container {
   position: relative;
   z-index: 1;
-}
-
-/* Services Carousel Neon Glow */
-
-.services {
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.carousel-title {
-  font-family: 'DotGothic16', monospace;
-  color: #00ffff;
-  font-size: 1.5rem;
-  text-shadow: 0 0 12px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-  margin-bottom: 0.75rem;
-}
-
-.carousel-text {
-  font-family: 'VT323', monospace;
-  color: #00ff88;
-  font-size: 1.1rem;
-  margin: 0 auto;
-  max-width: 600px;
-  text-shadow: 0 0 8px #00ff88;
-}
-
-.neon-card h3 {
-  font-family: 'DotGothic16', monospace;
-  color: #00ffff;
-  margin-top: 1rem;
-  margin-bottom: 0.75rem;
-  text-shadow: 0 0 12px #00ffff;
-}
-
-.neon-card p {
-  font-family: 'VT323', monospace;
-  color: #00ff88;
-  font-size: 1.1rem;
-  text-shadow: 0 0 6px #00ff88;
 }
 
 /* Card container style for each carousel item */
@@ -800,10 +1012,7 @@ footer h3 {
   filter: invert(1) drop-shadow(0 0 8px #00ffff);
 }
 
-/* ==========================================================
-   RESUME - VT323T
-   ========================================================== */
-
+/* === RESUME SECTION STYLING === */
 #resume::before {
   content: "";
   position: absolute;
@@ -822,71 +1031,7 @@ footer h3 {
   z-index: 1;
 }
 
-/* Resume section h5 styling - Role/Tag labels */
-#resume h5 {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #12151f;
-  background-color: #90ee90;
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 8px;
-  border-radius: 3px;
-  margin: 0;
-  box-shadow: 0 0 4px #90ee90, 0 0 8px #90ee90;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Resume section h3 styling - Section titles */
-#resume h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 600;
-  font-size: 1.6rem;
-  color: #90ee90;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  margin: 0 0 12px 0;
-  border: 2px solid #90ee90;
-  border-radius: 4px;
-  box-shadow:
-    0 0 6px #90ee90,
-    inset 0 0 12px rgba(144, 238, 144, 0.5);
-}
-
-/* Resume section h4 styling - Job/Position titles */
-.resume-item h4 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #39ff14; /* neon green */
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow:
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px rgba(57, 255, 20, 0.6);
-  margin-bottom: 8px;
-}
-
-/* ============================================
-   TECH PORTFOLIO
-   ============================================ */
-
-.portfolio-section {
-  background: #000;
-  padding: 4rem 2rem;
-  color: #e5e5e5;
-  font-family: 'VT323', monospace;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-}
+/* === TECH PORTFOLIO SECTION STYLING === */
 
 /* Card Base */
 .portfolio-item {
@@ -952,57 +1097,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
   object-fit: cover;
 }
 
-/* Text Content */
-.portfolio-content {
-  padding: 1.5rem;
-}
-
-.portfolio-content h3 {
-  font-family: 'DotGothic16', sans-serif;
-  font-size: 1.6rem;
-  color: #00f6ff;
-  margin-bottom: 0.5rem;
-}
-
-.portfolio-content p {
-  font-size: 1.1rem;
-  color: #bbb;
-  margin-bottom: 1rem;
-  line-height: 1.4;
-}
-
-/* Tags */
-.tags {
-  padding: 0 1.5rem 1.5rem;
-}
-
-.tags span {
-  background: rgba(0, 246, 255, 0.08);
-  border: 1px solid rgba(0, 246, 255, 0.4);
-  color: #00f6ff;
-  padding: 0.3rem 0.7rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  margin-right: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* ============================================
-   WRITING (DotGothic16 + VT323)
-   ============================================ */
-
-.neon-box {
-  display: inline-block;
-  padding: 10px 20px;
-  background: rgba(0, 255, 0, 0.1);
-  border: 1.5px solid #39ff14;
-  border-radius: 6px;
-  color: #39ff14;
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
-  box-shadow: 0 0 10px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.3);
-}
+/* === WRITING/BLOG SECTION STYLING === */
 
 /* ARTICLE CARD STYLING */
 .article-card {
@@ -1030,57 +1125,26 @@ iframe[src*="datawrapper.dwcdn.net"] {
   padding: 20px;
 }
 
-.article-title {
-  color: #9aff9a;
-  font-family: 'VT323', monospace;
-  font-size: 1.3rem;
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-
-.article-date {
-  color: #00f7ff;
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-bottom: 12px;
-  font-family: 'VT323', monospace;
-}
-
-.btn-neon {
-  display: inline-block;
-  padding: 8px 16px;
-  font-size: 1rem;
-  color: #12151f;
-  background: #00f7ff;
-  border: none;
-  border-radius: 6px;
-  font-family: 'DotGothic16', sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
 .btn-neon:hover {
   background: #39ff14;
   color: #0e121b;
   box-shadow: 0 0 15px #39ff14, 0 0 30px rgba(57, 255, 20, 0.8);
 }
 
-/* ==========================================================
-   TESTIMONIALS
-   ========================================================== */
-
-#testimonials .framed-subtitle {
-  display: inline-block;
-  font-family: 'VT323', monospace;
-  font-size: 1rem;
-  color: #39ff14;
-  border: 2px solid #39ff14;
-  border-radius: 6px;
-  padding: 6px 12px;
-  text-shadow: 0 0 4px #39ff14;
-  box-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+/* === TESTIMONIALS SECTION STYLING === */
+/* Barcode divider */
+#testimonials .cyber-barcode {
+  width: 140px;
+  height: 20px;
+  margin: 0 auto 16px;
+  background: repeating-linear-gradient(90deg,
+      #00f7ff 0 3px,
+      transparent 3px 6px,
+      #a020f0 6px 9px,
+      transparent 9px 12px);
+  border: 1px solid #00f7ff;
+  border-radius: 2px;
+  box-shadow: 0 0 6px #00f7ff, 0 0 12px #a020f0, 0 0 18px #00f7ff;
 }
 
 /* Swiper container reserves space for bullets and acts as positioning context */
@@ -1194,130 +1258,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
   box-shadow: 0 0 8px rgba(0, 247, 255, 0.6);
 }
 
-#testimonials h3 {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #90ee90;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-#testimonials h4 {
-  font-family: 'VT323', monospace;
-  font-size: 1rem;
-  color: #39ff14;
-  margin-bottom: 12px;
-}
-
-/* Barcode divider */
-#testimonials .cyber-barcode {
-  width: 140px;
-  height: 20px;
-  margin: 0 auto 16px;
-  background: repeating-linear-gradient(90deg,
-      #00f7ff 0 3px,
-      transparent 3px 6px,
-      #a020f0 6px 9px,
-      transparent 9px 12px);
-  border: 1px solid #00f7ff;
-  border-radius: 2px;
-  box-shadow: 0 0 6px #00f7ff, 0 0 12px #a020f0, 0 0 18px #00f7ff;
-}
-
-/* Quote text */
-/* #testimonials p,
-#testimonials p span {
-  font-family: 'VT323', monospace;
-  font-size: 1rem;
-  color: #9aff9a;
-  line-height: 1.5;
-  max-width: 720px;
-  margin: 0 auto;
-} */
-
-#testimonials .quote-icon-left,
-#testimonials .quote-icon-right {
-  color: #39ff14;
-  font-size: 1.2rem;
-  vertical-align: middle;
-}
-
-/* =========================
-   Responsive
-   ========================= */
-@media (max-width: 1024px) {
-  #testimonials .testimonial-item {
-    max-width: 92%;
-  }
-}
-
-  #testimonials .framed-subtitle {
-    font-size: 0.92rem;
-    padding: 4px 8px;
-    display: block;
-    max-width: 92%;
-    margin: 0 auto;
-  }
-
-  #testimonials .testimonial-item {
-    margin: 16px auto;
-    padding: 20px 14px;
-  }
-
-  #testimonials .testimonial-img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 10px;
-  }
-
-  #testimonials h3 {
-    font-size: 1.05rem;
-  }
-
-  #testimonials h4 {
-    font-size: 0.95rem;
-  }
-
-  /* #testimonials p,
-  #testimonials p span {
-    font-size: 0.95rem;
-    line-height: 1.45;
-    max-width: 92%;
-  } */
-
-  #testimonials .swiper {
-    padding-bottom: 44px;
-  }
-
-  #testimonials .swiper-pagination {
-    bottom: 8px;
-    gap: 6px;
-  }
-
-  #testimonials .swiper-pagination-bullet {
-    width: 7px;
-    height: 7px;
-  }
-}
-
-  #testimonials .framed-subtitle {
-    font-size: 0.88rem;
-  }
-
-  #testimonials .swiper {
-    padding-bottom: 40px;
-  }
-
-  #testimonials .swiper-pagination {
-    bottom: 6px;
-  }
-}
-
-/* ==========================================================
-   CONTACT FORM
-   ========================================================== */
-
+/* === CONTACT SECTION STYLING === */
 #contact form {
   max-width: 720px;
   margin: 0 auto;
@@ -1439,9 +1380,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
   }
 }
 
-/* ==========================================================
-   FOOTER
-   ========================================================== */
+/* === FOOTER SECTION STYLING === */
 /* Cyberpunk Footer Background Pic */
 #footer {
   position: relative;
@@ -1467,18 +1406,6 @@ iframe[src*="datawrapper.dwcdn.net"] {
     );
   z-index: 0;
 }
-
-/* Body text (VT323) */
-/* #footer p,
-#footer .copyright,
-#footer .credits {
-  font-family: 'VT323', monospace;
-  font-size: 18px;
-  color: #9aff9a;
-  /* pale green */
-  /*text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
-  margin-bottom: 20px;
-} */
 
 /* Social links */
 #footer .social-links a {
@@ -1512,9 +1439,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
   z-index: 1;
 }
 
-/* ==========================================================
-  SCROLL-TO-TOP BUTTON
-   ========================================================== */
+/* === SCROLL-TO-TOP BUTTON STYLING === */
 /* Scroll-to-top button styled like social icons */
 #scroll-top {
   font-size: 22px;
