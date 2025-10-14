@@ -1082,6 +1082,47 @@ section:not(#about) h2.framed-subtitle {
   filter: invert(1) drop-shadow(0 0 8px #00ffff);
 }
 
+/* Services Carousel Glow and Fixed Width === */
+
+#services .carousel,
+#services .carousel-item {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Neon arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0 0 10px #00ffff);
+  transition: 0.3s;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  filter: drop-shadow(0 0 15px #39ff14);
+  transform: scale(1.1);
+}
+
+/* Icons inside cards/titles */
+#services i {
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+  transition: 0.3s;
+}
+
+#services i:hover {
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  #services .carousel,
+  #services .carousel-item {
+    max-width: 95%;
+  }
+}
+
 /* === RESUME SECTION STYLING === */
 #resume::before {
   content: "";
