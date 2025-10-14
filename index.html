@@ -18,7 +18,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-<!-- Bootstrap & Animate.css -->
+  <!-- Bootstrap & Animate.css -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-<!-- Vendor CSS Files -->
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -163,63 +163,34 @@
             organizations communicate clearly, streamline integrations, and strengthen engineering practices.</h2>
         </div><!-- End Section Title -->
 
-        <!-- Neon Carousel -->
-        <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"
-          data-aos="fade-up">
-
-          <div class="carousel-inner">
-
-            <!-- Slide 1 -->
-            <div class="carousel-item active text-center">
-              <div class="service-card neon-card">
-                <i class="bi bi-code-slash"></i>
-                <h3>API Integration & Architecture</h3>
-                <p>Secure, scalable, and well-documented systems with GraphQL, REST, and CDN optimization.</p>
-              </div>
+        <!-- Services Grid -->
+        <div class="services-grid" data-aos="fade-up">
+          <!-- Service Card 1 -->
+            <div class="service-card">
+              <i class="bi bi-gear-fill"></i>
+              <h3>Integration & Architecture</h3>
+              <p>Secure, scalable, and well-documented systems with GraphQL, REST, and CDN optimization.</p>
             </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item text-center">
-              <div class="service-card neon-card">
-                <i class="bi bi-journal-text"></i>
-                <h3>Science & Tech Writing</h3>
-                <p>Engaging articles and documentation that translate complexity into clarity for diverse audiences.</p>
-              </div>
+          <!-- Service Card 2 -->
+            <div class="service-card">
+              <i class="bi bi-journal-text"></i>
+              <h3>Science & Tech Writing</h3>
+              <p>Bridging scientific insight and technical fluency to make complex concepts clear and accessible.</p>
             </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item text-center">
-              <div class="service-card neon-card">
-                <i class="bi bi-diagram-3"></i>
-                <h3>Technical Program Management</h3>
-                <p>Cross-functional leadership, risk mitigation, and incident response across high-impact platforms.</p>
-              </div>
+            <!-- Service Card 3 -->
+            <div class="service-card">
+              <i class="bi bi-lightbulb-fill"></i>
+              <h3>Mentorship & Strategy</h3>
+              <p>Guiding early-career technologists and shaping scalable, ethical systems with narrative clarity.</p>
             </div>
-
-            <!-- Slide 4 -->
-            <div class="carousel-item text-center">
-              <div class="service-card neon-card">
-                <i class="bi bi-lightbulb"></i>
-                <h3>Mentorship & Strategy</h3>
-                <p>Guiding early-career technologists and shaping scalable, ethical systems with narrative clarity.</p>
-              </div>
+            <!-- Service Card 4 -->
+            <div class="service-card">
+              <i class="bi bi-lock-fill"></i>
+              <h3>Security & Compliance</h3>
+              <p>Applying OAuth 2.0, API hardening, and privacy-first design to safeguard integrations and data.</p>
             </div>
-
-          </div><!-- End Carousel Inner -->
-
-          <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-
-          <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div><!-- End Carousel -->
-
-      </div><!-- End Container -->
+          </div><!--End Services Grid -->
+        </div>
     </section><!-- /Services Section -->
 
     <!-- Resume Section -->
@@ -350,121 +321,126 @@
           projects. More projects coming soon!</h2>
       </div><!-- End Section Title -->
 
- <section id="portfolio" class="portfolio-section" data-aos="fade-in">
+      <section id="portfolio" class="portfolio-section" data-aos="fade-in">
 
-<!-- Project 1 Row 1 -->
-  <div class="portfolio-item" data-aos="fade-up">
-  <iframe title="Healthcare Data Breaches by State (Total Number, October 2024 - October 2025" aria-label="Choropleth map" id="datawrapper-chart-ZT1co" src="https://datawrapper.dwcdn.net/ZT1co/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="574" data-external="1"></iframe>
+        <!-- Project 1 Row 1 -->
+        <div class="portfolio-item" data-aos="fade-up">
+          <iframe title="Healthcare Data Breaches by State (Total Number, October 2024 - October 2025"
+            aria-label="Choropleth map" id="datawrapper-chart-ZT1co" src="https://datawrapper.dwcdn.net/ZT1co/1/"
+            scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="574"
+            data-external="1"></iframe>
 
-<!-- Datawrapper JS Script -->
-<script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-<!-- End of Datawrapper JS Script -->
+          <!-- Datawrapper JS Script -->
+          <script
+            type="text/javascript">window.addEventListener("message", function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } });</script>
+          <!-- End of Datawrapper JS Script -->
 
-    <div class="portfolio-content">
-      <h3>Healthcare Data Breach Map</h3>
-      <p>U.S. states choropleth map showing healthcare data breaches (Oct 2024–2025), built using Datawrapper and Google Sheets.</p>
-    </div>
-    <div class="tags">
-      <span>Datawrapper</span><span>Google Sheets</span>
-    </div>
-  </div>
+          <div class="portfolio-content">
+            <h3>Healthcare Data Breach Map</h3>
+            <p>U.S. states choropleth map showing healthcare data breaches (Oct 2024–2025), built using Datawrapper and
+              Google Sheets.</p>
+          </div>
+          <div class="tags">
+            <span>Datawrapper</span><span>Google Sheets</span>
+          </div>
+        </div>
 
-<!-- Project 2 Row 2 -->
-  <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-    <img src="assets/img/portfolio/tron-coming-soon-placeholder.png" alt="API Monitoring Data Pipeline">
-    <div class="portfolio-content">
-      <h3>API Monitoring Data Pipeline</h3>
-      <p>Real-time feed tracking and data QA pipeline for partner integrations.</p>
-    </div>
-    <div class="tags">
-      <span>Python</span><span>API</span><span>Automation</span>
-    </div>
-  </div>
+        <!-- Project 2 Row 2 -->
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/img/portfolio/tron-coming-soon-placeholder.png" alt="API Monitoring Data Pipeline">
+          <div class="portfolio-content">
+            <h3>API Monitoring Data Pipeline</h3>
+            <p>Real-time feed tracking and data QA pipeline for partner integrations.</p>
+          </div>
+          <div class="tags">
+            <span>Python</span><span>API</span><span>Automation</span>
+          </div>
+        </div>
 
-<!-- Project 3 Row 3 -->
-  <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
-    <img src="assets/img/portfolio/tron-coming-soon-placeholder.png" alt="Reddit Resume Impact Tracking">
-    <div class="portfolio-content">
-      <h3>Reddit Resume Impact Tracking</h3>
-      <p>Scripted Reddit API monitor visualizing user success stories and engagement metrics.</p>
-    </div>
-    <div class="tags">
-      <span>API</span><span>Data</span><span>Python</span>
-    </div>
-  </div>
+        <!-- Project 3 Row 3 -->
+        <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/img/portfolio/tron-coming-soon-placeholder.png" alt="Reddit Resume Impact Tracking">
+          <div class="portfolio-content">
+            <h3>Reddit Resume Impact Tracking</h3>
+            <p>Scripted Reddit API monitor visualizing user success stories and engagement metrics.</p>
+          </div>
+          <div class="tags">
+            <span>API</span><span>Data</span><span>Python</span>
+          </div>
+        </div>
 
-</section><!-- End Tech Portfolio Section -->
+      </section><!-- End Tech Portfolio Section -->
 
-    <!-- Writing Section -->
-    <section id="writing" class="writing section-black py-5">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h1>WRITING</h1>
-        <h2 class="framed-subtitle">Recent published work on Medium — expand to preview each article.</h2>
-      </div>
-      <!-- Blog Container -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <!-- Writing Section -->
+      <section id="writing" class="writing section-black py-5">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h1>WRITING</h1>
+          <h2 class="framed-subtitle">Recent published work on Medium — expand to preview each article.</h2>
+        </div>
+        <!-- Blog Container -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row justify-content-center">
-          <!-- ARTICLE CARD 1 -->
-          <div class="col-md-4 mb-4">
-            <div class="article-card">
-              <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png"
-                alt="David Bowie’s Ode to Sci-Fi" class="article-img">
-              <div class="article-content">
-                <h4 class="article-title">David Bowie’s Ode to Sci-Fi and Space Science</h4>
-                <p class="article-date">Published on Medium</p>
-                <a href="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546"
-                  target="_blank" class="btn btn-neon">Read Article</a>
+          <div class="row justify-content-center">
+            <!-- ARTICLE CARD 1 -->
+            <div class="col-md-4 mb-4">
+              <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png"
+                  alt="David Bowie’s Ode to Sci-Fi" class="article-img">
+                <div class="article-content">
+                  <h4 class="article-title">David Bowie’s Ode to Sci-Fi and Space Science</h4>
+                  <p class="article-date">Published on Medium</p>
+                  <a href="https://medium.com/@sashacheek100/david-bowies-ode-to-sci-fi-and-space-science-5bbd5e5f6546"
+                    target="_blank" class="btn btn-neon">Read Article</a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- ARTICLE CARD 2 -->
-          <div class="col-md-4 mb-4">
-            <div class="article-card">
-              <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN" alt="Automated Love"
-                class="article-img">
-              <div class="article-content">
-                <h4 class="article-title">Automated Love: How AI Became the New Face of Romance</h4>
-                <p class="article-date">Published on Medium</p>
-                <a href="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079"
-                  target="_blank" class="btn btn-neon">Read Article</a>
+            <!-- ARTICLE CARD 2 -->
+            <div class="col-md-4 mb-4">
+              <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN"
+                  alt="Automated Love" class="article-img">
+                <div class="article-content">
+                  <h4 class="article-title">Automated Love: How AI Became the New Face of Romance</h4>
+                  <p class="article-date">Published on Medium</p>
+                  <a href="https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079"
+                    target="_blank" class="btn btn-neon">Read Article</a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- ARTICLE CARD 3 -->
-          <div class="col-md-4 mb-4">
-            <div class="article-card">
-              <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz"
-                alt="Dealing with Alzheimer’s" class="article-img">
-              <div class="article-content">
-                <h4 class="article-title">Dealing with Early Signs of Alzheimer’s Disease in Loved Ones</h4>
-                <p class="article-date">Published on Medium</p>
-                <a href="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7"
-                  target="_blank" class="btn btn-neon">Read Article</a>
+            <!-- ARTICLE CARD 3 -->
+            <div class="col-md-4 mb-4">
+              <div class="article-card">
+                <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz"
+                  alt="Dealing with Alzheimer’s" class="article-img">
+                <div class="article-content">
+                  <h4 class="article-title">Dealing with Early Signs of Alzheimer’s Disease in Loved Ones</h4>
+                  <p class="article-date">Published on Medium</p>
+                  <a href="https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7"
+                    target="_blank" class="btn btn-neon">Read Article</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- End Writing Section -->
+      </section>
+      <!-- End Writing Section -->
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section-black" data-aos="fade-in">
-      <div class="container">
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials section-black" data-aos="fade-in">
+        <div class="container">
 
-        <!-- Section Title  -->
-        <div class="section-title" data-aos="fade-up">
-          <h1>TESTIMONIALS</h1>
-          <h2 class="framed-subtitle">Results recognized by former colleagues, coworkers, and clients.</h2>
-        </div><!-- End Section Title -->
+          <!-- Section Title  -->
+          <div class="section-title" data-aos="fade-up">
+            <h1>TESTIMONIALS</h1>
+            <h2 class="framed-subtitle">Results recognized by former colleagues, coworkers, and clients.</h2>
+          </div><!-- End Section Title -->
 
-        <div data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
                 {
                   "loop": true,
                   "speed": 600,
@@ -480,127 +456,134 @@
                 }
               </script>
 
-            <div class="swiper-wrapper">
+              <div class="swiper-wrapper">
 
-              <!-- Testiomonial 1-->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="testimonial-glass-inner">
-                    <img
-                      src="https://media.licdn.com/dms/image/v2/D5603AQEibYrTk8suiA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1687087039525?e=1761782400&v=beta&t=MG7kjd4nd9Lk5s_lKX1opAb8gAUUS6P1s6HmVxCU7ao"
-                      class="testimonial-img" alt="">
-                    <h3>Daniel M. Chin, PMP</h3>
-                    <h4>Program Manager at Microsoft</h4>
-                    <!--Cyber Barcode Divider -->
-                    <div class="cyber-barcode"></div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>I worked with Sasha on the Microsoft e-commerce program migration project. She successfully
-                        managed complicated program tasks with a detail oriented project management skill-set while
-                        employing creativity. Thanks to her clear communication with cross functional teams, we could
-                        efficiently use our time. She is a very knowledgeable and hardworking collaborator. She’s also a
-                        very friendly and warm hearted person. I strongly recommend her for any program manager
-                        position.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
+                <!-- Testiomonial 1-->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="testimonial-glass-inner">
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D5603AQEibYrTk8suiA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1687087039525?e=1761782400&v=beta&t=MG7kjd4nd9Lk5s_lKX1opAb8gAUUS6P1s6HmVxCU7ao"
+                        class="testimonial-img" alt="">
+                      <h3>Daniel M. Chin, PMP</h3>
+                      <h4>Program Manager at Microsoft</h4>
+                      <!--Cyber Barcode Divider -->
+                      <div class="cyber-barcode"></div>
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>I worked with Sasha on the Microsoft e-commerce program migration project. She
+                          successfully
+                          managed complicated program tasks with a detail oriented project management skill-set while
+                          employing creativity. Thanks to her clear communication with cross functional teams, we could
+                          efficiently use our time. She is a very knowledgeable and hardworking collaborator. She’s also
+                          a
+                          very friendly and warm hearted person. I strongly recommend her for any program manager
+                          position.</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Testimonial 2 -->
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <div class="testimonial-glass-inner">
-                    <img
-                      src="https://media.licdn.com/dms/image/v2/D5603AQEoS37JgAcEKw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731534579150?e=1761782400&v=beta&t=XOFElMatfSz274LVnHA3fx1YvVkVCEBuJm8IldSTupo"
-                      class="testimonial-img" alt="">
-                    <h3>Susan Walker</h3>
-                    <h4>Scrum Master at Abercrombie &amp; Fitch</h4>
-                    <!--Cyber Barcode Divider -->
-                    <div class="cyber-barcode"></div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      <span>I had the pleasure of working with Sasha as a fellow Technical Program Manager. From the
-                        moment
-                        I met her during my first day at Credit Karma I liked her and knew she would be someone I could
-                        learn from. She is knowledgeable and passionate about coaching teams to be their very best. She
-                        has
-                        a positive attitude and is always willing to help whenever needed. She is also not afraid to ask
-                        the
-                        hard questions and point out areas where we can all improve. She is a humble leader who always
-                        has
-                        the best in mind of everyone she works with.</span>
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="testimonial-glass-inner">
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D5603AQEoS37JgAcEKw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731534579150?e=1761782400&v=beta&t=XOFElMatfSz274LVnHA3fx1YvVkVCEBuJm8IldSTupo"
+                        class="testimonial-img" alt="">
+                      <h3>Susan Walker</h3>
+                      <h4>Scrum Master at Abercrombie &amp; Fitch</h4>
+                      <!--Cyber Barcode Divider -->
+                      <div class="cyber-barcode"></div>
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>I had the pleasure of working with Sasha as a fellow Technical Program Manager. From the
+                          moment
+                          I met her during my first day at Credit Karma I liked her and knew she would be someone I
+                          could
+                          learn from. She is knowledgeable and passionate about coaching teams to be their very best.
+                          She
+                          has
+                          a positive attitude and is always willing to help whenever needed. She is also not afraid to
+                          ask
+                          the
+                          hard questions and point out areas where we can all improve. She is a humble leader who always
+                          has
+                          the best in mind of everyone she works with.</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </div><!-- End swiper-wrapper -->
+                </div><!-- End swiper-wrapper -->
 
-              <div class="swiper-pagination"></div>
-            </div><!-- End swiper -->
-          </div><!-- End testimonial-glass -->
-        </div><!-- End data-aos -->
-    </section><!-- /Testimonials Section -->
+                <div class="swiper-pagination"></div>
+              </div><!-- End swiper -->
+            </div><!-- End testimonial-glass -->
+          </div><!-- End data-aos -->
+      </section><!-- /Testimonials Section -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-black">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h1>CONTACT</h1>
-        <h2 class="framed-subtitle">Have a question, need help with a project, or just talk about tech? I'm always happy
-          to connect. Send me a
-          message, and I will respond within 24-48 hours.</h2>
-      </div><!-- End Section Title -->
+      <!-- Contact Section -->
+      <section id="contact" class="contact section-black">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h1>CONTACT</h1>
+          <h2 class="framed-subtitle">Have a question, need help with a project, or just talk about tech? I'm always
+            happy
+            to connect. Send me a
+            message, and I will respond within 24-48 hours.</h2>
+        </div><!-- End Section Title -->
 
-      <!-- Contact Container -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- Contact Container -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
 
-            <!-- Contact Form -->
-            <form action="https://formspree.io/f/mldpgwjj" method="POST" class="contact-form">
-              <div class="row gy-4">
+              <!-- Contact Form -->
+              <form action="https://formspree.io/f/mldpgwjj" method="POST" class="contact-form">
+                <div class="row gy-4">
 
-                <!-- Name -->
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-
-                <!-- Email -->
-                <div class="col-md-6">
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                </div>
-
-                <!-- Subject -->
-                <div class="col-md-12">
-                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                </div>
-
-                <!-- Message -->
-                <div class="col-md-12">
-                  <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-                </div>
-
-                <!-- Honeypot field (spam protection) -->
-                <input type="text" name="_gotcha" style="display:none">
-
-                <!-- Status Messages -->
-                <div class="col-md-12 text-center">
-                  <div class="loading" style="display:none;">Loading...</div>
-                  <div class="error-message" style="display:none; color:#ff4d4d;"></div>
-                  <div class="sent-message" style="display:none; color:#39ff14;">Your message has been sent. Thank you!
+                  <!-- Name -->
+                  <div class="col-md-6">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                   </div>
-                  <button type="submit" class="btn btn-neon btn-lg">Send Message</button>
+
+                  <!-- Email -->
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                  </div>
+
+                  <!-- Subject -->
+                  <div class="col-md-12">
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="col-md-12">
+                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                  </div>
+
+                  <!-- Honeypot field (spam protection) -->
+                  <input type="text" name="_gotcha" style="display:none">
+
+                  <!-- Status Messages -->
+                  <div class="col-md-12 text-center">
+                    <div class="loading" style="display:none;">Loading...</div>
+                    <div class="error-message" style="display:none; color:#ff4d4d;"></div>
+                    <div class="sent-message" style="display:none; color:#39ff14;">Your message has been sent. Thank
+                      you!
+                    </div>
+                    <button type="submit" class="btn btn-neon btn-lg">Send Message</button>
+                  </div>
+
                 </div>
+              </form>
 
-              </div>
-            </form>
-
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   </main>
 
   <!-- Footer -->
@@ -616,7 +599,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">SASHA CHEEK | TECH PROGRAM MANAGER & SCIENCE WRITER</strong> <span>All Rights
+          <span>Copyright</span> <strong class="px-1 sitename">SASHA CHEEK | TECH PROGRAM MANAGER & SCIENCE
+            WRITER</strong> <span>All Rights
             Reserved</span>
         </div>
         <div class="credits">
