@@ -1471,6 +1471,21 @@ iframe[src*="datawrapper.dwcdn.net"] {
   }
 }
 
+/* === Autofill Fix (Chrome, Edge, Safari) === */
+#contact input:-webkit-autofill,
+#contact textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.45) inset !important;
+  -webkit-text-fill-color: #9aff9a !important;
+  caret-color: #9aff9a !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+#contact input:-webkit-autofill:focus,
+#contact textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6) inset !important;
+  border-color: #00f7ff !important;
+}
+
 /* === FOOTER SECTION STYLING === */
 /* Cyberpunk Footer Background Pic */
 #footer {
