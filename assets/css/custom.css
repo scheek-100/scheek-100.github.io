@@ -827,7 +827,7 @@ section:not(#about) h2.framed-subtitle {
   border-radius: 12px;
   background-color: #000;
   box-shadow: 0 0 25px #00eaff55, 0 0 45px #00eaff33;
-  animation: jitterShift 0.6s steps(2, end) infinite, glowPulse 4s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* Portrait image */
@@ -836,154 +836,62 @@ section:not(#about) h2.framed-subtitle {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  filter: brightness(1.2) contrast(1.3) saturate(1.3);
+  filter: brightness(1.15) contrast(1.2) saturate(1.2);
+  transition: filter 0.3s ease;
 }
 
-/* Layer 1: scanline flicker */
+/* Static scanlines overlay */
 .holo-static::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(to bottom,
-      rgba(0, 255, 255, 0.25) 0px,
-      rgba(0, 255, 255, 0.25) 2px,
-      transparent 4px,
-      transparent 8px);
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.25) 0px,
+    rgba(0, 255, 255, 0.25) 2px,
+    transparent 4px,
+    transparent 8px
+  );
   mix-blend-mode: screen;
-  opacity: 0.3;
-  animation: scanlineFlicker 1.5s linear infinite;
+  opacity: 0.25;
   pointer-events: none;
 }
 
-/* Layer 2: flickering brightness pulses */
+/* Subtle cyan overlay */
 .holo-static::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(to bottom,
-      transparent 0px,
-      rgba(0, 255, 255, 0.35) 4px,
-      transparent 15px);
+  background: linear-gradient(
+    rgba(0, 255, 255, 0.1),
+    rgba(0, 255, 255, 0.05)
+  );
   mix-blend-mode: screen;
-  opacity: 0.3;
-  animation: interferenceFlash 3s ease-in-out infinite;
+  opacity: 0.2;
   pointer-events: none;
 }
 
-/* Layer 3: faint static shimmer */
+/* Static grain texture */
 .holo-static .grain {
   position: absolute;
   inset: 0;
   background: url('https://upload.wikimedia.org/wikipedia/commons/d/d7/Static-noise-texture.png');
   background-size: cover;
-  opacity: 0.08;
+  opacity: 0.05;
   mix-blend-mode: screen;
-  animation: grainShift 4s steps(2, end) infinite;
   pointer-events: none;
 }
 
-/* About Section Animations */
-
-/* Jittery horizontal shift */
-@keyframes jitterShift {
-  0% {
-    transform: translateX(0);
-  }
-
-  25% {
-    transform: translateX(-2px);
-  }
-
-  50% {
-    transform: translateX(2px);
-  }
-
-  75% {
-    transform: translateX(-1px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
+/* === FAINT GREEN HOVER === */
+.holo-static:hover {
+  transform: scale(1.01);
+  box-shadow:
+    0 0 25px #39ff1444,  /* faint neon green outer glow */
+    0 0 45px #00eaff33;  /* keep soft cyan base */
 }
 
-/* Scanline flicker */
-@keyframes scanlineFlicker {
-  0% {
-    background-position: 0 0;
-    opacity: 0.3;
-  }
-
-  50% {
-    background-position: 0 100px;
-    opacity: 0.6;
-  }
-
-  100% {
-    background-position: 0 200px;
-    opacity: 0.3;
-  }
-}
-
-/* Brightness pulses */
-@keyframes interferenceFlash {
-
-  0%,
-  100% {
-    opacity: 0.2;
-    filter: brightness(1.1);
-  }
-
-  10% {
-    opacity: 0.6;
-    filter: brightness(1.8);
-  }
-
-  25% {
-    opacity: 0.3;
-  }
-
-  40% {
-    opacity: 0.7;
-    filter: brightness(2.0);
-  }
-
-  55% {
-    opacity: 0.4;
-  }
-
-  70% {
-    opacity: 0.8;
-    filter: brightness(1.6);
-  }
-
-  85% {
-    opacity: 0.3;
-  }
-}
-
-/* Glow pulse */
-@keyframes glowPulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 25px #00eaff55, 0 0 45px #00eaff33;
-  }
-
-  50% {
-    box-shadow: 0 0 35px #00eaff88, 0 0 60px #00eaff55;
-  }
-}
-
-/* Static shimmer */
-@keyframes grainShift {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 60px;
-  }
+.holo-static:hover .holo-img {
+  filter: brightness(1.25) contrast(1.25) saturate(1.3);
 }
 
 /* === SERVICES SECTION STYLING === */
