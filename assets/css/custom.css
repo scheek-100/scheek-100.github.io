@@ -894,6 +894,18 @@ section:not(#about) h2.framed-subtitle {
   filter: brightness(1.25) contrast(1.25) saturate(1.3);
 }
 
+/* === HEADER LOGO SITENAME STYLING == */
+
+/* Make the site name smaller and responsive */
+.header .logo .sitename{
+  margin:0;
+  line-height:1.05;
+  letter-spacing:.04em;
+  /* scales between 14px and 22px based on viewport */
+  font-size: clamp(14px, 1.2vw + 0.6rem, 22px);
+  white-space: nowrap;            /* keep it on one line */
+}
+
 /* === SERVICES SECTION STYLING === */
 
 /* Background image and overlay for Services section */
@@ -1013,6 +1025,149 @@ section:not(#about) h2.framed-subtitle {
 #resume .container {
   position: relative;
   z-index: 1;
+}
+
+/* === BLOG SECTION STYLING === */
+
+/* ===== BLOG SLIDER (scoped to #slider) ===== */
+
+/* Section shell */
+#slider.section-black {
+  padding: 0;                 /* slider usually sits flush */
+  background: #080c12;        /* your dark base */
+  position: relative;
+}
+
+/* Swiper container */
+#slider .swiper {
+  width: 100%;
+}
+
+/* Slides: full-bleed, responsive height, background covers */
+#slider .swiper-slide {
+  position: relative;
+  min-height: 46vh;
+  max-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 247, 255, 0.25);
+  box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
+}
+
+/* Dark legibility overlay */
+#slider .swiper-slide::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.45) 55%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* Slide content block */
+#slider .swiper-slide .content {
+  position: absolute; left: 24px; right: 24px; bottom: 24px;
+  z-index: 2;
+  color: #e7faff;
+  text-shadow: 0 0 18px rgba(0, 247, 255, 0.35), 0 0 2px #00f7ff;
+  max-width: 900px;
+}
+
+/* Titles + links */
+#slider .swiper-slide .content h2 {
+  margin: 0 0 6px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  line-height: 1.15;
+  font-size: clamp(20px, 2.4vw, 36px);
+}
+#slider .swiper-slide .content h2 a {
+  color: #c7fdff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 247, 255, 0.35);
+}
+#slider .swiper-slide .content h2 a:hover {
+  color: #ffffff;
+  border-bottom-color: rgba(0, 247, 255, 0.6);
+}
+#slider .swiper-slide .content p {
+  margin: 0;
+  opacity: .9;
+  font-size: clamp(14px, 1.3vw, 18px);
+}
+
+/* Arrows */
+#slider .swiper-button-next,
+#slider .swiper-button-prev {
+  color: #9feaff;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: rgba(11, 15, 20, 0.72);
+  border: 1px solid rgba(0, 247, 255, 0.35);
+  box-shadow: 0 0 18px rgba(0, 247, 255, 0.22);
+  backdrop-filter: blur(4px);
+}
+#slider .swiper-button-next:hover,
+#slider .swiper-button-prev:hover {
+  background: rgba(11, 15, 20, 0.9);
+  box-shadow: 0 0 26px rgba(0, 247, 255, 0.36);
+}
+#slider .swiper-button-next:after,
+#slider .swiper-button-prev:after {
+  font-size: 18px;            /* icon size */
+}
+
+/* Pagination bullets */
+#slider .swiper-pagination {
+  bottom: 10px !important;
+}
+#slider .swiper-pagination-bullet {
+  width: 9px; height: 9px;
+  background: #1f3640;
+  opacity: 1;
+  border: 1px solid rgba(0, 247, 255, 0.35);
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.25);
+}
+#slider .swiper-pagination-bullet-active {
+  background: #00f7ff;
+  border-color: #00f7ff;
+  box-shadow: 0 0 14px rgba(0, 247, 255, 0.6);
+}
+
+/* Container spacing so slides breathe */
+#slider .container {
+  padding: 20px 12px 28px;
+}
+
+/* Responsive tune-ups */
+@media (max-width: 992px) {
+  #slider .swiper-slide { min-height: 40vh; }
+  #slider .swiper-button-next, #slider .swiper-button-prev {
+    width: 40px; height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  #slider .swiper-slide { min-height: 36vh; }
+  #slider .swiper-slide .content { left: 16px; right: 16px; bottom: 16px; }
+}
+
+/* Accessibility: focus-visible for arrow buttons (keyboard users) */
+#slider .swiper-button-next:focus-visible,
+#slider .swiper-button-prev:focus-visible {
+  outline: 2px solid #00f7ff;
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #slider .swiper { transition: none !important; }
 }
 
 /* === TECH PORTFOLIO SECTION STYLING === */
