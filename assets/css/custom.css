@@ -247,7 +247,6 @@ p {
   width: 7px;
   height: 7px;
 }
-}
 
 #testimonials .framed-subtitle {
   font-size: 0.88rem;
@@ -313,41 +312,55 @@ p {
 section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
   font-size: 1.8rem;
-  /* same size */
   font-weight: bold;
-  color: #39ff14;
-  /* same neon green */
 
+  /* color swap only */
+  color: #7FE1FF;
+  /* soft aqua */
+  border: 2px solid #7FE1FF;
+
+  /* framing/layout preserved */
   display: block;
-  /* make it a block element */
   width: 400px;
-  /* fixed width (adjust as needed) */
-  margin: 0 auto 20px auto;
-  /* centers it horizontally + spacing below */
+  margin: 15px auto 20px auto;
+  /* top + bottom spacing */
   text-align: center;
-  /* centers the text inside the box */
-  margin-top: 15px;
-
   padding: 6px 12px;
-  border: 2px solid #39ff14;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.4);
   letter-spacing: 0.5px;
   position: relative;
 
-  /* Dual-layer glow + crisp shadow */
+  /* darker glass so it reads on dark/photo bgs */
+  background: rgba(6, 18, 26, 0.35);
+
+  /* glow tuned to aqua */
   text-shadow:
-    /* inner dark outline for clarity */
     0 0 1px #000,
     0 0 2px #000,
-    /* outer glow layers */
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14,
-    0 0 32px #39ff14;
+    0 0 4px rgba(127, 225, 255, 0.95),
+    0 0 8px rgba(127, 225, 255, 0.70),
+    0 0 16px rgba(127, 225, 255, 0.55),
+    0 0 32px rgba(127, 225, 255, 0.40);
   box-shadow:
-    0 0 6px #39ff14,
-    inset 0 0 8px rgba(57, 255, 20, 0.2);
+    0 0 6px rgba(127, 225, 255, 0.55),
+    inset 0 0 8px rgba(127, 225, 255, 0.15);
+}
+
+/* If you use a framed subtitle inside Testimonials, match it */
+#testimonials .framed-subtitle {
+  color: #7FE1FF;
+  border-color: #7FE1FF;
+  background: rgba(6, 18, 26, 0.35);
+  text-shadow:
+    0 0 1px #000,
+    0 0 2px #000,
+    0 0 4px rgba(127, 225, 255, 0.95),
+    0 0 8px rgba(127, 225, 255, 0.70),
+    0 0 16px rgba(127, 225, 255, 0.55),
+    0 0 32px rgba(127, 225, 255, 0.40);
+  box-shadow:
+    0 0 6px rgba(127, 225, 255, 0.55),
+    0 0 12px rgba(127, 225, 255, 0.45);
 }
 
 /* H3 Hero Font */
@@ -385,11 +398,11 @@ section:not(#about) h2.framed-subtitle {
   font-size: 1.8rem;
   /* same size */
   font-weight: bold;
-  color: #39ff14;
+  color: #7FE1FF;
   /* same neon green */
   display: inline-block;
   padding: 3px 8px;
-  border: 2px solid #39ff14;
+  border: 2px solid #9ee9ff;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.4);
   letter-spacing: 0.5px;
@@ -402,19 +415,19 @@ section:not(#about) h2.framed-subtitle {
     0 0 1px #000,
     0 0 2px #000,
     /* outer glow layers */
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
-    0 0 16px #39ff14,
-    0 0 32px #39ff14;
+    0 0 4px #7FE1FF,
+    0 0 8px #7FE1FF,
+    0 0 16px #7FE1FF,
+    0 0 32px #7FE1FF;
   box-shadow:
-    0 0 6px #39ff14,
+    0 0 6px #7FE1FF,
     inset 0 0 8px rgba(57, 255, 20, 0.2);
 }
 
 /* Blinking cursor (kept subtle) */
 #about h2::after {
   content: "_";
-  color: #39ff14;
+  color: #7FE1FF;
   margin-left: 6px;
   animation: blink 1.2s infinite;
 }
@@ -476,17 +489,18 @@ section:not(#about) h2.framed-subtitle {
 
 /* Resume section h5 styling - Role/Tag labels */
 #resume h5 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'VT323', sans-serif;
   font-weight: 600;
   font-size: 1rem;
-  color: #12151f;
-  background-color: #90ee90;
+  color: #00eaff;
+  background-color: #12151f;
   display: inline-flex;
   align-items: center;
   padding: 3px 8px;
   border-radius: 3px;
   margin: 0;
-  box-shadow: 0 0 4px #90ee90, 0 0 8px #90ee90;
+  box-shadow: 0 0 8px #00eaff,
+    0 0 16px rgba(57, 255, 20, 0.6);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -496,18 +510,18 @@ section:not(#about) h2.framed-subtitle {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   font-size: 1.6rem;
-  color: #90ee90;
+  color: #00eaff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
   margin: 0 0 12px 0;
-  border: 2px solid #90ee90;
+  border: 2px solid rgba(0, 246, 255, 0.4);
   border-radius: 4px;
-  box-shadow:
-    0 0 6px #90ee90,
-    inset 0 0 12px rgba(144, 238, 144, 0.5);
+  /*box-shadow:
+    0 0 6px #00eaff,
+    inset 0 0 12px rgba(144, 238, 144, 0.5); */
 }
 
 /* Resume section h4 styling - Job/Position titles */
@@ -515,13 +529,12 @@ section:not(#about) h2.framed-subtitle {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #39ff14;
+  color: #00eaff;
   /* neon green */
   letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow:
-    0 0 4px #39ff14,
-    0 0 8px #39ff14,
+    0 0 8px #00eaff,
     0 0 16px rgba(57, 255, 20, 0.6);
   margin-bottom: 8px;
 }
@@ -544,7 +557,7 @@ section:not(#about) h2.framed-subtitle {
 }
 
 .portfolio-content h3 {
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'VT323', monospace;
   font-size: 1.6rem;
   color: #00f6ff;
   margin-bottom: 0.5rem;
@@ -583,7 +596,7 @@ section:not(#about) h2.framed-subtitle {
   background: rgba(0, 255, 0, 0.1);
   border: 1.5px solid #39ff14;
   border-radius: 6px;
-  color: #39ff14;
+  color: #7EEBFF;
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   box-shadow: 0 0 10px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.3);
@@ -614,7 +627,7 @@ section:not(#about) h2.framed-subtitle {
   background: #00f7ff;
   border: none;
   border-radius: 6px;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: 'VT323', monospace;
   text-transform: uppercase;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -639,7 +652,7 @@ section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #90ee90;
+  color: #00f6ff;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -776,7 +789,7 @@ section:not(#about) h2.framed-subtitle {
    END OF GLOBAL RESPONSIVE - WEB BROWSER, MOBILE & TABLETS DISPLAY
    ========================================================== */
 
-/* === HERO SRCTION STYLING === */
+/* === HERO SECTION STYLING === */
 /* Ensure hero image acts as background */
 #hero {
   position: relative;
@@ -831,7 +844,7 @@ section:not(#about) h2.framed-subtitle {
   box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
 
-/* === ABOUT SRCTION STYLING === */
+/* === ABOUT SECTION STYLING === */
 /* HOLOGRAM */
 .holo-static {
   position: relative;
@@ -1101,6 +1114,8 @@ section:not(#about) h2.framed-subtitle {
 /* Titles + links */
 #slider .swiper-slide .content h2 {
   margin: 0 0 6px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00eaff;
   font-weight: 800;
   letter-spacing: .02em;
   line-height: 1.15;
@@ -1695,101 +1710,34 @@ iframe[src*="datawrapper.dwcdn.net"] {
 }
 
 /* =========================
-   SINGLE ARTICLE PAGE
+   SINGLE ARTICLE PAGE (scoped)
    ========================= */
 
-/* Page-scope: only affects the blog article page */
-.page-post #main { background: transparent; }
+/* Scope to article pages only */
+.page-post #main {
+  background: transparent;
+  padding-top: 150px;
+}
 
-/* kill the white container panel that the theme adds */
-.page-post .blog > .container,
+/* Kill any white/boxed containers around the header/title area */
+.page-post .blog>.container,
 .page-post .blog .section-title.container,
 .page-post .article-title.container {
-  background: black !important;
+  background: transparent !important;
   box-shadow: none !important;
+  border: 0 !important;
 }
 
-/* Dark article “card” */
-.page-post article {
-  background: rgba(11, 15, 20, 0.96);
-  border: 1px solid rgba(0, 247, 255, 0.25);
-  border-radius: 16px;
-  padding: 24px 24px 32px;
-  box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
-}
-
-/* Optional: make the date subtler on the dark panel */
-.page-post .article-title p.text-muted { color: #9fc9d6 !important; }
-
-/* Images inside content */
-.page-post .content img { border-radius: 10px; }
-
-/* Top spacing for the article page */
-.page-post #main { padding-top: 150px; }           /* a little more breathing room */
-@media (max-width: 991px){ .page-post #main { padding-top: 120px; }}
-
-/* Wrapper that centers the header without using .container */
-.page-post .post-header .wrap {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-/* Reuse your site’s section-title look; ensure no white panel creeps in */
-.page-post .post-header .section-title {
-  text-align: center;
-  margin: 0 auto 20px;
-  background: transparent;             /* safety—no background fill */
-  box-shadow: none;                     /* avoid container-like shadow */
-}
-
-/* Keep your Tron/Orbitron styling for the big blue title */
-.page-post .post-header .section-title h1,
-.page-post .post-header .section-title h1 i {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #00eaff;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 1rem 2rem;
-  margin: 0 auto;
-  text-shadow:
-    0 0 1px #fff, 0 0 2px #000,
-    0 0 4px #39ff14, 0 0 8px #39ff14,
-    0 0 16px #39ff14, 0 0 32px #39ff14;
-  border: 1px solid rgba(0,255,255,0.25);
-  border-radius: 10px;
-  background: rgba(0,10,20,0.35);
-  box-shadow:
-    0 0 10px rgba(0,255,255,0.2),
-    inset 0 0 6px rgba(0,255,255,0.1);
-  backdrop-filter: blur(4px);
-}
-
-/* Optional: slim the framed subtitle on this page */
-.page-post .post-header .framed-subtitle {
-  display: inline-block;
-  margin-top: 10px;
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
-  color: #39ff14;
-  border: 2px solid #39ff14;
-  border-radius: 3px;
-  padding: 6px 12px;
-  background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 4px #39ff14, 0 0 8px #39ff14;
-  box-shadow: 0 0 6px #39ff14, inset 0 0 8px rgba(57,255,20,0.2);
-}
-
-/* Make the whole blog header band solid dark */
+/* Solid dark band behind the section header */
 .page-post #blog.section-black {
-  background: #12151f !important;     /* same site black */
-  padding-top: 56px;                   /* space below navbar */
+  background: #12151f !important;
+  /* site black */
+  padding-top: 56px;
+  /* clear the fixed navbar */
   padding-bottom: 24px;
 }
 
-/* Remove any template dividers/stripes added by pseudo-elements */
+/* Remove template dividers/stripes */
 .page-post #blog.section-black::before,
 .page-post #blog.section-black::after,
 .page-post #blog .section-title::before,
@@ -1798,21 +1746,320 @@ iframe[src*="datawrapper.dwcdn.net"] {
   display: none !important;
 }
 
-/* Ensure the inner title container is transparent (no white card/shadow) */
+/* Ensure the inner title container is truly transparent */
 .page-post #blog .container.section-title {
   background: transparent !important;
   box-shadow: none !important;
   border: 0 !important;
   margin: 0 auto;
   padding: 0;
+  text-align: center;
 }
 
-/* Optional: push the article down a touch more */
+/* Keep your Orbitron neon for the big blue header title */
+.page-post #blog .section-title h1,
+.page-post #blog .section-title h1 i {
+  /* uses your existing global styles; no change needed */
+}
+
+/* Optional: your framed subtitle style still applies; nothing to change here */
+
+/* Dark article “card” */
 .page-post article {
+  background: rgba(11, 15, 20, 0.96);
+  border: 1px solid rgba(0, 247, 255, 0.25);
+  border-radius: 16px;
+  padding: 24px 24px 32px;
+  box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
   margin-top: 12px;
+  /* a touch of breathing room */
 }
 
-/* Keep your neon H1/subtitle styles (if you want them here) */
-.page-post #blog .section-title h1 { /* …your Orbitron neon styles… */ }
-.page-post #blog .section-title .framed-subtitle { /* …your framed neon styles… */ }
+/* Date line: subtle on dark */
+.page-post .article-title p.text-muted {
+  color: #9fc9d6 !important;
+}
 
+/* Images inside post content */
+.page-post .content img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive top padding */
+@media (max-width: 991px) {
+  .page-post #main {
+    padding-top: 120px;
+  }
+}
+
+/* === Article Content Font === */
+
+/* h3 inside the article body */
+article .content h3,
+.article-content h3 {
+  color: #00f6ff;
+  text-shadow:
+    0 0 3px rgba(0, 246, 255, 0.6),
+    0 0 8px rgba(0, 246, 255, 0.35);
+}
+
+/* tag pills under articles */
+article .tags span,
+.article-content .tags span {
+  color: #00f6ff;
+  background: rgba(0, 246, 255, 0.08);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   UNIFORM BLOG + TECH PORTFOLIO TYPOGRAPHY & BUTTONS
+   (Put this at the very end of custom.css so it wins)
+   ========================================================= */
+
+:root {
+  /* fonts */
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'VT323', monospace;
+
+  /* colors */
+  --c-bg: #12151f;
+  --c-title: #9aff9a;
+  /* light neon green (titles) */
+  --c-body: #9ee9ff;
+  /* body copy cyan */
+  --c-muted: #7FE1FF;
+  /* meta lines like “Published on…” */
+  --c-border: rgba(0, 247, 255, 0.35);
+  --c-card: rgba(15, 20, 25, 0.60);
+
+  /* button */
+  --btn-bg: #00f7ff;
+  /* cyan */
+  --btn-text: #0e121b;
+  /* dark text for contrast */
+  --btn-hover-bg: #39ff14;
+  /* neon green hover */
+  --btn-hover-text: #0e121b;
+  --btn-shadow: 0 0 12px rgba(0, 234, 255, 0.7), 0 0 24px rgba(0, 234, 255, 0.5);
+  --btn-shadow-hover: 0 0 16px #39ff14, 0 0 32px rgba(57, 255, 20, .7);
+}
+
+/* ---------- Cards (both blog + portfolio) ---------- */
+
+/* same frame + glow on both card types */
+.article-card,
+.portfolio-item {
+  background: var(--c-card) !important;
+  border: 2px solid var(--c-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.25) !important;
+  color: var(--c-body) !important;
+  font-family: var(--font-body) !important;
+}
+
+/* images */
+.article-card .article-img,
+.portfolio-item img,
+.portfolio-item iframe {
+  border-bottom: 2px solid var(--c-border);
+}
+
+/* hover effect */
+.article-card:hover,
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  border-color: #00ff9c !important;
+  box-shadow: 0 0 40px #00ff9c, 0 0 60px rgba(0, 247, 255, 0.6) !important;
+}
+
+/* ---------- Titles (blog + portfolio) ---------- */
+
+.article-title,
+.article-title a,
+.portfolio-content h3,
+.portfolio-content h3 a {
+  font-family: var(--font-body) !important;
+  font-size: 1.35rem !important;
+  line-height: 1.35 !important;
+  color: var(--c-title) !important;
+  text-decoration: none !important;
+}
+
+.article-title a:hover,
+.portfolio-content h3 a:hover {
+  color: #caffca !important;
+  /* lighter green on hover */
+  text-shadow: 0 0 6px rgba(154, 255, 154, .7);
+}
+
+/* meta/date lines */
+.article-date,
+.article-content .meta,
+.portfolio-content .meta {
+  color: var(--c-muted) !important;
+  opacity: .95 !important;
+  font-size: .95rem !important;
+  margin-bottom: .65rem !important;
+  font-family: var(--font-body) !important;
+}
+
+/* body text inside both */
+.article-content p,
+.portfolio-content p,
+.article-card p,
+.portfolio-item p {
+  color: var(--c-body) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+/* tags on both */
+.article-content .tags span,
+.tags span {
+  background: rgba(0, 246, 255, 0.08) !important;
+  border: 1px solid rgba(0, 246, 255, 0.4) !important;
+  color: #00f6ff !important;
+  padding: .3rem .7rem !important;
+  border-radius: 6px !important;
+  font-size: .9rem !important;
+  letter-spacing: .5px !important;
+  text-transform: uppercase !important;
+}
+
+/* ---------- Buttons (one style everywhere) ---------- */
+
+/* normalize any button used inside these cards */
+.article-card .btn,
+.portfolio-item .btn,
+.btn-neon {
+  display: inline-block;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  border: 0 !important;
+  font-family: var(--font-body) !important;
+  text-transform: uppercase !important;
+  letter-spacing: .5px !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  color: var(--btn-text) !important;
+  background: var(--btn-bg) !important;
+  box-shadow: var(--btn-shadow) !important;
+  text-decoration: none !important;
+  transition: transform .2s ease, box-shadow .25s ease, background .25s ease, color .25s ease !important;
+}
+
+.article-card .btn:hover,
+.portfolio-item .btn:hover,
+.btn-neon:hover {
+  background: var(--btn-hover-bg) !important;
+  color: var(--btn-hover-text) !important;
+  box-shadow: var(--btn-shadow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* make stretched-link titles not change color on hover except the title itself */
+.article-card .stretched-link:after {
+  pointer-events: none;
+}
+
+/* Make the article page H1 match the green article title style */
+.page-post .article-title h1 {
+  font-family: var(--font-body, 'VT323', monospace) !important;
+  color: var(--c-title, #9aff9a) !important;
+  line-height: 1.25 !important;
+  font-size: clamp(1.8rem, 2.6vw, 2.2rem) !important;
+  /* adjust if you want bigger */
+  margin: 0 0 .35rem 0 !important;
+  text-shadow: 0 0 6px rgba(154, 255, 154, .7) !important;
+}
+
+/* Optional: match any H1 that appears inside the article body too */
+.page-post article .content h1 {
+  font-family: var(--font-body, 'VT323', monospace) !important;
+  color: var(--c-title, #9aff9a) !important;
+  text-shadow: 0 0 6px rgba(154, 255, 154, .7) !important;
+}
+
+/* ===========================================
+   Single post buttons (Bootstrap outlines)
+   =========================================== */
+.page-post .btn {
+  --btn-font: 'VT323', monospace;
+  --c-cyan: #00f7ff;
+  --c-green: #39ff14;
+  --c-dark: #0e121b;
+
+  font-family: var(--btn-font) !important;
+  text-transform: uppercase !important;
+  letter-spacing: .5px !important;
+  font-weight: 700 !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  border-width: 2px !important;
+  transition: transform .18s ease, color .25s ease, background .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+}
+
+/* -------- Primary (cyan) -------- */
+.page-post .btn-outline-primary {
+  color: var(--c-cyan) !important;
+  border-color: color-mix(in srgb, var(--c-cyan) 85%, #ffffff 15%) !important;
+  background: transparent !important;
+  box-shadow: 0 0 10px rgba(0, 247, 255, .25) !important;
+}
+.page-post .btn-outline-primary:hover,
+.page-post .btn-outline-primary:active {
+  color: var(--c-dark) !important;
+  background: var(--c-cyan) !important;
+  border-color: var(--c-cyan) !important;
+  box-shadow: 0 0 14px rgba(0, 247, 255, .65), 0 0 28px rgba(0, 247, 255, .35) !important;
+  transform: translateY(-2px);
+}
+.page-post .btn-outline-primary:focus-visible {
+  outline: 2px solid var(--c-cyan);
+  outline-offset: 2px;
+}
+.page-post .btn-outline-primary.disabled,
+.page-post .btn-outline-primary:disabled {
+  color: rgba(0, 247, 255, .45) !important;
+  border-color: rgba(0, 247, 255, .35) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* -------- Secondary (neon green) -------- */
+.page-post .btn-outline-secondary {
+  color: var(--c-green) !important;
+  border-color: color-mix(in srgb, var(--c-green) 85%, #ffffff 15%) !important;
+  background: transparent !important;
+  box-shadow: 0 0 10px rgba(57, 255, 20, .25) !important;
+}
+.page-post .btn-outline-secondary:hover,
+.page-post .btn-outline-secondary:active {
+  color: var(--c-dark) !important;
+  background: var(--c-green) !important;
+  border-color: var(--c-green) !important;
+  box-shadow: 0 0 16px rgba(57, 255, 20, .75), 0 0 32px rgba(57, 255, 20, .45) !important;
+  transform: translateY(-2px);
+}
+.page-post .btn-outline-secondary:focus-visible {
+  outline: 2px solid var(--c-green);
+  outline-offset: 2px;
+}
+.page-post .btn-outline-secondary.disabled,
+.page-post .btn-outline-secondary:disabled {
+  color: rgba(57, 255, 20, .45) !important;
+  border-color: rgba(57, 255, 20, .35) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* optional: keep equal spacing when used as a 3-button nav */
+.page-post .post-nav .btn { min-width: 9.25rem; text-align: center; }
