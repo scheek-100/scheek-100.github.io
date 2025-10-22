@@ -1114,8 +1114,8 @@ section:not(#about) h2.framed-subtitle {
 /* Titles + links */
 #slider .swiper-slide .content h2 {
   margin: 0 0 6px;
-  font-family: 'Orbitron', sans-serif;
-  color: #00eaff;
+  font-family: 'VT323', monospace;
+  color: #39ff14;
   font-weight: 800;
   letter-spacing: .02em;
   line-height: 1.15;
