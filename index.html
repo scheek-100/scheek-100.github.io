@@ -596,107 +596,102 @@
 
       </section><!-- End Tech Portfolio Section -->
 
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="testimonials section-black" data-aos="fade-in">
-        <div class="container">
+      <!--TESTIMONIALS TITLE-->
+      <section id="testimonials" class="testimonials section-black py-5">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h1>TESTIMONIALS</h1>
+          <h2 class="framed-subtitle">Results recognized by former colleagues, coworkers, and clients.</h2>
+        </div>
 
-          <!-- Section Title  -->
-          <div class="section-title" data-aos="fade-up">
-            <h1>TESTIMONIALS</h1>
-            <h2 class="framed-subtitle">Results recognized by former colleagues, coworkers, and clients.</h2>
-          </div><!-- End Section Title -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            // Avoid duplicate inits if you hot-reload
+            if (window.__tSwiper) window.__tSwiper.destroy(true, true);
 
-          <div data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
+            window.__tSwiper = new Swiper('.testimonials-swiper', {
+              loop: true,
+              speed: 600,
+              autoHeight: true,                         // adapts to quote length
+              autoplay: { delay: 5000, disableOnInteraction: false },
+              slidesPerView: 1,
+              centeredSlides: true,
+              spaceBetween: 20,
+              pagination: { el: '.testimonials-pagination', clickable: true },
+              navigation: { nextEl: '.testimonials-next', prevEl: '.testimonials-prev' },
+              breakpoints: {
+                992: { slidesPerView: 1, centeredSlides: true, spaceBetween: 24 }
+                // For 2-up on desktop: 992: { slidesPerView: 2, centeredSlides: false, spaceBetween: 24 }
+              }
+            });
+          });
+        </script>
 
-              <div class="swiper-wrapper">
+        <!-- Testimonials Container -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
 
-                <!-- Testiomonial 1-->
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="testimonial-glass-inner">
-                      <img
-                        src="https://media.licdn.com/dms/image/v2/D5603AQEibYrTk8suiA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1687087039525?e=1761782400&v=beta&t=MG7kjd4nd9Lk5s_lKX1opAb8gAUUS6P1s6HmVxCU7ao"
-                        class="testimonial-img" alt="">
-                      <h3>Daniel M. Chin, PMP</h3>
-                      <h4>Program Manager at Microsoft</h4>
-                      <!--Cyber Barcode Divider -->
-                      <div class="cyber-barcode"></div>
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>I worked with Sasha on the Microsoft e-commerce program migration project. She
-                          successfully
-                          managed complicated program tasks with a detail oriented project management skill-set while
-                          employing creativity. Thanks to her clear communication with cross functional teams, we could
-                          efficiently use our time. She is a very knowledgeable and hardworking collaborator. She’s also
-                          a
-                          very friendly and warm hearted person. I strongly recommend her for any program manager
-                          position.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <article class="t-card">
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D5603AQEibYrTk8suiA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1687087039525?e=1761782400&v=beta&t=MG7kjd4nd9Lk5s_lKX1opAb8gAUUS6P1s6HmVxCU7ao"
+                    alt="Portrait of Daniel M. Chin" class="t-avatar">
+                  <h3 class="t-name">Daniel M. Chin, PMP</h3>
+                  <p class="t-role">Program Manager at Microsoft</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="t-quote">
+                    <span class="qmark left">“</span>
+                    I worked with Sasha on the Microsoft e-commerce program migration project. She successfully managed complicated
+                    program tasks with a detail oriented project management skill-set while employing creativity. Thanks to her clear
+                    communication with cross functional teams, we could efficiently use our time. She is a very knowledgeable and
+                    hardworking collaborator. She’s also a very friendly and warm hearted person. I strongly recommend her for any
+                    program manager position.
+                    <span class="qmark right">”</span>
+                  </p>
+                </article>
+              </div>
 
-                <!-- Testimonial 2 -->
-                <div class="swiper-slide">
-                  <div class="testimonial-item">
-                    <div class="testimonial-glass-inner">
-                      <img
-                        src="https://media.licdn.com/dms/image/v2/D5603AQEoS37JgAcEKw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731534579150?e=1761782400&v=beta&t=XOFElMatfSz274LVnHA3fx1YvVkVCEBuJm8IldSTupo"
-                        class="testimonial-img" alt="">
-                      <h3>Susan Walker</h3>
-                      <h4>Scrum Master at Abercrombie &amp; Fitch</h4>
-                      <!--Cyber Barcode Divider -->
-                      <div class="cyber-barcode"></div>
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>I had the pleasure of working with Sasha as a fellow Technical Program Manager. From the
-                          moment
-                          I met her during my first day at Credit Karma I liked her and knew she would be someone I
-                          could
-                          learn from. She is knowledgeable and passionate about coaching teams to be their very best.
-                          She
-                          has
-                          a positive attitude and is always willing to help whenever needed. She is also not afraid to
-                          ask
-                          the
-                          hard questions and point out areas where we can all improve. She is a humble leader who always
-                          has
-                          the best in mind of everyone she works with.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div><!-- End swiper-wrapper -->
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <article class="t-card">
+                  <img
+                    src="https://media.licdn.com/dms/image/v2/D5603AQEoS37JgAcEKw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1731534579150?e=1761782400&v=beta&t=XOFElMatfSz274LVnHA3fx1YvVkVCEBuJm8IldSTupo"
+                    alt="Portrait of Susan Walker" class="t-avatar">
+                  <h3 class="t-name">Susan Walker</h3>
+                  <p class="t-role">Scrum Master at Abercrombie &amp; Fitch</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="t-quote">
+                    <span class="qmark left">“</span>
+                    I had the pleasure of working with Sasha as a fellow Technical Program Manager. From the moment I met her during
+                    my first day at Credit Karma I liked her and knew she would be someone I could learn from. She is knowledgeable
+                    and passionate about coaching teams to be their very best. She has a positive attitude and is always willing to
+                    help whenever needed. She is also not afraid to ask the hard questions and point out areas where we can all
+                    improve. She is a humble leader who always has the best in mind of everyone she works with.
+                    <span class="qmark right">”</span>
+                  </p>
+                </article>
+              </div>
 
-                <div class="swiper-pagination"></div>
-              </div><!-- End swiper -->
-            </div><!-- End testimonial-glass -->
-          </div><!-- End data-aos -->
-      </section><!-- /Testimonials Section -->
+            </div>
+
+            <!-- Scoped controls -->
+            <div class="swiper-pagination testimonials-pagination"></div>
+            <div class="swiper-button-prev testimonials-prev" aria-label="Previous"></div>
+            <div class="swiper-button-next testimonials-next" aria-label="Next"></div>
+          </div>
+        </div>
+      </section>
+
 
       <!-- Contact Section -->
       <section id="contact" class="contact section-black">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h1>CONTACT</h1>
-          <h2 class="framed-subtitle">Have a question, need help with a project, or just talk about tech? I'm always
+          <h2 class="framed-subtitle">Have a question, need help with a project, or just talk about tech? I'm
+            always
             happy
             to connect. Send me a
             message, and I will respond within 24-48 hours.</h2>
@@ -741,7 +736,8 @@
                     <div class="status-messages">
                       <div class="loading" style="display:none;">Loading...</div>
                       <div class="error-message" style="display:none;"></div>
-                      <div class="sent-message" style="display:none;">Your message has been sent. Thank you!</div>
+                      <div class="sent-message" style="display:none;">Your message has been sent. Thank you!
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-neon btn-lg">Send Message</button>
                   </div>
@@ -756,9 +752,9 @@
   </main>
 
   <!-- Footer -->
-  <footer id="footer" class="footer" style="background:url('assets/img/cyberpunk-footer.jpg') no-repeat center center / cover !important;
+  <footer id="footer" class="footer" data-aos="fade-up" data-aos-delay="100" style="background:url('assets/img/cyberpunk-footer.jpg') no-repeat center center / cover !important;
                background-size:cover;">
-    <div class="container">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
       <h3 class="sitename">SASHA CHEEK | TECH PROGRAM MANAGER & SCIENCE WRITER</h3>
       <p>Bridging the gap between systems and narrative.</p>
       <div class="social-links d-flex justify-content-center">
@@ -858,13 +854,13 @@
     });
   </script>
 
-<!-- For Coming Soon Blog Entries -->
+  <!-- For Coming Soon Blog Entries -->
   <script>
-document.addEventListener('click', e => {
-  const el = e.target.closest('[data-comingsoon]');
-  if (el){ e.preventDefault(); }
-});
-</script>
+    document.addEventListener('click', e => {
+      const el = e.target.closest('[data-comingsoon]');
+      if (el) { e.preventDefault(); }
+    });
+  </script>
 
 
 </body>
