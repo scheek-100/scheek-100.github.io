@@ -1899,6 +1899,72 @@ article .tags span,
   text-shadow: 0 0 6px rgba(154, 255, 154, .7);
 }
 
+/* Article page: H2 + Figure/figcaption styling*/
+
+/* fallbacks in case tokens aren't defined above */
+:root {
+  --c-body: #9ee9ff;   /* paragraph/body color */
+  --c-title: #9aff9a;  /* green used for article titles */
+}
+
+.page-post article {
+  /* just keeping spacing consistent */
+  --h2-size: clamp(1.35rem, 2.2vw, 1.85rem);
+}
+
+/* H2 in article content — match your green title vibe */
+.page-post article .content h2 {
+  font-family: var(--font-body, 'VT323', monospace) !important;
+  color: var(--c-title) !important;
+  font-size: var(--h2-size) !important;
+  line-height: 1.28 !important;
+  margin: 1.35rem 0 .55rem !important;
+  text-shadow: 0 0 6px rgba(154, 255, 154, .7) !important;
+  letter-spacing: .3px;
+}
+
+/* Optional: thin cyan underline for visual rhythm */
+.page-post article .content h2 + * {
+  border-top: 0;
+}
+.page-post article .content h2.use-underline {
+  padding-bottom: .25rem;
+  border-bottom: 1px solid rgba(0, 247, 255, .28);
+}
+
+/* Figure block + image */
+.page-post article figure {
+  margin: 1.25rem 0;
+}
+.page-post article figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 247, 255, .22);
+  box-shadow: 0 0 18px rgba(0, 247, 255, .18);
+}
+
+/* Figcaption — match paragraph color */
+.page-post article figure figcaption {
+  font-family: var(--font-body, 'VT323', monospace);
+  color: var(--c-body);
+  font-size: 1rem;
+  line-height: 1.45;
+  opacity: .95;
+  margin-top: .55rem;
+  padding-top: .5rem;
+  border-top: 1px solid rgba(0, 247, 255, .25);
+  text-align: center; /* change to center if preferred */
+  text-shadow: 0 0 6px rgba(158, 233, 255, .35);
+}
+
+/* Smaller/muted variant if you add class="small" */
+.page-post article figure figcaption.small {
+  font-size: .92rem;
+  opacity: .85;
+}
+
 /* meta/date lines */
 .article-date,
 .article-content .meta,
@@ -2063,3 +2129,37 @@ article .tags span,
 
 /* optional: keep equal spacing when used as a 3-button nav */
 .page-post .post-nav .btn { min-width: 9.25rem; text-align: center; }
+
+/* CODE BLOCK DESIGNS */
+/* Inline code */
+.page-post code,
+#blog code {
+font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'VT323', monospace;
+font-size: 0.95rem;
+color: #7FE1FF;
+background: rgba(6, 18, 26, 0.55);
+border: 1px solid rgba(0, 247, 255, 0.35);
+border-radius: 6px;
+padding: .1rem .35rem;
+}
+
+/* Code block */
+.page-post pre,
+#blog pre {
+background: rgba(10, 14, 20, 0.9);
+border: 1.5px solid rgba(0, 247, 255, 0.35);
+box-shadow: 0 0 18px rgba(0, 247, 255, 0.22);
+border-radius: 12px;
+padding: 14px 16px;
+overflow: auto;
+margin: 1rem 0 1.25rem;
+}
+
+/* Make the text inside the block clean and non-wrapping by default */
+.page-post pre code,
+#blog pre code {
+display: block;
+white-space: pre;        /* use pre-wrap if you prefer wrapping */
+color: #9ee9ff;
+text-shadow: 0 0 6px rgba(158, 233, 255, .35);
+}

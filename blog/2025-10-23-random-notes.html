@@ -119,20 +119,61 @@
             <figure class="mb-4">
                 <img src="https://images.pexels.com/photos/5827785/pexels-photo-5827785.jpeg?w=1920"
                     class="img-fluid rounded" alt="Random Notes feature image">
-                <figcaption class="text-muted small mt-2">Photo credit / caption (optional)</figcaption>
+                <figcaption class="small mt-2"><i>Photo credit: Pexels.com</i></figcaption>
             </figure>
 
             <!-- Post content -->
             <div class="content">
-                <p>My humble beginnings as a writer combining engineering knowledge to tell stories.</p>
-                <h2>Section heading</h2>
-                <p>Body text goes here. You can use <strong>bold</strong>, <em>italics</em>, lists, images, and code.
-                </p>
+                <p><i>My humble beginnings as a writer combining engineering knowledge to tell stories.</i></p>
+                <h2>Log 001</h2>
+                <p>Tuesday was the day my new life as a part-time blogger began after multiple code deployments. I spent
+                    hours experimenting with its aesthetics and functionality, words and formatting appearing and
+                    disappearing with every new sandbox test. What was the culprit? GitHub's relative paths. After
+                    setting up the repository structure for the blog section, file paths like
+                    <code>assets/css/custom.css</code> vanished before my eyes. Apparently, the file path needed one
+                    more "/" in front of "assets" and things started working again.</p>
+                <p>This wasn't just a typical styling and code fix; it was reprogramming of one's mindset. Seeing the
+                    difference between the code working on one aspect and then seeing it work anywhere is one
+                    characteristic of this change. It's not only good coding practice for front-end web development. It
+                    will sustain the website blog's skeleton for a better user experience. Being aware of how multiple
+                    aspects come together-- SEO, web hosting, repository organization, etc. -- is the key to
+                    understanding some foundations of systems engineering.</p>
+                <!-- Feature Image -->
+                <figure class="mb-4">
+                    <img src="/assets/img/blog/pic2-blog-01.png"
+                        class="img-fluid rounded" alt="Random Notes feature image">
+                    <figcaption class="small mt-2"><i>Photo credit: Visual Studio Code Screenshot</i></figcaption>
+                </figure>
+                <!-- End of Feature Image -->
+                <p>A few guardrails that every writer building a website should know are:</p>
                 <ul>
-                    <li>Point one</li>
-                    <li>Point two</li>
+                    <li>
+                        <p>Use <strong style="color:lightgreen;">root-relative</strong> file paths to make sure shared
+                            assets show on your website.</p>
+                    </li>
+                    <li>
+                        <p>Keep header/footer HTML in sync across all website pages without changing it.</p>
+                    </li>
+                    <li>
+                        <p>Never launch code without previewing it with GitHub Desktop <strong
+                                style="color:lightgreen;">or</strong> VS (Visual Studio) Code with the Live Server
+                            extension.</p>
+                    </li>
+                    <li>
+                        <p>When you're stuck look for extra code that shouldn't be there; misspelled fields; anything
+                            that deviates from the code pattern, or go to <strong style="color:lightgreen;">DevTools →
+                                Network</strong> in your web browser for additional troubleshooting.</p>
+                    </li>
                 </ul>
-                <p>Closing thoughts…</p>
+                <!-- Feature Image -->
+                <figure class="mb-4">
+                    <img src="/assets/img/blog/pic3-blog-01.jpg"
+                        class="img-fluid rounded" alt="Random Notes feature image">
+                    <figcaption class="small mt-2"><i>Photo credit: Stockcake.com</i></figcaption>
+                </figure>
+                <!-- End of Feature Image -->
+                <p><strong style="color:lightgreen;">Today's Win:</strong> I created my first blog post and can reuse
+                    the template for future logs.</p>
             </div>
 
             <hr class="my-5" />
