@@ -447,7 +447,7 @@ section:not(#about) h2.framed-subtitle {
   }
 }
 
-/* === SERVICES SECTION FONT === */
+/* === SERVICES TEXT === */
 
 /* Section base */
 .services {
@@ -455,12 +455,24 @@ section:not(#about) h2.framed-subtitle {
   text-align: center;
 }
 
+/* Ensure each card centers its content vertically & horizontally */
+.service-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;      /* vertical centering */
+  align-items: center;          /* horizontal centering */
+  text-align: center;           /* center inline text */
+  padding: 22px;                /* breathing room */
+  gap: 10px;                    /* space between icon/title/paragraph */
+  min-height: 280px;            /* grows if content is longer */
+}
+
 /* Services Icon */
 .service-card i {
   font-size: 2rem;
   color: #00eaff;
   text-shadow: 0 0 6px #00eaff, 0 0 12px rgba(0, 234, 255, 0.8);
-  margin-bottom: 1rem;
+  margin: 0 0 6px;              /* tighter, consistent spacing */
 }
 
 /* Title */
@@ -470,10 +482,11 @@ section:not(#about) h2.framed-subtitle {
   letter-spacing: 1.5px;
   font-size: 1.4rem;
   color: #00eaff;
+  line-height: 1.2;
   text-shadow:
     0 0 6px #00eaff,
     0 0 12px rgba(0, 234, 255, 0.8);
-  margin-bottom: 1rem;
+  margin: 0;                    /* remove default margins (gap handles spacing) */
 }
 
 /* Description */
@@ -481,9 +494,15 @@ section:not(#about) h2.framed-subtitle {
   font-family: 'VT323', monospace;
   font-size: 1.1rem;
   color: #9ee9ff;
+  max-width: 36ch;              /* comfortable line length */
+  text-wrap: balance;           /* nicer wrapping (modern) */
+  overflow-wrap: anywhere;      /* break very long tokens/URLs */
+  word-break: break-word;       /* legacy fallback */
+  hyphens: auto;                /* prettier breaks */
   text-shadow: 0 0 6px rgba(158, 233, 255, 0.8);
   margin: 0;
 }
+
 
 /* === RESUME SECTION FONT === */
 
@@ -519,9 +538,6 @@ section:not(#about) h2.framed-subtitle {
   margin: 0 0 12px 0;
   border: 2px solid rgba(0, 246, 255, 0.4);
   border-radius: 4px;
-  /*box-shadow:
-    0 0 6px #00eaff,
-    inset 0 0 12px rgba(144, 238, 144, 0.5); */
 }
 
 /* Resume section h4 styling - Job/Position titles */
@@ -541,7 +557,7 @@ section:not(#about) h2.framed-subtitle {
 
 /* === TECH PORTFOLIO SECTION FONT === */
 .portfolio-section {
-  background: #000;
+  /*background: #000; */
   padding: 4rem 2rem;
   color: #e5e5e5;
   font-family: 'VT323', monospace;
@@ -586,6 +602,44 @@ section:not(#about) h2.framed-subtitle {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
+/* each project card */
+.portfolio-item{
+  /* center the tile in its parent */
+  margin-left: auto;
+  margin-right: auto;
+  /* consistent width that shrinks on mobile and never overflows */
+  width: clamp(280px, 90vw, 900px);
+  /* keep vertical layout inside the card */
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* or center if you prefer */
+}
+
+/* vertical spacing */
+.portfolio-item + .portfolio-item{
+  margin-top: 2rem;   /* adjust to taste: 1.5–3rem */
+}
+
+/* make media inside cards fill the card width and stay centered */
+.portfolio-item iframe,
+.portfolio-item img{
+  display: block;
+  width: 100% !important;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 14px; /* matches your card rounding */
+}
+
+/* keep the tag row aligned with the card content */
+.portfolio-item .tags{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* if anything still pulls a tile to one side, override stray floats */
+.portfolio-item { float: none; }
 
 /* === WRITING/BLOG SECTION FONT === */
 
@@ -885,37 +939,6 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* === SERVICES SECTION STYLING === */
-
-/* Background image and overlay for Services section */
-#services {
-  position: relative;
-  background: url("assets/img/Nick_Fancher_Unplash_Cyberbunk2077.png") no-repeat center center;
-  background-size: cover !important;
-  color: #fff;
-  padding: 80px 0;
-  /* adjust as needed for spacing */
-  text-align: center;
-  z-index: 1;
-  overflow: hidden;
-}
-
-#services::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(0, 170, 255, 0.4) 0%,
-      /* top: soft neon blue */
-      rgba(0, 0, 0, 0.6) 100%
-      /* bottom: fade to black */
-    );
-  z-index: 0;
-}
-
-/* Background image sits above overlay */
-#services .container {
-  position: relative;
-  z-index: 1;
-}
 
 /* Grid layout */
 .services-grid {
@@ -2113,4 +2136,40 @@ display: block;
 white-space: pre;        /* use pre-wrap if you prefer wrapping */
 color: #9ee9ff;
 text-shadow: 0 0 6px rgba(158, 233, 255, .35);
+}
+
+/* TITLE BANNERS */
+.title-banner{
+  --title-img: url('/assets/img/headers/default.webp');
+  --title-height: clamp(160px, 26vw, 280px);
+  --title-overlay: linear-gradient(rgba(128,0,128,.45), rgba(0,0,0,.78));
+  position: relative;
+  min-height: var(--title-height);
+  margin: 0 0 1.75rem 0;
+  border: 1.5px solid rgba(0,247,255,.35);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(0,247,255,.25);
+}
+.title-banner::before{
+  content:""; position:absolute; inset:0;
+  background: var(--title-overlay), var(--title-img) center/cover no-repeat;
+  filter: saturate(1.05) contrast(1.05) brightness(.9);
+}
+.title-banner::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(120px 40% at -5% 50%, rgba(0,247,255,.25), transparent 60%),
+    radial-gradient(120px 40% at 105% 50%, rgba(0,247,255,.25), transparent 60%);
+  pointer-events:none;
+}
+
+/* optional size variants */
+.title-banner.small{ --title-height: clamp(130px, 20vw, 200px); }
+.title-banner.tall { --title-height: clamp(220px, 34vw, 380px); }
+
+/* tighter stacking on phones */
+@media (max-width: 576px){
+  .title-banner > .section-title h1{ margin-bottom:.35rem; }
+  .title-banner .framed-subtitle{ font-size:1.1rem; padding:4px 10px; }
 }
