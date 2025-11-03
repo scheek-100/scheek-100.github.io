@@ -1327,15 +1327,16 @@ iframe[src*="datawrapper.dwcdn.net"] {
 }
 
 /* === TECH PORTFOLIO DETAILS PAGE SECTION STYLING === */
-:root{
-  --bg:#0f1318;
-  --panel:rgba(255,255,255,0.04);
-  --muted:#b9c2cf;
-  --accent:#5ad0ff;
-  --glass-border: rgba(255,255,255,0.06);
-  --radius:10px;
-  --max-img-height:520px;
+:root {
+    --bg: #0f1318;
+    --panel: rgba(255, 255, 255, 0.04);
+    --muted: #b9c2cf;
+    --accent: #5ad0ff;
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --radius: 10px;
+    --max-img-height: 520px;
 }
+
 .portfolio-details img {
     width: 100%;
     height: auto;
@@ -1351,9 +1352,10 @@ iframe[src*="datawrapper.dwcdn.net"] {
 
 /* Slider */
 .portfolio-details-slider {
-    background: transparent;
-    border-radius: var(--radius);
-    overflow: visible;
+    width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 1.5rem auto 2.5rem;
 }
 
 .portfolio-details-slider .swiper-wrapper {
@@ -1365,6 +1367,8 @@ iframe[src*="datawrapper.dwcdn.net"] {
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    width: 100%;
+    text-align: center;
 }
 
 .portfolio-details-slider .swiper-slide img {
@@ -1373,10 +1377,49 @@ iframe[src*="datawrapper.dwcdn.net"] {
     max-height: var(--max-img-height);
     height: auto;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 12px 30px rgba(2, 6, 12, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.03);
     background: #0b0d10;
+}
+
+/* === PORTFOLIO DETAILS IMAGE SLIDER PAGINATION (CYAN STATIC COLOR) === */
+.portfolio-details-slider {
+  position: relative;
+  padding-bottom: 2.5rem; /* space for pagination dots */
+}
+
+.portfolio-details-slider .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  z-index: 10;
+}
+
+/* Pagination bullets */
+.portfolio-details-slider .swiper-pagination {
+    bottom: 10px !important;
+}
+
+.portfolio-details-slider .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: #1f3640;
+    opacity: 1;
+    border: 1px solid rgba(0, 247, 255, 0.35);
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.25);
+}
+
+.portfolio-details-slider .swiper-pagination-bullet-active {
+    background: #00f7ff;
+    border-color: #00f7ff;
+    box-shadow: 0 0 14px rgba(0, 247, 255, 0.6);
 }
 
 /* Links inside project info */
@@ -1432,6 +1475,187 @@ button:focus,
     outline: 2px solid rgba(90, 208, 255, 0.25);
     outline-offset: 3px;
     border-radius: 6px;
+}
+
+/* Build Log- Milestone Project details Section */
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 1rem;
+    border-left: 2px solid rgba(0, 255, 255, 0.25);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -15px;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #00eaff;
+    color: #0f1318;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: var(--panel);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    color: var(--muted);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.25);
+}
+
+.timeline-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    color: #00eaff;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.timeline-content p {
+    font-family: 'VT323', monospace;
+    font-size: 1.05rem;
+    color: #9ee9ff;
+    margin-bottom: 1rem;
+}
+
+/* Code blocks inside Build Log */
+.timeline-content pre {
+    background: #0b0e14;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    color: #00ffcc;
+    font-size: 0.95rem;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    margin-bottom: 0;
+}
+
+.timeline-content code {
+    color: #00ffff;
+}
+
+/* Hover glow effect for icons */
+.timeline-item:hover .timeline-icon {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+}
+
+/* Smaller screens */
+@media (max-width: 767px) {
+    .timeline {
+        padding-left: 0.5rem;
+        border-left: 1px solid rgba(0, 255, 255, 0.2);
+    }
+
+    .timeline-item {
+        padding-left: 2rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content pre {
+        font-size: 0.85rem;
+    }
+}
+
+/* === GLIGHTBOX CYBERPUNK THEME === */
+/* Overlay background */
+.glightbox-container {
+  background: rgba(5, 10, 20, 0.92) !important; /* deep bluish-black */
+  backdrop-filter: blur(4px);
+}
+
+/* Image frame glow */
+.glightbox-container .gslide-image img {
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+}
+
+/* Caption text */
+.glightbox-desc,
+.glightbox-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffff !important;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  letter-spacing: 1px;
+}
+
+/* Caption container */
+.glightbox-desc {
+  font-family: 'DotGothic16', sans-serif;
+  color: #9ee9ff !important;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Navigation arrows */
+.glightbox-button,
+.glightbox-prev,
+.glightbox-next {
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.glightbox-button:hover,
+.glightbox-prev:hover,
+.glightbox-next:hover {
+  color: #5ad0ff !important;
+  transform: scale(1.1);
+}
+
+/* Close button glow */
+.glightbox-close {
+  color: #00ffff !important;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.glightbox-close:hover {
+  color: #5ad0ff !important;
+  transform: rotate(90deg);
+}
+
+/* Pagination dots if present */
+.glightbox-dots .gslide-dot {
+  background: rgba(0, 255, 255, 0.3);
+}
+.glightbox-dots .gslide-dot.active {
+  background: #00ffff;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
 }
 
 /* === WRITING/BLOG SECTION STYLING === */
@@ -2466,4 +2690,17 @@ article .tags span,
         font-size: 1.1rem;
         padding: 4px 10px;
     }
+}
+
+/* === PORTFOLIO DETAILS PAGE BACKGROUND FIX === */
+body.portfolio-details-page {
+    background-color: #0f1318 !important;
+    /* dark cyan-black, same as Tech Portfolio section */
+    color: #9ee9ff;
+}
+
+.section-black,
+.portfolio-details,
+.portfolio-details .container {
+    background-color: transparent !important;
 }

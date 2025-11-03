@@ -14,7 +14,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Tech Portfolio Details - Web Development Case Study">
-  <meta property="og:description" content="Notes from the Sandbox — a writer-engineer’s log.">
+  <meta property="og:description" content="Tech Portfolio Details - Web Development Case Study by Sasha Cheek.">
   <meta property="og:image" content="https://sashacheek.com/assets/img/preview-card.png">
   <meta property="og:url" content="https://sashacheek.com/tech-portfolio/web-dev-case-study-portfolio-details.html">
   <meta property="og:type" content="portfolio-details">
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tech Portfolio Details - Web Development Case Study">
-  <meta name="twitter:description" content="Notes from the Sandbox — a writer-engineer’s log.">
+  <meta name="twitter:description" content="Tech Portfolio Details - Web Development Case Study by Sasha Cheek.">
   <meta name="twitter:image" content="https://sashacheek.com/assets/img/preview-card.png">
 
   <link rel="canonical" href="https://sashacheek.com/tech-portfolio/web-dev-case-study-portfolio-details.html">
@@ -107,81 +107,147 @@
       </div>
 
       <!-- Tech Portfolio Details Container -->
-      <section id="portfolio-details" class="portfolio-details section-black py-5" data-aos="fade-in">
-        <!-- Tech Portfolio Container-->
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <!-- Build Log (Milestone Style) -->
+      <div class="portfolio-details" data-aos="fade-up" data-aos-delay="600">
+        <h2>BUILD LOG: WEBSITE CUSTOMIZATION MILESTONES</h2>
+        <p class="neon-text">
+          A chronicle of how I evolved my site—from a basic Bootstrap template to a cyberpunk-themed tech portfolio
+          that bridges design, engineering, and storytelling.
+        </p>
+        <!-- Development Work Slider -->
+        <div class="swiper portfolio-details-slider init-swiper" data-aos="fade-up" data-aos-delay="200">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": { "delay": 5000 },
+              "slidesPerView": 1,
+              "spaceBetween": 20,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+              }
+            }
+            </script>
+          
+          <div class="swiper-wrapper">
 
-          <div class="row gy-4">
-
-            <div class="col-lg-8">
-              <div class="portfolio-details-slider swiper init-swiper">
-
-                <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-                <div class="swiper-wrapper align-items-center">
-
-                  <div class="swiper-slide">
-                    <img src="assets/img/portfolio/api-1.png" alt="">
-                  </div>
-
-                  <div class="swiper-slide">
-                    <img src="assets/img/portfolio/product-1.png" alt="">
-                  </div>
-
-                  <div class="swiper-slide">
-                    <img src="assets/img/portfolio/branding-1.jpg" alt="">
-                  </div>
-
-                  <div class="swiper-slide">
-                    <img src="assets/img/portfolio/books-1.jpg" alt="">
-                  </div>
-
-                </div>
-                <div class="swiper-pagination"></div>
-              </div>
+            <div class="swiper-slide">
+              <a href="/assets/img/portfolio/portfolio-details/devlog-1/project1-slide1.webp" class="glightbox"
+                data-gallery="devwork-gallery" data-title="Initial Setup: Folio Framework & Flask Routes">
+                <img src="/assets/img/portfolio/portfolio-details/devlog-1/project1-slide1.webp"
+                  alt="Initial project setup">
+              </a>
+              <p class="slide-caption">Folio Framework & Flask Routes Setup Process</p>
             </div>
 
-            <div class="col-lg-4">
-              <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-                <h3>Project information</h3>
-                <ul>
-                  <li><strong>Category</strong>: Web design</li>
-                  <li><strong>Client</strong>: Self</li>
-                  <li><strong>Project date</strong>: 01 Aug, 2025</li>
-                  <li><strong>Project URL</strong>: <a href="#">www.sashacheek.com</a></li>
-                </ul>
-              </div>
-              <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-                <h2>Exercitationem repudiandae officiis neque suscipit</h2>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia.
-                  Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia
-                  accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt
-                  eius.
-                </p>
-              </div>
+            <div class="swiper-slide">
+              <a href="/assets/img/portfolio/portfolio-details/devlog-1/project1-slide2.webp" class="glightbox"
+                data-gallery="devwork-gallery" data-title="Custom CSS Theme Development">
+                <img src="/assets/img/portfolio/portfolio-details/devlog-1/project1-slide2.webp"
+                  alt="Custom CSS structure">
+              </a>
+              <p class="slide-caption">Building the custom.css theme layer with neon accents</p>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="/assets/img/portfolio/portfolio-details/devlog-1/project1-slide3.webp" class="glightbox"
+                data-gallery="devwork-gallery" data-title="Responsive Portfolio Preview">
+                <img src="/assets/img/portfolio/portfolio-details/devlog-1/project1-slide3.webp"
+                  alt="Portfolio prototype preview">
+              </a>
+              <p class="slide-caption">Testing responsive layouts for the Tech Portfolio section</p>
             </div>
 
           </div>
 
+          <div class="swiper-pagination"></div>
         </div>
 
-      </section><!-- /Portfolio Details Section -->
 
+        <!--Initialize Glightbox-->
+        <script>
+          const lightbox = GLightbox({ selector: '.glightbox' });
+        </script>
+
+        <div class="timeline"><!--Milestone Divider-->
+
+          <!-- Milestone 1 -->
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-icon"><i class="bi bi-lightning"></i></div>
+            <div class="timeline-content">
+              <h3>Milestone 1: Launched the First Prototype</h3>
+              <p>
+                Started with the Folio Bootstrap framework and stripped out unused components.
+                Built the site structure with <code>index.html</code>, <code>main.css</code>, and
+                <code>custom.js</code>.
+              </p>
+              <pre><code class="language-html">
+              &lt;section id="hero" class="hero"&gt;
+                &lt;h1&gt;SASHA CHEEK&lt;/h1&gt;
+                &lt;p&gt;I am an Engineer&lt;/p&gt;
+              &lt;/section&gt;
+                      </code></pre>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-icon"><i class="bi bi-palette"></i></div>
+            <div class="timeline-content">
+              <h3>Milestone 2: Designed the Cyberpunk Theme</h3>
+              <p>
+                Replaced the default Bootstrap palette with neon cyan, magenta, and electric blue accents.
+                Integrated <code>Orbitron</code> and <code>DotGothic16</code> fonts to achieve a futuristic display
+                aesthetic.
+              </p>
+              <pre><code class="language-css">
+              body {
+              background: #12151f;
+              color: #00ffff;
+              font-family: 'DotGothic16', sans-serif;
+              }
+              </code></pre>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-icon"><i class="bi bi-terminal"></i></div>
+            <div class="timeline-content">
+              <h3>Milestone 3: Engineered Page Automation</h3>
+              <p>
+                Connected sections to load dynamically with <code>AOS</code> animations and reusable components.
+                Built scroll animations, lazy loading, and used <code>Swiper.js</code> for portfolio carousels.
+              </p>
+              <pre><code class="language-js">
+              AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+              });
+              </code></pre>
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-icon"><i class="bi bi-globe2"></i></div>
+            <div class="timeline-content">
+              <h3>Milestone 4: Published + Iterated</h3>
+              <p>
+                Deployed the site to production, refined the layout for mobile,
+                and added new sections for the <strong>Tech Portfolio</strong> and <strong>Published Work</strong>.
+              </p>
+              <p class="neon-text small">
+                “Every build is both a product and a lesson.”
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Tech Portfolio Section -->
   </main>
 
   <!-- ======= Footer (same markup as index) ======= -->
