@@ -2040,7 +2040,7 @@ button:focus,
 /* Cyberpunk Footer Background Pic */
 #footer {
     position: relative;
-    background: url("../img/cyberpunk-footer.jpg") no-repeat center center;
+    background: url("../img/cyberpunk-footer.webp") no-repeat center center;
     background-size: cover !important;
     /* fills the entire area */
     color: #fff;
