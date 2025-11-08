@@ -1444,42 +1444,37 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* === BLOG SECTION STYLING === */
-/*  Blog Slider */
-/* Section shell */
+/* Blog Slider */
 #slider.section-black {
     padding: 0;
-    /* slider usually sits flush */
     background: #080c12;
-    /* your dark base */
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-/* Swiper container
+/* Centered container with matching card width */
 #slider .swiper {
-    width: 100%;
-} */
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
 /* Slides: full-bleed, responsive height, background covers */
-#slider {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto; /* center horizontally */
-}
-
 #slider .swiper-slide {
-  position: relative;
-  min-height: 46vh;
-  max-height: 70vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 247, 255, 0.25);
-  box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
+    position: relative;
+    min-height: 46vh;
+    max-height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 247, 255, 0.25);
+    box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
 }
 
-/* Dark legibility overlay */
+/* Dark overlay for legibility */
 #slider .swiper-slide::after {
     content: "";
     position: absolute;
@@ -1550,7 +1545,6 @@ section:not(#about) h2.framed-subtitle {
 #slider .swiper-button-next:after,
 #slider .swiper-button-prev:after {
     font-size: 18px;
-    /* icon size */
 }
 
 /* Pagination bullets */
@@ -1573,7 +1567,7 @@ section:not(#about) h2.framed-subtitle {
     box-shadow: 0 0 14px rgba(0, 247, 255, 0.6);
 }
 
-/* Container spacing so slides breathe */
+/* Container spacing */
 #slider .container {
     padding: 20px 12px 28px;
 }
@@ -1603,14 +1597,14 @@ section:not(#about) h2.framed-subtitle {
     }
 }
 
-/* Accessibility: focus-visible for arrow buttons (keyboard users) */
+/* Accessibility focus */
 #slider .swiper-button-next:focus-visible,
 #slider .swiper-button-prev:focus-visible {
     outline: 2px solid #00f7ff;
     outline-offset: 2px;
 }
 
-/* Respect reduced motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     #slider .swiper {
         transition: none !important;
