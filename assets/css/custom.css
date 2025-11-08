@@ -1454,23 +1454,29 @@ section:not(#about) h2.framed-subtitle {
     position: relative;
 }
 
-/* Swiper container */
+/* Swiper container
 #slider .swiper {
     width: 100%;
-}
+} */
 
 /* Slides: full-bleed, responsive height, background covers */
+#slider {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto; /* center horizontally */
+}
+
 #slider .swiper-slide {
-    position: relative;
-    min-height: 46vh;
-    max-height: 70vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 247, 255, 0.25);
-    box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
+  position: relative;
+  min-height: 46vh;
+  max-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 247, 255, 0.25);
+  box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
 }
 
 /* Dark legibility overlay */
