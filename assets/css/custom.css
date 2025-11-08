@@ -2547,6 +2547,142 @@ button:focus,
     color: #12151f;
     box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
+/* ========================= PUBLISHED WORK SINGLE ARTICLE PAGE STYLING (scoped) ========================= */
+.published-work article {
+  --h2-size: clamp(1.35rem, 2.2vw, 1.85rem);
+}
+
+/* H2 in article content — match green title vibe */
+.published-work article .content h2 {
+  font-family: var(--font-body, 'VT323', monospace) !important;
+  color: var(--c-title) !important;
+  font-size: var(--h2-size) !important;
+  line-height: 1.28 !important;
+  margin: 1.35rem 0 .55rem !important;
+  text-shadow: 0 0 6px rgba(154, 255, 154, .7) !important;
+  letter-spacing: .3px;
+  text-align: center;
+}
+
+/* Optional: thin cyan underline */
+.published-work article .content h2+* {
+  border-top: 0;
+}
+
+.published-work article .content h2.use-underline {
+  padding-bottom: .25rem;
+  border-bottom: 1px solid rgba(0, 247, 255, .28);
+}
+
+/* Figure block + image */
+.published-work article figure {
+  margin: 1.25rem 0;
+}
+
+.published-work article figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 247, 255, .22);
+  box-shadow: 0 0 18px rgba(0, 247, 255, .18);
+}
+
+/* Figcaption — match paragraph color */
+.published-work article figure figcaption {
+  font-family: var(--font-body, 'VT323', monospace);
+  color: var(--c-body);
+  font-size: 1rem;
+  line-height: 1.45;
+  opacity: .95;
+  margin-top: .55rem;
+  padding-top: .5rem;
+  border-top: 1px solid rgba(0, 247, 255, .25);
+  text-align: center;
+  text-shadow: 0 0 6px rgba(158, 233, 255, .35);
+}
+
+/* Smaller/muted variant */
+.published-work article figure figcaption.small {
+  font-size: .92rem;
+  opacity: .85;
+}
+
+/* Meta/date lines */
+.article-date,
+.article-content .meta,
+.portfolio-content .meta {
+  color: var(--c-muted) !important;
+  opacity: .95 !important;
+  font-size: .95rem !important;
+  margin-bottom: .65rem !important;
+  font-family: var(--font-body) !important;
+}
+
+/* Body text */
+.article-content p,
+.portfolio-content p,
+.article-card p,
+.portfolio-item p {
+  color: var(--c-body) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Tags */
+.article-content .tags span,
+.tags span {
+  background: rgba(0, 246, 255, 0.08) !important;
+  border: 1px solid rgba(0, 246, 255, 0.4) !important;
+  color: #00f6ff !important;
+  padding: .3rem .7rem !important;
+  border-radius: 6px !important;
+  font-size: .9rem !important;
+  letter-spacing: .5px !important;
+  text-transform: uppercase !important;
+}
+
+/* === LEFT-ALIGNMENT FOR PUBLISHED WORK ARTICLES === */
+.published-work .article-title,
+.published-work article,
+.published-work article .content,
+.published-work article p,
+.published-work article h2,
+.published-work article h3 {
+  text-align: left !important;
+}
+
+/* keep main title/subtitle centered */
+.published-work .framed-subtitle {
+  text-align: center !important;
+}
+
+/* adjust margins for better left alignment flow */
+.published-work article .content h2,
+.published-work article .content h3 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ensure figures don’t overflow and stay in text flow */
+.published-work article figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* === H3 STYLING FOR PUBLISHED WORK SINGLE PAGE ARTICLES === */
+.published-work article .content h3 {
+  font-family: var(--font-body, 'VT323', monospace);
+  color: var(--c-body, #9aff9a);
+  font-size: 1.15rem;
+  line-height: 1.45;
+  margin: 1.2rem 0 0.6rem;
+  text-align: left;
+  text-shadow: 0 0 5px rgba(158, 233, 255, 0.4);
+  letter-spacing: 0.4px;
+  font-weight: normal;
+}
 
 /* ========================= SINGLE ARTICLE PAGE (scoped) ========================= */
 /* Scope to article pages only */
