@@ -2,20 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sashacheek.com/</loc>
+    <priority>1.00</priority>
+  </url>
+  
+  <!-- Main Website Navigation -->
+  <url>
+    <loc>https://sashacheek.com/#hero</loc>
   </url>
   <url>
     <loc>https://sashacheek.com/#about</loc>
   </url>
   <url>
-    <loc>https://sashacheek.com/#resume</loc>
+    <loc>https://sashacheek.com/#published-work</loc>
   </url>
   <url>
     <loc>https://sashacheek.com/#portfolio</loc>
   </url>
   <url>
-    <loc>https://sashacheek.com/#published-work</loc>
+    <loc>https://sashacheek.com/#blog</loc>
+  </url>
+  <url>
+    <loc>https://sashacheek.com/#resume</loc>
+  </url>
+  <url>
+    <loc>https://sashacheek.com/#services</loc>
   </url>
   <url>
     <loc>https://sashacheek.com/#contact</loc>
   </url>
+
+  <!-- Tech Portfolio Details Pages -->
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://sashacheek.com/blog/2025-10-23-random-notes-from-an-emerging-writers-desk/</loc>
+  </url>
+  <url>
+    <loc>https://sashacheek.com/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/</loc>
+  </url>
+  <url>
+    <loc>https://sashacheek.com/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/</loc>
+  </url>
+
 </urlset>
