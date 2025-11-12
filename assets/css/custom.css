@@ -1245,66 +1245,39 @@ text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
 }
 
 /* ===== Responsive Carousel Adjustments ===== */
-
-@media (max-width: 900px) {
-  .carousel-container {
-    max-width: 100%;
-    overflow: hidden;
-    padding: 0 10px;
-  }
-
-  .blog-card {
-    flex: 0 0 240px; /* slightly smaller width for mobile */
-    margin: 0 10px;
-  }
-
-  .blog-card img {
-    height: 140px;
-  }
-
-  .blog-content {
-    padding: 15px;
-  }
-
-  .blog-content h3 {
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-
-  .blog-content p {
-    font-size: 0.85rem;
-  }
-
-  .blog-link {
-    font-size: 0.85rem;
-  }
-
-  .carousel-btn {
-    font-size: 1.6rem;
-    text-shadow: 0 0 4px #00ffff;
-  }
-}
-
 @media (max-width: 550px) {
   .carousel-container {
     flex-direction: column;
     align-items: center;
-  }
-
-  .carousel-btn {
-    display: none; /* hide arrows to save space */
+    overflow: visible; /* allow full height cards */
   }
 
   .carousel-track {
-    transform: none !important; /* show all cards stacked */
+    transform: none !important;
     flex-direction: column;
     align-items: center;
+    overflow: visible;
   }
 
   .blog-card {
     flex: 1 0 auto;
     width: 90%;
-    margin: 10px 0;
+    margin: 15px 0;
+    height: auto; /* critical fix */
+  }
+
+  .blog-card img {
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .blog-content {
+    padding: 20px;
+  }
+
+  .carousel-btn {
+    display: none; /* hide arrows on small screens */
   }
 }
 
