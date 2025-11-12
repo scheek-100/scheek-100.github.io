@@ -130,7 +130,7 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section id="hero" class="hero section dark-background">
 
       <img src="assets/img/tech-home-office-background.webp" alt="" data-aos="fade-in">
@@ -156,9 +156,9 @@
         </div>
       </div>
 
-    </section><!-- /Hero Section -->
+    </section><!-- END OF HERO SECTION -->
 
-    <!--About Section-->
+    <!--ABOUT SECTION -->
     <section id="about" class="section-black py-5">
       <!-- Section Title -->
       <div class="section-title">
@@ -195,9 +195,9 @@
                   science and technology.</p>
               </div>
             </div>
-    </section><!-- /About Section -->
+    </section><!-- END OF ABOUT SECTION -->
 
-    <!-- Featured Writing Section -->
+    <!-- PUBLISHED WORK SECTION -->
     <section id="published-work" class="published-work section-black py-5">
       <!-- Title Banner -->
       <div class="title-banner small" data-aos="fade-up"
@@ -210,76 +210,134 @@
         </div>
       </div>
 
-      <!-- Self-Published Articles -->
-      <div class="featured-title" data-aos="fade-up" data-aos-delay="100">
-        <h4 class="subheading">Featured Article</h4>
-      </div>
+      <!-- Featured Article Section Title-->
+      <section id="featured-article" class="section-black py-5">
+        <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+          <h1>Featured Article</h1>
+        </div><!-- End of Featured Article Section Title-->
 
-      <!-- Featured Story -->
-      <div class="featured-article">
-        <img src="assets/img/telepathic-music-image.webp" alt="Hackernoon feature" class="img-fluid">
-        <div class="article-content">
-          <h3>How Telepathic Music Inspires Disabled Creatives</h3>
-          <p class="pub-info"><strong>Published on Hackernoon — Featured Story</strong></p>
-          <p class="article-date">Nov 3, 2025</p>
-          <p class="article-summary">
-            Exploring the world of brain-computer interface (BCI) technology for disabled creatives and
-            the battle against neurodegenerative disorders.
-          </p>
-          <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives" class="btn btn-neon"
-            target="_blank" rel="noopener">Read Article</a>
-        </div>
-      </div>
-      <!-- End Featured Story -->
-
-      <!-- SELF-PUBLISHED ARTICLES -->
-      <div class="featured-title" data-aos="fade-up" data-aos-delay="100">
-        <h4 class="subheading">Self-Published Articles</h4>
-      </div>
-
-      <div class="article-list container" data-aos="fade-up" data-aos-delay="100">
-        <!-- ARTICLE CARD 1 -->
-        <div class="article-item">
-          <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png"
-            alt="David Bowie’s Ode to Sci-Fi" class="article-img">
-          <div class="article-content">
-            <h4 class="article-title">David Bowie’s Ode to Sci-Fi and Space Science</h4>
-            <p class="article-date">Published on Medium and Portfolio Site - Apr 11, 2024</p>
-            <a href="/writing/david-bowies-ode-to-sci-fi-and-space-science/" target="_blank" class="btn btn-neon">Read
-              Article</a>
+        <!-- Featured Story -->
+        <article class="featured-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/img/telepathic-music-image.webp" alt="Telepathic Music">
+          <div class="featured-content">
+            <h3>How Telepathic Music Inspires Disabled Creatives</h3>
+            <p class="featured-meta">Published on Hackernoon — Featured Story · Nov 3, 2025</p>
+            <p>Exploring the world of brain-computer interface (BCI) technology for disabled creatives and
+              the battle against neurodegenerative disorders.
+            </p>
+            <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives" class="featured-link">Read
+              Article →</a>
           </div>
-        </div>
+        </article>
+      </section><!-- End of Featured Articles Section -->
 
-        <!-- ARTICLE CARD 2 -->
-        <div class="article-item">
-          <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN" alt="Automated Love"
-            class="article-img">
-          <div class="article-content">
-            <h4 class="article-title">Automated Love: How AI Became the New Face of Romance</h4>
-            <p class="article-date">Published on Substack - Oct 2025</p>
-            <a href="https://sashacheek.substack.com/p/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079"
-              target="_blank" class="btn btn-neon">Read Article</a>
-          </div>
-        </div>
+      <!-- Self-Published Articles Section Title-->
+      <section id="featured-article" class="section-black py-5">
+        <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+          <h1>Self-Published Articles</h1>
+        </div><!-- End of Self-Published Articles Section Title-->
 
-        <!-- ARTICLE CARD 3 -->
-        <div class="article-item">
-          <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz"
-            alt="Dealing with Alzheimer’s" class="article-img">
-          <div class="article-content">
-            <h4 class="article-title">Dealing with Early Signs of Alzheimer’s Disease in Loved Ones</h4>
-            <p class="article-date">Published on Substack - Oct 2025</p>
-            <a href="https://sashacheek.substack.com/p/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7"
-              target="_blank" class="btn btn-neon">Read Article</a>
-          </div>
+        <!-- Self-Published Articles Carousel Section -->
+        <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
+          <button class="carousel-btn prev" id="publishedPrev">&#10094;</button>
+          <div class="carousel-track" id="publishedTrack"></div>
+          <button class="carousel-btn next" id="publishedNext">&#10095;</button>
         </div>
+      </section><!-- End of Self-Published Articles Section -->
 
-      </div>
+      <!--Carousel JS Script - Self-Published Articles -->
+      <!-- Carousel JS Script - Published Work -->
+      <script>
+        const publishedPosts = [
+          {
+            url: "/articles/david-bowies-ode-to-sci-fi-and-space-science/",
+            image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png",
+            date: "Apr 11, 2024",
+            title: "David Bowie’s Ode to Sci-Fi and Space Science",
+            source: "Portfolio Site"
+          },
+          {
+            url: "https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079",
+            image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN",
+            date: "Apr 1, 2024",
+            title: "Automated Love: How AI Became the New Face of Romance",
+            source: "Medium"
+          },
+          {
+            url: "https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7",
+            image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz",
+            date: "Mar 13, 2024",
+            title: "Dealing with Early Signs of Alzheimer’s Disease in Loved Ones",
+            source: "Medium"
+          }
+        ];
+
+        async function loadPublishedWork() {
+          const track = document.getElementById('publishedTrack');
+
+          for (const post of publishedPosts) {
+            const card = document.createElement('article');
+            card.className = 'blog-card';
+
+            if (post.url.startsWith('http')) {
+              card.innerHTML = `
+          <img src="${post.image}" alt="${post.title}">
+          <div class="blog-content">
+            <h3>${post.title}</h3>
+            <p class="blog-date">${post.date}</p>
+            <p><i>Read this full piece directly on ${post.source}.</i></p>
+            <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${post.source} →</a>
+          </div>`;
+              track.appendChild(card);
+              continue;
+            }
+
+            try {
+              const res = await fetch(post.url);
+              const html = await res.text();
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              const title = doc.querySelector('title')?.innerText || post.title;
+              const firstP = doc.querySelector('p i')?.innerText || doc.querySelector('p')?.innerText || '';
+              const excerpt = firstP.split('. ').slice(0, 2).join('. ') + '.';
+
+              card.innerHTML = `
+          <img src="${post.image}" alt="${title}">
+          <div class="blog-content">
+            <h3>${title}</h3>
+            <p class="blog-date">${post.date}</p>
+            <p><i>${excerpt}</i></p>
+            <a href="${post.url}" class="blog-link">Read More →</a>
+          </div>`;
+              track.appendChild(card);
+            } catch (err) {
+              console.error('Error loading', post.url, err);
+            }
+          }
+        }
+
+        // Independent carousel controls for Published Work
+        let publishedIndex = 0;
+        function slidePublished(dir) {
+          const cards = document.querySelectorAll('#publishedTrack .blog-card');
+          if (!cards.length) return;
+          publishedIndex = (publishedIndex + dir + cards.length) % cards.length;
+          document.getElementById('publishedTrack').style.transform = `translateX(-${publishedIndex * 310}px)`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          loadPublishedWork().then(() => {
+            document.getElementById('publishedNext').onclick = () => slidePublished(1);
+            document.getElementById('publishedPrev').onclick = () => slidePublished(-1);
+          });
+        });
+      </script>
+      <!-- End of Carousel JS Script - Published Work -->
 
     </section>
-    <!-- End Published Work Section -->
+    <!-- END OF PUBLISHED WORK SECTION -->
 
-    <!-- Tech Portfolio Section -->
+    <!-- TECH PORTFOLIO SECTION -->
     <section id="portfolio" class="portfolio section-black" data-aos="fade-in">
       <!-- Title Banner -->
       <div class="title-banner small" data-aos="fade-up"
@@ -328,9 +386,9 @@
           </div>
         </div>
 
-      </section><!--End Tech Portfolio Section -->
+      </section><!--END OF TECH PORTFOLIO SECTION -->
 
-      <!-- Notes from the Sandbox Blog Section -->
+      <!--NOTES FROM THE SANDBOX BLOG SECTION -->
       <section id="blog" class="blog section-black py-5">
         <!-- Title Banner -->
         <div class="title-banner small" data-aos="fade-up"
@@ -438,10 +496,10 @@
           }
 
           .blog-content h3 {
-          font-family: 'VT323', monospace !important;
-          font-size: 1.3rem;
-          color: #00f7ff;
-          text-shadow: 0 0 10px #00f7ff, 0 0 20px rgba(0, 255, 255, 0.6);
+            font-family: 'VT323', monospace !important;
+            font-size: 1.3rem;
+            color: #00f7ff;
+            text-shadow: 0 0 10px #00f7ff, 0 0 20px rgba(0, 255, 255, 0.6);
           }
 
           .blog-content p {
@@ -457,6 +515,8 @@
           }
 
           .blog-link {
+            font-family: 'VT323', monospace !important;
+            font-size: 1rem;
             color: #00ffff;
             font-weight: 600;
             transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -566,9 +626,9 @@
           });
         </script><!-- End of JS Script -->
 
-      </section><!-- End Notes from the Sandbox Blog Section -->
+      </section><!-- END OF NOTES FROM THE SANDBOX BLOG SECTION -->
 
-      <!-- Resume Section -->
+      <!-- RESUME SECTION -->
       <section id="resume" class="resume section-black py-5">
         <!-- Title Banner -->
         <div class="title-banner small" data-aos="fade-up"
@@ -698,9 +758,9 @@
             </div>
           </div>
       </section>
-      <!-- /Resume Section -->
+      <!-- END OF RESUME SECTION -->
 
-      <!-- Services Section -->
+      <!-- SERVICES SECTION-->
       <section id="services" class="services section-black py-5">
         <!-- Title Banner -->
         <div class="title-banner small" data-aos="fade-up"
@@ -742,7 +802,7 @@
           </div>
         </div><!--End Services Grid -->
         </div>
-      </section><!-- /Services Section -->
+      </section><!-- END OF SERVICES SECTION-->
 
       <!--TESTIMONIALS TITLE-->
       <section id="testimonials" class="testimonials section-black py-5">
@@ -845,9 +905,9 @@
           </div>
         </div>
       </section>
-      <!-- End Testimonials Section -->
+      <!-- END OF TESTIMONIALS SECTION -->
 
-      <!-- Contact Section -->
+      <!-- CONTACT SECTION -->
       <section id="contact" class="contact section-black">
         <!-- Title Banner -->
         <div class="title-banner small" data-aos="fade-up"
@@ -915,10 +975,10 @@
             </div>
           </div>
         </div>
-      </section>
+      </section><!-- END OF CONTACT SECTION -->
   </main>
 
-  <!-- Footer -->
+  <!-- FOOTER SECTION -->
   <footer id="footer" class="footer" data-aos="fade-up" data-aos-delay="100" style="background:url('assets/img/cyberpunk-footer.webp') no-repeat center center / cover !important;
                background-size:cover;">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -976,7 +1036,7 @@
 
       </div>
     </div>
-  </footer>
+  </footer><!-- END OF FOOTER SECTION -->
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
