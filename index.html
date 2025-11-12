@@ -530,9 +530,8 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
                 const title = doc.querySelector('title')?.innerText || 'Untitled Post';
-                const firstP = doc.querySelector('p')?.innerText || '';
-                const excerpt = firstP.split('. ').slice(0, 2).join('. ') + '.';
-
+                const introP = doc.querySelector('p i')?.innerText || '';
+                const excerpt = introP || (doc.querySelector('p')?.innerText.split('. ').slice(0, 2).join('. ') + '.');
                 const card = document.createElement('article');
                 card.className = 'blog-card';
                 card.innerHTML = `
@@ -540,7 +539,7 @@
         <div class="blog-content">
           <h3>${title}</h3>
           <p class="blog-date">${post.date || ''}</p>
-          <p>${excerpt}</p>
+          <p><i>${excerpt}</i></p>
           <a href="${post.url}" class="blog-link">Read More →</a>
         </div>`;
                 track.appendChild(card);
