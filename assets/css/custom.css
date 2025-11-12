@@ -1447,174 +1447,6 @@ section:not(#about) h2.framed-subtitle {
   border-bottom: none;
 }
 
-/* === BLOG SECTION STYLING === */
-/* Blog Slider */
-#slider.section-black {
-    padding: 0;
-    background: #080c12;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-/* Centered container with matching card width */
-#slider .swiper {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Slides: full-bleed, responsive height, background covers */
-#slider .swiper-slide {
-    position: relative;
-    min-height: 46vh;
-    max-height: 70vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 247, 255, 0.25);
-    box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
-}
-
-/* Dark overlay for legibility */
-#slider .swiper-slide::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.75) 100%);
-    pointer-events: none;
-}
-
-/* Slide content block */
-#slider .swiper-slide .content {
-    position: absolute;
-    left: 24px;
-    right: 24px;
-    bottom: 24px;
-    z-index: 2;
-    color: #e7faff;
-    text-shadow: 0 0 18px rgba(0, 247, 255, 0.35), 0 0 2px #00f7ff;
-    max-width: 900px;
-}
-
-/* Titles + links */
-#slider .swiper-slide .content h2 {
-    margin: 0 0 6px;
-    font-family: 'VT323', monospace;
-    color: #39ff14;
-    font-weight: 800;
-    letter-spacing: .02em;
-    line-height: 1.15;
-    font-size: clamp(20px, 2.4vw, 36px);
-}
-
-#slider .swiper-slide .content h2 a {
-    color: #c7fdff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0, 247, 255, 0.35);
-}
-
-#slider .swiper-slide .content h2 a:hover {
-    color: #ffffff;
-    border-bottom-color: rgba(0, 247, 255, 0.6);
-}
-
-#slider .swiper-slide .content p {
-    margin: 0;
-    opacity: .9;
-    font-size: clamp(14px, 1.3vw, 18px);
-}
-
-/* Arrows */
-#slider .swiper-button-next,
-#slider .swiper-button-prev {
-    color: #9feaff;
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    background: rgba(11, 15, 20, 0.72);
-    border: 1px solid rgba(0, 247, 255, 0.35);
-    box-shadow: 0 0 18px rgba(0, 247, 255, 0.22);
-    backdrop-filter: blur(4px);
-}
-
-#slider .swiper-button-next:hover,
-#slider .swiper-button-prev:hover {
-    background: rgba(11, 15, 20, 0.9);
-    box-shadow: 0 0 26px rgba(0, 247, 255, 0.36);
-}
-
-#slider .swiper-button-next:after,
-#slider .swiper-button-prev:after {
-    font-size: 18px;
-}
-
-/* Pagination bullets */
-#slider .swiper-pagination {
-    bottom: 10px !important;
-}
-
-#slider .swiper-pagination-bullet {
-    width: 9px;
-    height: 9px;
-    background: #1f3640;
-    opacity: 1;
-    border: 1px solid rgba(0, 247, 255, 0.35);
-    box-shadow: 0 0 10px rgba(0, 247, 255, 0.25);
-}
-
-#slider .swiper-pagination-bullet-active {
-    background: #00f7ff;
-    border-color: #00f7ff;
-    box-shadow: 0 0 14px rgba(0, 247, 255, 0.6);
-}
-
-/* Container spacing */
-#slider .container {
-    padding: 20px 12px 28px;
-}
-
-/* Responsive tune-ups */
-@media (max-width: 992px) {
-    #slider .swiper-slide {
-        min-height: 40vh;
-    }
-
-    #slider .swiper-button-next,
-    #slider .swiper-button-prev {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 576px) {
-    #slider .swiper-slide {
-        min-height: 36vh;
-    }
-
-    #slider .swiper-slide .content {
-        left: 16px;
-        right: 16px;
-        bottom: 16px;
-    }
-}
-
-/* Accessibility focus */
-#slider .swiper-button-next:focus-visible,
-#slider .swiper-button-prev:focus-visible {
-    outline: 2px solid #00f7ff;
-    outline-offset: 2px;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    #slider .swiper {
-        transition: none !important;
-    }
-}
-
 /* === TECH PORTFOLIO SECTION STYLING === */
 /* Card Base */
 .portfolio-item {
@@ -1744,7 +1576,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
     background: #0b0d10;
 }
 
-/* === PORTFOLIO DETAILS IMAGE SLIDER PAGINATION (CYAN STATIC COLOR) === */
+/* === TECH PORTFOLIO DETAILS PAGE - IMAGE SLIDER === */
 .portfolio-details-slider {
     position: relative;
     padding-bottom: 2.5rem;
@@ -2022,7 +1854,7 @@ button:focus,
     box-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
 }
 
-/* === WRITING/BLOG SECTION STYLING === */
+/* === WRITING/BLOG SECTION PAGES STYLING === */
 /* ARTICLE CARD STYLING */
 .article-card {
     background: rgba(15, 20, 25, 0.6);
@@ -3024,7 +2856,7 @@ article .tags span,
     text-shadow: 0 0 6px rgba(154, 255, 154, .7) !important;
 }
 
-/* =========================================== Single post buttons (Bootstrap outlines) =========================================== */
+/* =========================================== Single Blog Page Post Buttons (Bootstrap outlines) =========================================== */
 .page-post .btn {
     --btn-font: 'VT323', monospace;
     --c-cyan: #00f7ff;
