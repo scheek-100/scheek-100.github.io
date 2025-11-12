@@ -408,9 +408,22 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
           }
 
+          /* Blog Card Hover Glow */
           .blog-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 18px rgba(0, 255, 255, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 0 20px rgba(0, 255, 180, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+            border-color: #39ff14;
+          }
+
+          /* Hover Glow for Read More */
+          .blog-card:hover .blog-link {
+            color: #39ff14;
+            text-shadow: 0 0 8px #39ff14;
+          }
+
+          .blog-card:hover h3 {
+            color: #39ff14;
+            text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
           }
 
           .blog-card img {
@@ -427,8 +440,9 @@
           .blog-content h3 {
             font-size: 1.1rem;
             color: #00ffff;
-            text-shadow: 0 0 6px #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px rgba(0, 255, 255, 0.6);
             margin-bottom: 8px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
           }
 
           .blog-content p {
@@ -445,12 +459,15 @@
 
           .blog-link {
             color: #00ffff;
-            text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
           }
 
-          .blog-link:hover {
-            color: #ffffff;
+          .blog-content h3 .blog-link {
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+            color: #00f7ff;
+            margin-bottom: 0.5rem;
           }
 
           .carousel-btn {
@@ -465,7 +482,8 @@
           }
 
           .carousel-btn:hover {
-            color: #ffffff;
+            color: #00ffff;
+            /* same as default */
           }
 
           .prev {
