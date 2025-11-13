@@ -1360,6 +1360,20 @@ text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
     display: block;
 }
 
+/* Portfolio Details Link */
+.portfolio-details-link {
+font-family: 'VT323', monospace !important;
+ font-size: 1rem;
+  color: #00ffff;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.portfolio-details-link:hover {
+  color: #39ff14;
+text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
+}
+
 /* Force white background for Datawrapper embeds */
 iframe[src*="datawrapper.dwcdn.net"] {
     background-color: #fff !important;
@@ -1377,20 +1391,6 @@ iframe[src*="datawrapper.dwcdn.net"] {
     width: 100%;
     height: 420px;
     object-fit: cover;
-}
-
-/* Project 2 Carousel/Tile Slider For Images */
-/*.portfolio-swiper {
-  width: 100%;
-  height: 420px;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.portfolio-swiper .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* === TECH PORTFOLIO DETAILS PAGE SECTION STYLING === */
@@ -2554,14 +2554,21 @@ article .tags span,
 
 /* ---------- Titles (blog + portfolio) ---------- */
 .article-title,
-.article-title a,
-.portfolio-content h3,
-.portfolio-content h3 a {
+.article-title a { 
     font-family: var(--font-body) !important;
     font-size: 1.35rem !important;
     line-height: 1.35 !important;
     color: var(--c-title) !important;
     text-decoration: none !important;
+}
+
+.portfolio-content h3,
+.portfolio-content h3 a {
+  font-family: 'VT323', monospace;
+  font-size: 1.6rem;
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff, 0 0 24px rgba(0,255,255,0.6);
+  margin-bottom: 10px;
 }
 
 .article-title a:hover,

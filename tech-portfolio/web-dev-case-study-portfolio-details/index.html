@@ -130,7 +130,7 @@
               }
             }
             </script>
-          
+
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
@@ -177,11 +177,15 @@
           <div class="timeline-item" data-aos="fade-right">
             <div class="timeline-icon"><i class="bi bi-lightning"></i></div>
             <div class="timeline-content">
-              <h3>Milestone 1: Launched the First Prototype</h3>
+              <h3>Milestone 1: Completed First Prototype</h3>
               <p>
-                Started with the Folio Bootstrap framework and stripped out unused components.
-                Built the site structure with <code>index.html</code>, <code>main.css</code>, and
-                <code>custom.js</code>.
+                I started using Bootstrap Creative template after deployment. The integration was redesigned and
+                structured at first through GitHub Pages. The basic structure and initial project were completed in Aug
+                2025. Then I migrated all exisiting data and files into the Folio Bootstrap framework and stripped out
+                unused components.
+                The entire framework was restructured in sections using <code>index.html</code>, <code>main.css</code>,
+                <code>custom.css</code>
+                and <code>custom.js</code>.
               </p>
               <pre><code class="language-html">
               &lt;section id="hero" class="hero"&gt;
@@ -196,19 +200,34 @@
           <div class="timeline-item" data-aos="fade-left">
             <div class="timeline-icon"><i class="bi bi-palette"></i></div>
             <div class="timeline-content">
-              <h3>Milestone 2: Designed the Cyberpunk Theme</h3>
+              <h3>Milestone 2: Designed annd Restructured to Customized Cyberpunk Theme</h3>
               <p>
-                Replaced the default Bootstrap palette with neon cyan, magenta, and electric blue accents.
-                Integrated <code>Orbitron</code> and <code>DotGothic16</code> fonts to achieve a futuristic display
-                aesthetic.
+                I replaced the default Bootstrap palette with neon cyan, magenta, and electric blue accents.
+                Afterwards, I integrated <code>Orbitron</code>, <code>VT323</code> and [previously]
+                <code>DotGothic16</code> fonts to achieve a futuristic display
+                aesthetic from Sept to Nov 2025. New sections were adapted from other Boostrap templates (Lonely
+                Bootstrap resume, Zen Blog Bootstrap Blog design elements, etc.). Customized carousels were built with
+                extensive JS and CSS modifications for the blog, testimonials, and published work sections.
               </p>
-              <pre><code class="language-css">
-              body {
-              background: #12151f;
-              color: #00ffff;
-              font-family: 'DotGothic16', sans-serif;
-              }
-              </code></pre>
+              <!-- Code Snippet Block Title -->
+              <div class="portfolio-details" data-aos="fade-up" data-aos-delay="600">
+                <h3>BLOG CAROUSEL HTML STRUCTURE</h3>
+                <!-- End of Code Snippet Block Title -->
+
+                <!-- Code Snippet Block -->
+                <pre><code class="language-html">
+    &lt;!-- Blog Carousel Subsection --&gt;
+    &lt;section id="blog" class="blog-carousel section-black"&gt;
+      &lt;!-- Carousel Container Main --&gt;
+      &lt;div class="carousel-container" data-aos="fade-up" data-aos-delay="100"&gt;
+        &lt;button class="carousel-btn prev"&gt;&#10094;&lt;/button&gt;
+        &lt;div class="carousel-track" id="blogTrack"&gt;&lt;/div&gt;
+        &lt;button class="carousel-btn next"&gt;&#10095;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- End Blog Carousel Subsection --&gt;
+</code></pre><!-- End of Code Snippet Block -->
+              </div>
             </div>
           </div>
 
@@ -218,16 +237,100 @@
             <div class="timeline-content">
               <h3>Milestone 3: Engineered Page Automation</h3>
               <p>
-                Connected sections to load dynamically with <code>AOS</code> animations and reusable components.
-                Built scroll animations, lazy loading, and used <code>Swiper.js</code> for portfolio carousels.
+                Integrations were built for <code>Google Search Console</code>, <code>Bing Webmaster Tools</code>,
+                <code>Cloud DNS + SSL</code>, and <code>Formspree API endpoint for the custom-built contact form.</code>
+                Some sections
+                (Ex. - tech portfolio) load dynamically with <code>AOS</code> animations and reusable components.
+                I looked up online tutorials to learn how to do scroll animations, lazy loading, and used
+                <code>Swiper.js</code> for
+                portfolio carousels.
               </p>
-              <pre><code class="language-js">
-              AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-              });
-              </code></pre>
+              <!-- Code Snippet Block Title -->
+              <div class="portfolio-details" data-aos="fade-up" data-aos-delay="600">
+                <h3>TESTIMONIALS CAROUSEL JS SCRIPT</h3>
+                <!-- End of Code Snippet Block Title -->
+
+                <!-- Code Snippet Block -->
+                <pre><code class="language-js">
+      &lt;script&gt;
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.__tSwiper) window.__tSwiper.destroy(true, true);
+
+  window.__tSwiper = new Swiper('.testimonials-swiper', {
+    loop: true,
+    speed: 600,
+    autoHeight: true, 
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    slidesPerView: 1,
+    centeredSlides: true,
+    spaceBetween: 20,
+    pagination: { el: '.testimonials-pagination', clickable: true },
+    navigation: { nextEl: '.testimonials-next', prevEl: '.testimonials-prev' },
+    breakpoints: {
+      992: { slidesPerView: 1, centeredSlides: true, spaceBetween: 24 }
+    }
+  });
+});
+&lt;/script&gt;
+    </code></pre><!-- End of Code Snippet Block -->
+              </div>
+
+              <!-- Code Snippet Block Title -->
+              <div class="portfolio-details" data-aos="fade-up" data-aos-delay="600">
+                <h3>CUSTOMIZED CONTACT FORM WITH FORMSPREE API ENDPOINT AND HONEYPOT FILTERING</h3>
+                <!-- End of Code Snippet Block Title -->
+
+                <!-- Code Snippet Block -->
+                <pre><code class="language-html">
+  &lt;!-- Contact Form --&gt;
+  &lt;form id="contact-form" action="https://formspree.io/f/mldpgwjj" method="POST" class="contact-form" novalidate&gt;
+    &lt;div class="row gy-4"&gt;
+
+      &lt;!-- Name --&gt;
+      &lt;div class="col-md-6"&gt;
+        &lt;input type="text" name="name" class="form-control" placeholder="Your Name" required&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Email --&gt;
+      &lt;div class="col-md-6"&gt;
+        &lt;input type="email" name="email" class="form-control" placeholder="Your Email" required&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Subject --&gt;
+      &lt;div class="col-md-12"&gt;
+        &lt;input type="text" name="subject" class="form-control" placeholder="Subject" required&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Message --&gt;
+      &lt;div class="col-md-12"&gt;
+        &lt;textarea name="message" class="form-control" rows="6" placeholder="Message" required&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Honeypot field (spam protection) --&gt;
+      &lt;input type="text" name="_gotcha" style="display:none"&gt;
+
+      &lt;!-- Status Messages --&gt;
+      &lt;div class="col-md-12 text-center"&gt;
+        &lt;div class="status-messages"&gt;
+          &lt;div class="loading" style="display:none;"&gt;Loading...&lt;/div&gt;
+          &lt;div class="error-message" style="display:none;"&gt;&lt;/div&gt;
+          &lt;div class="sent-message" style="display:none;"&gt;Your message has been sent. Thank you!&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button type="submit" class="btn btn-neon btn-lg"&gt;Send Message&lt;/button&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/form&gt;
+</code></pre><!-- End of Code Snippet Block -->
+              </div>
+              <h3>Log Highlights</h3>
+              <ul class="log-snippets">
+                <li><strong>2025-11-11</strong> — Uploaded <code>microsoftWebmasterTool.html</code> to root directory
+                  for site
+                  verification.</li>
+                <li><strong>2025-11-10</strong> — Created and linked <code>sitemap.xml</code> for SEO and crawler
+                  indexing.</li>
+              </ul>
             </div>
           </div>
 
@@ -240,6 +343,16 @@
                 Deployed the site to production, refined the layout for mobile,
                 and added new sections for the <strong>Tech Portfolio</strong> and <strong>Published Work</strong>.
               </p>
+              <h3>Log Highlights</h3>
+              <ul class="log-snippets">
+                <li><strong>2025-11-12</strong> — Blog section visual + layout refinements (<code>v05–v09</code>
+                  commits)</li>
+                <li><strong>2025-11-11</strong> — Iterative blog layout fixes, added next/prev button logic</li>
+                <li><strong>2025-11-11</strong> — Updated tagline styling and microcopy</li>
+                <li><strong>2025-11-11</strong> — Blog section initial publish and baseline structure</li>
+                <li><strong>2025-11-10</strong> — Homepage (`index.html`) updates to surface blog section</li>
+              </ul>
+
               <p class="neon-text small">
                 “Every build is both a product and a lesson.”
               </p>
@@ -264,7 +377,8 @@
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Sasha Cheek | Systems, Stories, and Science</strong> <span>All Rights Reserved</span>
+          <span>Copyright</span> <strong class="px-1 sitename">Sasha Cheek | Systems, Stories, and Science</strong>
+          <span>All Rights Reserved</span>
         </div>
 
         <!-- Bootstrap Framework/Template Credits -->
