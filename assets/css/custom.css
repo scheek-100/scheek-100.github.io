@@ -1379,6 +1379,20 @@ iframe[src*="datawrapper.dwcdn.net"] {
     object-fit: cover;
 }
 
+/* Project 2 Carousel/Tile Slider For Images */
+/*.portfolio-swiper {
+  width: 100%;
+  height: 420px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.portfolio-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* === TECH PORTFOLIO DETAILS PAGE SECTION STYLING === */
 :root {
     --bg: #0f1318;
