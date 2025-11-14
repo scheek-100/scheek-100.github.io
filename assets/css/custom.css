@@ -1044,6 +1044,83 @@ section:not(#about) h2.framed-subtitle {
     z-index: 1;
 }
 
+/* === NEW RESUME SECTION — CYBERPUNK TWO-COLUMN ENHANCEMENT === */
+
+#resume .resume-item {
+  background: rgba(5, 15, 25, 0.72);
+  border: 1px solid rgba(0, 247, 255, 0.25);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 0 14px rgba(0, 247, 255, 0.18);
+  transition: all 0.28s ease;
+}
+
+#resume .resume-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(0, 247, 255, 0.35);
+}
+
+/* Section headers (Summary, Education, Experience) */
+#resume h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  color: var(--t-green, #39ff14);
+  text-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
+  margin: 1.4rem 0 1rem;
+}
+
+/* Job titles */
+#resume .resume-item h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00eaff;
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 6px rgba(0, 234, 255, 0.55);
+}
+
+/* Dates */
+#resume .resume-item h5 {
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #9ee9ff;
+  background: rgba(0, 247, 255, 0.08);
+  border-left: 2px solid var(--t-cyan, #00f6ff);
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+/* Org/location line */
+#resume .resume-item em {
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #bffaff;
+}
+
+/* Bullet items */
+#resume .resume-item .description {
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #c8f7ff;
+  line-height: 1.5;
+  margin: 0.35rem 0;
+}
+
+#resume .resume-item .description .bullet {
+  color: var(--t-cyan);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  #resume .resume-item {
+    padding: 1.2rem 1.3rem;
+  }
+  #resume h3 {
+    text-align: center;
+  }
+}
+
 /* =========================================================
    FEATURED + SELF-PUBLISHED ARTICLES — FINAL STYLESHEET
    Matches blog carousel and neon theme aesthetic
