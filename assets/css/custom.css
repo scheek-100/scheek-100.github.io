@@ -543,6 +543,17 @@ font-family: 'VT323', monospace;
     color: #7EE1FF;
     opacity: .95;
     margin: 0 0 10px;
+    text-align: center !important;
+}
+
+#resume .project {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: #7FE1FF;
+    opacity: .95;
+    margin: 0 0 10px;
+    text-align: center !important;
+    text-decoration: underline;
 }
 
 #resume .r-year {
