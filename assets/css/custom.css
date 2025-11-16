@@ -507,56 +507,102 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* === RESUME SECTION FONT === */
-/* Resume section h5 styling - Role/Tag labels */
-#resume h5 {
-    font-family: 'VT323', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #00eaff;
-    background-color: #12151f;
-    display: inline-flex;
-    align-items: center;
-    padding: 3px 8px;
-    border-radius: 3px;
-    margin: 0;
-    box-shadow: 0 0 8px #00eaff, 0 0 16px rgba(57, 255, 20, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
-/* Resume section h3 styling - Section titles */
+/* Resume Section Titles */
 #resume h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 600;
-    font-size: 1.6rem;
-    color: #00eaff;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 10px;
-    margin: 0 0 12px 0;
-    border: 2px solid rgba(0, 246, 255, 0.4);
-    border-radius: 4px;
+    font-family: 'VT323', monospace;
+    /*line-height: 1.1; */
+    color: var(--c-title, #9aff9a);
+    margin: 0 0 4px;
+    text-shadow: 0 0 6px rgba(154, 255, 154, .65);
+    text-align: center;
+}
+#resume h4 {
+  font-family: 'VT323', monospace;
+  font-size: 1.6rem;
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff, 0 0 24px rgba(0,255,255,0.6);
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-/* Resume section h4 styling - Job/Position titles */
-.resume-item h4 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #00eaff;
-    /* neon green */
-    letter-spacing: 1px;
+#resume h5 {
+font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: #7FE1FF;
+    opacity: .95;
+    margin: 0 0 10px;
+    text-align: center !important;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#resume .em {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
     text-transform: uppercase;
-    text-shadow: 0 0 8px #00eaff, 0 0 16px rgba(57, 255, 20, 0.6);
-    margin-bottom: 8px;
+    color: #7EE1FF;
+    opacity: .95;
+    margin: 0 0 10px;
+}
+
+#resume .r-year {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: #7FE1FF;
+    opacity: .95;
+    margin: 0 0 10px;
+    text-align: center !important;
+}
+/* New divider (node line) */
+#resume .t-divider {
+    position: relative;
+    width: min(72%, 520px);
+    height: 12px;
+    margin: 10px auto 14px;
+}
+
+#resume .t-divider.t-node {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--t-cyan), transparent);
+    box-shadow: 0 0 10px rgba(0, 247, 255, .45);
+}
+
+#resume .t-divider.t-node::before,
+#resume .t-divider.t-node::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--t-green);
+    box-shadow: 0 0 8px rgba(57, 255, 20, .9), 0 0 18px rgba(57, 255, 20, .45);
+}
+
+#resume .t-divider.t-node::before {
+    left: -6px;
+}
+
+#resume .t-divider.t-node::after {
+    right: -6px;
+}*/
+
+.resume-link {
+font-family: 'VT323', monospace !important;
+ font-size: 1rem;
+  color: #00ffff;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.resume-link:hover {
+  color: #39ff14;
+text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
 }
 
 /* === TECH PORTFOLIO SECTION FONT === */
 .portfolio-section {
-    /*background: #000;
-     */
     padding: 4rem 2rem;
     color: #e5e5e5;
     font-family: 'VT323', monospace;
@@ -1062,7 +1108,7 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* Section headers (Summary, Education, Experience) */
-#resume h3 {
+/*#resume h3 {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.25rem;
   color: var(--t-green, #39ff14);
@@ -1071,7 +1117,7 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* Job titles */
-#resume .resume-item h4 {
+/*#resume .resume-item h4 {
   font-family: 'Orbitron', sans-serif;
   color: #00eaff;
   font-size: 1.15rem;
@@ -1080,7 +1126,7 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* Dates */
-#resume .resume-item h5 {
+/*#resume .resume-item h5 {
   font-family: 'VT323', monospace;
   font-size: 1rem;
   color: #9ee9ff;
@@ -1092,14 +1138,14 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* Org/location line */
-#resume .resume-item em {
+/*#resume .resume-item em {
   font-family: 'VT323', monospace;
   font-size: 1rem;
   color: #bffaff;
 }
 
 /* Bullet items */
-#resume .resume-item .description {
+/*#resume .resume-item .description {
   font-family: 'VT323', monospace;
   font-size: 1rem;
   color: #c8f7ff;
