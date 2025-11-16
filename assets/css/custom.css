@@ -2590,6 +2590,14 @@ button:focus,
     /* a touch of breathing room */
 }
 
+/* UL Blog Page Content List Style */
+.page-post .blog-page-content-list {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    color: #9ee9ff;
+    font-family: 'VT323', monospace;
+}
+
 /* Date line: subtle on dark */
 .page-post .article-title p.text-muted {
     color: #9fc9d6 !important;
