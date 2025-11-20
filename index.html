@@ -115,17 +115,21 @@
         <ul>
           <li><a href="#hero" class="active">HOME</a></li>
           <li><a href="#about">ABOUT</a></li>
-          <li><a href="#published-work">PUBLISHED WORK</a></li>
-          <li class="dropdown"><a href="#portfolio"><span>TECH PORTFOLIO</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#portfolio"><span>TECH PORTFOLIO</span><i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul><!-- Tech Portfolio Drop Down Menu-->
               <li><a href="/tech-portfolio/web-dev-case-study-portfolio-details/">Cyberfolio: A Systems-Engineered
                   Personal Platform</a></li>
             </ul><!-- End of Tech Portfolio Drop Down Menu-->
+          <li><a href="#published-work">PUBLISHED WORK</a></li>
           <li class="dropdown"><a href="#blog"><span>BLOG</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul><!-- Blog Drop Down Menu-->
-              <li><a href="/blog/2025-10-23-random-notes-from-an-emerging-writers-desk">Random Notes From an Emerging Writer's Desk</a></li>
-              <li><a href="/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/">System Overload: Troubleshooting Burnout in the Human Brain Stack</a></li>
-              <li><a href="/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/">Learning Real-World Data Manipulation</a></li>
+              <li><a href="/blog/2025-10-23-random-notes-from-an-emerging-writers-desk">Random Notes From an Emerging
+                  Writer's Desk</a></li>
+              <li><a href="/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/">System
+                  Overload: Troubleshooting Burnout in the Human Brain Stack</a></li>
+              <li><a href="/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/">Learning Real-World
+                  Data Manipulation</a></li>
               <li><a href="/blog/2025-11-16-using-ai-as-a-tool/">Using AI as a Tool</a></li>
             </ul><!-- End of Blog Drop Down Menu-->
           </li>
@@ -208,145 +212,6 @@
             </div>
     </section><!-- END OF ABOUT SECTION -->
 
-    <!-- PUBLISHED WORK SECTION -->
-    <section id="published-work" class="published-work section-black py-5">
-      <!-- Title Banner -->
-      <div class="title-banner small" data-aos="fade-up"
-        style="--title-img:url('/assets/img/headers/depressing-blue-monday-composition.webp');">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <!-- Subtitle -->
-          <h1>PUBLISHED WORK</h1>
-          <h2 class="framed-subtitle">Published work in science and technology.</h2>
-        </div>
-      </div>
-
-      <!-- Featured Article Section Title-->
-      <section id="featured-article" class="section-black py-5">
-        <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
-          <h1>Featured Article</h1>
-        </div><!-- End of Featured Article Section Title-->
-
-        <!-- Featured Story -->
-        <article class="featured-card" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/img/telepathic-music-image.webp" alt="Telepathic Music">
-          <div class="featured-content">
-            <h3>How Telepathic Music Inspires Disabled Creatives</h3>
-            <p class="featured-meta">Published on Hackernoon — Featured Story · Nov 3, 2025</p>
-            <p><i>Exploring the world of brain-computer interface (BCI) technology for disabled creatives and
-                the battle against neurodegenerative disorders.</i>
-            </p>
-            <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives" class="featured-link">View
-              on Hackernoon →</a>
-          </div>
-        </article>
-      </section><!-- End of Featured Articles Section -->
-
-      <!-- Self-Published Articles Section Title-->
-      <section id="featured-article" class="section-black py-5">
-        <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
-          <h1>Self-Published Articles</h1>
-        </div><!-- End of Self-Published Articles Section Title-->
-
-        <!-- Self-Published Articles Carousel Section -->
-        <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
-          <button class="carousel-btn prev" id="publishedPrev">&#10094;</button>
-          <div class="carousel-track" id="publishedTrack"></div>
-          <button class="carousel-btn next" id="publishedNext">&#10095;</button>
-        </div>
-      </section><!-- End of Self-Published Articles Section -->
-
-      <!--Carousel JS Script - Self-Published Articles -->
-      <script>
-        const publishedPosts = [
-          {
-            url: "/articles/david-bowies-ode-to-sci-fi-and-space-science/",
-            image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png",
-            date: "Apr 11, 2024",
-            title: "David Bowie’s Ode to Sci-Fi and Space Science",
-            source: "Portfolio Site"
-          },
-          {
-            url: "https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079",
-            image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN",
-            date: "Apr 1, 2024",
-            title: "Automated Love: How AI Became the New Face of Romance",
-            source: "Medium"
-          },
-          {
-            url: "https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7",
-            image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz",
-            date: "Mar 13, 2024",
-            title: "Dealing with Early Signs of Alzheimer’s Disease in Loved Ones",
-            source: "Medium"
-          }
-        ];
-
-        async function loadPublishedWork() {
-          const track = document.getElementById('publishedTrack');
-
-          for (const post of publishedPosts) {
-            const card = document.createElement('article');
-            card.className = 'blog-card';
-
-            if (post.url.startsWith('http')) {
-              card.innerHTML = `
-          <img src="${post.image}" alt="${post.title}">
-          <div class="blog-content">
-            <h3>${post.title}</h3>
-            <p class="blog-date">${post.date}</p>
-            <p><i>Read this full piece directly on ${post.source}.</i></p>
-            <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${post.source} →</a>
-          </div>`;
-              track.appendChild(card);
-              continue;
-            }
-
-            try {
-              const res = await fetch(post.url);
-              const html = await res.text();
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-              const title = doc.querySelector('title')?.innerText || post.title;
-              const firstP = doc.querySelector('p i')?.innerText || doc.querySelector('p')?.innerText || '';
-              const excerpt = firstP.split('. ').slice(0, 2).join('. ') + '.';
-
-              card.innerHTML = `
-          <img src="${post.image}" alt="${title}">
-          <div class="blog-content">
-            <h3>${title}</h3>
-            <p class="blog-date">${post.date}</p>
-            <p><i>${excerpt}</i></p>
-            <a href="${post.url}" class="blog-link">Read More →</a>
-          </div>`;
-              track.appendChild(card);
-            } catch (err) {
-              console.error('Error loading', post.url, err);
-            }
-          }
-        }
-
-        // Independent carousel controls for Published Work
-        let publishedIndex = 0;
-        function slidePublished(dir) {
-          const cards = document.querySelectorAll('#publishedTrack .blog-card');
-          if (!cards.length) return;
-          publishedIndex = (publishedIndex + dir + cards.length) % cards.length;
-          document.getElementById('publishedTrack').style.transform = `translateX(-${publishedIndex * 310}px)`;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-          loadPublishedWork().then(() => {
-            document.getElementById('publishedNext').onclick = () => slidePublished(1);
-            document.getElementById('publishedPrev').onclick = () => slidePublished(-1);
-          });
-        });
-      </script>
-      <!-- End of Carousel JS Script - Published Work -->
-
-    </section>
-    <!-- END OF PUBLISHED WORK SECTION -->
-
     <!-- TECH PORTFOLIO SECTION -->
     <section id="portfolio" class="portfolio section-black" data-aos="fade-in">
       <!-- Title Banner -->
@@ -403,6 +268,146 @@
         </div>
 
       </section><!--END OF TECH PORTFOLIO SECTION -->
+
+      <!-- PUBLISHED WORK SECTION -->
+      <section id="published-work" class="published-work section-black py-5">
+        <!-- Title Banner -->
+        <div class="title-banner small" data-aos="fade-up"
+          style="--title-img:url('/assets/img/headers/depressing-blue-monday-composition.webp');">
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <!-- Subtitle -->
+            <h1>PUBLISHED WORK</h1>
+            <h2 class="framed-subtitle">Published work in science and technology.</h2>
+          </div>
+        </div>
+
+        <!-- Featured Article Section Title-->
+        <section id="featured-article" class="section-black py-5">
+          <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+            <h1>Featured Article</h1>
+          </div><!-- End of Featured Article Section Title-->
+
+          <!-- Featured Story -->
+          <article class="featured-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/telepathic-music-image.webp" alt="Telepathic Music">
+            <div class="featured-content">
+              <h3>How Telepathic Music Inspires Disabled Creatives</h3>
+              <p class="featured-meta">Published on Hackernoon — Featured Story · Nov 3, 2025</p>
+              <p><i>Exploring the world of brain-computer interface (BCI) technology for disabled creatives and
+                  the battle against neurodegenerative disorders.</i>
+              </p>
+              <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives"
+                class="featured-link">View
+                on Hackernoon →</a>
+            </div>
+          </article>
+        </section><!-- End of Featured Articles Section -->
+
+        <!-- Self-Published Articles Section Title-->
+        <section id="featured-article" class="section-black py-5">
+          <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
+            <h1>Self-Published Articles</h1>
+          </div><!-- End of Self-Published Articles Section Title-->
+
+          <!-- Self-Published Articles Carousel Section -->
+          <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
+            <button class="carousel-btn prev" id="publishedPrev">&#10094;</button>
+            <div class="carousel-track" id="publishedTrack"></div>
+            <button class="carousel-btn next" id="publishedNext">&#10095;</button>
+          </div>
+        </section><!-- End of Self-Published Articles Section -->
+
+        <!--Carousel JS Script - Self-Published Articles -->
+        <script>
+          const publishedPosts = [
+            {
+              url: "/articles/david-bowies-ode-to-sci-fi-and-space-science/",
+              image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png",
+              date: "Apr 11, 2024",
+              title: "David Bowie’s Ode to Sci-Fi and Space Science",
+              source: "Portfolio Site"
+            },
+            {
+              url: "https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079",
+              image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN",
+              date: "Apr 1, 2024",
+              title: "Automated Love: How AI Became the New Face of Romance",
+              source: "Medium"
+            },
+            {
+              url: "https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7",
+              image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz",
+              date: "Mar 13, 2024",
+              title: "Dealing with Early Signs of Alzheimer’s Disease in Loved Ones",
+              source: "Medium"
+            }
+          ];
+
+          async function loadPublishedWork() {
+            const track = document.getElementById('publishedTrack');
+
+            for (const post of publishedPosts) {
+              const card = document.createElement('article');
+              card.className = 'blog-card';
+
+              if (post.url.startsWith('http')) {
+                card.innerHTML = `
+          <img src="${post.image}" alt="${post.title}">
+          <div class="blog-content">
+            <h3>${post.title}</h3>
+            <p class="blog-date">${post.date}</p>
+            <p><i>Read this full piece directly on ${post.source}.</i></p>
+            <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${post.source} →</a>
+          </div>`;
+                track.appendChild(card);
+                continue;
+              }
+
+              try {
+                const res = await fetch(post.url);
+                const html = await res.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const title = doc.querySelector('title')?.innerText || post.title;
+                const firstP = doc.querySelector('p i')?.innerText || doc.querySelector('p')?.innerText || '';
+                const excerpt = firstP.split('. ').slice(0, 2).join('. ') + '.';
+
+                card.innerHTML = `
+          <img src="${post.image}" alt="${title}">
+          <div class="blog-content">
+            <h3>${title}</h3>
+            <p class="blog-date">${post.date}</p>
+            <p><i>${excerpt}</i></p>
+            <a href="${post.url}" class="blog-link">Read More →</a>
+          </div>`;
+                track.appendChild(card);
+              } catch (err) {
+                console.error('Error loading', post.url, err);
+              }
+            }
+          }
+
+          // Independent carousel controls for Published Work
+          let publishedIndex = 0;
+          function slidePublished(dir) {
+            const cards = document.querySelectorAll('#publishedTrack .blog-card');
+            if (!cards.length) return;
+            publishedIndex = (publishedIndex + dir + cards.length) % cards.length;
+            document.getElementById('publishedTrack').style.transform = `translateX(-${publishedIndex * 310}px)`;
+          }
+
+          document.addEventListener('DOMContentLoaded', () => {
+            loadPublishedWork().then(() => {
+              document.getElementById('publishedNext').onclick = () => slidePublished(1);
+              document.getElementById('publishedPrev').onclick = () => slidePublished(-1);
+            });
+          });
+        </script>
+        <!-- End of Carousel JS Script - Published Work -->
+
+      </section>
+      <!-- END OF PUBLISHED WORK SECTION -->
 
       <!--NOTES FROM THE SANDBOX BLOG SECTION -->
       <section id="blog" class="blog section-black py-5">

@@ -1,5 +1,213 @@
 /* SASHA CHEEK - CYBERPUNK PORTFOLIO SKIN */
-/* ========================================================== STARTER/LOADING PAGE ========================================================== */
+/* ========SECTION 0: SITE PRELOADER, NAVIGATION, ETC. ========= */
+
+/* ========SECTION 1: HERO/HOME SECTION FONT & STYLING========= */
+
+/* FONTS H1-H3 */
+.hero h1,
+#hero h1,
+#hero .container h1 {
+  font-family: "Orbitron", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 3rem !important;
+  /* roughly 48px */
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #00eaff !important;
+  /* Crisp TRON-style glow */
+  text-shadow: 0 0 3px rgba(0, 234, 255, 0.9) !important;
+    0 0 8px rgba(0, 234, 255, 0.6) !important, 0 0 16px rgba(0, 234, 255, 0.4) !important;
+}
+
+/* H1-H3 TEXT SHADOW */
+#hero h1,
+#hero h2,
+#hero h3 {
+  text-shadow: 0 0 3px rgba(0, 234, 255, 0.9), 0 0 6px rgba(0, 234, 255, 0.5),
+    0 2px 10px rgba(0, 0, 0, 0.75);
+  /* subtle dark grounding */
+}
+
+/* H2 FONT (CONT.) */
+#hero h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #6fd3ff;
+  /* pale blue */
+  text-transform: uppercase;
+  text-shadow: 0 0 2px rgba(111, 211, 255, 0.8),
+    0 0 6px rgba(111, 211, 255, 0.6), 0 0 12px rgba(111, 211, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* H3 FONT ( SPECIALTIES) */
+#hero h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: #6fd3ff;
+  /* pale blue */
+  text-transform: uppercase;
+  text-shadow: 0 0 2px rgba(111, 211, 255, 0.8),
+    0 0 6px rgba(111, 211, 255, 0.6), 0 0 12px rgba(111, 211, 255, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* H3 FONT (SITENAME TOP AREA) */
+#hero h3.small {
+  /* smaller, responsive, keeps your existing glow palette */
+  font-size: clamp(14px, 1.2vw + 0.2rem, 18px);
+  line-height: 1.25;
+  letter-spacing: 1px;
+  color: #6fd3ff;
+  margin: 0.15rem 0 0.15rem;
+  text-shadow: 0 0 2px rgba(111, 211, 255, 0.8),
+    0 0 6px rgba(111, 211, 255, 0.6), 0 0 12px rgba(111, 211, 255, 0.3);
+}
+
+/* Tagline container */
+#hero .tagline {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero Paragraph Tagline */
+#hero p.tagline {
+  /* small, readable, matches paragraph color family */
+  font-family: "VT323", monospace;
+  font-size: clamp(12px, 1vw + 0.2rem, 16px);
+  line-height: 1.3;
+  color: #9ee9ff;
+  opacity: 0.9;
+  margin: 0.1rem 0 0.6rem;
+  text-shadow: 0 0 6px rgba(158, 233, 255, 0.35);
+}
+
+/* HERO SECTION AND STYLING */
+
+/* Hero Divider Styling and Nodes */
+#hero .t-divider {
+  position: relative;
+  display: block;
+  width: min(72%, 520px);
+  height: 12px;
+  margin: 10px auto 14px;
+}
+
+#hero .t-divider.t-node {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #00eaff 20%,
+    #00eaff 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(0, 234, 255, 0.45);
+}
+
+#hero .t-divider.t-node::before,
+#hero .t-divider.t-node::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #39ff14;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.9), 0 0 18px rgba(57, 255, 20, 0.45);
+}
+
+#hero .t-divider.t-node::before {
+  left: -6px;
+}
+
+#hero .t-divider.t-node::after {
+  right: -6px;
+}
+
+/* Hero T-Divider for Small Screens */
+@media (max-width: 480px) {
+  #hero .t-divider {
+    width: min(84%, 420px);
+    margin: 8px auto 12px;
+  }
+
+  #hero .t-divider.t-node::before,
+  #hero .t-divider.t-node::after {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+/* Hero Background Image and Overlay */
+#hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75));
+  z-index: 2;
+}
+
+/* Image Content Above Overlay */
+#hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Social links */
+#hero .social-links a {
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 247, 255, 0.2);
+  color: #00f7ff;
+  transition: all 0.3s ease;
+}
+
+/* Hero Social Links (Hover Effect) */
+#hero .social-links a:hover {
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+/* ========SECTION 2: ABOUT SECTION FONT & STYLING========= */
+/* ========SECTION 3: PUBLISHED WORK SECTION FONT & STYLING========= */
+/* ========SECTION 4: TECH PORTFOLIO SECTION FONT & STYLING========= */
+/* ========SECTION 5: ARTICLE & BLOG PAGES SECTION FONT & STYLING========= */
+/* ========SECTION 6: RESUME SECTION FONT & STYLING========= */
+/* ========SECTION 7: SERVICES SECTION FONT & STYLING========= */
+/* ========SECTION 8: TESTIMONIALS SECTION FONT & STYLING========= */
+/* ========SECTION 9: CONTACT SECTION FONT & STYLING========= */
+/* ========SECTION 10: GLOBAL FONTS & STYLING========= */
+
+/* ========================================================== PRELOADER STYLING ========================================================== */
 /* Preloader Color */
 #preloader {
   background-color: #000;
@@ -226,44 +434,6 @@ p {
 }
 
 /* ========================= Responsive ========================= */
-/* === HERO SECTION FONT === */
-/* H1 Hero Font */
-.hero h1,
-#hero h1,
-#hero .container h1 {
-  font-family: "Orbitron", sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 3rem !important;
-  /* roughly 48px */
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  color: #00eaff !important;
-  /* Crisp TRON-style glow */
-  text-shadow: 0 0 3px rgba(0, 234, 255, 0.9) !important,
-    0 0 8px rgba(0, 234, 255, 0.6) !important, 0 0 16px rgba(0, 234, 255, 0.4) !important;
-}
-
-/* H2 Hero Font */
-/* Tagline */
-#hero h2 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  color: #6fd3ff;
-  /* pale blue */
-  text-transform: uppercase;
-  text-shadow: 0 0 2px rgba(111, 211, 255, 0.8),
-    0 0 6px rgba(111, 211, 255, 0.6), 0 0 12px rgba(111, 211, 255, 0.3);
-  margin-bottom: 0.5rem;
-}
-
-/* Tagline container */
-#hero .tagline {
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
-}
-
 /* Other framed subtitles */
 section:not(#about) h2.framed-subtitle {
   font-family: "VT323", monospace;
@@ -303,29 +473,6 @@ section:not(#about) h2.framed-subtitle {
     0 0 32px rgba(127, 225, 255, 0.4);
   box-shadow: 0 0 6px rgba(127, 225, 255, 0.55),
     0 0 12px rgba(127, 225, 255, 0.45);
-}
-
-/* H3 Hero Font */
-#hero h3 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 400;
-  letter-spacing: 1.2px;
-  color: #6fd3ff;
-  /* pale blue */
-  text-transform: uppercase;
-  text-shadow: 0 0 2px rgba(111, 211, 255, 0.8),
-    0 0 6px rgba(111, 211, 255, 0.6), 0 0 12px rgba(111, 211, 255, 0.3);
-  margin-bottom: 0.5rem;
-}
-
-/* Hero Font H1 - H3 Shadow */
-#hero h1,
-#hero h2,
-#hero h3 {
-  text-shadow: 0 0 3px rgba(0, 234, 255, 0.9), 0 0 6px rgba(0, 234, 255, 0.5),
-    0 2px 10px rgba(0, 0, 0, 0.75);
-  /* subtle dark grounding */
 }
 
 /* === ABOUT SECTION FONT === */
@@ -376,87 +523,6 @@ section:not(#about) h2.framed-subtitle {
   25%,
   75% {
     opacity: 0;
-  }
-}
-
-/* Hero H3 Font */
-#hero h3.small {
-  /* smaller, responsive, keeps your existing glow palette */
-  font-size: clamp(14px, 1.2vw + 0.2rem, 18px);
-  line-height: 1.25;
-  letter-spacing: 1px;
-  color: #6fd3ff;
-  margin: 0.15rem 0 0.15rem;
-  text-shadow: 0 0 2px rgba(111, 211, 255, 0.8),
-    0 0 6px rgba(111, 211, 255, 0.6), 0 0 12px rgba(111, 211, 255, 0.3);
-}
-
-/* Hero Paragraph Tagline */
-#hero p.tagline {
-  /* small, readable, matches paragraph color family */
-  font-family: "VT323", monospace;
-  font-size: clamp(12px, 1vw + 0.2rem, 16px);
-  line-height: 1.3;
-  color: #9ee9ff;
-  opacity: 0.9;
-  margin: 0.1rem 0 0.6rem;
-  text-shadow: 0 0 6px rgba(158, 233, 255, 0.35);
-}
-
-/* Hero Divider Styling */
-#hero .t-divider {
-  position: relative;
-  display: block;
-  width: min(72%, 520px);
-  height: 12px;
-  margin: 10px auto 14px;
-}
-
-/*Hero Divider - Nodes */
-#hero .t-divider.t-node {
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #00eaff 20%,
-    #00eaff 80%,
-    transparent 100%
-  );
-  box-shadow: 0 0 10px rgba(0, 234, 255, 0.45);
-}
-
-#hero .t-divider.t-node::before,
-#hero .t-divider.t-node::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #39ff14;
-  box-shadow: 0 0 8px rgba(57, 255, 20, 0.9), 0 0 18px rgba(57, 255, 20, 0.45);
-}
-
-#hero .t-divider.t-node::before {
-  left: -6px;
-}
-
-#hero .t-divider.t-node::after {
-  right: -6px;
-}
-
-/* Hero T-Divider for Small Screens */
-@media (max-width: 480px) {
-  #hero .t-divider {
-    width: min(84%, 420px);
-    margin: 8px auto 12px;
-  }
-
-  #hero .t-divider.t-node::before,
-  #hero .t-divider.t-node::after {
-    width: 9px;
-    height: 9px;
   }
 }
 
@@ -902,61 +968,6 @@ section:not(#about) h2.framed-subtitle {
 }
 
 /* ========================================================== END OF GLOBAL RESPONSIVE - WEB BROWSER, MOBILE & TABLETS DISPLAY ========================================================== */
-/* === HERO SECTION STYLING === */
-/* Hero Image as Background */
-#hero {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  color: #fff;
-}
-
-/* Background image */
-#hero img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* Purple overlay */
-#hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(128, 0, 128, 0.55), rgba(64, 0, 128, 0.75));
-  z-index: 2;
-}
-
-/* Content sits above overlay */
-#hero .container {
-  position: relative;
-  z-index: 3;
-}
-
-/* Social links */
-#hero .social-links a {
-  font-size: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 6px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(0, 247, 255, 0.2);
-  color: #00f7ff;
-  transition: all 0.3s ease;
-}
-
-#hero .social-links a:hover {
-  background: #00f7ff;
-  color: #12151f;
-  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
-}
-
 /* === ABOUT SECTION STYLING === */
 /* HOLOGRAM */
 .holo-static {
