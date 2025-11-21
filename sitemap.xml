@@ -13,10 +13,10 @@
     <loc>https://sashacheek.com/#about</loc>
   </url>
   <url>
-    <loc>https://sashacheek.com/#published-work</loc>
+    <loc>https://sashacheek.com/#portfolio</loc>
   </url>
   <url>
-    <loc>https://sashacheek.com/#portfolio</loc>
+    <loc>https://sashacheek.com/#published-work</loc>
   </url>
   <url>
     <loc>https://sashacheek.com/#blog</loc>
@@ -32,7 +32,9 @@
   </url>
 
   <!-- Tech Portfolio Details Pages -->
-
+  <url>
+    <loc>https://sashacheek.com/tech-portfolio/web-dev-case-study-portfolio-details/</loc>
+  </url>
   <!-- Self-Published Article Pages -->
   <url>
     <loc>https://sashacheek.com/articles/david-bowies-ode-to-sci-fi-and-space-science/</loc>
@@ -48,5 +50,7 @@
   <url>
     <loc>https://sashacheek.com/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/</loc>
   </url>
-
+  <url>
+    <loc>https://sashacheek.com/blog/2025-11-16-using-ai-as-a-tool/</loc>
+  </url>
 </urlset>

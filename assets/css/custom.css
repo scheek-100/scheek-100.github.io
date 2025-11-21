@@ -2031,6 +2031,7 @@ button:focus,
   letter-spacing: 0.3px;
   margin: 0;
   text-shadow: 0 0 6px rgba(158, 233, 255, 0.35);
+  text-align: center !important;
 }
 
 #testimonials .qmark {
