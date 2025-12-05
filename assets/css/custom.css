@@ -2243,8 +2243,6 @@ button:focus,
      no change needed */
 }
 
-/* Optional: your framed subtitle style still applies;
- nothing to change here */
 /* Dark article “card” */
 .page-post article {
   background: rgba(11, 15, 20, 0.96);
@@ -2276,7 +2274,34 @@ button:focus,
   height: auto;
 }
 
-/* Responsive top padding */
+/* METADATA TAGS */
+.page-post .meta-bottom {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 247, 255, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page-post .meta-bottom .tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.page-post .meta-bottom .tags .tag {
+  background: rgba(0, 246, 255, 0.08);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  color: #00f6ff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE PADDING */
 @media (max-width: 991px) {
   .page-post #main {
     padding-top: 120px;
@@ -2291,7 +2316,7 @@ article .content h3,
   text-shadow: 0 0 3px rgba(0, 246, 255, 0.6), 0 0 8px rgba(0, 246, 255, 0.35);
 }
 
-/* tag pills under articles */
+/* DELETE LATER - tag pills under articles */
 article .tags span,
 .article-content .tags span {
   color: #00f6ff;
