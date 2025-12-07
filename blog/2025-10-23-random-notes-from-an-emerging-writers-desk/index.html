@@ -110,135 +110,239 @@
             <!-- End Section Subtitle -->
 
             <!-- Article Skeleton-->
-            <article class="mx-auto" style="max-width: 840px;">
-                <div class="container article-title mb-4" data-aos="fade-up">
-                    <h1>Random Notes From an Emerging Writer's Desk</h1>
-                    <p class="text-muted mb-1">by Sasha Cheek</p>
-                    <p class="text-muted mb-1">Oct 23, 2025</p>
-                </div>
+            <div class="container page-post-layout">
+                <div class="row">
+                    <!--MAIN ARTICLE COLUMN-->
+                    <div class="col-md-8">
+                        <!-- ORIGINAL ARTICLE STRUCTURE -->
+                        <article class="mx-auto" style="max-width: 840px;">
+                            <div class="container article-title mb-4" data-aos="fade-up">
+                                <h1>Random Notes From an Emerging Writer's Desk</h1>
+                                <p class="text-muted mb-1">by Sasha Cheek</p>
+                                <p class="text-muted mb-1">Oct 23, 2025</p>
+                            </div>
 
-                <!-- Main Image with Metadata Overlay -->
-                <figure class="article-figure mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.pexels.com/photos/5827785/pexels-photo-5827785.jpeg?w=1920" class="img-fluid rounded"
-                        alt="Random Notes feature image">
-                
-                    <div class="meta-overlay">
-                        <div class="meta-categories">
-                            <a href="#" class="category">Career Development</a>
-                            <span class="divider">•</span>
-                            <span class="reading-time"><i class="bi bi-clock"></i> 2 min read</span>
-                        </div>
+                            <!-- Main Image with Metadata Overlay -->
+                            <figure class="article-figure mb-4" data-aos="fade-up" data-aos-delay="100">
+                                <img src="https://images.pexels.com/photos/5827785/pexels-photo-5827785.jpeg?w=1920"
+                                    class="img-fluid rounded" alt="Random Notes feature image">
+
+                                <div class="meta-overlay">
+                                    <div class="meta-categories">
+                                        <a href="#" class="category">Career Development</a>
+                                        <span class="divider"></span>
+                                        <span class="reading-time"><i class="bi bi-clock"></i> 2 min read</span>
+                                    </div>
+                                </div>
+
+                                <figcaption class="small mt-2"><i>Photo credit: Pexels.com</i></figcaption>
+                            </figure>
+                            <!-- End of Main Image with Metadata Overlay -->
+
+                            <!-- Post content -->
+                            <div class="content" data-aos="fade-up" data-aos-delay="100">
+                                <p><i>My humble beginnings as a writer, combining engineering knowledge to tell
+                                        stories.</i></p>
+                                <h2>Log 001</h2>
+                                <p>Tuesday was the day my new life as a part-time blogger began after multiple code
+                                    deployments. I
+                                    spent
+                                    hours experimenting with its aesthetics and functionality, words and formatting
+                                    appearing and
+                                    disappearing with every new sandbox test. What was the culprit? GitHub's relative
+                                    paths. After
+                                    setting up the repository structure for the blog section, file paths like
+                                    <code>assets/css/custom.css</code> vanished before my eyes. Apparently, the file
+                                    path needed one
+                                    more "/" next to "assets" and things started working again.
+                                </p>
+                                <p>This wasn't just a typical styling and code fix; it was reprogramming of one's
+                                    mindset. Seeing
+                                    the
+                                    difference between the code working on one aspect and then seeing it work anywhere
+                                    is one
+                                    characteristic of this change. It's not only good coding practice for front-end web
+                                    development.
+                                    It
+                                    will sustain the website blog's skeleton for a better user experience. Being aware
+                                    of how
+                                    multiple
+                                    aspects come together-- SEO, web hosting, repository organization, etc. -- is the
+                                    key to
+                                    understanding some foundations of systems engineering.</p>
+                                <!-- Feature Image -->
+                                <figure class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                                    <img src="/assets/img/blog/pic2-blog-01.png" class="img-fluid rounded"
+                                        alt="Random Notes feature image">
+                                    <figcaption class="small mt-2"><i>Photo credit: Visual Studio Code Screenshot</i>
+                                    </figcaption>
+                                </figure>
+                                <!-- End of Feature Image -->
+                                <p>A few guardrails that every writer building a website should know are:</p>
+                                <ul>
+                                    <li>
+                                        <p>Use <strong style="color:lightgreen;">root-relative</strong> file paths to
+                                            make sure
+                                            shared
+                                            assets show on your website.</p>
+                                    </li>
+                                    <li>
+                                        <p>Keep header/footer HTML in sync across all website pages without changing it.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Never launch code without previewing it with GitHub Desktop <strong
+                                                style="color:lightgreen;">or</strong> VS (Visual Studio) Code with the
+                                            Live Server
+                                            extension.</p>
+                                    </li>
+                                    <li>
+                                        <p>When you're stuck look for extra code that shouldn't be there; misspelled
+                                            fields;
+                                            anything
+                                            that deviates from the code pattern, or go to <strong
+                                                style="color:lightgreen;">DevTools
+                                                →
+                                                Network</strong> in your web browser for additional troubleshooting.</p>
+                                    </li>
+                                </ul>
+                                <!-- Feature Image -->
+                                <figure class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                                    <img src="/assets/img/blog/pic3-blog-01.jpg" class="img-fluid rounded"
+                                        alt="Random Notes feature image">
+                                    <figcaption class="small mt-2"><i>Photo credit: Stockcake.com</i></figcaption>
+                                </figure>
+                                <!-- End of Feature Image -->
+                                <p><strong style="color:lightgreen;">Today's Win:</strong> I created my first blog post
+                                    and can
+                                    reuse
+                                    the template for future logs.</p>
+                            </div>
+
+                            <!--Meta-Bottom-->
+                            <div class="meta-bottom">
+                                <p><strong style="color:lightgreen;">Related Topics:</strong></p>
+                                <div class="tags">
+                                    <a href="#" class="tag">Web Development</a>
+                                    <a href="#" class="tag">Blog</a>
+                                    <a href="#" class="tag">Career Development</a>
+                                    <a href="#" class="tag">VS Code</a>
+                                    <a href="#" class="tag">GitHub</a>
+                                    <a href="#" class="tag">Technology</a>
+                                </div>
+                            </div>
+                            <!-- End of Meta-Bottom-->
+
+                            <!-- Share Section -->
+                            <div class="share-section">
+                                <p><strong style="color:lightgreen;">Share Article:</strong></p>
+                                <div class="social-links">
+                                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" class="copy-link" title="Copy Link"><i class="bi bi-link-45deg"></i></a>
+                                </div>
+                            </div>
+                            <!-- End of Share Section -->
+
+                            <!--Button Navigation -->
+                            <hr class="my-5" />
+                            <nav class="d-flex justify-content-between gap-2">
+                                <span class="btn btn-outline-secondary disabled" aria-disabled="true">← Previous</span>
+                                <a class="btn btn-outline-primary" href="/#blog">Back to homepage</a>
+                                <a class="btn btn-outline-primary"
+                                    href="/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/">Next
+                                    →</a>
+                            </nav>
+                        </article>
                     </div>
-                
-                    <figcaption class="small mt-2"><i>Photo credit: Pexels.com</i></figcaption>
-                </figure>
-                <!-- End of Main Image with Metadata Overlay -->
+                    <!-- End of Article Skeleton-->
 
-                <!-- Post content -->
-                <div class="content" data-aos="fade-up" data-aos-delay="100">
-                    <p><i>My humble beginnings as a writer, combining engineering knowledge to tell stories.</i></p>
-                    <h2>Log 001</h2>
-                    <p>Tuesday was the day my new life as a part-time blogger began after multiple code deployments. I
-                        spent
-                        hours experimenting with its aesthetics and functionality, words and formatting appearing and
-                        disappearing with every new sandbox test. What was the culprit? GitHub's relative paths. After
-                        setting up the repository structure for the blog section, file paths like
-                        <code>assets/css/custom.css</code> vanished before my eyes. Apparently, the file path needed one
-                        more "/" next to "assets" and things started working again.
-                    </p>
-                    <p>This wasn't just a typical styling and code fix; it was reprogramming of one's mindset. Seeing
-                        the
-                        difference between the code working on one aspect and then seeing it work anywhere is one
-                        characteristic of this change. It's not only good coding practice for front-end web development.
-                        It
-                        will sustain the website blog's skeleton for a better user experience. Being aware of how
-                        multiple
-                        aspects come together-- SEO, web hosting, repository organization, etc. -- is the key to
-                        understanding some foundations of systems engineering.</p>
-                    <!-- Feature Image -->
-                    <figure class="mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <img src="/assets/img/blog/pic2-blog-01.png" class="img-fluid rounded"
-                            alt="Random Notes feature image">
-                        <figcaption class="small mt-2"><i>Photo credit: Visual Studio Code Screenshot</i></figcaption>
-                    </figure>
-                    <!-- End of Feature Image -->
-                    <p>A few guardrails that every writer building a website should know are:</p>
-                    <ul>
-                        <li>
-                            <p>Use <strong style="color:lightgreen;">root-relative</strong> file paths to make sure
-                                shared
-                                assets show on your website.</p>
-                        </li>
-                        <li>
-                            <p>Keep header/footer HTML in sync across all website pages without changing it.</p>
-                        </li>
-                        <li>
-                            <p>Never launch code without previewing it with GitHub Desktop <strong
-                                    style="color:lightgreen;">or</strong> VS (Visual Studio) Code with the Live Server
-                                extension.</p>
-                        </li>
-                        <li>
-                            <p>When you're stuck look for extra code that shouldn't be there; misspelled fields;
-                                anything
-                                that deviates from the code pattern, or go to <strong style="color:lightgreen;">DevTools
-                                    →
-                                    Network</strong> in your web browser for additional troubleshooting.</p>
-                        </li>
-                    </ul>
-                    <!-- Feature Image -->
-                    <figure class="mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <img src="/assets/img/blog/pic3-blog-01.jpg" class="img-fluid rounded"
-                            alt="Random Notes feature image">
-                        <figcaption class="small mt-2"><i>Photo credit: Stockcake.com</i></figcaption>
-                    </figure>
-                    <!-- End of Feature Image -->
-                    <p><strong style="color:lightgreen;">Today's Win:</strong> I created my first blog post and can
-                        reuse
-                        the template for future logs.</p>
-                </div>
-                
-                <!--Meta-Bottom-->
-                <div class="meta-bottom">
-                    <p><strong style="color:lightgreen;">Related Topics:</strong></p>
-                    <div class="tags">
-                        <a href="#" class="tag">Web Development</a>
-                        <a href="#" class="tag">Blog</a>
-                        <a href="#" class="tag">Career Development</a>
-                        <a href="#" class="tag">VS Code</a>
-                        <a href="#" class="tag">GitHub</a>
-                        <a href="#" class="tag">Technology</a>
-                    </div>
-                </div>
-                <!-- End of Meta-Bottom-->
+                    <!-- ARTICLE PAGE SIDEBAR SECTION-->
+                    <div class="col-lg-4 sidebar">
+                        <div class="widgets-container" data-aos="fade-up" data-aos-delay="200">
 
-                <!-- Share Section -->
-                <div class="share-section">
-                      <p><strong style="color:lightgreen;">Share Article:</strong></p>
-                      <div class="social-links">
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="copy-link" title="Copy Link"><i class="bi bi-link-45deg"></i></a>
-                      </div>
-                    </div>
-                <!-- End of Share Section -->
+                            <!-- Search Widget -->
+                            <div class="search-widget widget-item">
+                                <h3 class="widget-title">Search</h3>
+                                <form action="">
+                                    <input type="text">
+                                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                                </form>
+                            </div><!--/Search Widget -->
 
-                <hr class="my-5" />
-                <nav class="d-flex justify-content-between gap-2">
-                    <span class="btn btn-outline-secondary disabled" aria-disabled="true">← Previous</span>
-                    <a class="btn btn-outline-primary" href="/#blog">Back to homepage</a>
-                    <a class="btn btn-outline-primary"
-                        href="/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/">Next
-                        →</a>
-                </nav>
-            </article>
-            <!-- End of Article Skeleton-->
-    </main>
+                            <!--Tags-->
+                            <div class="tags-widget widget-item">
+                                <!--Tags Widget Title-->
+                                <h3 class="widget-title">Tags</h3><!--End of Widget Title-->
+                                <a href="#" class="tag">Technology</a>
+                                <a href="#" class="tag">Career Development</a>
+                                <a href="#" class="tag">Web Development</a>
+                                <a href="#" class="tag">Front-End Development</a>
+                                <a href="#" class="tag">CSS</a>
+                                <a href="#" class="tag">GitHub</a>
+                                <a href="#" class="tag">VS Code</a>
+                                <a href="#" class="tag">DevTools</a>
+                                <a href="#" class="tag">File Paths</a>
+                                <a href="#" class="tag">Troubleshooting</a>
+                                <a href="#" class="tag">SEO Basics</a>
+                                <a href="#" class="tag">Systems Engineering</a>
+                                <a href="#" class="tag">Blogging</a>
+                                <a href="#" class="tag">Emerging Writer</a>
+                                <a href="#" class="tag">Career Development</a>
+                                <a href="#" class="tag">Engineering Storytelling</a>
+                                <a href="#" class="tag">Personal Growth</a>
+                                <a href="#" class="tag">Technology</a>
+                                <a href="#" class="tag">Sandbox Testing</a>
+                                <a href="#" class="tag">Coding Mindset</a>
+                                <a href="#" class="tag">Templates & Reuse</a>
+                                <a href="#" class="tag">Creative Process</a>
+                            </div>
+
+                            <!--Recent Posts Widget -->
+                            <div class="recent-posts-widget widget-item">
+                                <h3 class="widget-title">Recent Posts</h3>
+
+                                <!--Post Item 1-->
+                                <div class="post-item">
+                                    <img src="/assets/img/blog/post-slide-2.jpg" alt="" class="flex-shrink-0">
+                                    <div>
+                                        <h4><a
+                                                href="/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/">System
+                                                Overload: Troubleshooting Burnout in the Human Brain Stack</a></h4>
+                                        <time datetime="2020-01-01">Nov 2, 2025</time>
+                                    </div>
+                                </div><!-- End recent post item-->
+
+                                <!--Post Item 2-->
+                                <div class="post-item">
+                                    <img src="/assets/img/blog/Mathematician_analyzing_data._-_DPLA_-_60af5ced0800f6f7d6c99b5587a9ae0e.webp"
+                                        alt="" class="flex-shrink-0">
+                                    <div>
+                                        <h4><a
+                                                href="/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/">Learning
+                                                Real-World Data Manipulation in Grad School</a></h4>
+                                        <time datetime="2020-01-01">Nov 10, 2025</time>
+                                    </div>
+                                </div><!-- End recent post item-->
+
+                                <!--Post Item 3-->
+                                <div class="post-item">
+                                    <img src="/assets/img/blog/log004/eye-glitch-art-pinterest.webp" alt=""
+                                        class="flex-shrink-0">
+                                    <div>
+                                        <h4><a href="/blog/2025-11-16-using-ai-as-a-tool/">Using AI as a Tool</a></h4>
+                                        <time datetime="2020-01-01">Nov 16, 2025</time>
+                                    </div>
+                                </div><!-- End recent post item-->
+                            </div><!--End of Recent Posts Widget -->
+    </main><!--End of ARTICLE PAGE MAIN-->
 
     <!-- ======= Footer (same markup as index) ======= -->
     <footer id="footer" class="footer" data-aos="fade-up" data-aos-delay="100"
         style="background:url('/assets/img/cyberpunk-footer.webp') no-repeat center center / cover !important;">
         <div class="container">
-            <h3 class="sitename" data-aos="fade-up" data-aos-delay="100">Sasha Cheek | Systems, Stories, and Science</h3>
+            <h3 class="sitename" data-aos="fade-up" data-aos-delay="100">Sasha Cheek | Systems, Stories, and Science
+            </h3>
             <p>Exploring how engineered systems shape the people and processes behind science and technology.</p>
             <div class="social-links d-flex justify-content-center">
                 <a href="https://github.com/scheek-100"><i class="bi bi-github"></i></a>
@@ -247,7 +351,8 @@
             </div>
             <div class="container">
                 <div class="copyright">
-                    <span>Copyright</span> <strong class="px-1 sitename">Sasha Cheek | Systems, Stories, and Science</strong> <span>All Rights Reserved</span>
+                    <span>Copyright</span> <strong class="px-1 sitename">Sasha Cheek | Systems, Stories, and
+                        Science</strong> <span>All Rights Reserved</span>
                 </div>
 
                 <!-- Bootstrap Framework/Template Credits -->
