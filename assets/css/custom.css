@@ -548,9 +548,9 @@ p {
   filter: brightness(1.25) contrast(1.25) saturate(1.3);
 }
 
-/* =========================================================
-            SECTION 3: TECH PORTFOLIO SECTION FONT & STYLING
-============================================================= */
+/* ==========================
+      TECH PORTFOLIO SECTION
+============================= */
 
 /* Tech Portfolio Section Font */
 .portfolio-section {
@@ -631,32 +631,103 @@ p {
   /* matches your card rounding */
 }
 
-/* keep the tag row aligned with the card content */
 .portfolio-item .tags {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-/* if anything still pulls a tile to one side, override stray floats */
 .portfolio-item {
   float: none;
 }
 
-/* ===================================================================
-            SECTION 4: PUBLISHED WORK SECTION FONT & STYLING
-====================================================================== */
+/* Card Base */
+.portfolio-item {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 246, 255, 0.25);
+  transition: all 0.35s ease;
+  /* overflow: hidden;
+     */
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
-/* ===========================================================================
-            SECTION 5: "NOTES FROM THE SANDBOX" BLOG SECTION FONT & STYLING
-============================================================================== */
+/* Tech Portfolio Hover Effects */
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  border-color: #00ff9c;
+  box-shadow: 0 0 40px #00ff9c, 0 0 20px rgba(0, 255, 156, 0.6);
+}
 
-/* ===========================================================================
-            SECTION 6: ARTICLE & BLOG PAGES SECTION FONT & STYLING
-============================================================================== */
+/* Tech Portfolio Animation Hover Effects */
+.portfolio-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 246, 255, 0.2);
+  animation: bluePulse 2s infinite alternate;
+}
 
-/* =========================================================
-            SECTION 7: RESUME SECTION FONT & STYLING
-============================================================= */
+@keyframes bluePulse {
+  from {
+    box-shadow: 0 0 10px rgba(0, 246, 255, 0.3);
+  }
+
+  to {
+    box-shadow: 0 0 25px rgba(0, 246, 255, 0.6);
+  }
+}
+
+/* Tech Portfolio IFrame Images */
+.portfolio-item iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  display: block;
+}
+
+/* Tech Portfolio Details Link */
+.portfolio-details-link {
+  font-family: "VT323", monospace !important;
+  font-size: 1rem;
+  color: #00ffff;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.portfolio-details-link:hover {
+  color: #39ff14;
+  text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
+}
+
+/* Forced White Background for Datawrapper Embeds */
+iframe[src*="datawrapper.dwcdn.net"] {
+  background-color: #fff !important;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 246, 255, 0.4);
+}
+
+.portfolio-item iframe {
+  z-index: 1;
+  position: relative;
+}
+
+/* Other Tech Project Images */
+.portfolio-item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* ==========================
+        RESUME SECTION
+=============================*/
 
 /* Resume Section Font */
 #resume h3,
@@ -851,62 +922,6 @@ p {
   }
 }
 
-/* ==============================================================
-            SECTION 8: TESTIMONIALS SECTION FONT & STYLING
-================================================================= */
-
-/* ========================= Responsive ========================= */
-@media (max-width: 1024px) {
-  #testimonials .testimonial-item {
-    max-width: 92%;
-  }
-}
-
-#testimonials .framed-subtitle {
-  font-size: 0.92rem;
-  padding: 4px 8px;
-  display: block;
-  max-width: 92%;
-  margin: 0 auto;
-}
-
-#testimonials .testimonial-item {
-  margin: 16px auto;
-  padding: 20px 14px;
-}
-
-#testimonials .testimonial-img {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 10px;
-}
-
-#testimonials .swiper {
-  padding-bottom: 44px;
-}
-
-#testimonials .swiper-pagination {
-  bottom: 8px;
-  gap: 6px;
-}
-
-#testimonials .swiper-pagination-bullet {
-  width: 7px;
-  height: 7px;
-}
-
-#testimonials .framed-subtitle {
-  font-size: 0.88rem;
-}
-
-#testimonials .swiper {
-  padding-bottom: 40px;
-}
-
-#testimonials .swiper-pagination {
-  bottom: 6px;
-}
-
 /* ========================= Responsive ========================= */
 /* Other framed subtitles */
 section:not(#about) h2.framed-subtitle {
@@ -1015,7 +1030,10 @@ section:not(#about) h2.framed-subtitle {
   margin: 0;
 }
 
-/* === TECH PORTFOLIO DETAILS PAGE SECTION FONT === */
+/* ========================================
+        SECTION: TECH PORTFOLIO PAGES
+=========================================== */
+/* Tech Portfolio Pages - Font */
 .portfolio-details {
   max-width: 800px;
   margin: 0 auto;
@@ -1104,489 +1122,7 @@ section:not(#about) h2.framed-subtitle {
   margin: 0;
 }
 
-/* TECH PORTFOLIO SECTION STYLING */
-/* Card Base */
-.portfolio-item {
-  width: 90%;
-  max-width: 900px;
-  background: rgba(10, 10, 10, 0.95);
-  border: 1px solid rgba(0, 246, 255, 0.4);
-  border-radius: 14px;
-  box-shadow: 0 0 25px rgba(0, 246, 255, 0.25);
-  transition: all 0.35s ease;
-  /* overflow: hidden;
-     */
-  text-align: left;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Hover effect - bright green glow */
-.portfolio-item:hover {
-  transform: translateY(-5px);
-  border-color: #00ff9c;
-  box-shadow: 0 0 40px #00ff9c, 0 0 20px rgba(0, 255, 156, 0.6);
-}
-
-/* Animated subtle glow pulse */
-.portfolio-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 246, 255, 0.2);
-  animation: bluePulse 2s infinite alternate;
-}
-
-@keyframes bluePulse {
-  from {
-    box-shadow: 0 0 10px rgba(0, 246, 255, 0.3);
-  }
-
-  to {
-    box-shadow: 0 0 25px rgba(0, 246, 255, 0.6);
-  }
-}
-
-/* IFrame Image (Interactive Data Visuals */
-.portfolio-item iframe {
-  width: 100%;
-  height: 420px;
-  border: none;
-  display: block;
-}
-
-/* Portfolio Details Link */
-.portfolio-details-link {
-  font-family: "VT323", monospace !important;
-  font-size: 1rem;
-  color: #00ffff;
-  font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.portfolio-details-link:hover {
-  color: #39ff14;
-  text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
-}
-
-/* Force white background for Datawrapper embeds */
-iframe[src*="datawrapper.dwcdn.net"] {
-  background-color: #fff !important;
-  border-radius: 14px;
-  box-shadow: 0 0 25px rgba(0, 246, 255, 0.4);
-}
-
-.portfolio-item iframe {
-  z-index: 1;
-  position: relative;
-}
-
-/* Other Project Images */
-.portfolio-item img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-/* === FOOTER SECTION FONT === */
-/* Default Footer Text */
-#footer,
-#footer p,
-#footer small {
-  font-family: "VT323", monospace;
-  color: #9ee9ff;
-  text-align: center !important;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  line-height: 1.5;
-  opacity: 0.9;
-}
-
-/* Footer titles / name line */
-#footer h3,
-#footer h4 {
-  font-family: "Orbitron", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #00eaff;
-  text-shadow: 0 0 3px rgba(0, 234, 255, 0.9), 0 0 8px rgba(0, 234, 255, 0.6),
-    0 0 16px rgba(0, 234, 255, 0.4);
-  margin-bottom: 0.5rem;
-}
-
-/* Footer links (socials / credits) */
-#footer a {
-  color: #6fd3ff;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-#footer a:hover {
-  color: #39ff14;
-  /* neon green hover */
-  text-shadow: 0 0 4px #39ff14, 0 0 10px rgba(57, 255, 20, 0.7);
-}
-
-/* Copyright and credits alignment */
-#footer .copyright,
-#footer .credits {
-  font-size: 0.9rem;
-  margin-top: 15px;
-  opacity: 0.85;
-}
-
-/* ========================================================== END OF GLOBAL TEXT ========================================================== */
-/* ========================================================== GLOBAL RESPONSIVE - WEB BROWSER, MOBILE & TABLETS DISPLAY ========================================================== */
-/* SECTION TITLES - H1 TEXT */
-
-
-/* === HEADER LOGO SITENAME STYLING == */
-/* Make the site name smaller and responsive */
-.header .logo .sitename {
-  margin: 0;
-  line-height: 1.05;
-  letter-spacing: 0.04em;
-  /* scales between 14px and 22px based on viewport */
-  font-size: clamp(14px, 1.2vw + 0.6rem, 22px);
-  white-space: nowrap;
-  /* keep it on one line */
-}
-
-/* === SERVICES SECTION STYLING === */
-/* Grid layout */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  justify-items: center;
-  align-items: stretch;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Service cards */
-.service-card {
-  background: rgba(10, 10, 15, 0.9);
-  border: 1px solid rgba(0, 246, 255, 0.6);
-  border-radius: 14px;
-  box-shadow: 0 0 15px rgba(0, 246, 255, 0.3), 0 0 25px rgba(0, 246, 255, 0.2);
-  width: 100%;
-  max-width: 450px;
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: shimmerPulse 3.5s infinite ease-in-out;
-  transition: all 0.35s ease;
-}
-
-/* Hover */
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px #00ffcc, 0 0 60px rgba(0, 255, 204, 0.6);
-  border-color: #00ffcc;
-}
-
-/* Responsive stack */
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-card {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-}
-
-/* Shimmer animation */
-@keyframes shimmerPulse {
-  0% {
-    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
-      0 0 20px rgba(0, 246, 255, 0.15);
-  }
-
-  50% {
-    box-shadow: 0 0 25px rgba(0, 255, 204, 0.4),
-      0 0 50px rgba(0, 255, 204, 0.25);
-  }
-
-  100% {
-    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
-      0 0 20px rgba(0, 246, 255, 0.15);
-  }
-}
-
-/* =========================================================
-   FEATURED + SELF-PUBLISHED ARTICLES SECTION STYLING
-   ========================================================= */
-/* === FEATURED ARTICLE (FULL-WIDTH BLOCK) === */
-.featured-card {
-  display: flex;
-  flex-direction: column;
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  background: rgba(0, 20, 30, 0.65);
-  border: 1px solid #00ffff;
-  border-radius: 10px;
-  box-shadow: 0 0 16px rgba(0, 255, 255, 0.35);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.featured-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px #39ff14, 0 0 60px rgba(0, 247, 255, 0.6);
-}
-
-.featured-card img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-bottom: 1px solid #00ffff;
-}
-
-/* hover effect */
-.featured-card:hover {
-  transform: translateY(-6px);
-  border-color: #00ff9c !important;
-  box-shadow: 0 0 40px #00ff9c, 0 0 60px rgba(0, 247, 255, 0.6) !important;
-}
-
-.featured-content {
-  padding: 28px;
-}
-
-.featured-content h3 {
-  font-family: "VT323", monospace;
-  font-size: 1.6rem;
-  color: #00ffff;
-  text-shadow: 0 0 12px #00ffff, 0 0 24px rgba(0, 255, 255, 0.6);
-  margin-bottom: 10px;
-}
-
-.featured-meta {
-  font-size: 0.9rem;
-  color: #7ae6ff;
-  margin-bottom: 12px;
-}
-
-.featured-content p {
-  color: #bffaff;
-  font-size: 1rem;
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.featured-link {
-  font-family: "VT323", monospace !important;
-  font-size: 1rem;
-  color: #00ffff;
-  font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.featured-link:hover {
-  color: #39ff14;
-  text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
-}
-
-/* === SELF-PUBLISHED ARTICLES CAROUSEL === */
-#self-published {
-  padding-top: 20px;
-}
-
-.carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.6s ease;
-}
-
-.blog-card {
-  flex: 0 0 280px;
-  margin: 0 15px;
-  background: rgba(0, 20, 30, 0.6);
-  border: 1px solid #00ffff;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-  overflow: hidden;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 18px rgba(0, 255, 255, 0.5);
-}
-
-.blog-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-bottom: 1px solid #00ffff;
-}
-
-.blog-content {
-  padding: 20px;
-}
-
-.blog-content h3 {
-  font-family: "VT323", monospace;
-  font-size: 1.1rem;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff, 0 0 20px rgba(0, 255, 255, 0.5);
-  margin-bottom: 8px;
-}
-
-.blog-date {
-  font-size: 0.85rem;
-  color: #7ae6ff;
-  margin-bottom: 8px;
-}
-
-.blog-content p {
-  color: #bffaff;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.blog-link {
-  color: #00ffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.blog-link:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-/* === CAROUSEL NAVIGATION ARROWS === */
-.carousel-btn {
-  background: none;
-  border: none;
-  color: #00ffff;
-  font-size: 2rem;
-  cursor: pointer;
-  text-shadow: 0 0 8px #00ffff;
-  transition: text-shadow 0.3s ease;
-  z-index: 2;
-}
-
-.carousel-btn:hover {
-  color: #00ffff;
-  text-shadow: 0 0 16px #00ffff, 0 0 24px rgba(0, 255, 255, 0.7);
-}
-
-.carousel-btn:focus {
-  outline: none;
-  text-shadow: 0 0 14px #00ffff;
-}
-
-.prev {
-  position: absolute;
-  left: 0;
-}
-
-.next {
-  position: absolute;
-  right: 0;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 700px) {
-  .featured-card img {
-    height: 240px;
-  }
-
-  .blog-card {
-    flex: 0 0 240px;
-  }
-
-  .blog-card img {
-    height: 140px;
-  }
-}
-
-/* ===== Mobile Friendly Carousel Adjustments (Blog + Published Work) ===== */
-
-@media (max-width: 576px) {
-
-  /* Allow full visibility of cards */
-  .carousel-container {
-    overflow: visible !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .carousel-track {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    transform: none !important;
-    overflow: visible !important;
-  }
-
-  /* Cards expand naturally and fit screen width */
-  .blog-card {
-    flex: 1 0 auto !important;
-    width: 90% !important;
-    margin: 12px auto !important;
-    height: auto !important;
-    box-shadow: 0 0 12px rgba(0, 247, 255, 0.25);
-  }
-
-  .blog-card img {
-    height: auto !important;
-    max-height: 200px !important;
-    object-fit: cover !important;
-  }
-
-  .blog-content {
-    padding: 20px !important;
-  }
-
-  /* Simplify navigation for mobile */
-  .carousel-btn {
-    background: rgba(11, 15, 20, 0.72);
-    color: #9feaff;
-    border-radius: 50%;
-    border: 1px solid var(--t-border);
-    box-shadow: 0 0 18px rgba(0, 247, 255, 0.25);
-    width: 36px;
-    height: 36px;
-    font-size: 1.4rem;
-    transition: all 0.2s ease;
-  }
-
-  .carousel-btn:hover {
-    background: rgba(11, 15, 20, 0.9);
-    box-shadow: 0 0 26px rgba(0, 247, 255, 0.36);
-  }
-
-  /* Hide arrows if too narrow */
-  @media (max-width: 420px) {
-    .carousel-btn {
-      display: none !important;
-    }
-  }
-}
-
-/* === TECH PORTFOLIO DETAILS PAGE SECTION STYLING === */
+/* Styling */
 :root {
   --bg: #0f1318;
   --panel: rgba(255, 255, 255, 0.04);
@@ -1643,7 +1179,7 @@ iframe[src*="datawrapper.dwcdn.net"] {
   background: #0b0d10;
 }
 
-/* === TECH PORTFOLIO DETAILS PAGE - IMAGE SLIDER === */
+/*Tech Portfolio Pages - Image/Details Slider */
 .portfolio-details-slider {
   position: relative;
   padding-bottom: 2.5rem;
@@ -1921,7 +1457,406 @@ button:focus,
   box-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
 }
 
-/* === WRITING/BLOG SECTION PAGES STYLING === */
+/* === FOOTER SECTION FONT === */
+/* Default Footer Text */
+#footer,
+#footer p,
+#footer small {
+  font-family: "VT323", monospace;
+  color: #9ee9ff;
+  text-align: center !important;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* Footer titles / name line */
+#footer h3,
+#footer h4 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #00eaff;
+  text-shadow: 0 0 3px rgba(0, 234, 255, 0.9), 0 0 8px rgba(0, 234, 255, 0.6),
+    0 0 16px rgba(0, 234, 255, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+/* Footer links (socials / credits) */
+#footer a {
+  color: #6fd3ff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#footer a:hover {
+  color: #39ff14;
+  /* neon green hover */
+  text-shadow: 0 0 4px #39ff14, 0 0 10px rgba(57, 255, 20, 0.7);
+}
+
+/* Copyright and credits alignment */
+#footer .copyright,
+#footer .credits {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  opacity: 0.85;
+}
+
+/* Header Logo Sitename Styling */
+.header .logo .sitename {
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  /* scales between 14px and 22px based on viewport */
+  font-size: clamp(14px, 1.2vw + 0.6rem, 22px);
+  white-space: nowrap;
+  /* keep it on one line */
+}
+
+/* ============================
+        SERVICES SECTION
+============================== */
+/* Grid layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Service cards */
+.service-card {
+  background: rgba(10, 10, 15, 0.9);
+  border: 1px solid rgba(0, 246, 255, 0.6);
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(0, 246, 255, 0.3), 0 0 25px rgba(0, 246, 255, 0.2);
+  width: 100%;
+  max-width: 450px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: shimmerPulse 3.5s infinite ease-in-out;
+  transition: all 0.35s ease;
+}
+
+/* Hover */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #00ffcc, 0 0 60px rgba(0, 255, 204, 0.6);
+  border-color: #00ffcc;
+}
+
+/* Responsive stack */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Shimmer animation */
+@keyframes shimmerPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
+      0 0 20px rgba(0, 246, 255, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.4),
+      0 0 50px rgba(0, 255, 204, 0.25);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(0, 246, 255, 0.25),
+      0 0 20px rgba(0, 246, 255, 0.15);
+  }
+}
+
+/* =========================================================
+   FEATURED + SELF-PUBLISHED ARTICLES SECTION STYLING
+   ========================================================= */
+/* === FEATURED ARTICLE (FULL-WIDTH BLOCK) === */
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  background: rgba(0, 20, 30, 0.65);
+  border: 1px solid #00ffff;
+  border-radius: 10px;
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.35);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #39ff14, 0 0 60px rgba(0, 247, 255, 0.6);
+}
+
+.featured-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-bottom: 1px solid #00ffff;
+}
+
+/* hover effect */
+.featured-card:hover {
+  transform: translateY(-6px);
+  border-color: #00ff9c !important;
+  box-shadow: 0 0 40px #00ff9c, 0 0 60px rgba(0, 247, 255, 0.6) !important;
+}
+
+.featured-content {
+  padding: 28px;
+}
+
+.featured-content h3 {
+  font-family: "VT323", monospace;
+  font-size: 1.6rem;
+  color: #00ffff;
+  text-shadow: 0 0 12px #00ffff, 0 0 24px rgba(0, 255, 255, 0.6);
+  margin-bottom: 10px;
+}
+
+.featured-meta {
+  font-size: 0.9rem;
+  color: #7ae6ff;
+  margin-bottom: 12px;
+}
+
+.featured-content p {
+  color: #bffaff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.featured-link {
+  font-family: "VT323", monospace !important;
+  font-size: 1rem;
+  color: #00ffff;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.featured-link:hover {
+  color: #39ff14;
+  text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
+}
+
+/* ==========================================================================
+     MAIN CAROUSEL STYLING AND NAVIGATION (PUBLISHED WORK & BLOG SECTIONS)
+============================================================================= */
+/* Carousel Container */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Carousel Tracking and Animation Transition */
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+/* Blog */
+.blog-card {
+  flex: 0 0 280px;
+  margin: 0 15px;
+  background: rgba(0, 20, 30, 0.6);
+  border: 1px solid #00ffff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.5);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #00ffff;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h3 {
+  font-family: "VT323", monospace !important;
+  font-size: 1.1rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px rgba(0, 255, 255, 0.5);
+  margin-bottom: 8px;
+}
+
+.blog-date {
+  font-size: 0.85rem;
+  color: #7ae6ff;
+  margin-bottom: 8px;
+}
+
+.blog-content p {
+  color: #bffaff;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.blog-link {
+  font-family: 'VT323', monospace !important;
+  font-size: 1rem;
+  color: #00ffff;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.blog-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* Carousel Navigation */
+.carousel-btn {
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 2rem;
+  cursor: pointer;
+  text-shadow: 0 0 8px #00ffff;
+  transition: text-shadow 0.3s ease;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  color: #00ffff;
+  text-shadow: 0 0 16px #00ffff, 0 0 24px rgba(0, 255, 255, 0.7);
+}
+
+.carousel-btn:focus {
+  outline: none;
+  text-shadow: 0 0 14px #00ffff;
+}
+
+.prev {
+  position: absolute;
+  left: 0;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+}
+
+/*Responsive adjustments Featured Article Card */
+@media (max-width: 700px) {
+  .featured-card img {
+    height: 240px;
+  }
+
+  /* Responsive adjustments for blog cards */
+  .blog-card {
+    flex: 0 0 240px;
+  }
+
+  .blog-card img {
+    height: 140px;
+  }
+}
+
+/* Mobile-Friendly Carousel Navigation */
+@media (max-width: 576px) {
+
+  /* Allow full visibility of cards */
+  .carousel-container {
+    overflow: visible !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .carousel-track {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .blog-card {
+    flex: 1 0 auto !important;
+    width: 90% !important;
+    margin: 12px auto !important;
+    height: auto !important;
+    box-shadow: 0 0 12px rgba(0, 247, 255, 0.25);
+  }
+
+  .blog-card img {
+    height: auto !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  .blog-content {
+    padding: 20px !important;
+  }
+
+  /* Simplify navigation for mobile */
+  .carousel-btn {
+    background: rgba(11, 15, 20, 0.72);
+    color: #9feaff;
+    border-radius: 50%;
+    border: 1px solid var(--t-border);
+    box-shadow: 0 0 18px rgba(0, 247, 255, 0.25);
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+    transition: all 0.2s ease;
+  }
+
+  .carousel-btn:hover {
+    background: rgba(11, 15, 20, 0.9);
+    box-shadow: 0 0 26px rgba(0, 247, 255, 0.36);
+    color: #00ffff;
+  }
+
+  /* Hide arrows if too narrow */
+  @media (max-width: 420px) {
+    .carousel-btn {
+      display: none !important;
+    }
+  }
+}
+
+/* =============================================
+          ARTICLE & BLOG PAGES SECTIONS
+================================================*/
 /* ARTICLE CARD STYLING */
 .article-card {
   background: rgba(15, 20, 25, 0.6);
@@ -1954,7 +1889,62 @@ button:focus,
   box-shadow: 0 0 15px #39ff14, 0 0 30px rgba(57, 255, 20, 0.8);
 }
 
-/* === TESTIMONIALS SECTION STYLING === */
+/* ==============================
+        TESTIMONIALS SECTION
+================================= */
+/* Responsive testimonials */
+@media (max-width: 1024px) {
+  #testimonials .testimonial-item {
+    max-width: 92%;
+  }
+}
+
+/* Testiomnials Styling */
+#testimonials .framed-subtitle {
+  font-size: 0.92rem;
+  padding: 4px 8px;
+  display: block;
+  max-width: 92%;
+  margin: 0 auto;
+}
+
+#testimonials .testimonial-item {
+  margin: 16px auto;
+  padding: 20px 14px;
+}
+
+#testimonials .testimonial-img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+#testimonials .swiper {
+  padding-bottom: 44px;
+}
+
+#testimonials .swiper-pagination {
+  bottom: 8px;
+  gap: 6px;
+}
+
+#testimonials .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+}
+
+#testimonials .framed-subtitle {
+  font-size: 0.88rem;
+}
+
+#testimonials .swiper {
+  padding-bottom: 40px;
+}
+
+#testimonials .swiper-pagination {
+  bottom: 6px;
+}
+
 :root {
   --t-cyan: #00f7ff;
   --t-green: #39ff14;
