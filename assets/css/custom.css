@@ -1043,14 +1043,14 @@ section:not(#about) h2.framed-subtitle {
   line-height: 1.6;
 }
 
-.portfolio-details h2 {
+/*.portfolio-details h2 {
   font-family: "Orbitron", sans-serif;
   font-size: 2rem;
   color: #00eaff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 1rem;
-}
+} */
 
 .portfolio-details p {
   font-size: 1.1rem;
@@ -1323,14 +1323,14 @@ button:focus,
   box-shadow: 0 0 18px rgba(0, 255, 255, 0.25);
 }
 
-.timeline-content h3 {
+/*.timeline-content h3 {
   font-family: "Orbitron", sans-serif;
   font-size: 1.25rem;
   color: #00eaff;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
-}
+}*/
 
 .timeline-content p {
   font-family: "VT323", monospace;
@@ -2688,7 +2688,8 @@ article .tags span,
 }
 
 /* H2 in article content — match your green title vibe */
-.page-post article .content h2 {
+.page-post article .content h2,
+.timeline-content h3 {
   font-family: var(--font-body, "VT323", monospace) !important;
   color: var(--c-title) !important;
   font-size: var(--h2-size) !important;
@@ -2704,7 +2705,16 @@ article .tags span,
   border-top: 0;
 }
 
+.timeline-content h3+* {
+  border-top: 0;
+}
+
 .page-post article .content h2.use-underline {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(0, 247, 255, 0.28);
+}
+
+.timeline-content h3.use-underline {
   padding-bottom: 0.25rem;
   border-bottom: 1px solid rgba(0, 247, 255, 0.28);
 }
@@ -2816,7 +2826,8 @@ article .tags span,
 }
 
 /* Make the article page H1 match the green article title style */
-.page-post .article-title h1 {
+.page-post .article-title h1,
+.portfolio-details h2 {
   font-family: var(--font-body, "VT323", monospace) !important;
   color: var(--c-title, #9aff9a) !important;
   line-height: 1.25 !important;
