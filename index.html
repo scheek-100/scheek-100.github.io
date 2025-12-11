@@ -107,7 +107,7 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+
         <h1 class="sitename">Sasha Cheek | <br>Systems, <br>Stories, and <br>Science</h1>
       </a>
 
@@ -134,7 +134,7 @@
             </ul><!-- End of Blog Drop Down Menu-->
           </li>
           <li><a href="#resume">RESUME</a></li>
-          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#testimonials">TESTIMONIALS</a></li>
           <li><a href="#contact">CONTACT</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -229,6 +229,104 @@
               </div>
             </div>
     </section><!-- END OF ABOUT SECTION -->
+
+    <!-- SERVICES SECTION & CAROUSEL-->
+    <section id="services" class="services section-black py-5">
+      <!-- Section Title -->
+      <div class="section-title" data-aos="fade-up" data-aos-delay="100">
+        <h1>SERVICES</h1>
+      </div><!-- End Section Title -->
+
+      <!-- Services Swiper/Mini Carousel-->
+      <div class="swiper services-swiper">
+        <div class="swiper-wrapper">
+
+          <!--Service Card 1-->
+          <div class="swiper-slide">
+            <article class="service-card">
+              <i class="bi bi-gear-fill"></i>
+              <h3 class="service-title">Integration & Architecture</h3>
+              <!--T-Node Divider-->
+              <div class="t-divider t-node" aria-hidden="true"></div>
+              <p class="service-desc">Secure, scalable, and well-documented systems with GraphQL, REST, and CDN
+                optimization.
+              </p>
+            </article>
+          </div>
+
+          <!--Service Card 2-->
+          <div class="swiper-slide">
+            <article class="service-card">
+              <i class="bi bi-journal-text"></i>
+              <h3 class="service-title">Science & Tech Writing</h3>
+              <!--T-Node Divider-->
+              <div class="t-divider t-node" aria-hidden="true"></div>
+              <p class="service-desc">Bridging scientific insight and technical fluency to make complex concepts clear
+                and
+                accessible.
+              </p>
+            </article>
+          </div>
+
+          <!--Service Card 3-->
+          <div class="swiper-slide">
+            <article class="service-card">
+              <i class="bi bi-lightbulb-fill"></i>
+              <h3 class="service-title">Mentorship & Strategy</h3>
+              <!--T-Node Divider-->
+              <div class="t-divider t-node" aria-hidden="true"></div>
+              <p class="service-desc">Guiding early-career technologists and shaping scalable, ethical systems with
+                narrative clarity.
+              </p>
+            </article>
+          </div>
+
+          <!--Service Card 4-->
+          <div class="swiper-slide">
+            <article class="service-card">
+              <i class="bi bi-lock-fill"></i>
+              <h3 class="service-title">Security & Compliance</h3>
+              <!--T-Node Divider-->
+              <div class="t-divider t-node" aria-hidden="true"></div>
+              <p class="service-desc">Applying OAuth 2.0, API hardening, and privacy-first design to safeguard
+                integrations and data.</p>
+            </article>
+          </div>
+
+        </div><!--End of Services Swipe/Mini Carousel-->
+
+        <!--Services Swipe/Mini Carousel JS Script-->
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+
+            if (window.__sSwiper) window.__sSwiper.destroy(true, true);
+
+            window.__sSwiper = new Swiper('.services-swiper', {
+              loop: true,
+              speed: 500,
+              slidesPerView: 'auto',          // mini tiles
+              spaceBetween: 16,
+              centeredSlides: false,
+              autoplay: { delay: 3500, disableOnInteraction: false },
+
+              pagination: {
+                el: '.services-pagination',
+                clickable: true
+              },
+
+              navigation: {
+                nextEl: '.services-next',
+                prevEl: '.services-prev'
+              },
+
+              breakpoints: {
+                768: { spaceBetween: 20 },
+                992: { spaceBetween: 24 }
+              }
+            });
+          });
+        </script><!-- End of Services Swipe/Mini Carousel JS Script -->
+    </section><!-- End of Services Section & Carousel -->
 
     <!-- TECH PORTFOLIO SECTION -->
     <section id="portfolio" class="portfolio section-black" data-aos="fade-in">
@@ -668,12 +766,6 @@
                     <div class="skill-fill" style="--level: 75%"></div>
                   </div>
                 </div>
-              </div><!-- End of Programming Languages-->
-
-              <!-- Web Technologies -->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Web Technologies</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
 
                 <div class="skill-bar">
                   <span class="skill-label">HTML/CSS</span>
@@ -681,7 +773,14 @@
                     <div class="skill-fill" style="--level: 85%"></div>
                   </div>
                 </div>
-              </div><!-- End of Web Technologies-->
+
+                <div class="skill-bar">
+                  <span class="skill-label">Structured Data (JSON, XML)</span>
+                  <div class="skill-track">
+                    <div class="skill-fill" style="--level: 95%"></div>
+                  </div>
+                </div>
+              </div><!-- End of Programming Languages-->
 
               <!-- APIs-->
               <div class="resume-item ps-4 position-relative">
@@ -701,15 +800,7 @@
                     <div class="skill-fill" style="--level: 85%"></div>
                   </div>
                 </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Structured Data (JSON, XML)</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 95%"></div>
-                  </div>
-                </div>
               </div><!-- End of APIs-->
-
 
               <!-- Data Tools -->
               <div class="resume-item ps-4 position-relative">
@@ -720,6 +811,13 @@
                   <span class="skill-label">Datawrapper</span>
                   <div class="skill-track">
                     <div class="skill-fill" style="--level: 90%"></div>
+                  </div>
+                </div>
+
+                <div class="skill-bar">
+                  <span class="skill-label">Datadog</span>
+                  <div class="skill-track">
+                    <div class="skill-fill" style="--level: 80%"></div>
                   </div>
                 </div>
 
@@ -894,50 +992,6 @@
 
       </section><!-- END OF RESUME SECTION -->
 
-      <!-- SERVICES SECTION-->
-      <section id="services" class="services section-black py-5">
-        <!-- Title Banner -->
-        <div class="title-banner small" data-aos="fade-up"
-          style="--title-img:url('/assets/img/headers/cyberpunk-2077-about-image.webp');">
-          <!-- Section Title -->
-          <div class="section-title" data-aos="fade-up">
-            <h1>SERVICES</h1>
-            <h2 class="framed-subtitle">I provide technical consulting, science/technology writing, and mentorship to
-              help
-              organizations communicate clearly, streamline integrations, and strengthen engineering practices.</h2>
-          </div>
-        </div>
-
-        <!-- Services Grid -->
-        <div class="services-grid" data-aos="fade-up">
-          <!-- Service Card 1 -->
-          <div class="service-card">
-            <i class="bi bi-gear-fill"></i>
-            <h3>Integration & Architecture</h3>
-            <p>Secure, scalable, and well-documented systems with GraphQL, REST, and CDN optimization.</p>
-          </div>
-          <!-- Service Card 2 -->
-          <div class="service-card">
-            <i class="bi bi-journal-text"></i>
-            <h3>Science & Tech Writing</h3>
-            <p>Bridging scientific insight and technical fluency to make complex concepts clear and accessible.</p>
-          </div>
-          <!-- Service Card 3 -->
-          <div class="service-card">
-            <i class="bi bi-lightbulb-fill"></i>
-            <h3>Mentorship & Strategy</h3>
-            <p>Guiding early-career technologists and shaping scalable, ethical systems with narrative clarity.</p>
-          </div>
-          <!-- Service Card 4 -->
-          <div class="service-card">
-            <i class="bi bi-lock-fill"></i>
-            <h3>Security & Compliance</h3>
-            <p>Applying OAuth 2.0, API hardening, and privacy-first design to safeguard integrations and data.</p>
-          </div>
-        </div><!--End Services Grid -->
-        </div>
-      </section><!-- END OF SERVICES SECTION-->
-
       <!--TESTIMONIALS TITLE-->
       <section id="testimonials" class="testimonials section-black py-5">
         <!-- Title Banner -->
@@ -967,7 +1021,6 @@
               navigation: { nextEl: '.testimonials-next', prevEl: '.testimonials-prev' },
               breakpoints: {
                 992: { slidesPerView: 1, centeredSlides: true, spaceBetween: 24 }
-                // For 2-up on desktop: 992: { slidesPerView: 2, centeredSlides: false, spaceBetween: 24 }
               }
             });
           });
@@ -1225,16 +1278,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- Services Section JS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: 'ease-in-out',
-    });
-  </script>
 
   <!-- ======= Contact Section JS Script ======= -->
   <script>

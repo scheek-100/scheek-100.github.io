@@ -952,18 +952,6 @@ section:not(#about) h2.framed-subtitle {
     inset 0 0 8px rgba(127, 225, 255, 0.15);
 }
 
-/* If you use a framed subtitle inside Testimonials, match it */
-#testimonials .framed-subtitle {
-  color: #7fe1ff;
-  border-color: #7fe1ff;
-  background: rgba(6, 18, 26, 0.35);
-  text-shadow: 0 0 1px #000, 0 0 2px #000, 0 0 4px rgba(127, 225, 255, 0.95),
-    0 0 8px rgba(127, 225, 255, 0.7), 0 0 16px rgba(127, 225, 255, 0.55),
-    0 0 32px rgba(127, 225, 255, 0.4);
-  box-shadow: 0 0 6px rgba(127, 225, 255, 0.55),
-    0 0 12px rgba(127, 225, 255, 0.45);
-}
-
 /* === SERVICES TEXT === */
 /* Section base */
 .services {
@@ -971,22 +959,17 @@ section:not(#about) h2.framed-subtitle {
   text-align: center;
 }
 
-/* Ensure each card centers its content vertically & horizontally */
-.service-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* vertical centering */
-  align-items: center;
-  /* horizontal centering */
+/* Services Cards */
+#services .service-card {
+  background: rgba(10, 14, 20, 0.85);
+  border: 2px solid rgba(0, 247, 255, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 0 24px rgba(0, 247, 255, 0.22);
+  padding: 22px 18px;
+  max-width: 860px;
+  margin: 0 auto;
   text-align: center;
-  /* center inline text */
-  padding: 22px;
-  /* breathing room */
-  gap: 10px;
-  /* space between icon/title/paragraph */
-  min-height: 280px;
-  /* grows if content is longer */
+  position: relative;
 }
 
 /* Services Icon */
@@ -998,17 +981,25 @@ section:not(#about) h2.framed-subtitle {
   /* tighter, consistent spacing */
 }
 
-/* Title */
-.service-card h3 {
-  font-family: "Orbitron", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 1.4rem;
-  color: #00eaff;
-  line-height: 1.2;
-  text-shadow: 0 0 6px #00eaff, 0 0 12px rgba(0, 234, 255, 0.8);
-  margin: 0;
-  /* remove default margins (gap handles spacing) */
+#services .t-divider.t-node::before,
+#services .t-divider.t-node::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--t-green);
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.9), 0 0 18px rgba(57, 255, 20, 0.45);
+}
+
+#services .t-divider.t-node::before {
+  left: -6px;
+}
+
+#services .t-divider.t-node::after {
+  right: -6px;
 }
 
 /* Description */
@@ -1892,6 +1883,7 @@ button:focus,
 /* ==============================
         TESTIMONIALS SECTION
 ================================= */
+
 /* Responsive testimonials */
 @media (max-width: 1024px) {
   #testimonials .testimonial-item {
@@ -1901,11 +1893,19 @@ button:focus,
 
 /* Testiomnials Styling */
 #testimonials .framed-subtitle {
+  color: #7fe1ff;
   font-size: 0.92rem;
   padding: 4px 8px;
   display: block;
   max-width: 92%;
   margin: 0 auto;
+  border-color: #7fe1ff;
+  background: rgba(6, 18, 26, 0.35);
+  text-shadow: 0 0 1px #000, 0 0 2px #000, 0 0 4px rgba(127, 225, 255, 0.95),
+    0 0 8px rgba(127, 225, 255, 0.7), 0 0 16px rgba(127, 225, 255, 0.55),
+    0 0 32px rgba(127, 225, 255, 0.4);
+  box-shadow: 0 0 6px rgba(127, 225, 255, 0.55),
+    0 0 12px rgba(127, 225, 255, 0.45);
 }
 
 #testimonials .testimonial-item {
@@ -1923,12 +1923,14 @@ button:focus,
   padding-bottom: 44px;
 }
 
-#testimonials .swiper-pagination {
+#testimonials .swiper-pagination,
+#services .swiper-pagination {
   bottom: 8px;
   gap: 6px;
 }
 
-#testimonials .swiper-pagination-bullet {
+#testimonials .swiper-pagination-bullet,
+#services .swiper-pagination-bullet {
   width: 7px;
   height: 7px;
 }
@@ -1937,11 +1939,13 @@ button:focus,
   font-size: 0.88rem;
 }
 
-#testimonials .swiper {
+#testimonials .swiper
+#services .swiper {
   padding-bottom: 40px;
 }
 
-#testimonials .swiper-pagination {
+#testimonials .swiper-pagination,
+#services .swiper-pagination {
   bottom: 6px;
 }
 
@@ -1982,8 +1986,9 @@ button:focus,
   border: 1px solid rgba(0, 247, 255, 0.45);
 }
 
-/* Name & role */
-#testimonials .t-name {
+/* Testimonials .t-name and Service-Title Font - Swipe Carousels */
+#testimonials .t-name,
+#services .service-title {
   font-family: "VT323", monospace;
   font-size: 1.25rem;
   line-height: 1.1;
@@ -2002,14 +2007,16 @@ button:focus,
 }
 
 /* New divider (node line) */
-#testimonials .t-divider {
+#testimonials .t-divider,
+#services .t-divider {
   position: relative;
   width: min(72%, 520px);
   height: 12px;
   margin: 10px auto 14px;
 }
 
-#testimonials .t-divider.t-node {
+#testimonials .t-divider.t-node,
+#services .t-divider.t-node {
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--t-cyan), transparent);
   box-shadow: 0 0 10px rgba(0, 247, 255, 0.45);
@@ -2130,7 +2137,8 @@ button:focus,
 
 /* Responsive tweaks */
 @media (max-width: 576px) {
-  #testimonials .t-card {
+  #testimonials .t-card,
+  #services .service-card {
     padding: 18px 14px;
   }
 
