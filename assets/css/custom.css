@@ -412,9 +412,7 @@ p {
 @media (max-width: 600px) {
   section:not(#about) h2.framed-subtitle {
     font-size: 1.4rem;
-    /* slightly smaller text */
     padding: 4px 8px;
-    /* tighter padding */
   }
 }
 
