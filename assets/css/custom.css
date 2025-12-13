@@ -2291,7 +2291,6 @@ button:focus,
 
 /* Kill any white/boxed containers around the header/title area */
 .page-post .blog>.container,
-.page-post .blog .section-title.container,
 .page-post .article-title.container {
 	background: transparent !important;
 	box-shadow: none !important;
@@ -2350,7 +2349,8 @@ button:focus,
 }
 
 /* Date line: subtle on dark */
-.page-post .article-title p.text-muted {
+.page-post .article-title p.text-muted,
+ .recent-posts-widget .post-item p {
 	color: #9fc9d6 !important;
 }
 
@@ -2526,15 +2526,19 @@ button:focus,
 	margin-right: 15px;
 }
 
-.recent-posts-widget .post-item h4 {
-	font-size: 15px;
-	font-weight: bold;
-	margin-bottom: 5px;
+/* Recent posts titles — force match to main content h4 */
+.page-post .recent-posts-widget h4 {
+  font-family: var(--font-body, "VT323", monospace);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin: 0 0 0.25rem;
+  color: var(--c-title);
+  text-shadow: none;
 }
 
-.recent-posts-widget .post-item h4 a {
-	color: var(--default-color);
-	transition: 0.3s;
+.page-post .recent-posts-widget h4 a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .recent-posts-widget .post-item time {
@@ -2623,6 +2627,10 @@ article .tags span,
 	--btn-hover-text: #0e121b;
 	--btn-shadow: 0 0 12px rgba(0, 234, 255, 0.7), 0 0 24px rgba(0, 234, 255, 0.5);
 	--btn-shadow-hover: 0 0 16px #39ff14, 0 0 32px rgba(57, 255, 20, 0.7);
+  /*New Meta Font*/
+  --meta-font: var(--font-body, "VT323", monospace);
+  --meta-size: 0.85rem;
+  --meta-color: #9fc9d6;
 }
 
 /* ---------- Cards (both blog + portfolio) ---------- */
