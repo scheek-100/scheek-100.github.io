@@ -2282,253 +2282,288 @@ button:focus,
 	font-weight: normal;
 }
 
-/* ========================= SINGLE ARTICLE PAGE (scoped) ========================= */
-/* Scope to article pages only */
-.page-post #main {
-	background: transparent;
-	padding-top: 150px;
+/* ========================= ROOT VARIABLES ========================= */
+:root {
+  /* Fonts */
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "VT323", monospace;
+  --font-monospace: "Courier New", monospace; /* for code */
+
+  /* Base font sizes */
+  --font-size-base: 16px;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.75rem;
+  --font-size-h4: 1.5rem;
+  --font-size-h5: 1.25rem;
+  --font-size-h6: 1rem;
+
+  /* Colors */
+  --c-bg: #12151f;
+  --c-title: #9aff9a;
+  --c-body: #9ee9ff;
+  --c-muted: #7fe1ff;
+  --c-border: rgba(0, 247, 255, 0.35);
+  --c-card: rgba(15, 20, 25, 0.6);
+
+  /* Buttons */
+  --btn-bg: #00f7ff;
+  --btn-text: #0e121b;
+  --btn-hover-bg: #39ff14;
+  --btn-hover-text: #0e121b;
+  --btn-shadow: 0 0 12px rgba(0, 234, 255, 0.7), 0 0 24px rgba(0, 234, 255, 0.5);
+  --btn-shadow-hover: 0 0 16px #39ff14, 0 0 32px rgba(57, 255, 20, 0.7);
+
+  /* Meta font */
+  --meta-font: var(--font-body);
+  --meta-size: 0.85rem;
+  --meta-color: #9fc9d6;
 }
 
-/* Kill any white/boxed containers around the header/title area */
+/* ========================= GLOBAL BODY & HEADINGS ========================= */
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--c-body);
+  background-color: var(--c-bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--c-title);
+  margin: 0;
+}
+
+code, pre {
+  font-family: var(--font-monospace);
+}
+
+/* ========================= SINGLE ARTICLE PAGE ========================= */
+.page-post #main {
+  background: transparent;
+  padding-top: 150px;
+}
+
 .page-post .blog>.container,
 .page-post .article-title.container {
-	background: transparent !important;
-	box-shadow: none !important;
-	border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
 }
 
-/* Solid dark band behind the section header */
 .page-post #blog.section-black {
-	background: #12151f !important;
-	/* site black */
-	padding-top: 56px;
-	/* clear the fixed navbar */
-	padding-bottom: 24px;
+  background: #12151f !important;
+  padding-top: 56px;
+  padding-bottom: 24px;
 }
 
-/* Remove template dividers/stripes */
 .page-post #blog.section-black::before,
 .page-post #blog.section-black::after,
 .page-post #blog .section-title::before,
 .page-post #blog .section-title::after {
-	content: none !important;
-	display: none !important;
+  content: none !important;
+  display: none !important;
 }
 
-/* Ensure the inner title container is truly transparent */
 .page-post #blog .container.section-title {
-	background: transparent !important;
-	box-shadow: none !important;
-	border: 0 !important;
-	margin: 0 auto;
-	padding: 0;
-	text-align: center;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 
-/* Keep your Orbitron neon for the big blue header title */
-.page-post #blog .section-title h1,
-.page-post #blog .section-title h1 i {}
-
-/* Dark article “card” */
 .page-post article {
-	background: rgba(11, 15, 20, 0.96);
-	border: 1px solid rgba(0, 247, 255, 0.25);
-	border-radius: 16px;
-	padding: 24px 24px 32px;
-	box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
-	margin-top: 12px;
-	/* a touch of breathing room */
+  background: rgba(11, 15, 20, 0.96);
+  border: 1px solid rgba(0, 247, 255, 0.25);
+  border-radius: 16px;
+  padding: 24px 24px 32px;
+  box-shadow: 0 0 24px rgba(0, 247, 255, 0.18);
+  margin-top: 12px;
+  font-family: var(--font-body);
 }
 
-/* UL Blog Page Content List Style */
 .page-post .blog-page-content-list {
-	list-style-type: disc;
-	margin-left: 1.5rem;
-	color: #9ee9ff;
-	font-family: "VT323", monospace;
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  color: var(--c-body);
+  font-family: var(--font-body);
 }
 
-/* Date line: subtle on dark */
 .page-post .article-title p.text-muted,
- .recent-posts-widget .post-item p {
-	color: #9fc9d6 !important;
+.recent-posts-widget .post-item p {
+  font-family: var(--meta-font);
+  font-size: var(--meta-size);
+  color: var(--meta-color) !important;
 }
 
-/* Images inside post content */
 .page-post .content img {
-	border-radius: 10px;
-	max-width: 100%;
-	height: auto;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
-/* FEATURE ARTICLE IMAGE META OVERALY */
 .page-post .article-figure {
-	position: relative;
+  position: relative;
 }
 
 .page-post .article-figure .meta-overlay {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
-	padding: 3rem 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent);
+  padding: 3rem 0.5rem;
+  font-family: var(--meta-font);
 }
 
-/* potential culprit for indention */
 .page-post .meta-overlay .meta-categories {
-	display: flex;
-	align-items: center;
-	gap: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-/* Category pill */
 .page-post .meta-overlay .category {
-	background: rgba(0, 246, 255, 0.12);
-	border: 1px solid rgba(0, 246, 255, 0.45);
-	color: #00f6ff;
-	padding: 0.28rem 0.7rem;
-	border-radius: 6px;
-	font-size: 0.85rem;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
-	transition: all 0.2s ease;
+  background: rgba(0, 246, 255, 0.12);
+  border: 1px solid rgba(0, 246, 255, 0.45);
+  color: var(--c-body);
+  padding: 0.28rem 0.7rem;
+  border-radius: 6px;
+  font-size: var(--meta-size);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
 }
 
 .page-post .meta-overlay .category:hover {
-	background: #00f7ff;
-	color: #12151f;
-	box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
-	transform: translateY(-2px);
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+  transform: translateY(-2px);
 }
 
-/* Divider */
 .page-post .meta-overlay .divider {
-	opacity: 0.6;
-	font-weight: 700;
+  opacity: 0.6;
+  font-weight: 700;
 }
 
-/* Reading Time */
 .page-post .meta-overlay .reading-time {
-	color: #00f7ff;
-	font-size: 0.9rem;
-	opacity: 0.9;
+  color: #00f7ff;
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
-/* METADATA TAGS */
+/* ========================= META TAGS ========================= */
 .page-post .meta-bottom {
-	margin-top: 1.5rem;
-	padding-top: 1rem;
-	border-top: 1px solid rgba(0, 247, 255, 0.2);
-	display: flex;
-	flex-wrap: wrap;
-	gap: 12px;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 247, 255, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .page-post .meta-bottom .tags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .page-post .meta-bottom .tags .tag {
-	background: rgba(0, 246, 255, 0.08);
-	border: 1px solid rgba(0, 246, 255, 0.4);
-	color: #00f6ff;
-	padding: 0.3rem 0.7rem;
-	border-radius: 6px;
-	font-size: 0.9rem;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
+  background: rgba(0, 246, 255, 0.08);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  color: var(--c-body);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: var(--meta-size);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--meta-font);
 }
 
 .page-post .meta-bottom .tags .tag:hover,
 .page-post .meta-bottom .tags .tag:focus {
-	background: #00f7ff !important;
-	color: #12151f !important;
-	box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff !important;
-	transform: translateY(-2px);
+  background: #00f7ff !important;
+  color: #12151f !important;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff !important;
+  transform: translateY(-2px);
 }
 
-/* SOCIAL SHARE BUTTONS */
+/* ========================= SOCIAL SHARE BUTTONS ========================= */
 .page-post .share-section .social-links a {
-	font-size: 18px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0 6px;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	background: rgba(0, 247, 255, 0.2);
-	color: #00f7ff;
-	transition: all 0.3s ease;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 247, 255, 0.2);
+  color: var(--c-body);
+  transition: all 0.3s ease;
 }
 
-/* Social Share Links (Hover Effect) */
 .page-post .share-section .social-links a:hover {
-	background: #00f7ff;
-	color: #12151f;
-	box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
 }
 
-/* ==============================================================
-            PAGE-POST-LAYOUT SIDEBAR WIDGETS
-================================================================= */
+/* ========================= SIDEBAR / WIDGETS ========================= */
 .widgets-container {
-	margin-top: 12px; /*Matches article margin-top*/
+  margin-top: 12px;
 }
 
 .widget-item {
-	margin-bottom: 30px;
-	background: rgba(11, 15, 20, 0.85);
-	border: 1px solid var(--c-border);
-	border-radius: 12px;
-	padding: 1.5rem;
-	box-shadow: 0 0 18px rgba(0, 247, 255, 0.18);
+  margin-bottom: 30px;
+  background: rgba(11, 15, 20, 0.85);
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 18px rgba(0, 247, 255, 0.18);
+  font-family: var(--font-body);
 }
 
 .widget-title {
-	font-size: 30px;
-	font-family: var(--font-body, "VT323", monospace) !important;
-	color: var(--c-title) !important;
-	line-height: 1.28 !important;
-	margin: 1.35rem 0 0.55rem !important;
-	text-shadow: 0 0 6px rgba(154, 255, 154, 0.7) !important;
-	letter-spacing: 0.3px;
-	text-align: left;
+  font-size: 30px;
+  font-family: var(--font-body);
+  color: var(--c-title);
+  line-height: 1.28;
+  margin: 1.35rem 0 0.55rem;
+  text-shadow: 0 0 6px rgba(154, 255, 154, 0.7);
+  letter-spacing: 0.3px;
+  text-align: left;
 }
 
-/* Make sidebar content match article content width */
 .page-post-layout .sidebar aside {
-	max-width: 840px;
-	margin-left: auto;
-	margin-right: auto;
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Sidebar inner full width */
 .page-post-layout .sidebar-inner {
   width: 100%;
 }
 
-/*Recent Posts Widget */
 .recent-posts-widget .post-item {
-	display: flex;
-	margin-bottom: 15px;
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .recent-posts-widget .post-item:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .recent-posts-widget .post-item img {
-	width: 80px;
-	margin-right: 15px;
+  width: 80px;
+  margin-right: 15px;
 }
 
-/* Recent posts titles — force match to main content h4 */
 .page-post .recent-posts-widget h4 {
-  font-family: var(--font-body, "VT323", monospace);
+  font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.35;
   margin: 0 0 0.25rem;
@@ -2542,96 +2577,64 @@ button:focus,
 }
 
 .recent-posts-widget .post-item time {
-	display: block;
-	font-style: italic;
-	font-size: 14px;
-	color: color-mix(in srgb, var(--default-color), transparent 50%);
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--c-body), transparent 50%);
 }
 
-/* SIDEBAR WIDGET TAGS */
 .sidebar .tags-widget .tag {
-	background: rgba(0, 246, 255, 0.08);
-	border: 1px solid rgba(0, 246, 255, 0.4);
-	color: #00f6ff;
-	padding: 0.3rem 0.7rem;
-	border-radius: 6px;
-	font-size: 0.9rem;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
-	transition: all 0.2s ease;
-	display: inline-block;
-	/* ensures pill-like spacing */
-	margin: 0.25rem;
-	/* spacing between tags */
+  background: rgba(0, 246, 255, 0.08);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  color: var(--c-body);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: var(--meta-size);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin: 0.25rem;
+  font-family: var(--meta-font);
 }
 
 .sidebar .tags-widget .tag:hover,
 .sidebar .tags-widget .tag:focus {
-	background: #00f7ff;
-	color: #12151f;
-	box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
-	transform: translateY(-2px);
+  background: #00f7ff;
+  color: #12151f;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+  transform: translateY(-2px);
 }
 
-
-/* RESPONSIVE PADDING */
+/* ========================= RESPONSIVE ========================= */
 @media (max-width: 991px) {
-	.page-post #main {
-		padding-top: 120px;
-	}
+  .page-post #main {
+    padding-top: 120px;
+  }
 }
 
-/* === Article Content Font === */
-/* h3 inside the article body */
+/* ========================= ARTICLE CONTENT HEADINGS ========================= */
 article .content h3,
 .article-content h3 {
-	color: #00f6ff;
-	text-shadow: 0 0 3px rgba(0, 246, 255, 0.6), 0 0 8px rgba(0, 246, 255, 0.35);
+  color: var(--c-body);
+  text-shadow: 0 0 3px rgba(0, 246, 255, 0.6), 0 0 8px rgba(0, 246, 255, 0.35);
+  font-family: var(--font-heading);
 }
 
-/* DELETE LATER - tag pills under articles */
+/* Tags under articles */
 article .tags span,
 .article-content .tags span {
-	color: #00f6ff;
-	background: rgba(0, 246, 255, 0.08);
-	border: 1px solid rgba(0, 246, 255, 0.4);
-	padding: 0.3rem 0.7rem;
-	border-radius: 6px;
-	font-size: 0.9rem;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
+  color: var(--c-body);
+  background: rgba(0, 246, 255, 0.08);
+  border: 1px solid rgba(0, 246, 255, 0.4);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: var(--meta-size);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--meta-font);
 }
 
-/* ========================================================= UNIFORM BLOG + TECH PORTFOLIO TYPOGRAPHY & BUTTONS (Put this at the very end of custom.css so it wins) ========================================================= */
-:root {
-	/* fonts */
-	--font-heading: "Orbitron", sans-serif;
-	--font-body: "VT323", monospace;
-	/* colors */
-	--c-bg: #12151f;
-	--c-title: #9aff9a;
-	/* light neon green (titles) */
-	--c-body: #9ee9ff;
-	/* body copy cyan */
-	--c-muted: #7fe1ff;
-	/* meta lines like “Published on…” */
-	--c-border: rgba(0, 247, 255, 0.35);
-	--c-card: rgba(15, 20, 25, 0.6);
-	/* button */
-	--btn-bg: #00f7ff;
-	/* cyan */
-	--btn-text: #0e121b;
-	/* dark text for contrast */
-	--btn-hover-bg: #39ff14;
-	/* neon green hover */
-	--btn-hover-text: #0e121b;
-	--btn-shadow: 0 0 12px rgba(0, 234, 255, 0.7), 0 0 24px rgba(0, 234, 255, 0.5);
-	--btn-shadow-hover: 0 0 16px #39ff14, 0 0 32px rgba(57, 255, 20, 0.7);
-  /*New Meta Font*/
-  --meta-font: var(--font-body, "VT323", monospace);
-  --meta-size: 0.85rem;
-  --meta-color: #9fc9d6;
-}
 
 /* ---------- Cards (both blog + portfolio) ---------- */
 /* same frame + glow on both card types */
