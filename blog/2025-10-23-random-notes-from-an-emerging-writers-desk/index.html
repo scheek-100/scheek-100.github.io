@@ -236,8 +236,8 @@
                             <div class="share-section">
                                 <p><strong style="color:lightgreen;">Share Article:</strong></p>
                                 <div class="social-links">
-                                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
                                     <a href="#" class="copy-link" title="Copy Link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div><!-- END OF SOCIAL MEDIA SHARING SECTION -->
@@ -264,13 +264,14 @@
                                     <h3 class="widget-title">Search</h3>
                                     <form id="searchForm">
                                         <!-- Search Input-->
-                                        <input type="text" id="searchInput" class="form-control" placeholder="Search posts...">
+                                        <input type="text" id="searchInput" class="form-control"
+                                            placeholder="Search posts...">
                                         <!--Button-->
                                         <button type="submit" class="d-none"></button>
                                     </form><!-- /Search Widget Form-->
                                     <!-- Search Results-->
                                     <div id="searchDropdown" class="search-dropdown d-none"></div>
-                                    </div><!--/SEARCH WIDGET-->
+                                </div><!--/SEARCH WIDGET-->
 
                                 <!--TAGS WIDGET-->
                                 <div class="tags-widget widget-item">
@@ -505,6 +506,30 @@
                 if (!e.target.closest('.search-widget')) {
                     dropdown.classList.add('d-none');
                 }
+            });
+        });
+    </script>
+
+    <!-- Social Media Sharing Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageUrl = encodeURIComponent(window.location.href);
+            const facebook = document.querySelector('.facebook');
+            const linkedin = document.querySelector('.linkedin');
+            const copyLink = document.querySelector('.copy-link');
+
+            // Facebook share
+            facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+
+            // LinkedIn share
+            linkedin.href = `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}`;
+
+            // Copy link
+            copyLink.addEventListener('click', e => {
+                e.preventDefault();
+                navigator.clipboard.writeText(window.location.href)
+                    .then(() => alert('Link copied to clipboard!'))
+                    .catch(() => alert('Failed to copy link.'));
             });
         });
     </script>
