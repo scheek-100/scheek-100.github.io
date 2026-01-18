@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Zara (Web Tags) from Cloudflare -->
+    <script src="/cdn-cgi/zaraz/i.js" referrerpolicy="origin"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Category: Data Journalism -->
+    <title>Learning Real-World Data Manipulation in Grad School | Sasha Cheek</title>
+    <meta name="description" content="Notes from the Sandbox — a writer-engineer’s log by Sasha Cheek.">
+    <meta name="author" content="Sasha Cheek">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Learning Real-World Data Manipulation in Grad School">
+    <meta property="og:description" content="Notes from the Sandbox — a writer-engineer’s log.">
+    <meta property="og:image" content="https://sashacheek.com/assets/img/preview-card.png">
+    <meta property="og:url"
+        content="https://sashacheek.com/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learning Real-World Data Manipulation in Grad School">
+    <meta name="twitter:description" content="Notes from the Sandbox — a writer-engineer’s log.">
+    <meta name="twitter:image" content="https://sashacheek.com/assets/img/preview-card.png">
+
+    <link rel="canonical"
+        href="https://sashacheek.com/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <!-- Vendor CSS (local copies to match your main page) -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/custom.css?v=3" rel="stylesheet">
+
+    <style>
+        /* Keep your page background consistent */
+        body {
+            background: #12151f;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="page-post">
+
+    <!-- ======= Header (same markup as index, but with root-relative links) ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <a href="/" class="logo d-flex align-items-center">
+                <h1 class="sitename">Sasha Cheek | <br>Systems, <br>Stories, and <br>Science</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="/#hero" class="active">HOME</a></li>
+                    <li><a href="/#about">ABOUT</a></li>
+                    <li><a href="/#portfolio">TECH PORTFOLIO</a></li>
+                    <li><a href="/#published-work">PUBLISHED WORK</a></li>
+                    <li><a href="/#blog">BLOG</a></li>
+                    <li><a href="/#resume">RESUME</a></li>
+                    <li><a href="/#testimonials">TESTIMONIALS</a></li>
+                    <li><a href="/#contact">CONTACT</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <section id="blog" class="blog section-black py-5">
+            <!-- Title Banner -->
+            <div class="title-banner small" data-aos="fade-up"
+                style="--title-img:url('/assets/img/headers/desk-with-computer-it-placed-front-window.webp');">
+                <div class="container section-title" data-aos="fade-up">
+                    <h1>NOTES FROM THE SANDBOX</h1>
+                    <h2 class="framed-subtitle">Tracing my beginnings as a writer-engineer—learning out loud, one build
+                        and
+                        paragraph at a time.</h2>
+                </div>
+            </div>
+
+            <!-- End Section Subtitle -->
+
+            <!-- Article Skeleton-->
+            <article class="mx-auto" style="max-width: 840px;">
+                <div class="container article-title mb-4" data-aos="fade-up">
+                    <h1>Learning Real-World Data Manipulation in Grad School</h1>
+                    <p class="text-muted mb-1">by Sasha Cheek</p>
+                    <p class="text-muted mb-1">Nov 10, 2025</p>
+                </div>
+
+                <!-- Feature image -->
+                <figure class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <img src="/assets/img/blog/Mathematician_analyzing_data._-_DPLA_-_60af5ced0800f6f7d6c99b5587a9ae0e.webp"
+                        class="img-fluid rounded" data-aos="fade-up" data-aos-delay="100"
+                        alt="Mathematician_analyzing_data feature image">
+                    <figcaption class="small mt-2"><i>Photo credit: Picture of mathematician, Donna W. by author, Job
+                            Peterson. <a
+                                href="https://commons.wikimedia.org/wiki/File:Mathematician_analyzing_data._-_DPLA_-_60af5ced0800f6f7d6c99b5587a9ae0e.jpg">Wikimedia
+                                Commons</a></i>
+                    </figcaption>
+                </figure>
+
+                <!-- Post content -->
+                <div class="content" data-aos="fade-up" data-aos-delay="100">
+                    <p><i>Drinking from the "firehose" in GitHub, Datawrapper, and pivot tables as a part-time grad
+                            student.</i></p>
+                    <h2>Log 003</h2>
+                    <p>My current science writing course in data storytelling ignited a newfound appreciation inside me
+                        for data visualization.
+                        It's hard to explain the thrill I felt when I first learned that our class would be exposed to
+                        GitHub data repos and visualization programs!
+                        It felt like taking a front row seat on a thril ride, ready to explore the twists, turns, and
+                        loops of this new adventure. I called one of my
+                        engineering friends to share this excitement, and he was equally in sync with my enthusiam for
+                        data manipulation.
+                    </p>
+                    <p>The growing pains of learning aspects of web development, cloud services and hosting via
+                        Cloudflare, and experiencing frustrations tinkering with a new tech stack prepared me for this
+                        moment in time--
+                        exploring data journalism. Those long
+                        nights debugging code and wrestling with deployment issues like a sumo wrestler have paid off.
+                        I started refreshing my knowledge through
+                        Youtube tutorials about ETL (extracting, transforming, and loading) data pipelines, reading
+                        inspirational articles from <b><i>The New York Times</i></b>
+                        and <b><i>WIRED</i></b>, analyzing how those journalists crafted compelling stories, vetted
+                        factual sources and envisioning a series of
+                        patterns to emulate in my own work.
+                    </p>
+                    <p>Familiar vernacular such as "data scraping," "web crawlers," "APIs (Application Programming
+                        Interface) calls" to retrieve information,
+                        and functions in Google Sheets fed my technical side. I was reminded of the importance of
+                        continuous learning and how my current role in technical
+                        integrations and systems has evolved my knowledge for the precipice I'm exploring now.
+                        Everything suddenly fell into place, and it solidifed my confidence
+                        in adapting to new skills to become a part-time science communicator. At first, I beleived my
+                        background in technology would make me seem rigid and less credible
+                        than my peers in the writing world. However, I now see that my unique blend of systems thinking
+                        and storytelling can offer a fresh perspective in this field of
+                        work.
+                    <p>The pursuit of a traditional role in journalism no longer feels like the only path to travel.
+                        Instead, I'm taking a road less traveled, learning
+                        how my intelligence and creativity can intersect to create something beautiful. Also after
+                        getting my first feature story [ever] published in Hackernoon,
+                        this semester, I feel more motivated than ever to continue honing my craft and exploring the
+                        endless possibilities that lie ahead. I also plan to document
+                        some of my learnng experiences here on my blog as I navigate this exciting new chapter in my
+                        life.
+                    </p>
+
+                    <!-- Feature Image -->
+                    <figure class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <img src="/assets/img/blog/Johns_Hopkins_Historic_Dome_-_panoramio.webp"
+                            class="img-fluid rounded"
+                            alt="Johns Hopkins University Historic Dome Panoramio feature image">
+                        <figcaption class="small mt-2"><i>Photo credit: Johns Hopkins' Historic Dome by author, Art
+                                Anderson</a>.
+                                <a
+                                    href="https://commons.wikimedia.org/wiki/File:Johns_Hopkins%27_Historic_Dome_-_panoramio.jpg">Wikimedia
+                                    Commons</a></i>
+                        </figcaption>
+                    </figure>
+                    <!-- End of Feature Image -->
+                    <p><strong style="color:lightgreen;">Today's Win:</strong> I have established my niche as a
+                        different type of writer: blending a knowledge of systems in different
+                        scientific industries and tech to expand on human stories.</p>
+                </div>
+                <div class="tags">
+                    <span>Burnout</span><span>Blog</span><span>Career Development</span><br><span>Grad
+                        School</span><span>Science Communication</span><span>Data Storytelling</span>
+                </div>
+
+                <hr class="my-5" />
+                <nav class="d-flex justify-content-between gap-2">
+                    <a class="btn btn-outline-primary"
+                        href="/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/">←
+                        Previous</a>
+                    <a class="btn btn-outline-primary" href="/#blog">Back to homepage</a>
+                    <a class="btn btn-outline-primary" href="/blog/2025-11-16-using-ai-as-a-tool/">Next →</a>
+                </nav>
+            </article>
+            <!-- End of Article Skeleton-->
+    </main>
+
+    <!-- ======= Footer (same markup as index) ======= -->
+    <footer id="footer" class="footer" data-aos="fade-up" data-aos-delay="100"
+        style="background:url('/assets/img/cyberpunk-footer.webp') no-repeat center center / cover !important;">
+        <div class="container">
+            <h3 class="sitename" data-aos="fade-up" data-aos-delay="100">Sasha Cheek | Systems, Stories, and Science
+            </h3>
+            <p>Exploring how engineered systems shape the people and processes behind science and technology.</p>
+            <div class="social-links d-flex justify-content-center">
+                <a href="https://github.com/scheek-100"><i class="bi bi-github"></i></a>
+                <a href="https://medium.com/@sashacheek100"><i class="bi bi-medium"></i></a>
+                <a href="https://www.linkedin.com/in/sasha-cheek/"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <span>Copyright</span> <strong class="px-1 sitename">Sasha Cheek | Systems, Stories, and
+                        Science</strong> <span>All Rights Reserved</span>
+                </div>
+
+                <!-- Bootstrap Framework/Template Credits -->
+                <div class="credits">
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
+                        href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                </div>
+
+                <!-- Image Credits (sitewide) -->
+                <div class="image-credits">
+                    <h4 class="ic-title">Image Credits</h4>
+                    <ul class="ic-list">
+                        <li>Hero — <a href="https://br.pinterest.com/leocbraga/configura%C3%A7%C3%A3o-de-computador/"
+                                target="_blank" rel="noopener">Leonnardo Braga / Pinterest</a></li>
+                        <li>Services Header — <a href="https://unsplash.com/@nickfancher" target="_blank"
+                                rel="noopener">Nick
+                                Fancher /
+                                Unsplash</a></li>
+                        <li>Resume Header — <a
+                                href="https://www.freepik.com/free-photo/green-neodymium-magnet-phenomenon_5282813.htm"
+                                target="_blank" rel="noopener">Freepik</a></li>
+                        <li>Blog Header — <a
+                                href="https://uoffice.com.sg/wp-content/uploads/2025/07/296226-1300x650.jpg"
+                                target="_blank" rel="noopener">Freepik</a></li>
+                        <li>Publications Header — <a
+                                href="https://www.freepik.com/free-photo/depressing-blue-monday-composition_20554495.htm#fromView=search&page=1&position=2&uuid=b9a636bd-25fa-4ab2-a70d-ccb81e9ce5e4&query=blue+monday+typewriter"
+                                target="_blank" rel="noopener">Freepik</a></li>
+                        <li>Tech Projects Header — <a
+                                href="https://www.freepik.com/free-photo/flat-lay-circuit-board-with-capacitors_5473607.htm"
+                                target="_blank" rel="noopener">Freepik</a></li>
+                        <li>Testimonials Header — <a href="https://www.pinterest.com/pin/333829391147120770/"
+                                target="_blank" rel="noopener">Jerry Quartz / Pinterest</a></li>
+                        <li>Testimonials Profiles — <a href="https://www.linkedin.com/in/sasha-cheek/" target="_blank"
+                                rel="noopener">LinkedIn</a></li>
+                        <li>Contact Header — <a href="https://www.freekpik.com/free-photo" target="_blank"
+                                rel="noopener">Freepik</a></li>
+                        <li>Footer Background — <a
+                                href="https://www.freepik.com/free-photo/electrical-panel-with-fuses-contactors-closeup_174142834.htm#fromView=keyword&page=12&position=2&uuid=ba5e3374-3e36-4724-a28f-c58ef60f773e&query=Electrical+switch+replacement"
+                                target="_blank" rel="noopener">Freepik</a></li>
+                    </ul>
+                </div><!-- /Image Credits -->
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- ======= Vendor JS (root-relative) ======= -->
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="/assets/js/main.js"></script>
+
+    <!-- AOS init (safe to keep) -->
+    <script>
+        AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+    </script>
+
+    <!-- Optional: disable "coming soon" links if you reuse data-comingsoon -->
+    <script>
+        document.addEventListener('click', e => {
+            const el = e.target.closest('[data-comingsoon]');
+            if (el) { e.preventDefault(); }
+        });
+    </script>
+
+    <!-- Post-specific CSS tweaks -->
+    <style>
+        .page-post .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        .page-post .content h2 {
+            margin-top: 1.5rem;
+        }
+    </style>
+</body>
+
+</html>
