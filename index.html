@@ -384,13 +384,13 @@
             <h2 class="framed-subtitle">Published work in science and technology.</h2>
           </div>
         </div>
-
+      
         <!-- Featured Article Section Title-->
         <section id="featured-article" class="section-black py-5">
           <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
             <h1>Featured Article</h1>
           </div><!-- End of Featured Article Section Title-->
-
+      
           <!-- Featured Story -->
           <article class="featured-card" data-aos="fade-up" data-aos-delay="100">
             <img src="assets/img/telepathic-music-image.webp" alt="Telepathic Music">
@@ -400,261 +400,237 @@
               <p><i>Exploring the world of brain-computer interface (BCI) technology for disabled creatives and
                   the battle against neurodegenerative disorders.</i>
               </p>
-              <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives"
-                class="featured-link">View
+              <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives" class="featured-link">View
                 on Hackernoon →</a>
             </div>
           </article>
         </section><!-- End of Featured Articles Section -->
-
+      
         <!-- Self-Published Articles Section Title-->
         <section id="featured-article" class="section-black py-5">
           <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
             <h1>Self-Published Articles</h1>
           </div><!-- End of Self-Published Articles Section Title-->
-
+      
           <!-- Self-Published Articles Carousel Section -->
-          <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
-            <button class="carousel-btn prev" id="publishedPrev">&#10094;</button>
-            <div class="carousel-track" id="publishedTrack"></div>
-            <button class="carousel-btn next" id="publishedNext">&#10095;</button>
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper published-swiper">
+              <div class="swiper-wrapper" id="publishedWrapper">
+                <!-- slides appended dynamically as .swiper-slide -->
+              </div>
+      
+              <!-- pagination and nav (scoped classes) -->
+              <div class="published-pagination swiper-pagination"></div>
+              <button class="published-prev" aria-label="Previous published article">&#10094;</button>
+              <button class="published-next" aria-label="Next published article">&#10095;</button>
+            </div>
           </div>
-        </section><!-- End of Self-Published Articles Section -->
-
-        <!--Carousel JS Script - Self-Published Articles -->
-        <script>
-          const publishedPosts = [
-            {
-              url: "/articles/david-bowies-ode-to-sci-fi-and-space-science/",
-              image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png",
-              date: "Apr 11, 2024",
-              title: "David Bowie’s Ode to Sci-Fi and Space Science",
-              source: "Portfolio Site"
-            },
-            {
-              url: "https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079",
-              image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN",
-              date: "Apr 1, 2024",
-              title: "Automated Love: How AI Became the New Face of Romance",
-              source: "Medium"
-            },
-            {
-              url: "https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7",
-              image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz",
-              date: "Mar 13, 2024",
-              title: "Dealing with Early Signs of Alzheimer’s Disease in Loved Ones",
-              source: "Medium"
-            }
-          ];
-
-          async function loadPublishedWork() {
-            const track = document.getElementById('publishedTrack');
-
-            for (const post of publishedPosts) {
-              const card = document.createElement('article');
-              card.className = 'blog-card';
-
-              if (post.url.startsWith('http')) {
-                card.innerHTML = `
-          <img src="${post.image}" alt="${post.title}">
-          <div class="blog-content">
-            <h3>${post.title}</h3>
-            <p class="blog-date">${post.date}</p>
-            <p><i>Read this full piece directly on ${post.source}.</i></p>
-            <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${post.source} →</a>
-          </div>`;
-                track.appendChild(card);
-                continue;
+      
+          <script>
+            const publishedPosts = [
+              {
+                url: "/articles/david-bowies-ode-to-sci-fi-and-space-science/",
+                image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*wKlX15g3ACqx51mokKbSgQ.png",
+                date: "Apr 11, 2024",
+                title: "David Bowie’s Ode to Sci-Fi and Space Science",
+                source: "Portfolio Site"
+              },
+              {
+                url: "https://medium.com/@sashacheek100/automated-love-how-ai-became-the-new-face-of-romance-900d9d59a079",
+                image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Tv3QfLov-HJwoiiN",
+                date: "Apr 1, 2024",
+                title: "Automated Love: How AI Became the New Face of Romance",
+                source: "Medium"
+              },
+              {
+                url: "https://medium.com/@sashacheek100/dealing-with-early-signs-of-alzheimers-disease-in-loved-ones-f40c4a5481f7",
+                image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*x2mm18W8-WYL6Ahz",
+                date: "Mar 13, 2024",
+                title: "Dealing with Early Signs of Alzheimer’s Disease in Loved Ones",
+                source: "Medium"
               }
+            ];
 
-              try {
-                const res = await fetch(post.url);
-                const html = await res.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const title = doc.querySelector('title')?.innerText || post.title;
-                const firstP = doc.querySelector('p i')?.innerText || doc.querySelector('p')?.innerText || '';
-                const excerpt = firstP.split('. ').slice(0, 2).join('. ') + '.';
+            async function loadPublishedWork() {
+              const wrapper = document.querySelector('.published-swiper .swiper-wrapper');
+              wrapper.innerHTML = '';
+              for (const post of publishedPosts) {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
 
-                card.innerHTML = `
-          <img src="${post.image}" alt="${title}">
-          <div class="blog-content">
-            <h3>${title}</h3>
-            <p class="blog-date">${post.date}</p>
-            <p><i>${excerpt}</i></p>
-            <a href="${post.url}" class="blog-link">Read More →</a>
-          </div>`;
-                track.appendChild(card);
-              } catch (err) {
-                console.error('Error loading', post.url, err);
-              }
-            }
-          }
-
-          // Independent carousel controls for Published Work
-          let publishedIndex = 0;
-          function slidePublished(dir) {
-            const cards = document.querySelectorAll('#publishedTrack .blog-card');
-            if (!cards.length) return;
-            publishedIndex = (publishedIndex + dir + cards.length) % cards.length;
-            document.getElementById('publishedTrack').style.transform = `translateX(-${publishedIndex * 310}px)`;
-          }
-
-          document.addEventListener('DOMContentLoaded', () => {
-            loadPublishedWork().then(() => {
-              document.getElementById('publishedNext').onclick = () => slidePublished(1);
-              document.getElementById('publishedPrev').onclick = () => slidePublished(-1);
-            });
-          });
-        </script>
-        <!-- End of Carousel JS Script - Published Work -->
-
-      </section>
-      <!-- END OF PUBLISHED WORK SECTION -->
-
-      <!--NOTES FROM THE SANDBOX BLOG SECTION -->
-      <section id="blog" class="blog section-black py-5">
-        <!-- Title Banner -->
-        <div class="title-banner small" data-aos="fade-up"
-          style="--title-img:url('/assets/img/headers/desk-with-computer-it-placed-front-window.webp');">
-          <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
-            <h1>NOTES FROM THE SANDBOX</h1>
-            <h2 class="framed-subtitle">Tracing my beginnings as a writer-engineer—learning out loud, one build and
-              paragraph at
-              a time.</h2>
-          </div>
-        </div>
-        <!-- End Section Subtitle -->
-
-        <!-- Blog Carousel Subsection -->
-        <section id="blog" class="blog-carousel section-black">
-          <!-- Carousel Container Main -->
-          <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
-            <button class="carousel-btn prev">&#10094;</button>
-            <div class="carousel-track" id="blogTrack"></div>
-            <button class="carousel-btn next">&#10095;</button>
-          </div>
-        </section>
-        <!-- End Blog Carousel Subsection -->
-
-        <!-- Blog Carousel Styles -->
-        <style>
-          .blog-carousel-section {
-            padding: 60px 20px;
-            color: #c8f7ff;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-          }
-
-          .section-title {
-            font-size: 2rem;
-            color: #00ffff;
-            text-shadow: 0 0 8px #00ffff;
-            margin-bottom: 10px;
-          }
-
-          .section-subtitle {
-            font-size: 1rem;
-            color: #89d2ff;
-            margin-bottom: 40px;
-          }
-
-          /* Blog Card Hover Glow */
-          .blog-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 20px rgba(0, 255, 180, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
-            border-color: #39ff14;
-          }
-
-          /* Hover Glow for Read More */
-          .blog-card:hover .blog-link {
-            color: #39ff14;
-            text-shadow: 0 0 8px #39ff14;
-          }
-
-          .blog-card:hover h3 {
-            color: #39ff14;
-            text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(0, 255, 180, 0.7);
-          }
-
-          .blog-content h3 {
-            font-family: 'VT323', monospace !important;
-            font-size: 1.3rem;
-            color: #00f7ff;
-            text-shadow: 0 0 10px #00f7ff, 0 0 20px rgba(0, 255, 255, 0.6);
-          }
-        </style>
-
-        <!-- JS Script -->
-        <script>
-          /* List your blog post HTML file paths here */
-          const posts = [
-            {
-              url: "/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/",
-              image: "assets/img/blog/post-slide-2.jpg",
-              date: "Nov 2, 2025"
-            },
-            {
-              url: "/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/",
-              image: "assets/img/blog/Mathematician_analyzing_data._-_DPLA_-_60af5ced0800f6f7d6c99b5587a9ae0e.webp",
-              date: "Nov 10, 2025"
-            },
-            {
-              url: "/blog/2025-11-16-using-ai-as-a-tool/",
-              image: "assets/img/blog/eye-glitch-art--blog-carousel-image-pinterest.webp",
-              date: "Nov 16, 2025"
-            }
-          ];
-
-          /* Dynamically load titles and excerpts */
-          async function loadPosts() {
-            const track = document.getElementById('blogTrack');
-            for (const post of posts) {
-              try {
-                const res = await fetch(post.url);
-                const html = await res.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const title = doc.querySelector('title')?.innerText || 'Untitled Post';
-                const introP = doc.querySelector('p i')?.innerText || '';
-                const excerpt = introP || (doc.querySelector('p')?.innerText.split('. ').slice(0, 2).join('. ') + '.');
                 const card = document.createElement('article');
                 card.className = 'blog-card';
-                card.innerHTML = `
-        <img src="${post.image}" alt="${title}">
-        <div class="blog-content">
-          <h3>${title}</h3>
-          <p class="blog-date">${post.date || ''}</p>
-          <p><i>${excerpt}</i></p>
-          <a href="${post.url}" class="blog-link">Read More →</a>
-        </div>`;
-                track.appendChild(card);
-              } catch (err) {
-                console.error('Error loading', post.url, err);
+
+                // If external URL (http/https), link out; otherwise try to fetch excerpt
+                if (post.url.startsWith('http')) {
+                  card.innerHTML = `
+                  <img src="${post.image}" alt="${post.title}">
+                  <div class="blog-content">
+                    <h3>${post.title}</h3>
+                    <p class="blog-date">${post.date}</p>
+                    <p><i>Read this full piece directly on ${post.source}.</i></p>
+                    <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${post.source} →</a>
+                  </div>`;
+                  slide.appendChild(card);
+                  wrapper.appendChild(slide);
+                  continue;
+                }
+
+                try {
+                  const res = await fetch(post.url);
+                  const html = await res.text();
+                  const parser = new DOMParser();
+                  const doc = parser.parseFromString(html, 'text/html');
+                  const title = doc.querySelector('title')?.innerText || post.title;
+                  const firstP = doc.querySelector('p i')?.innerText || doc.querySelector('p')?.innerText || '';
+                  const excerpt = firstP ? (firstP.split('. ').slice(0, 2).join('. ') + '.') : '';
+
+                  card.innerHTML = `
+                  <img src="${post.image}" alt="${title}">
+                  <div class="blog-content">
+                    <h3>${title}</h3>
+                    <p class="blog-date">${post.date}</p>
+                    <p><i>${excerpt}</i></p>
+                    <a href="${post.url}" class="blog-link">Read More →</a>
+                  </div>`;
+                  slide.appendChild(card);
+                  wrapper.appendChild(slide);
+                } catch (err) {
+                  console.error('Error loading', post.url, err);
+                }
               }
             }
-          }
+          </script>
+          <!-- End of Carousel JS Script - Published Work -->
+      
+        </section>
+        <!-- END OF PUBLISHED WORK SECTION -->
+      
+        <!--NOTES FROM THE SANDBOX BLOG SECTION -->
+        <section id="blog" class="blog section-black py-5">
+          <!-- Title Banner -->
+          <div class="title-banner small" data-aos="fade-up"
+            style="--title-img:url('/assets/img/headers/desk-with-computer-it-placed-front-window.webp');">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h1>NOTES FROM THE SANDBOX</h1>
+              <h2 class="framed-subtitle">Tracing my beginnings as a writer-engineer—learning out loud, one build and
+                paragraph at
+                a time.</h2>
+            </div>
+          </div>
+          <!-- End Section Subtitle -->
+      
+          <!-- Blog Carousel Subsection (Swiper structure) -->
+          <section class="blog-carousel section-black">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+              <div class="swiper blog-swiper">
+                <div class="swiper-wrapper" id="blogWrapper">
+                  <!-- slides appended dynamically -->
+                </div>
+      
+                <div class="blog-pagination swiper-pagination"></div>
+                <button class="blog-prev" aria-label="Previous blog post">&#10094;</button>
+                <button class="blog-next" aria-label="Next blog post">&#10095;</button>
+              </div>
+            </div>
+          </section>
+      
+          <script>
+            const posts = [
+              {
+                url: "/blog/2025-11-02-system-overload-troubleshooting-burnout-in-the-human-brain-stack/",
+                image: "assets/img/blog/post-slide-2.jpg",
+                date: "Nov 2, 2025"
+              },
+              {
+                url: "/blog/2025-11-10-learning-real-wold-data-manipulation-in-grad-school/",
+                image: "assets/img/blog/Mathematician_analyzing_data._-_DPLA_-_60af5ced0800f6f7d6c99b5587a9ae0e.webp",
+                date: "Nov 10, 2025"
+              },
+              {
+                url: "/blog/2025-11-16-using-ai-as-a-tool/",
+                image: "assets/img/blog/eye-glitch-art--blog-carousel-image-pinterest.webp",
+                date: "Nov 16, 2025"
+              }
+            ];
 
-          /* Carousel navigation */
-          let index = 0;
-          function slide(dir) {
-            const cards = document.querySelectorAll('.blog-card');
-            if (!cards.length) return;
-            index = (index + dir + cards.length) % cards.length;
-            document.getElementById('blogTrack').style.transform = `translateX(-${index * 310}px)`;
-          }
+            async function loadPosts() {
+              const wrapper = document.querySelector('.blog-swiper .swiper-wrapper');
+              wrapper.innerHTML = '';
+              for (const post of posts) {
+                try {
+                  const res = await fetch(post.url);
+                  const html = await res.text();
+                  const parser = new DOMParser();
+                  const doc = parser.parseFromString(html, 'text/html');
+                  const title = doc.querySelector('title')?.innerText || 'Untitled Post';
+                  const introP = doc.querySelector('p i')?.innerText || '';
+                  const excerpt = introP || (doc.querySelector('p')?.innerText ? (doc.querySelector('p')?.innerText.split('. ').slice(0, 2).join('. ') + '.') : '');
 
-          document.addEventListener('DOMContentLoaded', () => {
-            loadPosts().then(() => {
-              document.querySelector('.next').onclick = () => slide(1);
-              document.querySelector('.prev').onclick = () => slide(-1);
+                  const slide = document.createElement('div');
+                  slide.className = 'swiper-slide';
+                  slide.innerHTML = `
+                  <article class="blog-card">
+                    <img src="${post.image}" alt="${title}">
+                    <div class="blog-content">
+                      <h3>${title}</h3>
+                      <p class="blog-date">${post.date || ''}</p>
+                      <p><i>${excerpt}</i></p>
+                      <a href="${post.url}" class="blog-link">Read More →</a>
+                    </div>
+                  </article>`;
+                  wrapper.appendChild(slide);
+                } catch (err) {
+                  console.error('Error loading', post.url, err);
+                }
+              }
+            }
+
+            // Initialize Swipers after content loads
+            document.addEventListener('DOMContentLoaded', () => {
+              // Load both sets of slides, then initialize
+              Promise.all([loadPublishedWork(), loadPosts()]).then(() => {
+                // Published Swiper
+                if (window.__publishedSwiper) window.__publishedSwiper.destroy(true, true);
+                window.__publishedSwiper = new Swiper('.published-swiper', {
+                  loop: true,
+                  speed: 600,
+                  autoHeight: true,
+                  autoplay: { delay: 5000, disableOnInteraction: false },
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                  pagination: { el: '.published-pagination', clickable: true },
+                  navigation: { nextEl: '.published-next', prevEl: '.published-prev' },
+                  breakpoints: {
+                    320: { slidesPerView: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 20 },
+                    1200: { slidesPerView: 3, spaceBetween: 30 }
+                  }
+                });
+
+                // Blog Swiper
+                if (window.__blogSwiper) window.__blogSwiper.destroy(true, true);
+                window.__blogSwiper = new Swiper('.blog-swiper', {
+                  loop: true,
+                  speed: 600,
+                  autoHeight: false,
+                  autoplay: { delay: 5000, disableOnInteraction: false },
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                  pagination: { el: '.blog-pagination', clickable: true },
+                  navigation: { nextEl: '.blog-next', prevEl: '.blog-prev' },
+                  breakpoints: {
+                    320: { slidesPerView: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 20 },
+                    1200: { slidesPerView: 3, spaceBetween: 30 }
+                  }
+                });
+              });
             });
-          });
-        </script><!-- End of JS Script -->
-
-      </section><!-- END OF NOTES FROM THE SANDBOX BLOG SECTION -->
+          </script>
+      
+        </section><!-- END OF NOTES FROM THE SANDBOX BLOG SECTION -->
 
       <!-- RESUME SECTION -->
       <section id="resume" class="resume section-black py-5">

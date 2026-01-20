@@ -186,15 +186,15 @@ p {
 #hero .container h1 {
 	font-family: "Orbitron", sans-serif !important;
 	font-weight: 600 !important;
-	font-size: 3rem !important;
-	/* roughly 48px */
+	font-size: 3rem !important; /* roughly 48px */
 	letter-spacing: 2px !important;
 	text-transform: uppercase !important;
 	color: #00eaff !important;
-	/* Crisp TRON-style glow */
-	text-shadow: 0 0 3px rgba(0, 234, 255, 0.9) !important;
-	0 0 8px rgba(0, 234, 255, 0.6) !important,
-	0 0 16px rgba(0, 234, 255, 0.4) !important;
+	/* Crisp TRON-style glow: multiple shadows separated by commas */
+	text-shadow:
+	  0 0 3px rgba(0, 234, 255, 0.9),
+	  0 0 8px rgba(0, 234, 255, 0.6),
+	  0 0 16px rgba(0, 234, 255, 0.4) !important;
 }
 
 /* H1-H3 TEXT SHADOW */
@@ -264,7 +264,7 @@ p {
 	margin: 0.1rem 0 0.6rem;
 	text-shadow: 0 0 6px rgba(158, 233, 255, 0.35);
 	text-align: center;
-	 !important;
+	/* !important; */
 }
 
 /* Hero Divider Styling and Nodes */
@@ -1650,197 +1650,123 @@ button:focus,
 /* ==========================================================================
      MAIN CAROUSEL STYLING AND NAVIGATION (PUBLISHED WORK & BLOG SECTIONS)
 ============================================================================= */
-/* Carousel Container */
-.carousel-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	margin-top: 20px;
-	overflow: hidden;
-	max-width: 900px;
-	margin-left: auto;
-	margin-right: auto;
+
+/* Basic containment + spacing to mirror #testimonials */
+#published-work .swiper,
+#blog .swiper {
+  padding: 8px 0 52px;
+  overflow: hidden;
 }
 
-/* Carousel Tracking and Animation Transition */
-.carousel-track {
-	display: flex;
-	transition: transform 0.6s ease;
+/* Center slides like testimonials */
+#published-work .swiper-slide,
+#blog .swiper-slide {
+  display: flex;
+  justify-content: center;
+  
 }
 
-/* Blog */
-.blog-card {
-	flex: 0 0 280px;
-	margin: 0 15px;
-	background: rgba(0, 20, 30, 0.6);
-	border: 1px solid #00ffff;
-	border-radius: 10px;
-	box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-	overflow: hidden;
-	text-align: left;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Card containment: reuse blog-card styles but slightly constrain width for slides */
+#published-work .blog-card,
+#blog .blog-card {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(10,12,14,0.6), rgba(6,8,10,0.6));
+  border: 1px solid rgba(255,255,255,0.03);
 }
 
-.blog-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 0 18px rgba(0, 255, 255, 0.5);
+/* Scoped pagination look/placement (matching testimonials) */
+#published-work .published-pagination,
+#blog .blog-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  width: auto;
+  z-index: 10;
 }
 
-.blog-card img {
-	width: 100%;
-	height: 160px;
-	object-fit: cover;
-	border-bottom: 1px solid #00ffff;
+#published-work .published-pagination .swiper-pagination-bullet,
+#blog .blog-pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: #1f3640;
+  opacity: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 0 10px rgba(0, 247, 255, 0.15);
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
 }
 
-.blog-content {
-	padding: 20px;
+#published-work .published-pagination .swiper-pagination-bullet-active,
+#blog .blog-pagination .swiper-pagination-bullet-active {
+  background: var(--t-cyan, #00f7ff);
+  border-color: var(--t-cyan, #00f7ff);
+  box-shadow: 0 0 14px rgba(0, 247, 255, 0.45);
+  transform: scale(1.2);
 }
 
-.blog-content h3 {
-	font-family: "VT323", monospace !important;
-	font-size: 1.1rem;
-	color: #00ffff;
-	text-shadow: 0 0 10px #00ffff, 0 0 20px rgba(0, 255, 255, 0.5);
-	margin-bottom: 8px;
+/* Arrows: circular neon style matching testimonials arrows */
+#published-work .published-prev,
+#published-work .published-next,
+#blog .blog-prev,
+#blog .blog-next {
+  color: #9feaff;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(11, 15, 20, 0.72);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 0 18px rgba(0, 247, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 20;
 }
 
-.blog-date {
-	font-size: 0.85rem;
-	color: #7ae6ff;
-	margin-bottom: 8px;
+#published-work .published-prev:hover,
+#published-work .published-next:hover,
+#blog .blog-prev:hover,
+#blog .blog-next:hover {
+  background: rgba(11, 15, 20, 0.9);
+  box-shadow: 0 0 26px rgba(0, 247, 255, 0.24);
 }
 
-.blog-content p {
-	color: #bffaff;
-	font-size: 0.9rem;
-	margin-bottom: 10px;
-	line-height: 1.4;
+/* Position arrows near the swiper edges */
+#published-work .published-prev { position: absolute; left: 12px; top: 40%; transform: translateY(-50%); }
+#published-work .published-next { position: absolute; right: 12px; top: 40%; transform: translateY(-50%); }
+#blog .blog-prev { position: absolute; left: 12px; top: 40%; transform: translateY(-50%); }
+#blog .blog-next { position: absolute; right: 12px; top: 40%; transform: translateY(-50%); }
+
+/* Ensure card images fit nicely */
+#published-work .blog-card img,
+#blog .blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
 }
 
-.blog-link {
-	font-family: 'VT323', monospace !important;
-	font-size: 1rem;
-	color: #00ffff;
-	font-weight: 600;
-	transition: color 0.3s ease, text-shadow 0.3s ease;
+/* Blog content styling (reuse existing design tokens) */
+#published-work .blog-content,
+#blog .blog-content {
+  padding: 14px;
+  text-align: left;
 }
 
-.blog-link:hover {
-	color: #ffffff;
-	text-shadow: 0 0 10px #00ffff;
-}
-
-/* Carousel Navigation */
-.carousel-btn {
-	background: none;
-	border: none;
-	color: #00ffff;
-	font-size: 2rem;
-	cursor: pointer;
-	text-shadow: 0 0 8px #00ffff;
-	transition: text-shadow 0.3s ease;
-	z-index: 2;
-}
-
-.carousel-btn:hover {
-	color: #00ffff;
-	text-shadow: 0 0 16px #00ffff, 0 0 24px rgba(0, 255, 255, 0.7);
-}
-
-.carousel-btn:focus {
-	outline: none;
-	text-shadow: 0 0 14px #00ffff;
-}
-
-.prev {
-	position: absolute;
-	left: 0;
-}
-
-.next {
-	position: absolute;
-	right: 0;
-}
-
-/*Responsive adjustments Featured Article Card */
-@media (max-width: 700px) {
-	.featured-card img {
-		height: 240px;
-	}
-
-	/* Responsive adjustments for blog cards */
-	.blog-card {
-		flex: 0 0 240px;
-	}
-
-	.blog-card img {
-		height: 140px;
-	}
-}
-
-/* Mobile-Friendly Carousel Navigation */
-@media (max-width: 576px) {
-
-	/* Allow full visibility of cards */
-	.carousel-container {
-		overflow: visible !important;
-		flex-direction: column !important;
-		align-items: center !important;
-	}
-
-	.carousel-track {
-		display: flex !important;
-		flex-direction: column !important;
-		align-items: center !important;
-		transform: none !important;
-		overflow: visible !important;
-	}
-
-	.blog-card {
-		flex: 1 0 auto !important;
-		width: 90% !important;
-		margin: 12px auto !important;
-		height: auto !important;
-		box-shadow: 0 0 12px rgba(0, 247, 255, 0.25);
-	}
-
-	.blog-card img {
-		height: auto !important;
-		max-height: 200px !important;
-		object-fit: cover !important;
-	}
-
-	.blog-content {
-		padding: 20px !important;
-	}
-
-	/* Simplify navigation for mobile */
-	.carousel-btn {
-		background: rgba(11, 15, 20, 0.72);
-		color: #9feaff;
-		border-radius: 50%;
-		border: 1px solid var(--t-border);
-		box-shadow: 0 0 18px rgba(0, 247, 255, 0.25);
-		width: 36px;
-		height: 36px;
-		font-size: 1.4rem;
-		transition: all 0.2s ease;
-	}
-
-	.carousel-btn:hover {
-		background: rgba(11, 15, 20, 0.9);
-		box-shadow: 0 0 26px rgba(0, 247, 255, 0.36);
-		color: #00ffff;
-	}
-
-	/* Hide arrows if too narrow */
-	@media (max-width: 420px) {
-		.carousel-btn {
-			display: none !important;
-		}
-	}
+/* small responsive tweak */
+@media (max-width: 768px) {
+  #published-work .blog-card img,
+  #blog .blog-card img { height: 160px; }
+  #published-work .published-prev,
+  #published-work .published-next,
+  #blog .blog-prev,
+  #blog .blog-next { width: 36px; height: 36px; }
 }
 
 /* =============================================
@@ -1992,6 +1918,7 @@ button:focus,
 	color: var(--c-title, #9aff9a);
 	margin: 0 0 4px;
 	text-shadow: 0 0 6px rgba(154, 255, 154, 0.65);
+	text-align: center !important;
 }
 
 #testimonials .t-role {
