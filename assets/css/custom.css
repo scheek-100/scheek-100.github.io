@@ -1679,6 +1679,13 @@ button:focus,
   transition: transform 0.3s ease, box-shadow 0.3s ease
 }
 
+/* Carousel cards: use tighter padding than the full Featured Story card */
+#published-work .swiper .featured-content,
+#blog .swiper .featured-content {
+  padding: 14px;
+  text-align: left;
+}
+
 /* Scoped pagination look/placement (matching testimonials) */
 #published-work .published-pagination,
 #blog .blog-pagination {
@@ -1752,13 +1759,6 @@ button:focus,
   height: 180px;
   object-fit: cover;
   display: block;
-}
-
-/* Blog content styling (reuse existing design tokens) */
-#published-work .blog-content,
-#blog .blog-content {
-  padding: 14px;
-  text-align: left;
 }
 
 /* small responsive tweak */

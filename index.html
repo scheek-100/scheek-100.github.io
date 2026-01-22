@@ -408,7 +408,7 @@
         </section><!-- End of Featured Articles Section -->
 
         <!-- Self-Published Articles Section Title-->
-        <section id="featured-article" class="section-black py-5">
+        <section id="self-published-article" class="section-black py-5">
           <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
             <h1>Self-Published Articles</h1>
           </div><!-- End of Self-Published Articles Section Title-->
@@ -468,11 +468,11 @@
                 if (/^https?:\/\//i.test(post.url)) {
                   card.innerHTML = `
           <img src="${post.image}" alt="${escapeHtml(post.title)}">
-          <div class="blog-content">
+          <div class="featured-content">
             <h3>${escapeHtml(post.title)}</h3>
-            <p class="blog-date">${post.date || ''}</p>
+            <p class="featured-meta">${escapeHtml(post.source || 'Source')} · ${post.date || ''}</p>
             <p><i>Read this full piece directly on ${escapeHtml(post.source || 'the source')}.</i></p>
-            <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${escapeHtml(post.source || 'source')} →</a>
+            <a href="${post.url}" target="_blank" rel="noopener" class="featured-link">View on ${escapeHtml(post.source || 'source')} →</a>
           </div>`;
                   slide.appendChild(card);
                   wrapper.appendChild(slide);
@@ -491,11 +491,11 @@
 
                   card.innerHTML = `
           <img src="${post.image}" alt="${escapeHtml(title)}">
-          <div class="blog-content">
+          <div class="featured-content">
             <h3>${escapeHtml(title)}</h3>
-            <p class="blog-date">${post.date || ''}</p>
+            <p class="featured-meta">${escapeHtml(post.source || 'Source')} · ${post.date || ''}</p>
             <p><i>${escapeHtml(excerpt)}</i></p>
-            <a href="${post.url}" class="blog-link">Read More →</a>
+            <a href="${post.url}" class="featured-link">Read More →</a>
           </div>`;
                   slide.appendChild(card);
                   wrapper.appendChild(slide);
@@ -521,8 +521,8 @@
           </script>
           <!-- End of Carousel JS Script - Published Work -->
 
-        </section>
-        <!-- END OF PUBLISHED WORK SECTION -->
+        </section><!--End of #self-published-article-->
+      </section><!-- END OF PUBLISHED WORK SECTION -->
 
         <!--NOTES FROM THE SANDBOX BLOG SECTION -->
         <section id="blog" class="blog section-black py-5">
@@ -592,11 +592,11 @@
                   slide.innerHTML = `
           <article class="blog-card">
             <img src="${post.image}" alt="${title}">
-            <div class="blog-content">
+            <div class="featured-content">
               <h3>${title}</h3>
-              <p class="blog-date">${post.date || ''}</p>
+              <p class="featured-meta">${escapeHtml(post.source || 'Source')} · ${post.date || ''}</p>
               <p><i>${excerpt}</i></p>
-              <a href="${post.url}" class="blog-link">Read More →</a>
+              <a href="${post.url}" class="featured-link">Read More →</a>
             </div>
           </article>`;
                   wrapper.appendChild(slide);
@@ -700,6 +700,8 @@
               });
             });
           </script>
+
+        </section><!-- End of #blog section -->
 
         </section><!-- END OF NOTES FROM THE SANDBOX BLOG SECTION -->
 
