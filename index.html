@@ -142,8 +142,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h1>Sasha Cheek<br></h1>
-        <h2>I am <span class="typed"
-            data-typed-items="a Systems Engineer, a Technical Communicator"></span></h2>
+        <h2>I am <span class="typed" data-typed-items="a Systems Engineer, a Technical Communicator"></span></h2>
         <!-- Divider -->
         <div class="t-divider t-node" aria-hidden="true"></div>
 
@@ -190,7 +189,8 @@
               <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="about-paragraphs mt-3">
                   <p>
-                    Her core career centers on systems engineering with specializations in API integrations, data, and platform integrity. She is also talented in translating complex
+                    Her core career centers on systems engineering with specializations in API integrations, data, and
+                    platform integrity. She is also talented in translating complex
                     technical ecosystems into clear, actionable insights that support real-world decision-making.
                   </p>
                 </div>
@@ -384,13 +384,13 @@
             <h2 class="framed-subtitle">Published work in science and technology.</h2>
           </div>
         </div>
-      
+
         <!-- Featured Article Section Title-->
         <section id="featured-article" class="section-black py-5">
           <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
             <h1>Featured Article</h1>
           </div><!-- End of Featured Article Section Title-->
-      
+
           <!-- Featured Story -->
           <article class="featured-card" data-aos="fade-up" data-aos-delay="100">
             <img src="assets/img/telepathic-music-image.webp" alt="Telepathic Music">
@@ -400,32 +400,33 @@
               <p><i>Exploring the world of brain-computer interface (BCI) technology for disabled creatives and
                   the battle against neurodegenerative disorders.</i>
               </p>
-              <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives" class="featured-link">View
+              <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives"
+                class="featured-link">View
                 on Hackernoon →</a>
             </div>
           </article>
         </section><!-- End of Featured Articles Section -->
-      
+
         <!-- Self-Published Articles Section Title-->
         <section id="featured-article" class="section-black py-5">
           <div class="container section-title" data-aos="fade-up" data-aos-delay="100">
             <h1>Self-Published Articles</h1>
           </div><!-- End of Self-Published Articles Section Title-->
-      
-          <!-- Self-Published Articles Carousel Section -->
+
+          <!-- Self-Published Articles Carousel Section (rewritten) -->
           <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper published-swiper">
               <div class="swiper-wrapper" id="publishedWrapper">
                 <!-- slides appended dynamically as .swiper-slide -->
               </div>
-      
+
               <!-- pagination and nav (scoped classes) -->
               <div class="published-pagination swiper-pagination"></div>
               <button class="published-prev" aria-label="Previous published article">&#10094;</button>
               <button class="published-next" aria-label="Next published article">&#10095;</button>
             </div>
           </div>
-      
+
           <script>
             const publishedPosts = [
               {
@@ -453,7 +454,9 @@
 
             async function loadPublishedWork() {
               const wrapper = document.querySelector('.published-swiper .swiper-wrapper');
+              if (!wrapper) return;
               wrapper.innerHTML = '';
+
               for (const post of publishedPosts) {
                 const slide = document.createElement('div');
                 slide.className = 'swiper-slide';
@@ -461,38 +464,39 @@
                 const card = document.createElement('article');
                 card.className = 'blog-card';
 
-                // If external URL (http/https), link out; otherwise try to fetch excerpt
-                if (post.url.startsWith('http')) {
+                // External link: don't attempt to fetch, just render link-out card
+                if (/^https?:\/\//i.test(post.url)) {
                   card.innerHTML = `
-                  <img src="${post.image}" alt="${post.title}">
-                  <div class="blog-content">
-                    <h3>${post.title}</h3>
-                    <p class="blog-date">${post.date}</p>
-                    <p><i>Read this full piece directly on ${post.source}.</i></p>
-                    <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${post.source} →</a>
-                  </div>`;
+          <img src="${post.image}" alt="${escapeHtml(post.title)}">
+          <div class="blog-content">
+            <h3>${escapeHtml(post.title)}</h3>
+            <p class="blog-date">${post.date || ''}</p>
+            <p><i>Read this full piece directly on ${escapeHtml(post.source || 'the source')}.</i></p>
+            <a href="${post.url}" target="_blank" rel="noopener" class="blog-link">View on ${escapeHtml(post.source || 'source')} →</a>
+          </div>`;
                   slide.appendChild(card);
                   wrapper.appendChild(slide);
                   continue;
                 }
 
+                // Internal link: attempt to fetch and extract title/excerpt
                 try {
                   const res = await fetch(post.url);
                   const html = await res.text();
                   const parser = new DOMParser();
                   const doc = parser.parseFromString(html, 'text/html');
-                  const title = doc.querySelector('title')?.innerText || post.title;
+                  const title = doc.querySelector('title')?.innerText || post.title || 'Untitled';
                   const firstP = doc.querySelector('p i')?.innerText || doc.querySelector('p')?.innerText || '';
                   const excerpt = firstP ? (firstP.split('. ').slice(0, 2).join('. ') + '.') : '';
 
                   card.innerHTML = `
-                  <img src="${post.image}" alt="${title}">
-                  <div class="blog-content">
-                    <h3>${title}</h3>
-                    <p class="blog-date">${post.date}</p>
-                    <p><i>${excerpt}</i></p>
-                    <a href="${post.url}" class="blog-link">Read More →</a>
-                  </div>`;
+          <img src="${post.image}" alt="${escapeHtml(title)}">
+          <div class="blog-content">
+            <h3>${escapeHtml(title)}</h3>
+            <p class="blog-date">${post.date || ''}</p>
+            <p><i>${escapeHtml(excerpt)}</i></p>
+            <a href="${post.url}" class="blog-link">Read More →</a>
+          </div>`;
                   slide.appendChild(card);
                   wrapper.appendChild(slide);
                 } catch (err) {
@@ -500,12 +504,26 @@
                 }
               }
             }
+
+            // small helper to avoid injecting raw HTML inside interpolations
+            function escapeHtml(str = '') {
+              return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+            }
+
+            // Expose loadPublishedWork for the global initializer usage (Promise.all([...]))
+            // This function appends slides; Swiper initialization is handled in the global initializer
+            // (the same initializer that calls loadPosts()).
           </script>
           <!-- End of Carousel JS Script - Published Work -->
-      
+
         </section>
         <!-- END OF PUBLISHED WORK SECTION -->
-      
+
         <!--NOTES FROM THE SANDBOX BLOG SECTION -->
         <section id="blog" class="blog section-black py-5">
           <!-- Title Banner -->
@@ -520,7 +538,7 @@
             </div>
           </div>
           <!-- End Section Subtitle -->
-      
+
           <!-- Blog Carousel Subsection (Swiper structure) -->
           <section class="blog-carousel section-black">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -528,14 +546,14 @@
                 <div class="swiper-wrapper" id="blogWrapper">
                   <!-- slides appended dynamically -->
                 </div>
-      
+
                 <div class="blog-pagination swiper-pagination"></div>
                 <button class="blog-prev" aria-label="Previous blog post">&#10094;</button>
                 <button class="blog-next" aria-label="Next blog post">&#10095;</button>
               </div>
             </div>
           </section>
-      
+
           <script>
             const posts = [
               {
@@ -557,6 +575,7 @@
 
             async function loadPosts() {
               const wrapper = document.querySelector('.blog-swiper .swiper-wrapper');
+              if (!wrapper) return;
               wrapper.innerHTML = '';
               for (const post of posts) {
                 try {
@@ -571,15 +590,15 @@
                   const slide = document.createElement('div');
                   slide.className = 'swiper-slide';
                   slide.innerHTML = `
-                  <article class="blog-card">
-                    <img src="${post.image}" alt="${title}">
-                    <div class="blog-content">
-                      <h3>${title}</h3>
-                      <p class="blog-date">${post.date || ''}</p>
-                      <p><i>${excerpt}</i></p>
-                      <a href="${post.url}" class="blog-link">Read More →</a>
-                    </div>
-                  </article>`;
+          <article class="blog-card">
+            <img src="${post.image}" alt="${title}">
+            <div class="blog-content">
+              <h3>${title}</h3>
+              <p class="blog-date">${post.date || ''}</p>
+              <p><i>${excerpt}</i></p>
+              <a href="${post.url}" class="blog-link">Read More →</a>
+            </div>
+          </article>`;
                   wrapper.appendChild(slide);
                 } catch (err) {
                   console.error('Error loading', post.url, err);
@@ -587,613 +606,687 @@
               }
             }
 
+            /* --- Fullscreen-like detection & helpers --- */
+            function isFullscreenLike() {
+              const tol = 24; // tolerance in px for taskbars/dock differences
+              const fullscreenAPI = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement);
+              const nearFullscreen = (window.innerWidth >= (screen.availWidth - tol) && window.innerHeight >= (screen.availHeight - tol));
+              return fullscreenAPI || nearFullscreen;
+            }
+
+            function updateFullscreenClass() {
+              const active = isFullscreenLike();
+              document.documentElement.classList.toggle('is-fullscreen-like', active);
+              return active;
+            }
+
+            function setSwiperSlidesPerView(swiper, wantOneWhenFullscreen, fallbackSlides) {
+              if (!swiper) return;
+              const wantOne = wantOneWhenFullscreen && isFullscreenLike();
+              const newVal = wantOne ? 1 : fallbackSlides;
+              if (swiper.params.slidesPerView !== newVal) {
+                swiper.params.slidesPerView = newVal;
+                try { swiper.update(); } catch (e) { console.warn('Swiper update error', e); }
+              }
+            }
+
             // Initialize Swipers after content loads
             document.addEventListener('DOMContentLoaded', () => {
-              // Load both sets of slides, then initialize
+              // ensure initial class
+              updateFullscreenClass();
+
+              // Load both sets of slides, then initialize swipers
               Promise.all([loadPublishedWork(), loadPosts()]).then(() => {
-                // Published Swiper
+                const defaultSlidesPerView = 3; // non-fullscreen visible slides
+
+                // clean up any existing instances
                 if (window.__publishedSwiper) window.__publishedSwiper.destroy(true, true);
+                if (window.__blogSwiper) window.__blogSwiper.destroy(true, true);
+
+                // Published Swiper (assumes published-swiper markup exists elsewhere)
                 window.__publishedSwiper = new Swiper('.published-swiper', {
                   loop: true,
                   speed: 600,
                   autoHeight: true,
                   autoplay: { delay: 5000, disableOnInteraction: false },
-                  slidesPerView: 3,
+                  slidesPerView: isFullscreenLike() ? 1 : defaultSlidesPerView,
                   spaceBetween: 24,
                   pagination: { el: '.published-pagination', clickable: true },
                   navigation: { nextEl: '.published-next', prevEl: '.published-prev' },
                   breakpoints: {
                     320: { slidesPerView: 1, spaceBetween: 20 },
                     768: { slidesPerView: 2, spaceBetween: 20 },
-                    1200: { slidesPerView: 3, spaceBetween: 30 }
+                    1200: { slidesPerView: defaultSlidesPerView, spaceBetween: 30 }
                   }
                 });
 
                 // Blog Swiper
-                if (window.__blogSwiper) window.__blogSwiper.destroy(true, true);
                 window.__blogSwiper = new Swiper('.blog-swiper', {
                   loop: true,
                   speed: 600,
                   autoHeight: false,
                   autoplay: { delay: 5000, disableOnInteraction: false },
-                  slidesPerView: 3,
+                  slidesPerView: isFullscreenLike() ? 1 : defaultSlidesPerView,
                   spaceBetween: 24,
                   pagination: { el: '.blog-pagination', clickable: true },
                   navigation: { nextEl: '.blog-next', prevEl: '.blog-prev' },
                   breakpoints: {
                     320: { slidesPerView: 1, spaceBetween: 20 },
                     768: { slidesPerView: 2, spaceBetween: 20 },
-                    1200: { slidesPerView: 3, spaceBetween: 30 }
+                    1200: { slidesPerView: defaultSlidesPerView, spaceBetween: 30 }
                   }
                 });
+
+                // Resize/orientation handlers to toggle fullscreen-like behavior and update swipers
+                let resizeTimer;
+                window.addEventListener('resize', () => {
+                  clearTimeout(resizeTimer);
+                  resizeTimer = setTimeout(() => {
+                    updateFullscreenClass();
+                    setSwiperSlidesPerView(window.__publishedSwiper, true, defaultSlidesPerView);
+                    setSwiperSlidesPerView(window.__blogSwiper, true, defaultSlidesPerView);
+                  }, 120);
+                });
+
+                window.addEventListener('orientationchange', () => {
+                  setTimeout(() => {
+                    updateFullscreenClass();
+                    setSwiperSlidesPerView(window.__publishedSwiper, true, defaultSlidesPerView);
+                    setSwiperSlidesPerView(window.__blogSwiper, true, defaultSlidesPerView);
+                  }, 200);
+                });
+              }).catch(err => {
+                console.error('Error initializing blog/published swipers:', err);
               });
             });
           </script>
-      
+
         </section><!-- END OF NOTES FROM THE SANDBOX BLOG SECTION -->
 
-      <!-- RESUME SECTION -->
-      <section id="resume" class="resume section-black py-5">
-        <!-- Title Banner -->
-        <div class="title-banner small" data-aos="fade-up"
-          style="--title-img:url('/assets/img/headers/green-neodymium-magnet-phenomenon.webp');">
-          <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
-            <h1>RESUME</h1>
-            <h2 class="framed-subtitle">Experience and technical expertise at a glance.</h2>
-          </div>
-        </div>
-
-        <!--==============================RESUME COLUMN 1==========================================-->
-        <!-- Neon Framed Resume Body -->
-        <div class="container neon-paragraph" data-aos="fade-up" data-aos-delay="100">
-          <div class="row">
-            <div class="col-lg-6">
-              <h3 class="my-3">Summary</h3>
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Sasha Cheek</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="mb-3">
-                  <em>
-                    I am a systems engineer focused on API, integrations, and platform integrity. I design and govern the interfaces between systems-- defining data contracts, integration patterns, and technical constraints that enable platforms to operate correctly, securely, and on a large scale. My experience spans large partner ecosystems, and product-adjacent engineering/technology roles where engineering ethics and accountability matter.
-                  </em>
-                </p>
-              </div>
-
-              <!--EDUCATION-->
-              <h3 class="my-3">Education</h3>
-              <div class="resume-item ps-4 pb-4 position-relative">
-                <h4 class="mb-2">Master of Arts in Science Writing</h4>
-                <p class="r-year">2025 - 2027</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>Johns Hopkins University, Baltimore, MD (Remote)</i></b></em></p>
-              </div>
-
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Bachelor of Science in Electronics Engineering Technology (ABET-Accredited)</h4>
-                <p class="r-year">2015 - 2018</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>North Carolina A&amp;T State University, Greensboro, NC</i></b></em></p>
-              </div>
-
-              <!--PUBLICATIONS-->
-              <h3 class="my-3">Publications</h3>
-              <div class="resume-item ps-4 pb-4 position-relative">
-                <ul class="pub-list" style="list-style-type:disc;">
-                  <!-- Publication 1-->
-                  <li>(2025, Nov 3).
-                    <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives">"How Telepathic
-                      Music Inspires Disabled Creatives." <i>Hackernoon</i>.</a>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- SKILLS SECTION -->
-              <h3 class="my-3">Skills</h3>
-
-              <!-- Programming Languages -->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Programming Languages & Frameworks</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Python (Scripting)</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 60%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">JavaScript</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 50%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">SQL (ETL, MDM, ERDs)</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 80%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Bootstrap</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 75%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">HTML/CSS</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 85%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Structured Data (JSON, XML)</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 95%"></div>
-                  </div>
-                </div>
-              </div><!-- End of Programming Languages-->
-
-              <!-- APIs-->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">APIs</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">RESTful, SOAP & GraphQL APIs</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 85%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Postman</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 85%"></div>
-                  </div>
-                </div>
-              </div><!-- End of APIs-->
-
-              <!-- Data Tools -->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Data Tools</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Datawrapper</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 90%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Datadog</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 80%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Salesforce (Reports, Dashboards)</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 75%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Excel (Pivot Tables, Automation)</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 75%"></div>
-                  </div>
-                </div>
-              </div><!-- End of Data Tools-->
-
-              <!-- Release Management -->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Release Management</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Git</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 80%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Azure & AWS (Cloud Services)</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 70%"></div>
-                  </div>
-                </div>
-              </div><!-- End of Release Management-->
-
-
-              <!-- Project Management -->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="skill-category">Project Management</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Agile/Scrum</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 90%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Jira</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 85%"></div>
-                  </div>
-                </div>
-              </div><!-- End of Project Management-->
-
-              <!-- Writing / Communication -->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="skill-category">Technical & Science Communication</h4>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Technical Writing & Communication</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 95%"></div>
-                  </div>
-                </div>
-
-                <div class="skill-bar">
-                  <span class="skill-label">Content Creation</span>
-                  <div class="skill-track">
-                    <div class="skill-fill" style="--level: 85%"></div>
-                  </div>
-                </div>
-              </div><!-- End of Writing / Communication-->
-
-            </div><!-- End of Resume Column 1 -->
-
-            <!--==============================RESUME COLUMN 2==========================================-->
-            <!--EXPERIENCE-->
-            <div class="col-lg-6">
-              <h3 class="my-3">Experience</h3>
-
-              <!-- INDEED ROLE-->
-              <div class="resume-item ps-4 pb-4 position-relative">
-                <h4 class="mb-2">Technical Integrations Specialist (Contract)</h4>
-                <p class="r-year">2023 - 2025</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>Indeed.com, Remote</i></b></em></p>
-                <p class="description"><span class="bullet">&bull; Owned end-to-end ILM (Integration Lifecycle
-                    Management) for
-                    high-value ATS partner integrations, handling configuration, testing, deployment,
-                    monitoring, and version control to ensure reliable onboarding, improving integration accuracy, and
-                    client
-                    satisfaction</span></p>
-                <p class="description"><span class="bullet">&bull; Led a cross-functional investigation into GraphQL API
-                    misuse,
-                    identifying unauthorized query behavior, weak ID-based access patterns, and
-                    potential BOLA/IDOR risks; partnered with engineering to propose a centralized observability
-                    pipeline to strengthen
-                    monitoring and API integrity</span>
-                </p>
-                <p class="description"><span class="bullet">&bull; Served as a SME (subject matter expert) on API and
-                    data-feed
-                    integrations, advising engineering, product, and partnerships teams on systems
-                    architecture and best practices to improve reliability and integration quality</span></p>
-                <p class="description"><span class="bullet">&bull; Documented system behavior, data mappings, error
-                    patterns, and
-                    integration requirements to improve onboarding quality and cross-team
-                    alignment</span></p>
-              </div>
-
-              <!-- MICROSOFT ROLE-->
-              <div class="resume-item ps-4 pb-4 position-relative">
-                <h4 class="mb-2">Technical Program Manager, CDN Services (Contract)</h4>
-                <p class="r-year">2022</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>Microsoft, Remote</i></b></em></p>
-                <p class="description"><span class="bullet">&bull; Led the migration of 3,500+ CDN (content delivery
-                    network) pages
-                    using Akamai, improving content delivery performance and enhancing
-                    accessibility for end-users</span></p>
-                <p class="description"><span class="bullet">&bull; Built automated dashboards using Power Bl and Azure
-                    DevOps,
-                    integrating ETL-style data prep to communicate workflow status and reduce
-                    misalignment by 30%</span>
-                </p>
-              </div>
-
-              <!-- CREDIT KARMA ROLE-->
-              <div class="resume-item ps-4 pb-4 position-relative">
-                <h4 class="mb-2">Technical Program Manager (Contract)</h4>
-                <p class="r-year">2021 - 2022</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>Credit Karma, Charlotte, NC</i></b></em></p>
-                <p class="description"><span class="bullet">&bull; Managed 7-8 simultaneous partner integration
-                    projects, supporting
-                    API configuration, OAuth/API key credentialing, QA/UAT testing, and data
-                    mapping for smoother onboarding, reducing escalation volume by 50%</span></p>
-                <p class="description"><span class="bullet">&bull; Trained and onboarded new program managers on API
-                    integration
-                    workflows, tooling, and best practices, improving ramp-up time and cross-team
-                    execution</span>
-                </p>
-              </div>
-
-              <!-- HUDSON MX ROLE-->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Technical Business Analyst</h4>
-                <p class="r-year">2019 - 2021</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>Hudson MX, Atlanta, GA</i></b></em></p>
-                <p class="description"><span class="bullet">&bull; Led API gateway and credential management to
-                    streamline secure
-                    partner integrations while shadowing DevOps SME</span></p>
-                <p class="description"><span class="bullet">&bull; Created high-impact technical docs- APIs, ERDs
-                    (entity relationship
-                    diagrams), and test cases-that improved onboarding and cross-team
-                    collaboration</span></p>
-                <p class="description"><span class="bullet">&bull; Earned recognition for high-impact contributions
-                    during the 2018
-                    NCAA Digital technical product management apprenticeship program, which
-                    facilitated securing a startup ad-tech position through Warner Bros. Discovery referrals</span></p>
-              </div>
-
-              <!-- WARNER BROS DISCOVERY ROLES-->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Technical Product Management Intern, NCAA Digital & PGA.com</h4>
-                <p class="r-year">2018 - 2019</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>Warner Bros. Discovery, Atlanta, GA</i></b></em></p>
-                <p class="description"><span class="bullet">&bull;  Led platform coordination for the 2019 MARCH MADNESS TOURNAMENT, helping achieve record-breaking viewership across mobile, web, and OTT platforms</span></p>
-                <p class="description"><span class="bullet">&bull; Selected and placed through the T. Howard Foundation, a diversity pipeline program for media</span></p>
-                <p class="description"><span class="bullet">&bull; Utilized new web development technology and tools, creating the 2018 Ways to Watch page that became the fourth highest viewed internet page in August</span></p>
-                <p class="description"><span class="bullet">&bull; Continuous learning of products and applications to become a product expert</span></p>
-              </div>
-
-              <!-- NASA KSC ROLE-->
-              <div class="resume-item ps-4 position-relative">
-                <h4 class="mb-2">Systems Engineering & Integrations Intern</h4>
-                <p class="r-year">2016</p>
-                <div class="t-divider t-node" aria-hidden="true"></div>
-                <p class="em"><b><i>NASA Kennedy Space Center, Cape Canaveral, FL</i></b></em></p>
-                <p class="description"><span class="bullet">&bull;  Leader in hands-on support to the Technical Integration team in identifying and resolving open interface issues associated with SLS (Space Launch System) and Mars exploration</span></p>
-                <p class="description"><span class="bullet">&bull; Internship acquired through university research program and NASA defense contractor, MEI (Millennium Engineering & Integration)</span></p>
-              </div>
-              <!-- END OF RESUME EXPERIENCE SECTION COLUMN 2-->
+        <!-- RESUME SECTION -->
+        <section id="resume" class="resume section-black py-5">
+          <!-- Title Banner -->
+          <div class="title-banner small" data-aos="fade-up"
+            style="--title-img:url('/assets/img/headers/green-neodymium-magnet-phenomenon.webp');">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h1>RESUME</h1>
+              <h2 class="framed-subtitle">Experience and technical expertise at a glance.</h2>
             </div>
           </div>
-        </div>
 
-      </section><!-- END OF RESUME SECTION -->
-
-      <!--TESTIMONIALS TITLE-->
-      <section id="testimonials" class="testimonials section-black py-5">
-        <!-- Title Banner -->
-        <div class="title-banner small" data-aos="fade-up"
-          style="--title-img:url('/assets/img/headers/testimonials-background-image.webp');">
-          <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
-            <h1>TESTIMONIALS</h1>
-            <h2 class="framed-subtitle">Results recognized by former colleagues, coworkers, and clients.</h2>
-          </div>
-        </div>
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            // Avoid duplicate inits if you hot-reload
-            if (window.__tSwiper) window.__tSwiper.destroy(true, true);
-
-            window.__tSwiper = new Swiper('.testimonials-swiper', {
-              loop: true,
-              speed: 600,
-              autoHeight: true,                         // adapts to quote length
-              autoplay: { delay: 5000, disableOnInteraction: false },
-              slidesPerView: 1,
-              centeredSlides: true,
-              spaceBetween: 20,
-              pagination: { el: '.testimonials-pagination', clickable: true },
-              navigation: { nextEl: '.testimonials-next', prevEl: '.testimonials-prev' },
-              breakpoints: {
-                992: { slidesPerView: 1, centeredSlides: true, spaceBetween: 24 }
-              }
-            });
-          });
-        </script>
-
-        <!-- Testimonials Container -->
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper testimonials-swiper">
-            <div class="swiper-wrapper">
-
-              <!-- Slide 1 -->
-              <div class="swiper-slide">
-                <article class="t-card">
-                  <img src="/assets/img/testimonials/danielm_testimonialpic.jpg" alt="Portrait of Daniel M. Chin"
-                    class="t-avatar">
-                  <h3 class="t-name">Daniel M. Chin, PMP</h3>
-                  <p class="t-role">Program Manager at Microsoft</p>
+          <!--==============================RESUME COLUMN 1==========================================-->
+          <!-- Neon Framed Resume Body -->
+          <div class="container neon-paragraph" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <div class="col-lg-6">
+                <h3 class="my-3">Summary</h3>
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Sasha Cheek</h4>
                   <div class="t-divider t-node" aria-hidden="true"></div>
-                  <p class="t-quote">
-                    <span class="qmark left">“</span>
-                    I worked with Sasha on the Microsoft e-commerce program migration project. She successfully
-                    managed
-                    complicated
-                    program tasks with a detail oriented project management skill-set while employing creativity.
-                    Thanks
-                    to her clear
-                    communication with cross functional teams, we could efficiently use our time. She is a very
-                    knowledgeable and
-                    hardworking collaborator. She’s also a very friendly and warm hearted person. I strongly recommend
-                    her for any
-                    program manager position.
-                    <span class="qmark right">”</span>
+                  <p class="mb-3">
+                    <em>
+                      I am a systems engineer focused on API, integrations, and platform integrity. I design and govern
+                      the interfaces between systems-- defining data contracts, integration patterns, and technical
+                      constraints that enable platforms to operate correctly, securely, and on a large scale. My
+                      experience spans large partner ecosystems, and product-adjacent engineering/technology roles where
+                      engineering ethics and accountability matter.
+                    </em>
                   </p>
-                </article>
-              </div>
+                </div>
 
-              <!-- Slide 2 -->
-              <div class="swiper-slide">
-                <article class="t-card">
-                  <img src="/assets/img/testimonials/susan_testimonialpic.jpg" alt="Portrait of Susan Walker"
-                    class="t-avatar">
-                  <h3 class="t-name">Susan Walker</h3>
-                  <p class="t-role">Scrum Master at Abercrombie &amp; Fitch</p>
+                <!--EDUCATION-->
+                <h3 class="my-3">Education</h3>
+                <div class="resume-item ps-4 pb-4 position-relative">
+                  <h4 class="mb-2">Master of Arts in Science Writing</h4>
+                  <p class="r-year">2025 - 2027</p>
                   <div class="t-divider t-node" aria-hidden="true"></div>
-                  <p class="t-quote">
-                    <span class="qmark left">“</span>
-                    I had the pleasure of working with Sasha as a fellow Technical Program Manager. From the moment I
-                    met her during
-                    my first day at Credit Karma I liked her and knew she would be someone I could learn from. She is
-                    knowledgeable
-                    and passionate about coaching teams to be their very best. She has a positive attitude and is
-                    always
-                    willing to
-                    help whenever needed. She is also not afraid to ask the hard questions and point out areas where
-                    we
-                    can all
-                    improve. She is a humble leader who always has the best in mind of everyone she works with.
-                    <span class="qmark right">”</span>
-                  </p>
-                </article>
-              </div>
+                  <p class="em"><b><i>Johns Hopkins University, Baltimore, MD (Remote)</i></b></em></p>
+                </div>
 
-              <!-- Slide 3 -->
-              <div class="swiper-slide">
-                <article class="t-card">
-                  <img src="/assets/img/testimonials/evan_testimonialpic.jpg" alt="Portrait of Evan O'Toole"
-                    class="t-avatar">
-                  <h3 class="t-name">Evan O'Toole</h3>
-                  <p class="t-role">Tech Analyst, Integrations Delivery at Indeed</p>
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Bachelor of Science in Electronics Engineering Technology (ABET-Accredited)</h4>
+                  <p class="r-year">2015 - 2018</p>
                   <div class="t-divider t-node" aria-hidden="true"></div>
-                  <p class="t-quote">
-                    <span class="qmark left">“</span>
-                    Sasha and I first met each other at Hudson MX prior to our time at Indeed and from meeting her, I
-                    could tell Sasha
-                    was committed, confident, and competent about what she does.
+                  <p class="em"><b><i>North Carolina A&amp;T State University, Greensboro, NC</i></b></em></p>
+                </div>
 
-                    Sasha cares an incredible amount about her work and how is able to balance/manage incredibly diverse
-                    activities
-                    both in and outside of work. She has a passion for learning more and delivering high quality
-                    projects. She’s also
-                    committed to being a part of the culture and getting to know the team she’s a part of.
+                <!--PUBLICATIONS-->
+                <h3 class="my-3">Publications</h3>
+                <div class="resume-item ps-4 pb-4 position-relative">
+                  <ul class="pub-list" style="list-style-type:disc;">
+                    <!-- Publication 1-->
+                    <li>(2025, Nov 3).
+                      <a href="https://hackernoon.com/how-telepathic-music-inspires-disabled-creatives">"How Telepathic
+                        Music Inspires Disabled Creatives." <i>Hackernoon</i>.</a>
+                    </li>
+                  </ul>
+                </div>
 
-                    Sasha also has lent a helping hand and caring ear when called upon, especially when I first started
-                    working at
-                    Indeed. She made time to ensure I had a successful time getting on board and she’s helped others as
-                    well become
-                    more involved educated about the work.
+                <!-- SKILLS SECTION -->
+                <h3 class="my-3">Skills</h3>
 
-                    If you’re looking to hire a compassionate, dedicated, and studious employee, I couldn’t recommend
-                    Sasha enough.
-                    Any team would be even more well off adding such a great colleague like Sasha.
-                    <span class="qmark right">”</span>
-                  </p>
-                </article>
-              </div>
-
-              <!-- Slide 4 -->
-              <div class="swiper-slide">
-                <article class="t-card">
-                  <img src="/assets/img/testimonials/nick_testimonialpic.jpg" alt="Portrait of Nick Karahalios"
-                    class="t-avatar">
-                  <h3 class="t-name">Nick Karahalios</h3>
-                  <p class="t-role">Business Owner, NGK Property Inspections, LLC | Former Manager - Integrations Delivery at Indeed</p>
+                <!-- Programming Languages -->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Programming Languages & Frameworks</h4>
                   <div class="t-divider t-node" aria-hidden="true"></div>
-                  <p class="t-quote">
-                    <span class="qmark left">“</span>
-                    I had the privilege of working with Sasha as her manager. She is very passionate about her work, and is an expert in her field. 
-                    She is also very organized, and always valued feedback to grow her skills, both technically and professionally. 
-                    I would recommend Sasha to anyone looking for a dedicated, trustworthy individual who can add a lot of value to their team.
-                    <span class="qmark right">”</span>
-                  </p>
-                </article>
-              </div>
 
-            </div>
-
-            <!-- Scoped controls -->
-            <div class="swiper-pagination testimonials-pagination"></div>
-            <div class="swiper-button-prev testimonials-prev" aria-label="Previous"></div>
-            <div class="swiper-button-next testimonials-next" aria-label="Next"></div>
-          </div>
-        </div>
-      </section>
-      <!-- END OF TESTIMONIALS SECTION -->
-
-      <!-- CONTACT SECTION -->
-      <section id="contact" class="contact section-black">
-        <!-- Title Banner -->
-        <div class="title-banner small" data-aos="fade-up"
-          style="--title-img:url('/assets/img/headers/cityscape-image.webp');">
-          <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
-            <h1>CONTACT</h1>
-            <!-- Subtitle -->
-            <h2 class="framed-subtitle">Have a question, need help with a project, or just talk about tech? I'm
-              always
-              happy
-              to connect. Send me a
-              message, and I will respond within 24-48 hours.</h2>
-          </div>
-        </div>
-
-        <!-- Contact Container -->
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="row justify-content-center">
-            <div class="col-lg-6">
-
-              <!-- Contact Form -->
-              <form id="contact-form" action="https://formspree.io/f/mldpgwjj" method="POST" class="contact-form"
-                novalidate>
-                <div class="row gy-4">
-
-                  <!-- Name -->
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                  </div>
-
-                  <!-- Email -->
-                  <div class="col-md-6">
-                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                  </div>
-
-                  <!-- Subject -->
-                  <div class="col-md-12">
-                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                  </div>
-
-                  <!-- Message -->
-                  <div class="col-md-12">
-                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-                  </div>
-
-                  <!-- Honeypot field (spam protection) -->
-                  <input type="text" name="_gotcha" style="display:none">
-
-                  <!-- Status Messages -->
-                  <div class="col-md-12 text-center">
-                    <div class="status-messages">
-                      <div class="loading" style="display:none;">Loading...</div>
-                      <div class="error-message" style="display:none;"></div>
-                      <div class="sent-message" style="display:none;">Your message has been sent. Thank you!
-                      </div>
+                  <div class="skill-bar">
+                    <span class="skill-label">Python (Scripting)</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 60%"></div>
                     </div>
-                    <button type="submit" class="btn btn-neon btn-lg">Send Message</button>
                   </div>
 
-                </div>
-              </form>
+                  <div class="skill-bar">
+                    <span class="skill-label">JavaScript</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 50%"></div>
+                    </div>
+                  </div>
 
+                  <div class="skill-bar">
+                    <span class="skill-label">SQL (ETL, MDM, ERDs)</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 80%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Bootstrap</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 75%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">HTML/CSS</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 85%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Structured Data (JSON, XML)</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 95%"></div>
+                    </div>
+                  </div>
+                </div><!-- End of Programming Languages-->
+
+                <!-- APIs-->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">APIs</h4>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">RESTful, SOAP & GraphQL APIs</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 85%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Postman</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 85%"></div>
+                    </div>
+                  </div>
+                </div><!-- End of APIs-->
+
+                <!-- Data Tools -->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Data Tools</h4>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Datawrapper</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 90%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Datadog</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 80%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Salesforce (Reports, Dashboards)</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 75%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Excel (Pivot Tables, Automation)</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 75%"></div>
+                    </div>
+                  </div>
+                </div><!-- End of Data Tools-->
+
+                <!-- Release Management -->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Release Management</h4>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Git</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 80%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Azure & AWS (Cloud Services)</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 70%"></div>
+                    </div>
+                  </div>
+                </div><!-- End of Release Management-->
+
+
+                <!-- Project Management -->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="skill-category">Project Management</h4>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Agile/Scrum</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 90%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Jira</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 85%"></div>
+                    </div>
+                  </div>
+                </div><!-- End of Project Management-->
+
+                <!-- Writing / Communication -->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="skill-category">Technical & Science Communication</h4>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Technical Writing & Communication</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 95%"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-bar">
+                    <span class="skill-label">Content Creation</span>
+                    <div class="skill-track">
+                      <div class="skill-fill" style="--level: 85%"></div>
+                    </div>
+                  </div>
+                </div><!-- End of Writing / Communication-->
+
+              </div><!-- End of Resume Column 1 -->
+
+              <!--==============================RESUME COLUMN 2==========================================-->
+              <!--EXPERIENCE-->
+              <div class="col-lg-6">
+                <h3 class="my-3">Experience</h3>
+
+                <!-- INDEED ROLE-->
+                <div class="resume-item ps-4 pb-4 position-relative">
+                  <h4 class="mb-2">Technical Integrations Specialist (Contract)</h4>
+                  <p class="r-year">2023 - 2025</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="em"><b><i>Indeed.com, Remote</i></b></em></p>
+                  <p class="description"><span class="bullet">&bull; Owned end-to-end ILM (Integration Lifecycle
+                      Management) for
+                      high-value ATS partner integrations, handling configuration, testing, deployment,
+                      monitoring, and version control to ensure reliable onboarding, improving integration accuracy, and
+                      client
+                      satisfaction</span></p>
+                  <p class="description"><span class="bullet">&bull; Led a cross-functional investigation into GraphQL
+                      API
+                      misuse,
+                      identifying unauthorized query behavior, weak ID-based access patterns, and
+                      potential BOLA/IDOR risks; partnered with engineering to propose a centralized observability
+                      pipeline to strengthen
+                      monitoring and API integrity</span>
+                  </p>
+                  <p class="description"><span class="bullet">&bull; Served as a SME (subject matter expert) on API and
+                      data-feed
+                      integrations, advising engineering, product, and partnerships teams on systems
+                      architecture and best practices to improve reliability and integration quality</span></p>
+                  <p class="description"><span class="bullet">&bull; Documented system behavior, data mappings, error
+                      patterns, and
+                      integration requirements to improve onboarding quality and cross-team
+                      alignment</span></p>
+                </div>
+
+                <!-- MICROSOFT ROLE-->
+                <div class="resume-item ps-4 pb-4 position-relative">
+                  <h4 class="mb-2">Technical Program Manager, CDN Services (Contract)</h4>
+                  <p class="r-year">2022</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="em"><b><i>Microsoft, Remote</i></b></em></p>
+                  <p class="description"><span class="bullet">&bull; Led the migration of 3,500+ CDN (content delivery
+                      network) pages
+                      using Akamai, improving content delivery performance and enhancing
+                      accessibility for end-users</span></p>
+                  <p class="description"><span class="bullet">&bull; Built automated dashboards using Power Bl and Azure
+                      DevOps,
+                      integrating ETL-style data prep to communicate workflow status and reduce
+                      misalignment by 30%</span>
+                  </p>
+                </div>
+
+                <!-- CREDIT KARMA ROLE-->
+                <div class="resume-item ps-4 pb-4 position-relative">
+                  <h4 class="mb-2">Technical Program Manager (Contract)</h4>
+                  <p class="r-year">2021 - 2022</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="em"><b><i>Credit Karma, Charlotte, NC</i></b></em></p>
+                  <p class="description"><span class="bullet">&bull; Managed 7-8 simultaneous partner integration
+                      projects, supporting
+                      API configuration, OAuth/API key credentialing, QA/UAT testing, and data
+                      mapping for smoother onboarding, reducing escalation volume by 50%</span></p>
+                  <p class="description"><span class="bullet">&bull; Trained and onboarded new program managers on API
+                      integration
+                      workflows, tooling, and best practices, improving ramp-up time and cross-team
+                      execution</span>
+                  </p>
+                </div>
+
+                <!-- HUDSON MX ROLE-->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Technical Business Analyst</h4>
+                  <p class="r-year">2019 - 2021</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="em"><b><i>Hudson MX, Atlanta, GA</i></b></em></p>
+                  <p class="description"><span class="bullet">&bull; Led API gateway and credential management to
+                      streamline secure
+                      partner integrations while shadowing DevOps SME</span></p>
+                  <p class="description"><span class="bullet">&bull; Created high-impact technical docs- APIs, ERDs
+                      (entity relationship
+                      diagrams), and test cases-that improved onboarding and cross-team
+                      collaboration</span></p>
+                  <p class="description"><span class="bullet">&bull; Earned recognition for high-impact contributions
+                      during the 2018
+                      NCAA Digital technical product management apprenticeship program, which
+                      facilitated securing a startup ad-tech position through Warner Bros. Discovery referrals</span>
+                  </p>
+                </div>
+
+                <!-- WARNER BROS DISCOVERY ROLES-->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Technical Product Management Intern, NCAA Digital & PGA.com</h4>
+                  <p class="r-year">2018 - 2019</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="em"><b><i>Warner Bros. Discovery, Atlanta, GA</i></b></em></p>
+                  <p class="description"><span class="bullet">&bull; Led platform coordination for the 2019 MARCH
+                      MADNESS TOURNAMENT, helping achieve record-breaking viewership across mobile, web, and OTT
+                      platforms</span></p>
+                  <p class="description"><span class="bullet">&bull; Selected and placed through the T. Howard
+                      Foundation, a diversity pipeline program for media</span></p>
+                  <p class="description"><span class="bullet">&bull; Utilized new web development technology and tools,
+                      creating the 2018 Ways to Watch page that became the fourth highest viewed internet page in
+                      August</span></p>
+                  <p class="description"><span class="bullet">&bull; Continuous learning of products and applications to
+                      become a product expert</span></p>
+                </div>
+
+                <!-- NASA KSC ROLE-->
+                <div class="resume-item ps-4 position-relative">
+                  <h4 class="mb-2">Systems Engineering & Integrations Intern</h4>
+                  <p class="r-year">2016</p>
+                  <div class="t-divider t-node" aria-hidden="true"></div>
+                  <p class="em"><b><i>NASA Kennedy Space Center, Cape Canaveral, FL</i></b></em></p>
+                  <p class="description"><span class="bullet">&bull; Leader in hands-on support to the Technical
+                      Integration team in identifying and resolving open interface issues associated with SLS (Space
+                      Launch System) and Mars exploration</span></p>
+                  <p class="description"><span class="bullet">&bull; Internship acquired through university research
+                      program and NASA defense contractor, MEI (Millennium Engineering & Integration)</span></p>
+                </div>
+                <!-- END OF RESUME EXPERIENCE SECTION COLUMN 2-->
+              </div>
             </div>
           </div>
-        </div>
-      </section><!-- END OF CONTACT SECTION -->
+
+        </section><!-- END OF RESUME SECTION -->
+
+        <!--TESTIMONIALS TITLE-->
+        <section id="testimonials" class="testimonials section-black py-5">
+          <!-- Title Banner -->
+          <div class="title-banner small" data-aos="fade-up"
+            style="--title-img:url('/assets/img/headers/testimonials-background-image.webp');">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h1>TESTIMONIALS</h1>
+              <h2 class="framed-subtitle">Results recognized by former colleagues, coworkers, and clients.</h2>
+            </div>
+          </div>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              // Avoid duplicate inits if you hot-reload
+              if (window.__tSwiper) window.__tSwiper.destroy(true, true);
+
+              window.__tSwiper = new Swiper('.testimonials-swiper', {
+                loop: true,
+                speed: 600,
+                autoHeight: true,                         // adapts to quote length
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween: 20,
+                pagination: { el: '.testimonials-pagination', clickable: true },
+                navigation: { nextEl: '.testimonials-next', prevEl: '.testimonials-prev' },
+                breakpoints: {
+                  992: { slidesPerView: 1, centeredSlides: true, spaceBetween: 24 }
+                }
+              });
+            });
+          </script>
+
+          <!-- Testimonials Container -->
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper testimonials-swiper">
+              <div class="swiper-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <article class="t-card">
+                    <img src="/assets/img/testimonials/danielm_testimonialpic.jpg" alt="Portrait of Daniel M. Chin"
+                      class="t-avatar">
+                    <h3 class="t-name">Daniel M. Chin, PMP</h3>
+                    <p class="t-role">Program Manager at Microsoft</p>
+                    <div class="t-divider t-node" aria-hidden="true"></div>
+                    <p class="t-quote">
+                      <span class="qmark left">“</span>
+                      I worked with Sasha on the Microsoft e-commerce program migration project. She successfully
+                      managed
+                      complicated
+                      program tasks with a detail oriented project management skill-set while employing creativity.
+                      Thanks
+                      to her clear
+                      communication with cross functional teams, we could efficiently use our time. She is a very
+                      knowledgeable and
+                      hardworking collaborator. She’s also a very friendly and warm hearted person. I strongly recommend
+                      her for any
+                      program manager position.
+                      <span class="qmark right">”</span>
+                    </p>
+                  </article>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <article class="t-card">
+                    <img src="/assets/img/testimonials/susan_testimonialpic.jpg" alt="Portrait of Susan Walker"
+                      class="t-avatar">
+                    <h3 class="t-name">Susan Walker</h3>
+                    <p class="t-role">Scrum Master at Abercrombie &amp; Fitch</p>
+                    <div class="t-divider t-node" aria-hidden="true"></div>
+                    <p class="t-quote">
+                      <span class="qmark left">“</span>
+                      I had the pleasure of working with Sasha as a fellow Technical Program Manager. From the moment I
+                      met her during
+                      my first day at Credit Karma I liked her and knew she would be someone I could learn from. She is
+                      knowledgeable
+                      and passionate about coaching teams to be their very best. She has a positive attitude and is
+                      always
+                      willing to
+                      help whenever needed. She is also not afraid to ask the hard questions and point out areas where
+                      we
+                      can all
+                      improve. She is a humble leader who always has the best in mind of everyone she works with.
+                      <span class="qmark right">”</span>
+                    </p>
+                  </article>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <article class="t-card">
+                    <img src="/assets/img/testimonials/evan_testimonialpic.jpg" alt="Portrait of Evan O'Toole"
+                      class="t-avatar">
+                    <h3 class="t-name">Evan O'Toole</h3>
+                    <p class="t-role">Tech Analyst, Integrations Delivery at Indeed</p>
+                    <div class="t-divider t-node" aria-hidden="true"></div>
+                    <p class="t-quote">
+                      <span class="qmark left">“</span>
+                      Sasha and I first met each other at Hudson MX prior to our time at Indeed and from meeting her, I
+                      could tell Sasha
+                      was committed, confident, and competent about what she does.
+
+                      Sasha cares an incredible amount about her work and how is able to balance/manage incredibly
+                      diverse
+                      activities
+                      both in and outside of work. She has a passion for learning more and delivering high quality
+                      projects. She’s also
+                      committed to being a part of the culture and getting to know the team she’s a part of.
+
+                      Sasha also has lent a helping hand and caring ear when called upon, especially when I first
+                      started
+                      working at
+                      Indeed. She made time to ensure I had a successful time getting on board and she’s helped others
+                      as
+                      well become
+                      more involved educated about the work.
+
+                      If you’re looking to hire a compassionate, dedicated, and studious employee, I couldn’t recommend
+                      Sasha enough.
+                      Any team would be even more well off adding such a great colleague like Sasha.
+                      <span class="qmark right">”</span>
+                    </p>
+                  </article>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                  <article class="t-card">
+                    <img src="/assets/img/testimonials/nick_testimonialpic.jpg" alt="Portrait of Nick Karahalios"
+                      class="t-avatar">
+                    <h3 class="t-name">Nick Karahalios</h3>
+                    <p class="t-role">Business Owner, NGK Property Inspections, LLC | Former Manager - Integrations
+                      Delivery at Indeed</p>
+                    <div class="t-divider t-node" aria-hidden="true"></div>
+                    <p class="t-quote">
+                      <span class="qmark left">“</span>
+                      I had the privilege of working with Sasha as her manager. She is very passionate about her work,
+                      and is an expert in her field.
+                      She is also very organized, and always valued feedback to grow her skills, both technically and
+                      professionally.
+                      I would recommend Sasha to anyone looking for a dedicated, trustworthy individual who can add a
+                      lot of value to their team.
+                      <span class="qmark right">”</span>
+                    </p>
+                  </article>
+                </div>
+
+              </div>
+
+              <!-- Scoped controls -->
+              <div class="swiper-pagination testimonials-pagination"></div>
+              <div class="swiper-button-prev testimonials-prev" aria-label="Previous"></div>
+              <div class="swiper-button-next testimonials-next" aria-label="Next"></div>
+            </div>
+          </div>
+        </section>
+        <!-- END OF TESTIMONIALS SECTION -->
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact section-black">
+          <!-- Title Banner -->
+          <div class="title-banner small" data-aos="fade-up"
+            style="--title-img:url('/assets/img/headers/cityscape-image.webp');">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+              <h1>CONTACT</h1>
+              <!-- Subtitle -->
+              <h2 class="framed-subtitle">Have a question, need help with a project, or just talk about tech? I'm
+                always
+                happy
+                to connect. Send me a
+                message, and I will respond within 24-48 hours.</h2>
+            </div>
+          </div>
+
+          <!-- Contact Container -->
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+
+                <!-- Contact Form -->
+                <form id="contact-form" action="https://formspree.io/f/mldpgwjj" method="POST" class="contact-form"
+                  novalidate>
+                  <div class="row gy-4">
+
+                    <!-- Name -->
+                    <div class="col-md-6">
+                      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+                      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="col-md-12">
+                      <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="col-md-12">
+                      <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+                    </div>
+
+                    <!-- Honeypot field (spam protection) -->
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <!-- Status Messages -->
+                    <div class="col-md-12 text-center">
+                      <div class="status-messages">
+                        <div class="loading" style="display:none;">Loading...</div>
+                        <div class="error-message" style="display:none;"></div>
+                        <div class="sent-message" style="display:none;">Your message has been sent. Thank you!
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-neon btn-lg">Send Message</button>
+                    </div>
+
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </section><!-- END OF CONTACT SECTION -->
   </main>
 
   <!-- FOOTER SECTION -->
